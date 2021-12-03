@@ -1,0 +1,126 @@
+/*--------
+Font
+----------*/
+
+@font-face {
+  font-family: 'Seagal';
+  src: url('../webfonts/Seagal-Roman.woff');
+}
+
+/*--------
+Global
+----------*/
+
+html {
+  color: #ffffff;
+  background-color: #000000;
+  margin-left: 3%;
+  margin-right: 3%;
+  overflow-x: hidden;
+  font-family: 'Seagal', sans-serif;
+  font-variant-numeric: slashed-zero;
+  font-optical-sizing: auto;
+  text-rendering: optimizeLegibility;
+  font-variant-ligatures: common-ligatures;
+  font-size: 22px;
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1px, #000000 2px, #000000 15px),
+                    repeating-linear-gradient(to right, #878787, #878787 1px, #000000 1px, #000000 10px);
+
+  background-size: 5px 5px, 5px 5px;
+  cursor: crosshair;
+}
+
+::selection {
+  color: #000000;
+  background: #ffffff;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+}
+
+/*--------
+Header
+----------*/
+
+nav {
+  height: 8vh;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  border-bottom: 1px solid #ffffff;
+}
+
+.container {
+  width: 100%;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 1rem;
+
+}
+
+.home-btn {
+  grid-column: 1;
+  text-transform: uppercase;
+  border-right: 1px solid #ffffff;
+}
+
+.progetti-btn {
+  grid-column: 9;
+  text-align: center;
+  text-transform: uppercase;
+  border-right: 1px solid #ffffff;
+}
+
+.about-btn {
+  grid-column: 10;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+/*--------
+Content
+----------*/
+
+.introduction {
+  min-height: 92vh;
+  place-items: center;
+}
+
+.introduction-content {
+  grid-column: 1 / span 10;
+  text-align: center;
+}
+
+
+/*--------
+Footer
+----------*/
+
+footer {
+  height: 9.5vh;
+  align-items: center;
+}
+
+.indietro {
+  grid-column: 1 / span 5;
+}
+
+.avanti {
+  grid-column: 6 / span 5;
+  text-align: right;
+}

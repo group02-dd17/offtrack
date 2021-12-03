@@ -38,7 +38,6 @@ html {
   font-variant-ligatures: common-ligatures;
   background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
                     repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
-
   background-size: 15px 15px, 15px 15px;
   cursor: crosshair;
 }
@@ -98,12 +97,21 @@ Header
 ----------*/
 
 nav {
+  width: 94%;
   height: 8vh;
   align-items: center;
   position: fixed;
   z-index: 1000;
   border-bottom: 1px solid #ffffff;
-  font-size: 1.5em;
+  font-size: 1.8rem;
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
+                    repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
+  background-size: 15px 15px, 15px 15px;
+  box-shadow: 0 40px 30px -15px #000000;
+}
+
+.header {
+  height: 100%;
 }
 
 .container {
@@ -122,6 +130,7 @@ nav {
   grid-column: 1;
   text-transform: uppercase;
   border-right: 1px solid #ffffff;
+  place-items: center;
 }
 
 .archive-btn {
@@ -142,7 +151,7 @@ Content
 ----------*/
 
 .introduction {
-  min-height: 92vh;
+  min-height: 100vh;
   place-items: center;
 }
 
@@ -158,7 +167,7 @@ Content
 
 
 .introduction-text {
-  font-size: 2.7rem;
+  font-size: 2.8rem;
   text-align: justify;
   text-align-last: center;
 }
@@ -184,7 +193,8 @@ Tooltip
   color: #000000;
   content: attr(data-title);
   font-size: 1.5rem;
-  padding: 15%;
+  max-width: 40vw;
+  padding: 30px;
 }
 
 .tooltip.fade:after,

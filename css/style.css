@@ -13,8 +13,8 @@ Font
 }
 
 @font-face {
-  font-family: 'Redaction 20';
-  src: url('../webfonts/Redaction_20-Regular.woff');
+  font-family: 'Redaction 10';
+  src: url('../webfonts/Redaction_10-Regular.woff');
 }
 
 @font-face {
@@ -84,7 +84,7 @@ img:hover {
 }
 
 h1 {
-  font-family: 'Redaction 20', serif;
+  font-family: 'Redaction 10', serif;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
@@ -157,27 +157,43 @@ Content
 }
 
 .introduction-title {
-  font-size: 3em;
+  font-size: 3rem;
 }
 
 .introduction-text {
-  font-size: 2em;
+  font-size: 1.7rem;
 }
 
 /*--------
-Footer
+Tooltip
 ----------*/
-
-footer {
-  height: 9.5vh;
-  align-items: center;
+.tooltip {
+  position: relative;
+  z-index: 10;
+}
+.tooltip:before,
+.tooltip:after {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+.tooltip:before {
+  background: #000000;
+  border: 1px solid #ffffff;
+  color: #fff;
+  content: attr(data-title);
+  font-size: 1.5rem;
+  padding: 3%;
 }
 
-.indietro {
-  grid-column: 1 / span 5;
+.tooltip.fade:after,
+.tooltip.fade:before {
+  transform: translate3d(0,-10px,0);
+  transition: all .15s ease-in-out;
 }
-
-.avanti {
-  grid-column: 6 / span 5;
-  text-align: right;
+.tooltip.fade:hover:after,
+.tooltip.fade:hover:before {
+  opacity: 1;
+  transform: translate3d(0,0,0);
 }

@@ -7,6 +7,21 @@ Font
   src: url('../webfonts/Seagal-Roman.woff');
 }
 
+@font-face {
+  font-family: 'Redaction';
+  src: url('../webfonts/Redaction-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Redaction 20';
+  src: url('../webfonts/Redaction_20-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Redaction 50';
+  src: url('../webfonts/Redaction_50-Regular.woff');
+}
+
 /*--------
 Global
 ----------*/
@@ -17,8 +32,7 @@ html {
   margin-left: 3%;
   margin-right: 3%;
   overflow-x: hidden;
-  font-family: 'Seagal', sans-serif;
-  font-variant-numeric: slashed-zero;
+  font-weight: 400;
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
@@ -38,6 +52,11 @@ html {
 a {
   color: #ffffff;
   text-decoration: none;
+  font-family: 'Redaction', serif;
+}
+
+a:hover {
+font-family: 'Redaction 50', serif;
 }
 
 a:visited {
@@ -49,6 +68,32 @@ body {
   margin: 0;
 }
 
+img {
+   -webkit-filter: grayscale(100%);
+   -moz-filter: grayscale(100%);
+   -ms-filter: grayscale(100%);
+   filter: grayscale(100%);
+   filter: gray;
+}
+
+img:hover {
+   -webkit-filter: none;
+   -moz-filter: none;
+   -ms-filter: none;
+   filter: none;
+}
+
+h1 {
+  font-family: 'Redaction 20', serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+p {
+  font-family: 'Redaction', serif;
+  font-weight: 400;
+}
 /*--------
 Header
 ----------*/
@@ -79,7 +124,7 @@ nav {
   border-right: 1px solid #ffffff;
 }
 
-.progetti-btn {
+.archive-btn {
   grid-column: 9;
   text-align: center;
   text-transform: uppercase;
@@ -106,6 +151,18 @@ Content
   text-align: center;
 }
 
+.introduction2 {
+  min-height: 50vh;
+  place-items: center;
+}
+
+.introduction-title {
+  font-size: 3em;
+}
+
+.introduction-text {
+  font-size: 2em;
+}
 
 /*--------
 Footer

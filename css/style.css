@@ -36,11 +36,10 @@ html {
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
-  font-size: 22px;
-  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1px, #000000 2px, #000000 15px),
-                    repeating-linear-gradient(to right, #878787, #878787 1px, #000000 1px, #000000 10px);
+  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
+                    repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
 
-  background-size: 5px 5px, 5px 5px;
+  background-size: 15px 15px, 15px 15px;
   cursor: crosshair;
 }
 
@@ -104,6 +103,7 @@ nav {
   position: fixed;
   z-index: 1000;
   border-bottom: 1px solid #ffffff;
+  font-size: 1.5em;
 }
 
 .container {
@@ -147,21 +147,20 @@ Content
 }
 
 .introduction-content {
-  grid-column: 1 / span 10;
+  grid-column: 2 / span 8;
   text-align: center;
 }
 
 .introduction2 {
-  min-height: 50vh;
+  min-height: 40vh;
   place-items: center;
 }
 
-.introduction-title {
-  font-size: 3rem;
-}
 
 .introduction-text {
-  font-size: 1.7rem;
+  font-size: 2.7rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
 /*--------
@@ -171,6 +170,7 @@ Tooltip
   position: relative;
   z-index: 10;
 }
+
 .tooltip:before,
 .tooltip:after {
   display: block;
@@ -179,12 +179,12 @@ Tooltip
   position: absolute;
 }
 .tooltip:before {
-  background: #000000;
-  border: 1px solid #ffffff;
-  color: #fff;
+  background: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
   content: attr(data-title);
   font-size: 1.5rem;
-  padding: 3%;
+  padding: 15%;
 }
 
 .tooltip.fade:after,

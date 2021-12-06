@@ -88,6 +88,7 @@ p {
   font-weight: 400;
 }
 
+
 .redaction:hover {
   font-family: 'Redaction 50', serif;
 }
@@ -139,7 +140,7 @@ nav {
   place-items: center;
 }
 /*--------
-Content
+Index
 ----------*/
 .introduction {
   min-height: 100vh;
@@ -251,4 +252,35 @@ Tooltip
 .tooltip.fade:hover:before {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+/*--------
+Keywords
+----------*/
+
+.title {
+  min-height: 60vh;
+  place-items: center;
+  background-color: #000000;
+}
+
+.videos-container {
+
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+#canvasLines {
+  position: absolute;
+  z-index: -1;
+}
+
+.wrapper {
+  width: auto;
+}
+
+video {
+  width:auto;
 }

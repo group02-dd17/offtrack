@@ -1,7 +1,6 @@
 /*--------
 Font
 ----------*/
-
 @font-face {
   font-family: 'Seagal';
   src: url('../webfonts/Seagal-Roman.woff');
@@ -25,8 +24,8 @@ Font
 /*--------
 Global
 ----------*/
-
 html {
+  width: 100vw;
   color: #ffffff;
   background-color: #000000;
   margin-left: 3%;
@@ -36,10 +35,12 @@ html {
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
+  cursor: crosshair;
+  /*--------
   background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
                     repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
   background-size: 15px 15px, 15px 15px;
-  cursor: crosshair;
+  ----------*/
 }
 
 ::selection {
@@ -53,10 +54,6 @@ a {
   font-family: 'Redaction', serif;
 }
 
-a:hover {
-font-family: 'Redaction 50', serif;
-}
-
 a:visited {
   color: #ffffff;
   text-decoration: none;
@@ -67,18 +64,18 @@ body {
 }
 
 img {
-   -webkit-filter: grayscale(100%);
-   -moz-filter: grayscale(100%);
-   -ms-filter: grayscale(100%);
-   filter: grayscale(100%);
-   filter: gray;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
 }
 
 img:hover {
-   -webkit-filter: none;
-   -moz-filter: none;
-   -ms-filter: none;
-   filter: none;
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
 }
 
 h1 {
@@ -92,21 +89,23 @@ p {
   font-family: 'Redaction', serif;
   font-weight: 400;
 }
+
+.redaction:hover {
+  font-family: 'Redaction 50', serif;
+}
+
 /*--------
 Header
 ----------*/
-
 nav {
   width: 94%;
   height: 8vh;
   align-items: center;
   position: fixed;
   z-index: 1000;
+  background-color: #000000;
   border-bottom: 1px solid #ffffff;
   font-size: 1.8rem;
-  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
-                    repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
-  background-size: 15px 15px, 15px 15px;
   box-shadow: 0 40px 30px -15px #000000;
 }
 
@@ -123,7 +122,6 @@ nav {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 1rem;
-
 }
 
 .home-btn {
@@ -149,10 +147,12 @@ nav {
 /*--------
 Content
 ----------*/
-
 .introduction {
   min-height: 100vh;
   place-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #000000;
 }
 
 .introduction-content {
@@ -160,16 +160,47 @@ Content
   text-align: center;
 }
 
-.introduction2 {
-  min-height: 40vh;
-  place-items: center;
-}
-
-
 .introduction-text {
   font-size: 2.8rem;
   text-align: justify;
   text-align-last: center;
+}
+
+.go-to-rabbit {
+  grid-column: 2 / span 3;
+  border: 1px solid #ffffff;
+  width: 100%;
+  height: 100%;
+}
+
+.keywords {
+  width:100%;
+  height:100%;
+  position:absolute;
+  z-index:1;
+  display:none;
+}
+
+.go-to-rabbit .rabbit {
+  text-align:center;
+  position:relative;
+  top:50%;
+}
+
+.go-to-rabbit:hover .keywords {
+  display:block;
+}
+
+.keyword {
+  display: grid;
+  border-bottom: 1px solid #ffffff;
+}
+
+.go-to-archive {
+  grid-column: 6 / span 3;
+  border: 1px solid #ffffff;
+  width: 100%;
+  height: 100%;
 }
 
 /*--------
@@ -187,6 +218,7 @@ Tooltip
   pointer-events: none;
   position: absolute;
 }
+
 .tooltip:before {
   background: #ffffff;
   border: 1px solid #000000;
@@ -199,11 +231,12 @@ Tooltip
 
 .tooltip.fade:after,
 .tooltip.fade:before {
-  transform: translate3d(0,-10px,0);
+  transform: translate3d(0, -10px, 0);
   transition: all .15s ease-in-out;
 }
+
 .tooltip.fade:hover:after,
 .tooltip.fade:hover:before {
   opacity: 1;
-  transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }

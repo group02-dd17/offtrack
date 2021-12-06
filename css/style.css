@@ -178,7 +178,9 @@ Content
 }
 
 .go-to-rabbit {
+  display: grid;
   grid-column: 2 / span 3;
+  grid-template-areas: "overlap";
   border: 1px solid #ffffff;
   width: 100%;
   height: 100%;
@@ -187,15 +189,16 @@ Content
 .keywords {
   width:100%;
   height:100%;
-  position:absolute;
+  grid-area: overlap;
   z-index:1;
   display:none;
 }
 
 .rabbit {
-  text-align:center;
-  position:relative;
-  top:50%;
+  display: grid;
+  grid-area: overlap;
+  justify-content: center;
+  place-items: center;
 }
 
 .go-to-rabbit:hover .keywords {
@@ -205,6 +208,14 @@ Content
 .keyword {
   display: grid;
   border-bottom: 1px solid #ffffff;
+  background-color: #000000;
+  justify-content: center;
+  place-items: center;
+}
+
+.keyword:hover {
+  background-color: #ffffff;
+  color: #000000;
 }
 
 .go-to-archive {

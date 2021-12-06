@@ -98,23 +98,16 @@ Header
 nav {
   width: 100%;
   height: 8vh;
-  align-items: center;
   position: fixed;
   z-index: 1000;
   background-color: #000000;
   border-bottom: 1px solid #ffffff;
   font-size: 1.8rem;
-  box-shadow: 0 40px 30px -15px #000000;
+  text-transform: uppercase;
 }
 
 .header {
   height: 100%;
-  place-items: center;
-}
-
-.container {
-  width: 100%;
-  position: relative;
 }
 
 .grid {
@@ -126,33 +119,23 @@ nav {
 .home-btn {
   display: grid;
   grid-column: 1;
-  text-transform: uppercase;
   border-right: 1px solid #ffffff;
-  width: 100%;
-  height: 100%;
 }
 
 .archive-btn {
   display: grid;
   grid-column: 9;
-  text-transform: uppercase;
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
-  width: 100%;
-  height: 100%;
 }
 
 .about-btn {
   display: grid;
   grid-column: 10;
-  text-transform: uppercase;
-  width: 100%;
-  height: 100%;
 }
 
 .btn{
   display: grid;
-  justify-content: center;
   place-items: center;
 }
 /*--------
@@ -168,7 +151,6 @@ Content
 
 .introduction-content {
   grid-column: 2 / span 8;
-  text-align: center;
 }
 
 .introduction-text {
@@ -182,8 +164,8 @@ Content
   grid-column: 2 / span 4;
   grid-template-areas: "overlap";
   border: 1px solid #ffffff;
-  width: 100%;
-  height: 100%;
+  width: 60vh;
+  height: 60vh;
   font-size: 2.8rem;
 }
 
@@ -224,8 +206,8 @@ Content
   place-items: center;
   grid-column: 6 / span 4;
   border: 1px solid #ffffff;
-  width: 100%;
-  height: 100%;
+  width: 60vh;
+  height: 60vh;
   font-size: 2.8rem;
 }
 

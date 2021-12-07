@@ -3,7 +3,7 @@ let lines = function(l) {
 let videos = []; // Array that contains the videos
 let vidPos = [];
 let xyVertex = [];
-let videoList = document.getElementsByTagName("video");
+let videoList = document.getElementsByClassName("wrapper");
 for(let j = 0; j < videoList.length; j++) {
     vidPos.push(
         videoList[j].getBoundingClientRect()
@@ -34,12 +34,13 @@ l.draw = function() {
     l.strokeWeight(2);
 
     videoList.forEach(function(item, index) {
-        videoList[index].addEventListener("mouseover", function(){
+        videoList[index].firstElementChild.addEventListener("mouseover", function(){
+            // console.log(videos[index].x,videos[index].y);
             xyVertex.push({
-                x: videos[index].x,
-                y: videoList[index].offsetTop-videoList[index].parentNode.offsetTop+(videoList[index].offsetHeight/2)
+                x: videoList[index].firstElementChild.getBoundingClientRect().left+((videoList[index].offsetHeight)/4),
+                y: videoList[index].firstElementChild.getBoundingClientRect().top-videoList[index].parentNode.getBoundingClientRect().top+(videoList[index].firstElementChild.offsetHeight/2)
             });
-        })
+        });
     });
 
     l.beginShape();

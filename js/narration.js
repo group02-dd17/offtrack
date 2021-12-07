@@ -1,21 +1,21 @@
 let lines = function(l) {
 
-let videos = []; // Array that contains the videos
-let vidPos = [];
+// let videos = []; // Array that contains the videos
+// let vidPos = [];
 let xyVertex = [];
 let videoList = document.getElementsByClassName("wrapper");
-for(let j = 0; j < videoList.length; j++) {
-    vidPos.push(
-        videoList[j].getBoundingClientRect()
-    );
-}
+// for(let j = 0; j < videoList.length; j++) {
+//     vidPos.push(
+//         videoList[j].getBoundingClientRect()
+//     );
+// }
 
-for (let j = 0; j < videoList.length; j++) {
-    videos.push({
-    x: vidPos[j].right - (videoList[j].offsetWidth/2),
-    y: vidPos[j].top + (videoList[j].offsetHeight/2)
-    });
-}
+// for (let j = 0; j < videoList.length; j++) {
+//     videos.push({
+//     x: vidPos[j].right - (videoList[j].offsetWidth/2),
+//     y: vidPos[j].top + (videoList[j].offsetHeight/2)
+//     });
+// }
 
 l.setup = function() {
     var canvasL = l.createCanvas(l.windowWidth, l.windowHeight);

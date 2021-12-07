@@ -260,38 +260,19 @@ Keywords
 ----------*/
 
 .title {
-  min-height: 60vh;
+  min-height: 40vh;
   place-items: center;
-  background-color: #000000;
+  grid-column: 2 / span 8;
+  font-size: 5rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
-#container {
-  display: grid;
-  grid-template-areas: "overlap";
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
-  grid-gap: 1rem;
-  grid-area: overlap;
-  z-index: 5;
-}
-
-.videos-container {
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-
-#canvasLines {
-  display: grid;
-  grid-area: overlap;
-}
-
-video {
-  width: 100%;
-  object-fit: cover;
+.title-content {
+  grid-column: 2 / span 8;
+  text-align: justify;
+  text-align-last: center;
+  font-size: 5rem;
 }
 
 .info-btn {
@@ -305,7 +286,7 @@ video {
   z-index: 20;
   font-size: 1.5rem;
 }
-
+/*- Overlay btn--*/
 .overlay {
   height: 100%;
   width: 100%;
@@ -335,4 +316,34 @@ video {
   font-family: 'Redaction 70', serif;
   border: 1px solid #ffffff;
   padding: 1%;
+}
+
+/*- Video--*/
+#container {
+  display: grid;
+  grid-template-areas: "overlap";
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1rem;
+  grid-area: overlap;
+  z-index: 5;
+}
+
+.videos-container {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+#canvasLines {
+  display: grid;
+  grid-area: overlap;
+}
+
+video {
+  width: 100%;
+  object-fit: cover;
 }

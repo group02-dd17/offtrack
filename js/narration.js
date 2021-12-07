@@ -37,7 +37,7 @@ l.draw = function() {
         videoList[index].addEventListener("mouseover", function(){
             xyVertex.push({
                 x: videos[index].x,
-                y: videos[index].y
+                y: videoList[index].offsetTop-videoList[index].parentNode.offsetTop+(videoList[index].offsetHeight/2)
             });
         })
     });

@@ -25,13 +25,13 @@ l.setup = function() {
 l.draw = function() {
     const canvas = document.querySelector('#canvasLines');
     const ctx = this.canvas.getContext('2d');
-    
+
     // var linesarray = [];
     l.background("black");
 
     l.noFill();
     l.stroke("red");
-    l.strokeWeight(5);
+    l.strokeWeight(2);
 
     videoList.forEach(function(item, index) {
         videoList[index].addEventListener("mouseover", function(){

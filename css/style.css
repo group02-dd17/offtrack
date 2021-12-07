@@ -264,23 +264,31 @@ Keywords
   background-color: #000000;
 }
 
-.videos-container {
+#container {
+  display: grid;
+  grid-template-areas: "overlap";
+}
 
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  grid-gap: 1rem;
+  grid-area: overlap;
+  z-index: 5;
+}
+
+.videos-container {
   overflow-y: hidden;
   overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
 }
 
 #canvasLines {
-  position: absolute;
-  z-index: -1;
-}
-
-.wrapper {
-  width: auto;
+  display: grid;
+  grid-area: overlap;
 }
 
 video {
-  width:auto;
+  width: 100%;
+  object-fit: cover;
 }

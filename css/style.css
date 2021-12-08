@@ -327,7 +327,7 @@ Keywords
 .video-grid {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-rows:[row1-start] 5% [row1-end] repeat(40, 1fr);
   grid-gap: 1rem;
   grid-area: overlap;
   z-index: 5;
@@ -346,4 +346,20 @@ Keywords
 video {
   width: 100%;
   object-fit: cover;
+}
+
+#wrapper-vid1 {
+  grid-column: 3 / span 6;
+}
+
+#wrapper-vid2 {
+  grid-column: 2 / span 3;
+  justify-self: center;
+  width: 50%;
+}
+
+#wrapper-vid3 {
+  grid-column: 7;
+  grid-row: 2;
+  justify-self: center;
 }

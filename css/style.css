@@ -369,6 +369,7 @@ Keywords
 #canvasLines {
   display: grid;
   grid-area: overlap;
+  height: 10000px;
 }
 
 .wrapper {

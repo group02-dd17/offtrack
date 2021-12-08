@@ -94,6 +94,12 @@ p {
   font-family: 'Redaction 50', serif;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 1rem;
+}
+
 /*--------
 Header
 ----------*/
@@ -110,12 +116,6 @@ nav {
 
 .header {
   height: 100%;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-gap: 1rem;
 }
 
 .home-btn {
@@ -140,6 +140,7 @@ nav {
   display: grid;
   place-items: center;
 }
+
 /*--------
 Index
 ----------*/
@@ -159,6 +160,11 @@ Index
   font-size: 2.8rem;
   text-align: justify;
   text-align-last: center;
+}
+
+.one {
+  background-image: url('../img/home/ezgif-1-120972937554.gif');
+  background-size: cover;
 }
 
 .go-to-rabbit {
@@ -217,9 +223,7 @@ Index
   font-family: 'Redaction 50', serif;
 }
 
-/*--------
-Tooltip
-----------*/
+/*--Tooltip--*/
 .tooltip {
   position: relative;
   z-index: 10;
@@ -258,7 +262,6 @@ Tooltip
 /*--------
 Keywords
 ----------*/
-
 .title {
   min-height: 40vh;
   place-items: center;
@@ -279,13 +282,14 @@ Keywords
   position: fixed;
   bottom: 0;
   right: 0;
-  background-color: #000000;
-  border: 1px solid #ffffff;
+  background-color: #ffffff;
+  color: #000000;
   margin: 2%;
   padding: 1%;
   z-index: 20;
   font-size: 1.5rem;
 }
+
 /*- Overlay btn--*/
 .overlay {
   height: 100%;
@@ -343,9 +347,25 @@ Keywords
   grid-area: overlap;
 }
 
+.wrapper {
+  height: fit-content;
+  padding: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.0);
+}
+
+.wrapper:hover {
+  border: 1px solid #ffffff;
+  background-color: #000000;
+}
+
 video {
   width: 100%;
   object-fit: cover;
+  border: 1px solid #ffffff;
+}
+
+video:hover {
+  border: 1px solid rgba(255, 255, 255, 0.0);
 }
 
 #wrapper-vid1 {

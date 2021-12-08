@@ -108,7 +108,6 @@ nav {
   height: 8vh;
   position: fixed;
   z-index: 1000;
-  background-color: #000000;
   border-bottom: 1px solid #ffffff;
   font-size: 1.8rem;
   text-transform: uppercase;

@@ -34,12 +34,7 @@ html {
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
   cursor: crosshair;
-  font-family: 'Redaction 10', serif;
-  /*--------
-  background-image: repeating-linear-gradient(to bottom, transparent, transparent 1.3px, #000000 1.3px, #000000 15px),
-                    repeating-linear-gradient(to right, #878787, #878787 1.3px, #000000 1.3px, #000000 15px);
-  background-size: 15px 15px, 15px 15px;
-  ----------*/
+  font-family: 'Redaction', serif;
 }
 
 ::selection {
@@ -616,4 +611,75 @@ video:hover {
   justify-self: center;
   align-self: end;
   margin-bottom: 30%;
+}
+
+/*--------
+About
+----------*/
+.space{
+  height: 15vh;
+}
+
+.about-box{
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.tabs {
+  display: inline-grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+
+.tab{
+  cursor: pointer;
+  padding:10px 20px;
+  display: inline-grid;
+  border-top: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  font-size: 2rem;
+  z-index: 3;
+}
+.panels{
+  min-height:auto;
+  width:100%;
+  max-width:100vw;
+  overflow:hidden;
+  padding:3vw;
+  border-top: 1px solid #ffffff;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 1rem;
+}
+.panel{
+  display:none;
+  max-width:80vw;
+  font-size: 2.8rem;
+  grid-column: 2 / span 8;
+  align-items: center;
+  text-align: justify;
+  text-align-last: center;
+}
+
+.panel-title{
+  font-size:1.5em;
+  font-weight:400;
+}
+.radio{
+  display:none;
+}
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel {
+  display:block
+}
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab {
+  border-bottom: 2px solid #000;
+  margin-bottom: -1px;
 }

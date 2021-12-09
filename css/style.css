@@ -163,8 +163,15 @@ Index
 }
 
 .one {
-  background-image: url('../img/home/ezgif-1-120972937554.gif');
+  background-image: url('../img/home/1bitmap.webp');
   background-size: cover;
+}
+
+.two {
+  .one {
+    background-image: url('../img/home/2bitmap.webp');
+    background-size: cover;
+  }
 }
 
 .go-to-rabbit {

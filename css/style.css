@@ -108,6 +108,8 @@ nav {
   text-transform: uppercase;
 }
 
+.active { background-color: #000000;}
+
 .header {
   height: 100%;
 }

@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, height=device-height">
   <link rel="icon" type="image/png" href="img/favicon.png" />
   <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 
 <body>
@@ -44,155 +45,164 @@
   <div class="window" id="canvasLines"></div>
   <div class="videos-container video-grid">
       <div class="wrapper" id="wrapper-vid1">
-          <video id="vid1" controls>
+          <video id="vid1" playsinline autoplay muted loop>
               <source src="assets/videos/mask/masks01.webm" type="video/webm">
             </video>
       </div>
       <div class="wrapper" id="wrapper-vid2">
-          <video id="vid2" controls>
+          <video id="vid2" playsinline autoplay muted loop>
               <source src="assets/videos/mask/masks02.webm" type="video/webm">
             </video>
       </div>
       <div class="wrapper" id="wrapper-vid3">
-          <video id="vid3" controls>
+          <video id="vid3">
               <source src="assets/videos/mask/masks03.webm" type="video/webm">
             </video>
       </div>
       <div class="wrapper" id="wrapper-vid4">
-          <video  id="vid4" controls>
+          <video  id="vid4">
               <source src="assets/videos/mask/masks04.webm" type="video/webm">
             </video>
       </div>
+      <div class="quote" id="mask-quote-1">
+        <p>“When you are wearing this, you are doing your body a disservice”</p>
+      </div>
       <div class="wrapper" id="wrapper-vid5">
-        <video id="vid5" controls>
+        <video id="vid5">
             <source src="assets/videos/mask/masks05.webm" type="video/webm">
           </video>
     </div>
     <div class="wrapper" id="wrapper-vid6">
-        <video id="vid6" controls>
+        <video id="vid6" data-aos="zoom-in" data-aos-duration="10">
             <source src="assets/videos/mask/masks06.webm" type="video/webm">
           </video>
     </div>
-    <!-- <div class="wrapper" id="wrapper-vid7" style="grid-row:2">
-        <video id="vid7" controls>
+    <div class="quote" id="mask-quote-2">
+      <p>#FAKENEWS</p>
+    </div>
+    <div class="wrapper" id="wrapper-vid7">
+        <video id="vid7">
             <source src="assets/videos/mask/masks07.webm" type="video/webm">
           </video>
-    </div> -->
-    <!-- <div class="wrapper" id="wrapper-vid8">
-        <video  id="vid8" controls>
+    </div>
+    <div class="wrapper" id="wrapper-vid8">
+        <video  id="vid8">
             <source src="assets/videos/mask/masks08.webm" type="video/webm">
           </video>
-    </div> -->
-    <!-- <div class="wrapper" id="wrapper-vid9">
-      <video id="vid9" controls>
+    </div>
+    <div class="wrapper" id="wrapper-vid9">
+      <video id="vid9">
           <source src="assets/videos/mask/masks09.webm" type="video/webm">
         </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid10">
-      <video id="vid10" controls>
+    </div>
+  <div class="wrapper" id="wrapper-vid10">
+      <video id="vid10">
           <source src="assets/videos/mask/masks10.webm" type="video/webm">
         </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid11">
-    <video id="vid11" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid11">
+    <video id="vid11">
         <source src="assets/videos/mask/masks11.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid12">
-    <video id="vid12" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid12">
+    <video id="vid12">
         <source src="assets/videos/mask/masks12.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid13">
-    <video id="vid13" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid13">
+    <video id="vid13">
         <source src="assets/videos/mask/masks13.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid14">
-    <video id="vid14" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid14">
+    <video id="vid14">
         <source src="assets/videos/mask/masks14.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid15">
-    <video id="vid15" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid15">
+    <video id="vid15">
         <source src="assets/videos/mask/masks15.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid16">
-    <video id="vid16" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid16">
+    <video id="vid16">
         <source src="assets/videos/mask/masks16.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid17">
-    <video id="vid17" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid17">
+    <video id="vid17">
         <source src="assets/videos/mask/masks17.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid18">
-    <video id="vid18" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid18">
+    <video id="vid18">
         <source src="assets/videos/mask/masks18.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid19">
-    <video id="vid19" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid19">
+    <video id="vid19">
         <source src="assets/videos/mask/masks19.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid20">
-    <video id="vid20" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid20">
+    <video id="vid20">
         <source src="assets/videos/mask/masks20.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid21">
-    <video id="vid21" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid21">
+    <video id="vid21">
         <source src="assets/videos/mask/masks21.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid22">
-    <video id="vid22" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid22">
+    <video id="vid22">
         <source src="assets/videos/mask/masks22.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid23">
-    <video id="vid23" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid23">
+    <video id="vid23">
         <source src="assets/videos/mask/masks23.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid24">
-    <video id="vid24" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid24">
+    <video id="vid24">
         <source src="assets/videos/mask/masks24.webm" type="video/webm">
       </video>
-  </div> -->
-  <!-- <div class="wrapper" id="wrapper-vid25">
-    <video id="vid25" controls>
+  </div>
+  <div class="wrapper" id="wrapper-vid25">
+    <video id="vid25" playsinline autoplay muted loop>
         <source src="assets/videos/mask/masks25.webm" type="video/webm">
       </video>
-  </div> -->
-      <!-- <canvas id="canvas"></canvas> -->
+  </div>
+    </div>
+    <!-- Selector -->
+    <div class="selector">
+      <div class="title-content">
+        <p>CHOOSE ANOTHER PATH</p>
+      </div>
+      <div class="selector-container">
+        <div class="selector-btn"><a class="redaction" href="#">#Vaccine</a></div>
+        <div class="selector-btn"><a class="redaction" href="#">#Hospital</a></div>
+        <div class="selector-btn"><a class="redaction" href="#">#Lockdown</a></div>
+        <div class="selector-btn"><a class="redaction" href="#">#PCR</a></div>
+        <div class="selector-btn"><a class="redaction" href="#">#CovidPass</a></div>
+        <div class="selector-btn"><a class="redaction" href="#">#WorldHealthOrganization</a></div>
+      </div>
     </div>
   </div>
 
-<!-- Selector -->
-  <div class="selector">
-    <div class="title-content">
-      <p>CHOOSE ANOTHER PATH</p>
-    </div>
-    <div class="selector-container">
-      <div class="selector-btn"><a class="redaction" href="#">#Vaccine</a></div>
-      <div class="selector-btn"><a class="redaction" href="#">#Hospital</a></div>
-      <div class="selector-btn"><a class="redaction" href="#">#Lockdown</a></div>
-      <div class="selector-btn"><a class="redaction" href="#">#PCR</a></div>
-      <div class="selector-btn"><a class="redaction" href="#">#CovidPass</a></div>
-      <div class="selector-btn"><a class="redaction" href="#">#WorldHealthOrganization</a></div>
-    </div>
-  </div>
+
 
 
 <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0/lib/p5.js"></script>
 <script src="js/narration.js"></script>
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/p5.js-svg@1.1.1"></script>
-
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 
 </html>

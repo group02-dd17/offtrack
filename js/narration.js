@@ -6,12 +6,16 @@ let lines = function (l) {
     l.setup = function () {
         var canvasL = l.createCanvas(l.windowWidth, 10000);
         // let pg = l.createGraphics(l.windowWidth, document.getElementById("container").offsetHeight);
-        
+
         console.log(l.windowWidth);
         console.log(document.getElementById("container").offsetHeight);
 
         canvasL.parent("#canvasLines");
         // pg.parent("#canvasLines");
+        xyVertex.push({
+            x: videoList[0].firstElementChild.getBoundingClientRect().left + videoList[0].offsetWidth / 2,
+            y: videoList[0].firstElementChild.getBoundingClientRect().top -videoList[0].parentNode.getBoundingClientRect().top + videoList[0].firstElementChild.offsetHeight / 2,
+        });
     };
 
     l.draw = function () {
@@ -32,7 +36,7 @@ let lines = function (l) {
                 //add the center of the video as a new vertex
                 xyVertex.push({
                     x: videoList[index].firstElementChild.getBoundingClientRect().left + videoList[index].offsetWidth / 2,
-                    y: videoList[index].firstElementChild.getBoundingClientRect().top - videoList[index].parentNode.getBoundingClientRect().top + videoList[index].firstElementChild.offsetHeight / 2,
+                    y: videoList[index].firstElementChild.getBoundingClientRect().top -videoList[index].parentNode.getBoundingClientRect().top + videoList[index].firstElementChild.offsetHeight / 2,
                 });
                 // console.log(videos[index].x,videos[index].y);
             });
@@ -51,7 +55,7 @@ let lines = function (l) {
     //           marginWidth = round(float(css.marginLeft) + float(css.marginRight)),
     //           marginHeight = round(float(css.marginTop) + float(css.marginBottom)),
     //           w = l.windowWidth - marginWidth, h = l.windowHeight - marginHeight;
-      
+
     //     resizeCanvas(w, h, true);
     //   }
 };

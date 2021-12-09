@@ -4,7 +4,7 @@ let lines = function (l) {
     let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 
     l.setup = function () {
-        var canvasL = l.createCanvas(l.windowWidth, 10000);
+        var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight);
         // let pg = l.createGraphics(l.windowWidth, document.getElementById("container").offsetHeight);
 
         console.log(l.windowWidth);

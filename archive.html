@@ -37,21 +37,48 @@
       body {
         margin: 0;
       }
+
+      #wrapper {
+        height: 200vh;
+        padding-top: 100px;
+      }
+
+      #wrapper-side {
+        position: absolute;
+        left: 0;
+        height: 100%;
+        width: 20%;
+        border-right: 1px solid white;
+        z-index: 10;
+      }
+
       #network-graph {
-        top: 30%;
-        bottom: 30%;
-        left: 50px;
-        right: 50px;
+        top: 0%;
+        bottom: 0%;
+        width: 80%;
+        right: 0;
         position: absolute;
         background: #000;
       }
       #container {
+        border: 1px solid white;
+        width: 95%;
+        margin: 0 auto;
+        height: 85vh;
         position: relative;
-        top: 0;
+
         left: 0;
         right: 0;
-        height: 300vh;
         background: #000;
+      }
+
+      #visualizer {
+        border: 1px solid white;
+        height: 70%;
+      }
+
+      #legend {
+        border: 1px solid white;
       }
     </style>
   </head>
@@ -63,8 +90,14 @@
         <div class="about-btn redaction"><a class="btn redaction" href="about.html">About</a></div>
       </div>
     </nav>
-    <div id="container">
-      <div id="network-graph"></div>
+    <div id="wrapper">
+      <div id="container">
+        <div id="wrapper-side">
+          <div id="visualizer"></div>
+          <div id="legend"></div>
+        </div>
+        <div id="network-graph"></div>
+      </div>
     </div>
 
     <script src="js/archive.js"></script>

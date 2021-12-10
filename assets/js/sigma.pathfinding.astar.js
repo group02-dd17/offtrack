@@ -59,7 +59,7 @@
           previousNode: previousNode
         };
 
-        if(closedList[nodeId] == undefined || closedList[nodeId].pathLength > pathLength) {
+        if(closedList[nodeId] == undefined || closedList[nodeId].pathLenth > pathLength) {
           closedList[nodeId] = newItem;
 
           var item;

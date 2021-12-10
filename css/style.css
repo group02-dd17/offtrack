@@ -159,12 +159,12 @@ Index
 }
 
 .one {
-  background-image: url('../img/home/1bitmap.webp');
+  background-image: url('../assets/img/home/1bitmap.webp');
   background-size: cover;
 }
 
 .two {
-  background-image: url('../img/home/2bitmap.webp');
+  background-image: url('../assets/img/home/2bitmap.webp');
   background-size: cover;
 }
 

@@ -159,12 +159,12 @@ Index
 }
 
 .one {
-  background-image: url('../assets/img/home/1bitmap.webp');
+  background-image: url('../assets/img/home/2bitmap.webp');
   background-size: cover;
 }
 
 .two {
-  background-image: url('../assets/img/home/2bitmap.webp');
+  background-image: url('../assets/img/home/1bitmap.webp');
   background-size: cover;
 }
 
@@ -175,8 +175,7 @@ Index
   grid-template-areas: "overlap";
   border: 1px solid #ffffff;
   width: 85%;
-  height: 85%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   font-size: 2.8rem;
 }
 
@@ -219,8 +218,7 @@ Index
   grid-column: 6 / span 4;
   border: 1px solid #ffffff;
   width: 85%;
-  height: 85%;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1;
   font-size: 2.8rem;
 }
 
@@ -847,4 +845,17 @@ Cover
   background-position: center;
   grid-column: 6/8;
   grid-row: 1/6;
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 1rem;
+  }
+  .go-to-rabbit {
+    grid-column: 1
+  }
+  .go-to-archive {
+    grid-column: 1
+  }
 }

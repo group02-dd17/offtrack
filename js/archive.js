@@ -104,14 +104,17 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
   s.bind("clickNode", function (e) {
     var nodeId = e.data.node.id,
-      non = [],
       toKeep = s.graph.neighbors(nodeId);
     toKeep[nodeId] = e.data.node;
-    for (k in toKeep) {
-      non.push(s.graph.neighbors(toKeep[k].id));
-      console.log(non[k]);
-    }
 
+    document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+
+    document.getElementById("videosNumber").textContent = s.graph.neighbors(nodeId).lenght;
+
+
+    //   if(nameLabel.textContent != )
+    // nameLabel.appendChild(document.createTextNode(toKeep[nodeId].label));
+ 
     s.graph.nodes().forEach(function (n) {
       if (toKeep[n.id] == toKeep[nodeId]) n.color;
       else if (toKeep[n.id]) n.color = n.originalColor;

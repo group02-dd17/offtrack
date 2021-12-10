@@ -83,7 +83,6 @@ p {
   font-weight: 400;
 }
 
-
 .redaction:hover {
   font-family: 'Redaction 50', serif;
 }
@@ -106,7 +105,9 @@ nav {
   text-transform: uppercase;
 }
 
-.active { background-color: #000000;}
+.active {
+  background-color: #000000;
+}
 
 .header {
   height: 100%;
@@ -130,7 +131,7 @@ nav {
   grid-column: 10;
 }
 
-.btn{
+.btn {
   display: grid;
   place-items: center;
 }
@@ -163,11 +164,12 @@ Index
 }
 
 .two {
-    background-image: url('../img/home/2bitmap.webp');
-    background-size: cover;
+  background-image: url('../img/home/2bitmap.webp');
+  background-size: cover;
 }
 
 .go-to-rabbit {
+  cursor: pointer;
   display: grid;
   grid-column: 2 / span 4;
   grid-template-areas: "overlap";
@@ -179,11 +181,11 @@ Index
 }
 
 .keywords {
-  width:100%;
-  height:100%;
+  width: 100%;
+  height: 100%;
   grid-area: overlap;
-  z-index:1;
-  display:none;
+  z-index: 1;
+  display: none;
 }
 
 .rabbit {
@@ -210,6 +212,7 @@ Index
 }
 
 .go-to-archive {
+  cursor: pointer;
   display: grid;
   text-align: center;
   place-items: center;
@@ -292,7 +295,6 @@ Keywords
   z-index: 20;
   font-size: 1.5rem;
 }
-
 
 .selector {
   height: 60vh;
@@ -409,14 +411,14 @@ video:hover {
 
 #wrapper-vid1 {
   grid-column: 4 / span 4;
-  grid-row:1;
+  grid-row: 1;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid2 {
   grid-column: 2 / span 3;
-  grid-row:1;
+  grid-row: 1;
   justify-self: center;
   align-self: end;
 }
@@ -587,14 +589,14 @@ video:hover {
 }
 
 /*- Quotes--*/
-.quote{
+.quote {
   font-size: 2.8rem;
   padding: 25px;
   border: 1px solid #ffffff;
   background-color: #000000;
 }
 
-.quote p{
+.quote p {
   margin: 0;
 }
 
@@ -617,11 +619,11 @@ video:hover {
 /*--------
 About
 ----------*/
-.space{
+.space {
   height: 15vh;
 }
 
-.about-box{
+.about-box {
   display: grid;
   justify-items: center;
   align-items: center;
@@ -633,9 +635,9 @@ About
   text-align: center;
 }
 
-.tab{
+.tab {
   cursor: pointer;
-  padding:10px 20px;
+  padding: 10px 20px;
   display: inline-grid;
   border-top: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
@@ -643,18 +645,20 @@ About
   font-size: 2rem;
   z-index: 3;
 }
-.panels{
-  min-height:auto;
+
+.panels {
+  min-height: auto;
   width: -webkit-fill-available;
-  overflow:hidden;
+  overflow: hidden;
   border-top: 1px solid #ffffff;
+  padding-top: 10vh;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-gap: 1rem;
 }
 
-.panel{
-  display:none;
+.panel {
+  display: none;
   font-size: 2.8rem;
   grid-column: 2 / span 8;
   align-items: center;
@@ -662,9 +666,9 @@ About
   text-align-last: center;
 }
 
-.panel-title{
-  font-size:1.5em;
-  font-weight:400;
+.panel-title {
+  font-size: 1.5em;
+  font-weight: 400;
 }
 
 .team {
@@ -685,45 +689,52 @@ About
   grid-column: 1/span 2;
   grid-row: 1;
 }
+
 #person-2 {
   grid-column: 3/span 2;
   grid-row: 1;
 }
+
 #person-3 {
   grid-column: 5/span 2;
   grid-row: 1;
 }
+
 #person-4 {
   grid-column: 7/span 2;
   grid-row: 1;
 }
+
 #person-5 {
   grid-column: 2/span 2;
   grid-row: 2;
 }
+
 #person-6 {
   grid-column: 4/span 2;
   grid-row: 2;
 }
+
 #person-7 {
   grid-column: 6/span 2;
   grid-row: 2;
 }
 
-.radio{
-  display:none;
+.radio {
+  display: none;
 }
 
-#one:checked ~ .panels #one-panel,
-#two:checked ~ .panels #two-panel,
-#three:checked ~ .panels #three-panel,
-#four:checked ~ .panels #four-panel {
-  display:block
+#one:checked~.panels #one-panel,
+#two:checked~.panels #two-panel,
+#three:checked~.panels #three-panel,
+#four:checked~.panels #four-panel {
+  display: block
 }
-#one:checked ~ .tabs #one-tab,
-#two:checked ~ .tabs #two-tab,
-#three:checked ~ .tabs #three-tab,
-#four:checked ~ .tabs #four-tab {
+
+#one:checked~.tabs #one-tab,
+#two:checked~.tabs #two-tab,
+#three:checked~.tabs #three-tab,
+#four:checked~.tabs #four-tab {
   border-bottom: 2px solid #000;
   margin-bottom: -1px;
 }
@@ -741,18 +752,37 @@ Cover
 
 .cover-title {
   z-index: 1;
-  align-self: stretch;
-  grid-column: 4/span 9;
-  grid-row: 4/span 2;
   background-color: #000000;
   width: 100%;
+  text-align: center;
+  justify-self: stretch;
 }
 
-.cover-title h1{
-  text-align: center;
-  align-content: center;
-  justify-content: center;
+#cover-title-1 {
+  grid-column: 5/span 7;
+  grid-row: 4/span 1;
+}
+#cover-title-2 {
+  grid-column: 6/span 5;
+  grid-row: 5/span 1;
+}
+
+.cover-title h1 {
   font-size: 5rem;
+}
+
+.cover-btn {
+  z-index: 1;
+  grid-column: 8;
+  grid-row: 6;
+  background-color: #000000;
+  width: 100%;
+  text-align: center;
+  align-self: center;
+}
+
+.cover-btn a {
+  font-size: 2rem;
 }
 
 .cover-item1 {

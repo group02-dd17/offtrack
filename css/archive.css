@@ -45,7 +45,9 @@ body {
 
 #wrapper-video {
   align-self: center;
-  width: 90%
+  justify-self: center;
+  place-self: center;
+  width: 90%;
 }
 
 #visualizer {

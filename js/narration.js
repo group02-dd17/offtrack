@@ -13,8 +13,8 @@ let lines = function (l) {
         canvasL.parent("#canvasLines");
         // pg.parent("#canvasLines");
         xyVertex.push({
-            x: videoList[0].firstElementChild.getBoundingClientRect().left + videoList[0].offsetWidth / 2,
-            y: videoList[0].firstElementChild.getBoundingClientRect().top -videoList[0].parentNode.getBoundingClientRect().top + videoList[0].firstElementChild.offsetHeight / 2,
+            x: videoList[0].lastElementChild.getBoundingClientRect().left + videoList[0].offsetWidth / 2,
+            y: videoList[0].lastElementChild.getBoundingClientRect().top -videoList[0].parentNode.getBoundingClientRect().top + videoList[0].lastElementChild.offsetHeight / 2,
         });
     };
 
@@ -32,11 +32,11 @@ let lines = function (l) {
 
         videoList.forEach(function (item, index) {
             //when :hover the video
-            videoList[index].firstElementChild.addEventListener("mouseover", function () {
+            videoList[index].lastElementChild.addEventListener("mouseover", function () {
                 //add the center of the video as a new vertex
                 xyVertex.push({
-                    x: videoList[index].firstElementChild.getBoundingClientRect().left + videoList[index].offsetWidth / 2,
-                    y: videoList[index].firstElementChild.getBoundingClientRect().top -videoList[index].parentNode.getBoundingClientRect().top + videoList[index].firstElementChild.offsetHeight / 2,
+                    x: videoList[index].lastElementChild.getBoundingClientRect().left + videoList[index].offsetWidth / 2,
+                    y: videoList[index].lastElementChild.getBoundingClientRect().top -videoList[index].parentNode.getBoundingClientRect().top + videoList[index].lastElementChild.offsetHeight / 2,
                 });
                 // console.log(videos[index].x,videos[index].y);
             });

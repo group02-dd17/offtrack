@@ -9,6 +9,7 @@
     />
     <link rel="icon" type="image/png" href="img/favicon.png" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/archive.css" />
 
     <script src="assets/js/sigma.min.js"></script>
     <script src="assets/js/sigma.parsers.json.min.js"></script>
@@ -34,64 +35,7 @@
     <!-- PLUGIN CUSTOM SHAPES -->
     <script src="assets/js/sigma.renderers.customShapes/shape-library.js"></script>
     <script src="assets/js/sigma.renderers.customShapes/sigma.renderers.customShapes.js"></script>
-    <style>
-      body {
-        margin: 0;
-      }
-
-      .hide {
-        display: none;
-      }
-
-      #wrapper {
-        height: 200vh;
-        padding-top: 100px;
-      }
-
-      #wrapper-side {
-        position: absolute;
-        left: 0;
-        height: 100%;
-        width: 21%;
-        border-right: 1px solid white;
-        z-index: 10;
-        overflow-x: hidden;
-      }
-
-      #network-graph {
-        top: 0%;
-        bottom: 0%;
-        width: 79%;
-        right: 0;
-        position: absolute;
-        background: #000;
-      }
-      #container {
-        border: 1px solid white;
-        width: 95%;
-        margin: 0 auto;
-        height: 85vh;
-        position: relative;
-
-        left: 0;
-        right: 0;
-        background: #000;
-      }
-
-      #visualizer {
-        height: 70%;
-      }
-
-      #legend {
-        border-top: 1px solid white;
-      }
-
-      #nameLabels {
-        padding: 0.7em;
-        padding-left: 0.5em;
-        font-size: 1.6vmax;
-      }
-    </style>
+   
   </head>
   <body>
     <nav>
@@ -108,15 +52,15 @@
       </div>
     </nav>
     <div id="wrapper">
-      <div id="container">
+      <div id="network-container">
         <div id="wrapper-side">
+          <div id="wrapper-video"><video controls id="videoPlayer" type="video/mp4"></video></div>
           <div id="visualizer">
-            <iframe id="videoPlayer"></iframe>
             <h1 id="nameLabels">HASHTAG NAME</h1>
             <h3 id="videosNumber">Number of videos:</h3>
             <h3 id="hashtagsLabel">#covidiots, #proiect</h3>
           </div>
-          <div id="legend"></div>
+          <div id="legend"><h2>LEGEND</h2></div>
         </div>
         <div id="network-graph"></div>
       </div>

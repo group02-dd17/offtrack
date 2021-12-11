@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+#network-container {
+    display: grid;
+    grid-template-columns: minmax(20px, 21.5%) 1fr;
+    border: 1px solid white;
+    width: 95%;
+    margin: 0 auto;
+    height: 85vh;
+    position: relative;
+    left: 0;
+    right: 0;
+    background: #000;
+}
+
+#wrapper {
+    height: 200vh;
+    padding-top: 100px;
+}
+
+#wrapper-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr  !important;
+    grid-auto-rows: 1fr;
+    left: 0;
+    height: 100%;
+    border-right: 1px solid white;
+    z-index: 10;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+}
+
+#network-graph {
+    top: 0%;
+    bottom: 0%;
+    right: 0;
+    background: #000;
+}
+
+#legend {
+    border-top: 1px solid white;
+}
+
+#nameLabels {
+    padding: 0.7em;
+    padding-left: 0.5em;
+    font-size: 1.6vmax;
+}

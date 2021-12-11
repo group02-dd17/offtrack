@@ -135,9 +135,9 @@ function buildNetwork() {
       document.getElementById("videosNumber").textContent = "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
       document.getElementById("hashtagsLabel").textContent = e.data.node.attributes.hashtags;
       document.getElementById('videoPlayer').src = e.data.node.attributes.link;
-      document.getElementById('videoPlayer').classList.remove("hide");
+      document.getElementById('wrapper-video').classList.remove("hide");
     } else {
-      document.getElementById('videoPlayer').classList.add("hide");
+      document.getElementById('wrapper-video').classList.add("hide");
       document.getElementById('videoPlayer').src = "";
       document.getElementById("videosNumber").textContent = "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
       document.getElementById("nameLabels").textContent = toKeep[nodeId].label;

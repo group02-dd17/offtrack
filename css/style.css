@@ -354,7 +354,7 @@ Keywords
   opacity: 0;
   font-size: 1.5rem;
 }
-.wrapper p:hover{
+.wrapper:hover > p{
   opacity: 1;
 }
 

@@ -83,6 +83,24 @@ p {
   font-weight: 400;
 }
 
+video {
+    width: 100%;
+    object-fit: cover;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: gray;
+}
+
+video:hover {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+  filter: none;
+}
+
 .redaction:hover {
   font-family: 'Redaction 50', serif;
 }
@@ -364,17 +382,10 @@ Keywords
 }
 
 .wrapper video {
-  width: 100%;
-  object-fit: cover;
   border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
-  -webkit-filter: grayscale(100%);
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  filter: grayscale(100%);
-  filter: gray;
 }
 
 .wrapper:hover > video {
@@ -382,11 +393,6 @@ Keywords
   border-bottom: 1px solid #ffffff;
   border-left: 1px solid rgba(255, 255, 255, 0.0);
   border-right: 1px solid rgba(255, 255, 255, 0.0);
-  -webkit-filter: none;
-  -moz-filter: none;
-  -ms-filter: none;
-  filter: none;
-  filter: none;
 }
 
 #wrapper-vid1 {

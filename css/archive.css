@@ -49,6 +49,7 @@ body {
 }
 
 #visualizer {
+  border-top: 1px solid white;
   padding: 5%;
 }
 

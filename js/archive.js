@@ -29,11 +29,17 @@ $.getJSON("assets/data/Phase32.json", function (response) {
       type: "canvas",
     },
   });
+  s.addCamera('cam2');
+  s.camera.angle= Math.PI;
 
   buildNetwork();
 });
 
 CustomShapes.init(s);
+
+
+
+
 
 //Create the function to build the network graph
 function buildNetwork() {
@@ -61,7 +67,8 @@ function buildNetwork() {
     defaultLabelSize: 16,
     defaultLabelColor: "#FFF",
     defaultHoverLabelBGColor: "#000",
-    defaultLabelHoverColor: '#FFF'
+    defaultLabelHoverColor: '#FFF',
+
   });
 
   // Refresh the graph to see the changes:

@@ -57,6 +57,8 @@ function buildNetwork() {
     maxNodeSize: 15,
     minEdgeSize: 0.3,
     maxEdgeSize: 0.3,
+    font: "GT America",
+    defaultLabelSize: 16
   });
 
   // Refresh the graph to see the changes:

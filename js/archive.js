@@ -47,11 +47,12 @@ function buildNetwork() {
 
   s.refresh();
   //Override initial edge colors
+
   s.settings({
     edgeColor: "default",
     defaultEdgeColor: "#D8D8D8",
     defaultLabelColor: '#D8D8D8',
-    labelThreshold: 3,
+    labelThreshold: 5,
     minNodeSize: 1,
     maxNodeSize: 15,
     minEdgeSize: 0.3,
@@ -71,12 +72,12 @@ function buildNetwork() {
 
     s.graph.nodes().forEach(function (n) {
       if (toKeep[n.id]) n.color = "#F00";
-      else n.color = n.originalColor;
+      else n.color = "#444444";
     });
 
     s.graph.edges().forEach(function (e) {
-      if (toKeep[e.source] && toKeep[e.target]) e.color = "#FFF";
-      else e.color = e.originalColor;
+      if (toKeep[e.source] && toKeep[e.target]) e.color = "red";
+      else e.color = "rgba(158,158,158,0.1)";
     });
 
     //Refresh graph to update colors

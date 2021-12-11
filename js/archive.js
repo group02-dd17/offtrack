@@ -30,8 +30,9 @@ $.getJSON("assets/data/Phase32.json", function (response) {
     },
   });
   s.addCamera('cam2');
-  s.camera.angle= Math.PI;
-  s.camera.x -= 60;
+  // s.camera.angle= Math.PI;
+  s.camera.isAnimated = true;
+  // s.camera.getRectangle(document.getElementById("network-graph").clientWidth, document.getElementById("network-graph").clientHeight);
 
   buildNetwork();
 });
@@ -75,7 +76,7 @@ function buildNetwork() {
   // Refresh the graph to see the changes:
   s.refresh();
 
- let flagEvent = [false, 0];
+  let flagEvent = [false, 0];
 
   //When a node is hovered, check all nodes to see which are neighbors.
   //Set neighbor nodes to dark blue, else keep node as original color.
@@ -86,7 +87,7 @@ function buildNetwork() {
     toKeep[nodeId] = e.data.node;
 
     s.graph.nodes().forEach(function (n) {
-      if (toKeep[n.id] || n.id==flagEvent[1]) n.color = "#F00";
+      if (toKeep[n.id] || n.id == flagEvent[1]) n.color = "#F00";
       else n.color = "#444444";
     });
 
@@ -102,7 +103,7 @@ function buildNetwork() {
   //Return nodes and edges to original color after mose moves off a node (stops hovering)
   s.bind("outNode", function (e) {
     s.graph.nodes().forEach(function (n) {
-      if(flagEvent[0] == false || n.id != flagEvent[1]) n.color = n.originalColor;
+      if (flagEvent[0] == false || n.id != flagEvent[1]) n.color = n.originalColor;
     });
 
     s.graph.edges().forEach(function (e) {
@@ -140,6 +141,10 @@ function buildNetwork() {
       nofNeighs[nodeId] = e.data.node;
       toKeep = nofNeighs;
     }
+    console.log(s.camera.cameraPosition(e.data.node.x, e.data.node.y));
+    console.log(e.data.node.x, e.data.node.y);
+    s.camera.goTo(e.data.node.x, e.data.node.y);
+    console.log(s.camera.cameraPosition(e.data.node.x, e.data.node.y));
 
     // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
 
@@ -160,7 +165,7 @@ function buildNetwork() {
       if (toKeep[n.id]) {
         if (toKeep[n.id].id == nodeId) {
           n.color = "#FF0000";
-        } 
+        }
         else n.color = n.originalColor;
       }
       else n.hidden = true;
@@ -174,6 +179,17 @@ function buildNetwork() {
     flagEvent[0] = true;
     flagEvent[1] = nodeId;
     //Refresh graph to update colors
+
+    let aNode = e.data.node;
+    let cam = s.camera;
+    let pfx = cam.readPrefix;
+    sigma.utils.zoomTo(
+      cam,                        // cam
+      aNode[pfx + 'x'] - cam.x,   // x
+      aNode[pfx + 'y'] - cam.y,   // y
+      .3,                         // ratio
+      { 'duration': 1000, }          // animation
+    );
     s.refresh();
   });
 
@@ -187,6 +203,17 @@ function buildNetwork() {
       (e.color = e.originalColor), (e.hidden = false);
     });
 
+    let aNode = e.data.node;
+    let cam = s.camera;
+    let pfx = cam.readPrefix;
+    sigma.utils.zoomTo(
+      cam,                        // cam
+      aNode[pfx + 'x'] - cam.x,   // x
+      aNode[pfx + 'y'] - cam.y,   // y
+      1,                         // ratio
+      { 'duration': 1000,
+      easing: "ease" }          // animation
+    );
     //Refresh graph to update colors
     s.refresh();
   });

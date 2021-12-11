@@ -7,8 +7,9 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
-    <link rel="icon" type="image/png" href="img/favicon.png"/>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+
     <script src="assets/js/sigma.min.js"></script>
     <script src="assets/js/sigma.parsers.json.min.js"></script>
     <script src="assets/js/sigma.pathfinding.astar.js"></script>
@@ -50,6 +51,7 @@
         width: 20%;
         border-right: 1px solid white;
         z-index: 10;
+        overflow-x: hidden;
       }
 
       #network-graph {
@@ -80,22 +82,37 @@
       #legend {
         border: 1px solid white;
       }
+
+      #nameLabels {
+        padding: 0.7em;
+        padding-left: 0.5em;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        hyphens: auto;
+        font-size: 2vmax;
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="header grid">
-        <div class="home-btn redaction"><a class="btn redaction" href="index.html">Home</a></div>
-        <div class="archive-btn redaction"><a class="btn redaction" href="archive.html">Archive</a></div>
-        <div class="about-btn redaction"><a class="btn redaction" href="about.html">About</a></div>
+        <div class="home-btn redaction">
+          <a class="btn redaction" href="index.html">Home</a>
+        </div>
+        <div class="archive-btn redaction">
+          <a class="btn redaction" href="archive.html">Archive</a>
+        </div>
+        <div class="about-btn redaction">
+          <a class="btn redaction" href="about.html">About</a>
+        </div>
       </div>
     </nav>
     <div id="wrapper">
       <div id="container">
         <div id="wrapper-side">
           <div id="visualizer">
-            <p id="nameLabels">HASHTAG NAME</p>
-            <p id="videosNumber">NUMBER OF VIDEOS</p>
+            <h1 id="nameLabels">HASHTAG NAME</h1>
+            <h3>Number of videos: <span id="videosNumber">NUMBER OF VIDEOS</span></h3>
             <p id="hashtagNumber">NUMBER OF HASHTAGS</p>
           </div>
           <div id="legend"></div>
@@ -106,5 +123,16 @@
 
     <script src="js/archive.js"></script>
     <script src="js/main.js"></script>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

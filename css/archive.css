@@ -43,6 +43,11 @@ body {
     background: #000;
 }
 
+#wrapper-video {
+  align-self: center;
+  width: 90%
+}
+
 #visualizer {
   border-top: 1px solid white;
   padding: 5%;

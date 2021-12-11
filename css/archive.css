@@ -44,11 +44,14 @@ body {
 }
 
 #legend {
-    border-top: 1px solid white;
+  padding: 5%;
+  border-top: 1px solid white;
+}
+
+#visualizer {
+  padding: 5%;
 }
 
 #nameLabels {
-    padding: 0.7em;
-    padding-left: 0.5em;
     font-size: 1.6vmax;
 }

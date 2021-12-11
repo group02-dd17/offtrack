@@ -25,8 +25,8 @@ $.getJSON("assets/data/Phase32.json", function (response) {
   s = new sigma({
     graph: jnet,
     renderer: {
-        container: document.getElementById("network-graph"),
-        type: "canvas"
+      container: document.getElementById("network-graph"),
+      type: "canvas"
     }
   });
 
@@ -53,7 +53,7 @@ function buildNetwork() {
     defaultLabelColor: '#D8D8D8',
     labelThreshold: 3,
     minNodeSize: 1,
-    maxNodeSize: 10,
+    maxNodeSize: 15,
     minEdgeSize: 0.3,
     maxEdgeSize: 0.3
   });
@@ -104,13 +104,19 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
   s.bind("clickNode", function (e) {
     var nodeId = e.data.node.id,
-      non = [],
       toKeep = s.graph.neighbors(nodeId);
     toKeep[nodeId] = e.data.node;
-    for (k in toKeep) {
-      non.push(s.graph.neighbors(toKeep[k].id));
-      console.log(non[k]);
-    }
+
+    document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+    document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+    console.log(toKeep);
+
+    // toKeep.forEach(function (m, index) {
+    //   var nonObj = [];
+    //   nonObj.push(s.graph.neighbors(m));
+    //   console.log(s.graph.neighbors(nodeId));
+    // });
+
 
     s.graph.nodes().forEach(function (n) {
       if (toKeep[n.id] == toKeep[nodeId]) n.color;
@@ -127,10 +133,10 @@ function buildNetwork() {
     s.refresh();
   });
 
-  //When the stage is right-clicked, return nodes and edges to original colors
-  s.bind("rightClickStage", function (e) {
+  //When the stage is right-clicked or just clicked, return nodes and edges to original colors
+  s.bind("clickStage rightClickStage", function (e) {
     s.graph.nodes().forEach(function (n) {
-        (n.color = n.originalColor),
+      (n.color = n.originalColor),
         (n.hidden = false);
     });
 

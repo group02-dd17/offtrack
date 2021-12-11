@@ -266,7 +266,7 @@ Index
 Keywords
 ----------*/
 .title {
-  min-height: 45vh;
+  min-height: 50vh;
   width: 100%;
   place-items: center;
   grid-column: 2 / span 8;
@@ -345,14 +345,19 @@ Keywords
   border: 1px solid rgba(255, 255, 255, 0.0);
 }
 .wrapper:hover {
-  border: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px rgba(255, 255, 255, 0.0);
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
   background-color: #000000;
 }
 
 .wrapper p{
   margin-left: 1.5%;
   opacity: 0;
+  font-family: 'GT America', sans-serif;
   font-size: 1.5rem;
+  font-family: 'GT America';
 }
 .wrapper:hover > p{
   opacity: 1;
@@ -361,7 +366,10 @@ Keywords
 video {
   width: 100%;
   object-fit: cover;
-  border: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
   -ms-filter: grayscale(100%);
@@ -370,16 +378,15 @@ video {
 }
 
 video:hover {
-  border: 1px solid rgba(255, 255, 255, 0.0);
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  border-left: 1px solid rgba(255, 255, 255, 0.0);
+  border-right: 1px solid rgba(255, 255, 255, 0.0);
   -webkit-filter: none;
   -moz-filter: none;
   -ms-filter: none;
   filter: none;
   filter: none;
-}
-
-video::-webkit-media-controls {
-  display: none !important;
 }
 
 #wrapper-vid1 {

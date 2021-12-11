@@ -31,6 +31,7 @@ $.getJSON("assets/data/Phase32.json", function (response) {
   });
   s.addCamera('cam2');
   s.camera.angle= Math.PI;
+  s.camera.x -= 60;
 
   buildNetwork();
 });

@@ -52,7 +52,7 @@ function buildNetwork() {
     edgeColor: "default",
     defaultEdgeColor: "#D8D8D8",
     defaultLabelColor: "#D8D8D8",
-    labelThreshold: 5,
+    labelThreshold: 6,
     minNodeSize: 1,
     maxNodeSize: 15,
     minEdgeSize: 0.3,

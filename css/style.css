@@ -353,6 +353,7 @@ Keywords
   margin-left: 1.5%;
   opacity: 0;
   font-size: 1.5rem;
+  font-family: 'GT America'
 }
 .wrapper:hover > p{
   opacity: 1;

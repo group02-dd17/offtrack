@@ -111,11 +111,11 @@ function buildNetwork() {
     document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
     console.log(toKeep);
 
-    toKeep.forEach(function (m, index) {
-      var nonObj = [];
-      nonObj.push(s.graph.neighbors(m));
-      console.log(s.graph.neighbors(nodeId));
-    });
+    // toKeep.forEach(function (m, index) {
+    //   var nonObj = [];
+    //   nonObj.push(s.graph.neighbors(m));
+    //   console.log(s.graph.neighbors(nodeId));
+    // });
 
 
     s.graph.nodes().forEach(function (n) {

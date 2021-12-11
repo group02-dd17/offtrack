@@ -101,7 +101,7 @@ nav {
   position: fixed;
   z-index: 1000;
   border-bottom: 1px solid #ffffff;
-  font-size: 1.8rem;
+  font-size: 2rem;
   text-transform: uppercase;
 }
 
@@ -266,7 +266,7 @@ Index
 Keywords
 ----------*/
 .title {
-  min-height: 40vh;
+  min-height: 45vh;
   width: 100%;
   place-items: center;
   grid-column: 2 / span 8;
@@ -281,17 +281,14 @@ Keywords
   text-align-last: center;
   font-size: 5rem;
 }
+.title-content p{
+  margin-bottom: 0;
+}
 
-.info-btn {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  background-color: #ffffff;
-  color: #000000;
-  margin: 2%;
-  padding: 1%;
-  z-index: 20;
-  font-size: 1.5rem;
+.subtitle {
+  font-size: 2.3rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
 .selector {
@@ -313,39 +310,6 @@ Keywords
   font-size: 2.8rem;
   padding: 30px;
   border: 1px solid #ffffff;
-}
-
-/*- Overlay btn--*/
-.overlay {
-  height: 100%;
-  width: 100%;
-  display: none;
-  position: fixed;
-  z-index: 5000;
-  top: 0;
-  left: 0;
-  background-color: #000000;
-  place-items: center;
-}
-
-.overlay-content {
-  position: relative;
-  width: 100%;
-  grid-column: 2 / span 8;
-  font-size: 2.8rem;
-  text-align: justify;
-  text-align-last: center;
-}
-
-.overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
-  font-family: 'Redaction 70', serif;
-  border: 1px solid #ffffff;
-  padding: 1%;
-  z-index: 10;
 }
 
 /*- Video--*/
@@ -378,13 +342,20 @@ Keywords
 
 .wrapper {
   height: fit-content;
-  padding-top: 35px;
   border: 1px solid rgba(255, 255, 255, 0.0);
 }
-
 .wrapper:hover {
   border: 1px solid #ffffff;
   background-color: #000000;
+}
+
+.wrapper p{
+  margin-left: 1.5%;
+  opacity: 0;
+  font-size: 1.5rem;
+}
+.wrapper p:hover{
+  opacity: 1;
 }
 
 video {
@@ -419,93 +390,102 @@ video::-webkit-media-controls {
 }
 
 #wrapper-vid2 {
-  grid-column: 2 / span 3;
-  grid-row: 1;
+  grid-column: 3 / span 2;
+  grid-row: 2;
   justify-self: center;
-  align-self: end;
+  align-self: start;
 }
 
 #wrapper-vid3 {
   grid-column: 7 / span 2;
   grid-row: 2;
   justify-self: center;
-  align-self: start;
+  align-self: center;
+}
+
+#description-mask-1 {
+  grid-column: 2 / span 8;
+  grid-row: 3;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.8rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
 #wrapper-vid4 {
   grid-column: 3 / span 3;
-  grid-row: 2;
+  grid-row: 4;
   justify-self: center;
-  align-self: center;
+  align-self: start;
 }
 
 #wrapper-vid5 {
   grid-column: 8 / span 2;
-  grid-row: 2;
+  grid-row: 4;
   justify-self: center;
   align-self: end;
-  width: 60%;
 }
 
 #wrapper-vid6 {
   grid-column: 2 / span 5;
-  grid-row: 3;
+  grid-row: 5;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid7 {
   grid-column: 6 / span 4;
-  grid-row: 3;
+  grid-row: 6;
   justify-self: center;
-  align-self: end;
+  align-self: start;
 }
 
 #wrapper-vid8 {
   grid-column: 2 / span 3;
-  grid-row: 4;
+  grid-row: 7;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid9 {
   grid-column: 5 / span 2;
-  grid-row: 4;
+  grid-row: 7;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid10 {
   grid-column: 8 / span 2;
-  grid-row: 4;
+  grid-row: 7;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid11 {
   grid-column: 3 / span 4;
-  grid-row: 5;
+  grid-row: 8;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid12 {
   grid-column: 8 / span 2;
-  grid-row: 5;
+  grid-row: 8;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid13 {
   grid-column: 2 / span 2;
-  grid-row: 5;
+  grid-row: 8;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid14 {
   grid-column: 7 / span 4;
-  grid-row: 6;
+  grid-row: 9;
   justify-self: center;
   align-self: start;
   width: 80%;
@@ -513,35 +493,35 @@ video::-webkit-media-controls {
 
 #wrapper-vid15 {
   grid-column: 2 / span 4;
-  grid-row: 6;
+  grid-row: 9;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid16 {
   grid-column: 8 / span 2;
-  grid-row: 6;
+  grid-row: 9;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid17 {
   grid-column: 3 / span 3;
-  grid-row: 7;
+  grid-row: 10;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid18 {
   grid-column: 7 / span 3;
-  grid-row: 7;
+  grid-row: 10;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid19 {
   grid-column: 5 / span 3;
-  grid-row: 7;
+  grid-row: 10;
   justify-self: center;
   align-self: end;
   width: 80%;
@@ -549,28 +529,28 @@ video::-webkit-media-controls {
 
 #wrapper-vid20 {
   grid-column: 8 / span 3;
-  grid-row: 8;
+  grid-row: 11;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid21 {
   grid-column: 1 / span 5;
-  grid-row: 8;
+  grid-row: 12;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid22 {
   grid-column: 5 / span 4;
-  grid-row: 9;
+  grid-row: 13;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid23 {
   grid-column: 8 / span 2;
-  grid-row: 9;
+  grid-row: 13;
   justify-self: center;
   align-self: center;
   width: 80%;
@@ -578,14 +558,14 @@ video::-webkit-media-controls {
 
 #wrapper-vid24 {
   grid-column: 2 / span 3;
-  grid-row: 9;
+  grid-row: 13;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid25 {
   grid-column: 5 / span 3;
-  grid-row: 9;
+  grid-row: 13;
   justify-self: center;
   align-self: end;
 }
@@ -669,7 +649,7 @@ About
 }
 
 .panel-title {
-  font-size: 1.5em;
+  font-size: 5rem;
   font-weight: 400;
 }
 

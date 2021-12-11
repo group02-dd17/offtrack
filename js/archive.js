@@ -206,16 +206,11 @@ function buildNetwork() {
     let aNode = e.data.node;
     let cam = s.camera;
     let pfx = cam.readPrefix;
-    sigma.utils.zoomTo(
-      cam,                        // cam
-      aNode[pfx + 'x'] - cam.x,   // x
-      aNode[pfx + 'y'] - cam.y,   // y
-      1,                         // ratio
-      { 'duration': 1000,
-      easing: "ease" }          // animation
+    sigma.misc.animation.camera(
+      s.cameras[0],
+      { ratio: 1, x: 0, y: 0, angle: 0 },
+      { duration: 1000 }
     );
-    //Refresh graph to update colors
-    s.refresh();
   });
   s.refresh();
 }

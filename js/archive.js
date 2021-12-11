@@ -135,16 +135,15 @@ function buildNetwork() {
       document.getElementById("videosNumber").textContent = "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
       document.getElementById("hashtagsLabel").textContent = e.data.node.attributes.hashtags;
       document.getElementById('videoPlayer').src = e.data.node.attributes.link;
+      document.getElementById('videoPlayer').classList.remove("hide");
     } else {
+      document.getElementById('videoPlayer').classList.add("hide");
+      document.getElementById('videoPlayer').src = "";
       document.getElementById("videosNumber").textContent = "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
       document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
     }
 
     s.graph.nodes().forEach(function (n) {
-      // console.log(toKeep[n.id]);
-      console.log(toKeep[n.id]);
-      console.log(nodeId);
-  
       if (toKeep[n.id]) {
         if (toKeep[n.id].id == nodeId) {
           n.color = "#FF0000";

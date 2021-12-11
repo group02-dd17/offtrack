@@ -1,4 +1,4 @@
-;(function(undefined) {
+; (function (undefined) {
   'use strict';
 
   if (typeof sigma === 'undefined')
@@ -14,10 +14,18 @@
    * @param  {CanvasRenderingContext2D} context  The canvas context.
    * @param  {configurable}             settings The settings function.
    */
-  sigma.canvas.labels.def = function(node, context, settings) {
-    var fontSize,
-        prefix = settings('prefix') || '',
-        size = node[prefix + 'size'];
+  sigma.canvas.labels.def = function (node, context, settings) {
+    var x,
+      y,
+      w,
+      h,
+      e,
+      fontStyle = settings('hoverFontStyle') || settings('fontStyle'),
+      prefix = settings('prefix') || '',
+      size = node[prefix + 'size'],
+      fontSize = (settings('labelSize') === 'fixed') ?
+        settings('defaultLabelSize') :
+        settings('labelSizeRatio') * size;
 
     if (size < settings('labelThreshold'))
       return;
@@ -31,14 +39,47 @@
 
     context.font = (settings('fontStyle') ? settings('fontStyle') + ' ' : '') +
       fontSize + 'px ' + settings('font');
-    context.fillStyle = (settings('labelColor') === 'node') ?
-      (node.color || settings('defaultNodeColor')) :
-      settings('defaultLabelColor');
 
-    context.fillText(
-      node.label,
-      Math.round(node[prefix + 'x'] + size + 3),
-      Math.round(node[prefix + 'y'] + fontSize / 3)
-    );
+    // Label background:
+    context.font = (fontStyle ? fontStyle + ' ' : '') +
+      fontSize + 'px ' + (settings('hoverFont') || settings('font'));
+
+    context.beginPath();
+    context.fillStyle = settings('labelHoverBGColor') === 'node' ?
+      (node.color || settings('defaultNodeColor')) :
+      settings('defaultHoverLabelBGColor');
+
+    if (node.label && typeof node.label === 'string') {
+      x = Math.round(node[prefix + 'x'] + size + 3);
+      y = Math.round(node[prefix + 'y'] - fontSize / 2 - 2);
+      w = Math.round(context.measureText(node.label).width + 10);
+      h = Math.round(fontSize + 4);
+      e = Math.round(fontSize / 2);
+
+      context.moveTo(x , y);
+      context.lineTo(x + w + e, y);
+      context.lineTo(x + w + e, y + h);
+      context.lineTo(x, y + h);
+
+      context.closePath();
+      context.fill();
+
+      context.lineWidth = 1.5;
+      context.strokeStyle="#d8d8d8";
+      context.stroke();
+    }
+
+    // Display the label:
+    if (node.label && typeof node.label === 'string') {
+      context.fillStyle = (settings('labelColor') === 'node') ?
+        (node.color || settings('defaultNodeColor')) :
+        settings('defaultLabelColor');
+
+      context.fillText(
+        node.label,
+        Math.round(node[prefix + 'x'] + size + 3 + e),
+        Math.round(node[prefix + 'y'] + fontSize / 3)
+      );
+    }
   };
 }).call(this);

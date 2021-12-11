@@ -57,8 +57,14 @@ function buildNetwork() {
     maxNodeSize: 15,
     minEdgeSize: 0.3,
     maxEdgeSize: 0.3,
+<<<<<<< Updated upstream
     font: "GT America",
     defaultLabelSize: 16
+=======
+    defaultLabelColor: "#FFF",
+    defaultHoverLabelBGColor: "#000",
+    defaultLabelHoverColor: '#FFF'
+>>>>>>> Stashed changes
   });
 
   // Refresh the graph to see the changes:

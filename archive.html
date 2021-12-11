@@ -39,6 +39,10 @@
         margin: 0;
       }
 
+      .hide {
+        display: none;
+      }
+
       #wrapper {
         height: 200vh;
         padding-top: 100px;
@@ -107,9 +111,10 @@
       <div id="container">
         <div id="wrapper-side">
           <div id="visualizer">
+            <iframe id="videoPlayer"></iframe>
             <h1 id="nameLabels">HASHTAG NAME</h1>
-            <h3>Number of videos: <span id="videosNumber">NUMBER OF VIDEOS</span></h3>
-            <p id="hashtagNumber">NUMBER OF HASHTAGS</p>
+            <h3 id="videosNumber">Number of videos:</h3>
+            <h3 id="hashtagsLabel">#covidiots, #proiect</h3>
           </div>
           <div id="legend"></div>
         </div>

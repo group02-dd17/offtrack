@@ -1,5 +1,5 @@
-sigma.utils.pkg('sigma.canvas.nodes');
-sigma.utils.pkg('sigma.canvas.labels');
+sigma.utils.pkg("sigma.canvas.nodes");
+sigma.utils.pkg("sigma.canvas.labels");
 //Disable right click context menu in network-graph div
 //Right click is used to make all nodes and edges visible
 document.getElementById("network-graph").oncontextmenu = function (e) {
@@ -26,8 +26,8 @@ $.getJSON("assets/data/Phase32.json", function (response) {
     graph: jnet,
     renderer: {
       container: document.getElementById("network-graph"),
-      type: "canvas"
-    }
+      type: "canvas",
+    },
   });
 
   buildNetwork();
@@ -51,16 +51,18 @@ function buildNetwork() {
   s.settings({
     edgeColor: "default",
     defaultEdgeColor: "#D8D8D8",
-    defaultLabelColor: '#D8D8D8',
+    defaultLabelColor: "#D8D8D8",
     labelThreshold: 5,
     minNodeSize: 1,
     maxNodeSize: 15,
     minEdgeSize: 0.3,
-    maxEdgeSize: 0.3
+    maxEdgeSize: 0.3,
   });
 
   // Refresh the graph to see the changes:
   s.refresh();
+
+ let flagEvent = [false, 0];
 
   //When a node is hovered, check all nodes to see which are neighbors.
   //Set neighbor nodes to dark blue, else keep node as original color.
@@ -71,7 +73,7 @@ function buildNetwork() {
     toKeep[nodeId] = e.data.node;
 
     s.graph.nodes().forEach(function (n) {
-      if (toKeep[n.id]) n.color = "#F00";
+      if (toKeep[n.id] || n.id==flagEvent[1]) n.color = "#F00";
       else n.color = "#444444";
     });
 
@@ -87,7 +89,7 @@ function buildNetwork() {
   //Return nodes and edges to original color after mose moves off a node (stops hovering)
   s.bind("outNode", function (e) {
     s.graph.nodes().forEach(function (n) {
-      n.color = n.originalColor;
+      if(flagEvent[0] == false || n.id != flagEvent[1]) n.color = n.originalColor;
     });
 
     s.graph.edges().forEach(function (e) {
@@ -107,38 +109,48 @@ function buildNetwork() {
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId),
       arrIdNeighs = [],
-      nofNeighs = {},
-      counter = 0;
+      nofNeighs = {};
 
     toKeep[nodeId] = e.data.node;
-    console.log(toKeep);
-
     var keyNames = Object.keys(toKeep); //array degli id dei neighbors
     // console.log(keyNames);
 
     for (k in keyNames) {
-      console.log(keyNames[k]);
-
       var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
 
       arrIdNeighs = Object.keys(tempNeighs);
-      // console.log(arrIdNeighs);
 
       for (j in arrIdNeighs) {
         nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
       }
 
-      console.log(nofNeighs);
-      nofNeighs[nodeId] = e.data.node;;
+      nofNeighs[nodeId] = e.data.node;
       toKeep = nofNeighs;
     }
 
-    document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
-    document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+    // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+
+    if (e.data.node.attributes.Type == "id") {
+      document.getElementById("nameLabels").textContent = e.data.node.attributes.title;
+      document.getElementById("videosNumber").textContent = "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
+      document.getElementById("hashtagsLabel").textContent = e.data.node.attributes.hashtags;
+      document.getElementById('videoPlayer').src = e.data.node.attributes.link;
+      document.getElementById('videoPlayer').classList.remove("hide");
+    } else {
+      document.getElementById('videoPlayer').classList.add("hide");
+      document.getElementById('videoPlayer').src = "";
+      document.getElementById("videosNumber").textContent = "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
+      document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+    }
 
     s.graph.nodes().forEach(function (n) {
-      if (toKeep[n.id]) n.color = n.originalColor;
-      else (n.hidden = true);
+      if (toKeep[n.id]) {
+        if (toKeep[n.id].id == nodeId) {
+          n.color = "#FF0000";
+        } 
+        else n.color = n.originalColor;
+      }
+      else n.hidden = true;
     });
 
     s.graph.edges().forEach(function (e) {
@@ -146,15 +158,16 @@ function buildNetwork() {
       else (e.color = "#eee"), (e.hidden = true);
     });
 
+    flagEvent[0] = true;
+    flagEvent[1] = nodeId;
     //Refresh graph to update colors
     s.refresh();
   });
 
   //When the stage is right-clicked or just clicked, return nodes and edges to original colors
-  s.bind("clickStage rightClickStage", function (e) {
+  s.bind("rightClickStage", function (e) {
     s.graph.nodes().forEach(function (n) {
-      (n.color = n.originalColor),
-        (n.hidden = false);
+      (n.color = n.originalColor), (n.hidden = false);
     });
 
     s.graph.edges().forEach(function (e) {

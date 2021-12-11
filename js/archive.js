@@ -105,23 +105,39 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
   s.bind("clickNode", function (e) {
     var nodeId = e.data.node.id,
-      toKeep = s.graph.neighbors(nodeId);
+      toKeep = s.graph.neighbors(nodeId),
+      arrIdNeighs = [],
+      nofNeighs = {},
+      counter = 0;
+
     toKeep[nodeId] = e.data.node;
+    console.log(toKeep);
+
+    var keyNames = Object.keys(toKeep); //array degli id dei neighbors
+    // console.log(keyNames);
+
+    for (k in keyNames) {
+      console.log(keyNames[k]);
+
+      var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
+
+      arrIdNeighs = Object.keys(tempNeighs);
+      // console.log(arrIdNeighs);
+
+      for (j in arrIdNeighs) {
+        nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
+      }
+
+      console.log(nofNeighs);
+      nofNeighs[nodeId] = e.data.node;;
+      toKeep = nofNeighs;
+    }
 
     document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
     document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
-    console.log(toKeep);
-
-    // toKeep.forEach(function (m, index) {
-    //   var nonObj = [];
-    //   nonObj.push(s.graph.neighbors(m));
-    //   console.log(s.graph.neighbors(nodeId));
-    // });
-
 
     s.graph.nodes().forEach(function (n) {
-      if (toKeep[n.id] == toKeep[nodeId]) n.color;
-      else if (toKeep[n.id]) n.color = n.originalColor;
+      if (toKeep[n.id]) n.color = n.originalColor;
       else (n.hidden = true);
     });
 

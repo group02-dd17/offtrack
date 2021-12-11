@@ -43,14 +43,14 @@ body {
     background: #000;
 }
 
-#legend {
-  padding: 5%;
-  border-top: 1px solid white;
-}
-
 #visualizer {
   border-top: 1px solid white;
   padding: 5%;
+}
+
+#legend {
+  padding: 5%;
+  border-top: 1px solid white;
 }
 
 #nameLabels {

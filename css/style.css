@@ -784,6 +784,11 @@ Cover
   font-size: 2rem;
 }
 
+.filtered:hover {
+  background-color: red;
+  background-blend-mode: screen;
+}
+
 .cover-item1 {
   background-image: url("../assets/img/cover/thumb002.webp");
   background-size: cover;
@@ -1074,6 +1079,7 @@ Cover
   background-size: cover;
   background-position: center;
 }
+
 .cover-item58 {
   background-image: url("../assets/img/cover/thumb240.webp");
   background-size: cover;

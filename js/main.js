@@ -13,3 +13,15 @@ $(document).on('scroll', function(){
         $('.header').removeClass('active');
     }
 });
+
+function toggleMute(el) {
+  el.muted = !(el.muted);
+}
+window.onload = function() {
+  document.getElementById("sos").onmouseover = function() {
+    toggleMute(this);
+  };
+  document.getElementById("sos").onmouseout = function() {
+    toggleMute(this)
+  };
+}

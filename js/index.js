@@ -15,7 +15,7 @@ function shuffleArray(array) {
 // Get sub-arrays of elements after shuffle
 
 let selected = [];
-let elems = 9;
+let elems = 5;
 let groups = items.length / elems;
 
 for (i = 0; i < items.length; i += elems) {

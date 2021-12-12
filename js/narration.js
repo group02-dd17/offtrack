@@ -5,6 +5,8 @@ let lines = function (l) {
 
     l.setup = function () {
         var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
+        l.frameRate(25);
+        l.pixelDensity(1);
 
         console.log(l.windowWidth);
         console.log(document.getElementById("container").offsetHeight);

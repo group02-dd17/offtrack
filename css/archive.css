@@ -103,6 +103,11 @@ body {
 
 /* SEARCH BAR */
 
+form {
+    position: absolute;
+    z-index: 100;
+}
+
 .autocomplete {
     /*the container must be positioned relative:*/
     position: relative;

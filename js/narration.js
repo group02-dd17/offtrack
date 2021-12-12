@@ -1,6 +1,13 @@
+let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
+
+$(videoList).ready(function () {
+
+  videoList.forEach(function (item, index) {
+    videoList[index].lastElementChild.volume = 0.01;
+  });
+
 let lines = function (l) {
   let xyVertex = []; //Array that will contain the vertexes of the polyLine
-  let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 
   l.setup = function () {
     // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
@@ -74,14 +81,6 @@ let lines = function (l) {
 };
 
 let canvasLines = new p5(lines);
-
-let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
-
-$(videoList).ready(function () {
-
-  videoList.forEach(function (item, index) {
-    videoList[index].lastElementChild.volume = 0.01;
-  });
 
   videoList.forEach(function (item, index) {
     //when :hover the video

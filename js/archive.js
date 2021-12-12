@@ -60,7 +60,6 @@ function buildNetwork() {
   s.settings({
     edgeColor: "default",
     defaultEdgeColor: "#D8D8D8",
-    defaultLabelColor: "#D8D8D8",
     labelThreshold: 6,
     minNodeSize: 1,
     maxNodeSize: 15,
@@ -69,8 +68,9 @@ function buildNetwork() {
     font: "GT America",
     defaultLabelSize: 16,
     defaultLabelColor: "#FFF",
-    defaultHoverLabelBGColor: "#000",
-    defaultLabelHoverColor: "#FFF",
+    defaultLabelBGColor: "rgba(0,0,0,0.5)", //opacità per visibiltà video piccoli
+    defaultHoverLabelBGColor: "white",
+    defaultLabelHoverColor: "black",
   });
 
   // Refresh the graph to see the changes:
@@ -92,7 +92,7 @@ function buildNetwork() {
     });
 
     s.graph.edges().forEach(function (e) {
-      if (toKeep[e.source] && toKeep[e.target]) e.color = "red";
+      if (toKeep[e.source] && toKeep[e.target]) e.color = "#F00";
       else e.color = "rgba(158,158,158,0.1)";
     });
 
@@ -177,11 +177,6 @@ function buildNetwork() {
       } else n.hidden = true;
     });
 
-    s.graph.edges().forEach(function (e) {
-      if (toKeep[e.source] && toKeep[e.target]) e.color = e.originalColor;
-      else (e.color = "#eee"), (e.hidden = true);
-    });
-
     flagEvent[0] = true;
     flagEvent[1] = nodeId;
     //Refresh graph to update colors
@@ -217,54 +212,58 @@ function buildNetwork() {
       { ratio: 1, x: 0, y: 0, angle: 0 },
       { duration: 1000 }
     );
+    flagEvent[0] = false;
+    flagEvent[1] = null;
   });
 
   // GUI EVENTS
 
-  $(document).ready(function () {
-    $("#zoomIn").bind("click", function () {
-      // Zoom in - animation :
+  $("#zoomIn").bind("click", function () {
+    // Zoom in - animation :
+    sigma.misc.animation.camera(
+      s.camera,
+      {
+        ratio: s.camera.ratio / 2,
+      },
+      {
+        duration: 600,
+      }
+    );
+  });
+  $("#zoomOut").bind("click", function () {
+    // Zoom out - animation :
+    if (s.camera.ratio < 1) {
       sigma.misc.animation.camera(
         s.camera,
         {
-          ratio: s.camera.ratio / 2,
+          ratio: s.camera.ratio * 2,
         },
         {
           duration: 600,
         }
       );
+    }
+  });
+  $("#resetView").bind("click", function () {
+    // Reset view - animation :
+    sigma.misc.animation.camera(
+      s.cameras[0],
+      { ratio: 1, x: 0, y: 0, angle: 0 },
+      { duration: 600 }
+    );
+    s.graph.nodes().forEach(function (n) {
+      (n.color = n.originalColor), (n.hidden = false);
     });
-    $("#zoomOut").bind("click", function () {
-      // Zoom out - animation :
-      if (s.camera.ratio < 1) {
-        sigma.misc.animation.camera(
-          s.camera,
-          {
-            ratio: s.camera.ratio * 2,
-          },
-          {
-            duration: 600,
-          }
-        );
-      }
-    });
-    $("#resetView").bind("click", function () {
-      // Reset view - animation :
-      sigma.misc.animation.camera(
-        s.cameras[0],
-        { ratio: 1, x: 0, y: 0, angle: 0 },
-        { duration: 600 }
-      );
-      s.graph.nodes().forEach(function (n) {
-        (n.color = n.originalColor), (n.hidden = false);
-      });
 
-      s.graph.edges().forEach(function (e) {
-        (e.color = e.originalColor), (e.hidden = false);
-      });
+    s.graph.edges().forEach(function (e) {
+      (e.color = e.originalColor), (e.hidden = false);
     });
+
+    flagEvent[0] = false;
+    flagEvent[1] = null;
   });
   s.refresh();
+
 
   // SEARCH BAR
 
@@ -370,108 +369,94 @@ function buildNetwork() {
     }
 
     /*execute a function when someone clicks in the document:*/
-    document
-      .getElementById("submitButton")
-      .addEventListener("click", function (f) {
-        closeAllLists(f.target);
-        let selectedHash = document.getElementById("myInput").value;
-        sigma.misc.animation.camera(
-          s.cameras[0],
-          { ratio: 1, x: 0, y: 0, angle: 0 },
-          { duration: 600 }
-        );
-        s.graph.nodes().forEach(function (n) {
-          (n.color = n.originalColor), (n.hidden = false);
-        });
+    document.getElementById("submitButton").addEventListener("click", function (f) {
+      closeAllLists(f.target);
+      let selectedHash = document.getElementById("myInput").value;
 
-        s.graph.edges().forEach(function (e) {
-          (e.color = e.originalColor), (e.hidden = false);
-        });
-        
-        s.graph.nodes().forEach(function (n) {
-          if (n.attributes.Type == "hashtags") {
-            if (n.label == selectedHash) {
-              e = n;
-              var nodeId = e.id,
-                toKeep = s.graph.neighbors(nodeId),
-                arrIdNeighs = [],
-                nofNeighs = {};
+      sigma.misc.animation.camera(
+        s.cameras[0],
+        { ratio: 1, x: 0, y: 0, angle: 0 },
+        { duration: 600 }
+      );
 
-              toKeep[nodeId] = e;
-              var keyNames = Object.keys(toKeep); //array degli id dei neighbors
-              // console.log(keyNames);
-
-              for (k in keyNames) {
-                var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
-
-                arrIdNeighs = Object.keys(tempNeighs);
-
-                for (j in arrIdNeighs) {
-                  nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
-                }
-
-                nofNeighs[nodeId] = e;
-                toKeep = nofNeighs;
-              }
-              // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
-
-              if (e.attributes.Type == "id") {
-                document.getElementById("nameLabels").textContent =
-                  e.attributes.title;
-                document.getElementById("videosNumber").textContent =
-                  "Number of hashtags: " +
-                  Object.keys(s.graph.neighbors(nodeId)).length;
-                document.getElementById("hashtagsLabel").textContent =
-                  e.attributes.hashtags;
-                document.getElementById("videoPlayer").src = e.attributes.link;
-                document
-                  .getElementById("videoPlayer")
-                  .setAttribute("poster", e.attributes.thumburl);
-                document
-                  .getElementById("wrapper-video")
-                  .classList.remove("hide");
-              } else {
-                document.getElementById("wrapper-video").classList.add("hide");
-                document.getElementById("videoPlayer").src = "";
-                document.getElementById("videosNumber").textContent =
-                  "Number of videos: " +
-                  Object.keys(s.graph.neighbors(nodeId)).length;
-                document.getElementById("nameLabels").textContent =
-                  toKeep[nodeId].label;
-              }
-
-              s.graph.nodes().forEach(function (n) {
-                if (toKeep[n.id]) {
-                  if (toKeep[n.id].id == nodeId) {
-                    n.color = "#FF0000";
-                  } else n.color = n.originalColor;
-                } else n.hidden = true;
-              });
-
-              s.graph.edges().forEach(function (e) {
-                if (toKeep[e.source] && toKeep[e.target])
-                  e.color = e.originalColor;
-                else (e.color = "#eee"), (e.hidden = true);
-              });
-
-              flagEvent[0] = true;
-              flagEvent[1] = nodeId;
-              //Refresh graph to update colors
-
-              let aNode = e;
-              let cam = s.camera;
-              let pfx = cam.readPrefix;
-              sigma.utils.zoomTo(
-                cam, // cam
-                aNode[pfx + "x"] - cam.x, // x
-                aNode[pfx + "y"] - cam.y, // y
-                0.3, // ratio
-                { duration: 1000 } // animation
-              );
-              s.refresh();
-            }
-          }
-        });
+      s.graph.nodes().forEach(function (n) {
+        (n.color = n.originalColor), (n.hidden = false);
       });
+
+      s.graph.edges().forEach(function (e) {
+        (e.color = e.originalColor), (e.hidden = false);
+      });
+
+      s.graph.nodes().forEach(function (n) {
+        if (n.attributes.Type == "hashtags" && n.label == selectedHash) {
+          e = n;
+          var nodeId = e.id,
+            toKeep = s.graph.neighbors(nodeId),
+            arrIdNeighs = [],
+            nofNeighs = {};
+
+          toKeep[nodeId] = e;
+          var keyNames = Object.keys(toKeep); //array degli id dei neighbors
+          // console.log(keyNames);
+
+          for (k in keyNames) {
+            var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
+
+            arrIdNeighs = Object.keys(tempNeighs);
+
+            for (j in arrIdNeighs) {
+              nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
+            }
+
+            nofNeighs[nodeId] = e;
+            toKeep = nofNeighs;
+          }
+          // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+
+          if (e.attributes.Type == "id") {
+            document.getElementById("nameLabels").textContent = e.attributes.title;
+            document.getElementById("videosNumber").textContent = "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
+            document.getElementById("hashtagsLabel").textContent = e.attributes.hashtags;
+            document.getElementById("videoPlayer").src = e.attributes.link;
+            document.getElementById("videoPlayer").setAttribute("poster", e.attributes.thumburl);
+            document.getElementById("wrapper-video").classList.remove("hide");
+          } else {
+            document.getElementById("wrapper-video").classList.add("hide");
+            document.getElementById("videoPlayer").src = "";
+            document.getElementById("videosNumber").textContent = "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
+            document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+          }
+
+          s.graph.nodes().forEach(function (n) {
+            if (toKeep[n.id]) {
+              if (toKeep[n.id].id == nodeId) {
+                n.color = "#FF0000";
+              } else n.color = n.originalColor;
+            } else n.hidden = true;
+          });
+
+          s.graph.edges().forEach(function (e) {
+            if (toKeep[e.source] && toKeep[e.target])
+              e.color = e.originalColor;
+            else (e.color = "#eee"), (e.hidden = true);
+          });
+
+          flagEvent[0] = true;
+          flagEvent[1] = nodeId;
+
+          let aNode = e;
+          let cam = s.camera;
+          let pfx = cam.readPrefix;
+          sigma.utils.zoomTo(
+            cam, // cam
+            aNode[pfx + "x"], // x
+            aNode[pfx + "y"], // y
+            0.3, // ratio
+            { duration: 1000 } // animation
+          );
+          s.refresh();
+        }
+      });
+    });
   }
 }

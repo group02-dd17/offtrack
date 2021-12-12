@@ -435,9 +435,8 @@ Keywords
   justify-self: end;
   align-self: end;
   margin-bottom: 20%;
-  z-index: 4;
+  z-index: 6;
 }
-
 #wrapper-vid3 {
   grid-column: 7 / span 2;
   grid-row: 2;
@@ -462,6 +461,14 @@ Keywords
   align-self: start;
 }
 
+#mask-quote-2 {
+  grid-column: 6 / span 3;
+  grid-row: 5;
+  justify-self: end;
+  align-self: center;
+  margin-bottom: 80%;
+  z-index: 6;
+}
 #wrapper-vid5 {
   grid-column: 8 / span 2;
   grid-row: 5;
@@ -471,12 +478,19 @@ Keywords
 }
 
 #wrapper-vid6 {
-  grid-column: 2 / span 5;
+  grid-column: 2 / span 4;
   grid-row: 5;
   justify-self: center;
   align-self: end;
 }
 
+#mask-quote-3 {
+  grid-column: 2 / span 3;
+  grid-row: 6;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
 #wrapper-vid7 {
   grid-column: 6 / span 4;
   grid-row: 6;
@@ -484,6 +498,13 @@ Keywords
   align-self: center;
 }
 
+#mask-quote-4 {
+  grid-column: 2 / span 3;
+  grid-row: 6;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
 #wrapper-vid8 {
   grid-column: 2 / span 2;
   grid-row: 7;
@@ -507,6 +528,14 @@ Keywords
   align-self: end;
 }
 
+#mask-quote-5 {
+  grid-column: 6 / span 4;
+  grid-row: 8;
+  justify-self: center;
+  align-self: start;
+  margin-top: 20%;
+  z-index: 6;
+}
 #wrapper-vid11 {
   grid-column: 3 / span 4;
   grid-row: 8;
@@ -522,6 +551,13 @@ Keywords
   align-self: center;
 }
 
+#mask-quote-6 {
+  grid-column: 5 / span 2;
+  grid-row: 8;
+  justify-self: center;
+  align-self: end;
+  z-index: 6;
+}
 #wrapper-vid13 {
   grid-column: 2 / span 2;
   grid-row: 8;
@@ -541,7 +577,7 @@ Keywords
   grid-column: 2 / span 4;
   grid-row: 9;
   justify-self: center;
-  align-self: center;
+  align-self: end;
 }
 
 #wrapper-vid16 {
@@ -568,6 +604,13 @@ Keywords
   text-align-last: center;
 }
 
+#mask-quote-7 {
+  grid-column: 2 / span 2;
+  grid-row: 12;
+  justify-self: center;
+  align-self: start;
+  z-index: 6;
+}
 #wrapper-vid18 {
   grid-column: 7 / span 3;
   grid-row: 12;
@@ -584,21 +627,21 @@ Keywords
 }
 
 #wrapper-vid20 {
-  grid-column: 8 / span 3;
+  grid-column: 8 / span 2;
   grid-row: 13;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid21 {
-  grid-column: 1 / span 5;
+  grid-column: 2 / span 4;
   grid-row: 13;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid22 {
-  grid-column: 5 / span 4;
+  grid-column: 5 / span 3;
   grid-row: 14;
   justify-self: center;
   align-self: start;
@@ -789,6 +832,7 @@ Cover
   background-color: #000000;
   width: 100%;
   text-align: center;
+  justify-self: center;
   align-self: center;
   grid-template-areas: "overlap";
 }

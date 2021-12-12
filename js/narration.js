@@ -11,9 +11,10 @@ let lines = function (l) {
 
         canvasL.parent("#canvasLines");
 
+        var firstNode = document.getElementById("wrapper-vid1")
         xyVertex.push({
-            x: document.getElementById("wrapper-vid1").getBoundingClientRect().left - document.getElementById("wrapper-vid1").offsetWidth / 2 - l.width/2,
-            y: document.getElementById("wrapper-vid1").getBoundingClientRect().top - document.getElementById("wrapper-vid1").parentNode.getBoundingClientRect().top - document.getElementById("wrapper-vid1").lastElementChild.offsetHeight / 2 - l.height/2,
+            x: firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2 - l.width/2,
+            y: firstNode.lastElementChild.getBoundingClientRect().top - firstNode.parentNode.getBoundingClientRect().top + firstNode.lastElementChild.offsetHeight / 2 -l.height/2,
         });
     };
 

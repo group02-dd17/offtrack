@@ -45,9 +45,9 @@
       fontSize + 'px ' + (settings('hoverFont') || settings('font'));
 
     context.beginPath();
-    context.fillStyle = settings('labelHoverBGColor') === 'node' ?
+    context.fillStyle = settings('defaultlabelBGColor') === 'node' ?
       (node.color || settings('defaultNodeColor')) :
-      settings('defaultHoverLabelBGColor');
+      settings('defaultLabelBGColor');
 
     if (node.label && typeof node.label === 'string') {
       x = Math.round(node[prefix + 'x'] + size + 3);
@@ -56,10 +56,10 @@
       h = Math.round(fontSize + 4);
       e = Math.round(fontSize / 2);
 
-      context.moveTo(x , y);
-      context.lineTo(x + w + e, y);
-      context.lineTo(x + w + e, y + h);
-      context.lineTo(x, y + h);
+      context.moveTo(x , y - e/3);
+      context.lineTo(x + w + e/2, y - e/3);
+      context.lineTo(x + w + e/2, y + h + e/3);
+      context.lineTo(x, y + h + e/3);
 
       context.closePath();
       context.fill();

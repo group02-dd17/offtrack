@@ -36,37 +36,27 @@
       (node.color || settings('defaultNodeColor')) :
       settings('defaultHoverLabelBGColor');
 
-    if (node.label && settings('labelHoverShadow')) {
-      context.shadowOffsetX = 0;
-      context.shadowOffsetY = 0;
-      context.shadowBlur = 8;
-      context.shadowColor = settings('labelHoverShadowColor');
-    }
-
     if (node.label && typeof node.label === 'string') {
-      x = Math.round(node[prefix + 'x'] - fontSize / 2 - 2);
+      x = Math.round(node[prefix + 'x'] + size + 3);
       y = Math.round(node[prefix + 'y'] - fontSize / 2 - 2);
-      w = Math.round(
-        context.measureText(node.label).width + fontSize / 2 + size + 7
-      );
+      w = Math.round(context.measureText(node.label).width + 10);
       h = Math.round(fontSize + 4);
-      e = Math.round(fontSize / 2 + 2);
+      e = Math.round(fontSize / 2);
 
-      context.moveTo(x, y + e);
-      context.arcTo(x, y, x + e, y, e);
-      context.lineTo(x + w, y);
-      context.lineTo(x + w, y + h);
-      context.lineTo(x + e, y + h);
-      context.arcTo(x, y + h, x, y + h - e, e);
-      context.lineTo(x, y + e);
+      context.moveTo(x , y - e/3);
+      context.lineTo(x + w + e/2, y - e/3);
+      context.lineTo(x + w + e/2, y + h + e/3);
+      context.lineTo(x, y + h + e/3);
 
       context.closePath();
       context.fill();
 
-      context.shadowOffsetX = 0;
-      context.shadowOffsetY = 0;
-      context.shadowBlur = 0;
+      context.lineWidth = 1.5;
+      context.strokeStyle="black";
+      context.stroke();
     }
+
+    
 
     // Node border:
     if (settings('borderSize') > 0) {
@@ -92,13 +82,13 @@
 
     // Display the label:
     if (node.label && typeof node.label === 'string') {
-      context.fillStyle = (settings('labelHoverColor') === 'node') ?
+      context.fillStyle = (settings('defaultLabelHoverColor') === 'node') ?
         (node.color || settings('defaultNodeColor')) :
         settings('defaultLabelHoverColor');
 
       context.fillText(
         node.label,
-        Math.round(node[prefix + 'x'] + size + 3),
+        Math.round(node[prefix + 'x'] + size + 3 + e),
         Math.round(node[prefix + 'y'] + fontSize / 3)
       );
     }

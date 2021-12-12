@@ -819,15 +819,17 @@ Cover
   grid-template-rows: repeat(9, 1fr);
   width: 100%;
   height: 100vh;
+  grid-area: overlap;
 }
 
 .cover-title {
-  z-index: 1;
+  z-index: 15;
   background-color: #000000;
   width: 100%;
   text-align: center;
   align-self: center;
   justify-self: stretch;
+
 }
 
 #cover-title-1 {
@@ -844,7 +846,7 @@ Cover
 }
 
 .cover-btn {
-  z-index: 1;
+  z-index: 15;
   grid-column: 8;
   grid-row: 6;
   background-color: #000000;
@@ -860,822 +862,689 @@ Cover
   grid-area: overlap;
 }
 
-.cover-item1 {
+#cover-item1 {
   background-image: url("../assets/img/cover/thumb002.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
-
+  background-position: center
 }
-.cover-item2 {
+#cover-item2 {
   background-image: url("../assets/img/cover/thumb004.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item3 {
+#cover-item3 {
   background-image: url("../assets/img/cover/thumb005.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item4 {
+#cover-item4 {
   background-image: url("../assets/img/cover/thumb007.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item5 {
+#cover-item5 {
   background-image: url("../assets/img/cover/thumb009.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item6 {
+#cover-item6 {
   background-image: url("../assets/img/cover/thumb011.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item7 {
+#cover-item7 {
   background-image: url("../assets/img/cover/thumb016.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item8 {
+#cover-item8 {
   background-image: url("../assets/img/cover/thumb017.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item9 {
+#cover-item9 {
   background-image: url("../assets/img/cover/thumb020.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item10 {
+#cover-item10 {
   background-image: url("../assets/img/cover/thumb023.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item10 {
+#cover-item10 {
   background-image: url("../assets/img/cover/thumb023.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item11 {
+#cover-item11 {
   background-image: url("../assets/img/cover/thumb026.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item12 {
+#cover-item12 {
   background-image: url("../assets/img/cover/thumb027.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item13 {
+#cover-item13 {
   background-image: url("../assets/img/cover/thumb028.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item14 {
+#cover-item14 {
   background-image: url("../assets/img/cover/thumb029.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item15 {
+#cover-item15 {
   background-image: url("../assets/img/cover/thumb030.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item16 {
+#cover-item16 {
   background-image: url("../assets/img/cover/thumb031.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item17 {
+#cover-item17 {
   background-image: url("../assets/img/cover/thumb032.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item18 {
+#cover-item18 {
   background-image: url("../assets/img/cover/thumb036.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item19 {
+#cover-item19 {
   background-image: url("../assets/img/cover/thumb037.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item20 {
+#cover-item20 {
   background-image: url("../assets/img/cover/thumb040.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item21 {
+#cover-item21 {
   background-image: url("../assets/img/cover/thumb050.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item22 {
+#cover-item22 {
   background-image: url("../assets/img/cover/thumb052.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item23 {
+#cover-item23 {
   background-image: url("../assets/img/cover/thumb056.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item24 {
+#cover-item24 {
   background-image: url("../assets/img/cover/thumb059.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item25 {
+#cover-item25 {
   background-image: url("../assets/img/cover/thumb061.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item26 {
+#cover-item26 {
   background-image: url("../assets/img/cover/thumb062.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item27 {
+#cover-item27 {
   background-image: url("../assets/img/cover/thumb068.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item28 {
+#cover-item28 {
   background-image: url("../assets/img/cover/thumb077.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item29 {
+#cover-item29 {
   background-image: url("../assets/img/cover/thumb079.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item30 {
+#cover-item30 {
   background-image: url("../assets/img/cover/thumb085.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item31 {
+#cover-item31 {
   background-image: url("../assets/img/cover/thumb100.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item32 {
+#cover-item32 {
   background-image: url("../assets/img/cover/thumb124.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item33 {
+#cover-item33 {
   background-image: url("../assets/img/cover/thumb126.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item34 {
+#cover-item34 {
   background-image: url("../assets/img/cover/thumb130.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item35 {
+#cover-item35 {
   background-image: url("../assets/img/cover/thumb131.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item36 {
+#cover-item36 {
   background-image: url("../assets/img/cover/thumb1114.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item37 {
+#cover-item37 {
   background-image: url("../assets/img/cover/thumb138.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item38 {
+#cover-item38 {
   background-image: url("../assets/img/cover/thumb139.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item39 {
+#cover-item39 {
   background-image: url("../assets/img/cover/thumb145.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item40 {
+#cover-item40 {
   background-image: url("../assets/img/cover/thumb150.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item41 {
+#cover-item41 {
   background-image: url("../assets/img/cover/thumb152.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item42 {
+#cover-item42 {
   background-image: url("../assets/img/cover/thumb154.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item43 {
+#cover-item43 {
   background-image: url("../assets/img/cover/thumb155.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item44 {
+#cover-item44 {
   background-image: url("../assets/img/cover/thumb159.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item45 {
+#cover-item45 {
   background-image: url("../assets/img/cover/thumb163.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item46 {
+#cover-item46 {
   background-image: url("../assets/img/cover/thumb170.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item47 {
+#cover-item47 {
   background-image: url("../assets/img/cover/thumb171.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item48 {
+#cover-item48 {
   background-image: url("../assets/img/cover/thumb172.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item49 {
+#cover-item49 {
   background-image: url("../assets/img/cover/thumb174.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item50 {
+#cover-item50 {
   background-image: url("../assets/img/cover/thumb183.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item51 {
+#cover-item51 {
   background-image: url("../assets/img/cover/thumb184.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item52 {
+#cover-item52 {
   background-image: url("../assets/img/cover/thumb187.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item53 {
+#cover-item53 {
   background-image: url("../assets/img/cover/thumb204.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item54 {
+#cover-item54 {
   background-image: url("../assets/img/cover/thumb221.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item55 {
+#cover-item55 {
   background-image: url("../assets/img/cover/thumb226.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item56 {
+#cover-item56 {
   background-image: url("../assets/img/cover/thumb235.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item57 {
+#cover-item57 {
   background-image: url("../assets/img/cover/thumb238.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
 
-.cover-item58 {
+#cover-item58 {
   background-image: url("../assets/img/cover/thumb240.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item59 {
+#cover-item59 {
   background-image: url("../assets/img/cover/thumb256.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item60 {
+#cover-item60 {
   background-image: url("../assets/img/cover/thumb266.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item61 {
+#cover-item61 {
   background-image: url("../assets/img/cover/thumb266.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item62 {
+#cover-item62 {
   background-image: url("../assets/img/cover/thumb277.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item63 {
+#cover-item63 {
   background-image: url("../assets/img/cover/thumb287.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item64 {
+#cover-item64 {
   background-image: url("../assets/img/cover/thumb303.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item65 {
+#cover-item65 {
   background-image: url("../assets/img/cover/thumb323.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item66 {
+#cover-item66 {
   background-image: url("../assets/img/cover/thumb324.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item67 {
+#cover-item67 {
   background-image: url("../assets/img/cover/thumb325.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item68 {
+#cover-item68 {
   background-image: url("../assets/img/cover/thumb327.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item69 {
+#cover-item69 {
   background-image: url("../assets/img/cover/thumb340.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item70 {
+#cover-item70 {
   background-image: url("../assets/img/cover/thumb343.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item71 {
+#cover-item71 {
   background-image: url("../assets/img/cover/thumb1001.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item72 {
+#cover-item72 {
   background-image: url("../assets/img/cover/thumb1003.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item73 {
+#cover-item73 {
   background-image: url("../assets/img/cover/thumb1004.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item74 {
+#cover-item74 {
   background-image: url("../assets/img/cover/thumb1005.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item75 {
+#cover-item75 {
   background-image: url("../assets/img/cover/thumb1015.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item76 {
+#cover-item76 {
   background-image: url("../assets/img/cover/thumb1016.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item77 {
+#cover-item77 {
   background-image: url("../assets/img/cover/thumb1017.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item78 {
+#cover-item78 {
   background-image: url("../assets/img/cover/thumb1018.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item79 {
+#cover-item79 {
   background-image: url("../assets/img/cover/thumb1019.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item80 {
+#cover-item80 {
   background-image: url("../assets/img/cover/thumb1022.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item81 {
+#cover-item81 {
   background-image: url("../assets/img/cover/thumb1024.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item82 {
+#cover-item82 {
   background-image: url("../assets/img/cover/thumb1025.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item83 {
+#cover-item83 {
   background-image: url("../assets/img/cover/thumb1027.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item84 {
+#cover-item84 {
   background-image: url("../assets/img/cover/thumb1028.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item85 {
+#cover-item85 {
   background-image: url("../assets/img/cover/thumb1029.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item86 {
+#cover-item86 {
   background-image: url("../assets/img/cover/thumb1031.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item87 {
+#cover-item87 {
   background-image: url("../assets/img/cover/thumb1032.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item88 {
+#cover-item88 {
   background-image: url("../assets/img/cover/thumb1033.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item89 {
+#cover-item89 {
   background-image: url("../assets/img/cover/thumb1035.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item90 {
+#cover-item90 {
   background-image: url("../assets/img/cover/thumb1040.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item91 {
+#cover-item91 {
   background-image: url("../assets/img/cover/thumb1041.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item92 {
+#cover-item92 {
   background-image: url("../assets/img/cover/thumb1042.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item93 {
+#cover-item93 {
   background-image: url("../assets/img/cover/thumb1043.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item94 {
+#cover-item94 {
   background-image: url("../assets/img/cover/thumb1044.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item95 {
+#cover-item95 {
   background-image: url("../assets/img/cover/thumb1045.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item96 {
+#cover-item96 {
   background-image: url("../assets/img/cover/thumb1046.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item97 {
+#cover-item97 {
   background-image: url("../assets/img/cover/thumb1047.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item98 {
+#cover-item98 {
   background-image: url("../assets/img/cover/thumb1049.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item99 {
+#cover-item99 {
   background-image: url("../assets/img/cover/thumb1050.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item100 {
+#cover-item100 {
   background-image: url("../assets/img/cover/thumb1051.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item101 {
+#cover-item101 {
   background-image: url("../assets/img/cover/thumb1052.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item102 {
+#cover-item102 {
   background-image: url("../assets/img/cover/thumb1053.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item103 {
+#cover-item103 {
   background-image: url("../assets/img/cover/thumb1055.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item104 {
+#cover-item104 {
   background-image: url("../assets/img/cover/thumb1056.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item105 {
+#cover-item105 {
   background-image: url("../assets/img/cover/thumb1057.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item106 {
+#cover-item106 {
   background-image: url("../assets/img/cover/thumb1058.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item107 {
+#cover-item107 {
   background-image: url("../assets/img/cover/thumb1059.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item108 {
+#cover-item108 {
   background-image: url("../assets/img/cover/thumb1061.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item109 {
+#cover-item109 {
   background-image: url("../assets/img/cover/thumb1063.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item110 {
+#cover-item110 {
   background-image: url("../assets/img/cover/thumb1066.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item111 {
+#cover-item111 {
   background-image: url("../assets/img/cover/thumb1070.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item112 {
+#cover-item112 {
   background-image: url("../assets/img/cover/thumb1071.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item113 {
+#cover-item113 {
   background-image: url("../assets/img/cover/thumb1074.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item114 {
+#cover-item114 {
   background-image: url("../assets/img/cover/thumb1075.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item115 {
+#cover-item115 {
   background-image: url("../assets/img/cover/thumb1076.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item116 {
+#cover-item116 {
   background-image: url("../assets/img/cover/thumb1078.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item117 {
+#cover-item117 {
   background-image: url("../assets/img/cover/thumb1079.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item118 {
+#cover-item118 {
   background-image: url("../assets/img/cover/thumb1081.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item119 {
+#cover-item119 {
   background-image: url("../assets/img/cover/thumb1083.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item120 {
+#cover-item120 {
   background-image: url("../assets/img/cover/thumb1084.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item121 {
+#cover-item121 {
   background-image: url("../assets/img/cover/thumb1087.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item122 {
+#cover-item122 {
   background-image: url("../assets/img/cover/thumb1088.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item123 {
+#cover-item123 {
   background-image: url("../assets/img/cover/thumb1089.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item124 {
+#cover-item124 {
   background-image: url("../assets/img/cover/thumb1090.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item125 {
+#cover-item125 {
   background-image: url("../assets/img/cover/thumb1091.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item126 {
+#cover-item126 {
   background-image: url("../assets/img/cover/thumb1098.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item127 {
+#cover-item127 {
   background-image: url("../assets/img/cover/thumb1099.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item128 {
+#cover-item128 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item129 {
+#cover-item129 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item130 {
+#cover-item130 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item131 {
+#cover-item131 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item132 {
+#cover-item132 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item133 {
+#cover-item133 {
   background-image: url("../assets/img/cover/thumb1103.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item134 {
+#cover-item134 {
   background-image: url("../assets/img/cover/thumb1104.webp");
   background-size: cover;
-  background-position: center;
-  filter: grayscale(1) brightness(2);
+  background-position: center
 }
-.cover-item135 {
+#cover-item135 {
   background-image: url("../assets/img/cover/thumb1106.webp");
   background-size: cover;
-  background-position: center;
+  background-position: center
+}
+
+.filter{
   filter: grayscale(1) brightness(2);
 }
 

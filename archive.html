@@ -62,7 +62,19 @@
           </div>
           <div id="legend"><h2>LEGEND</h2></div>
         </div>
-        <div id="network-graph"></div>
+        <div id="network-graph">
+          <form autocomplete="off" onsubmit="return false">
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="myCountry" placeholder="Search hashtags...">
+            </div>
+            <input type="submit" id="submitButton">
+          </form>
+          <div class="buttonGui" id="zoomIn">+</div>
+          <div class="buttonGui" id="zoomOut">–</div>
+          <div  class="buttonGui" id="resetView">RESET VIEW</div>
+          <div  class="buttonGui" id="info">?</div>
+        </div>
+
       </div>
     </div>
 

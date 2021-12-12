@@ -4,6 +4,7 @@ var vertexArray = [];
 
 //shuffle the array
 shuffleArray(items);
+
 function shuffleArray(array) {
     for (let i = array.length - 14; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -43,11 +44,12 @@ let lines = function (l) {
         });
 
         selected1.each(function (index, item) {
-            var startX = item.getBoundingClientRect().left;
-            var widthThumb = item.offsetWidth;
+            var $this = $(item);
+            var startX = $this.offset().left;
+            var widthThumb = $this.width();
 
-            var startY = item.getBoundingClientRect().top;
-            var heightThumb = item.offsetWidth;
+            var startY = $this.offset().top;
+            var heightThumb = $this.height();
 
             if (l.mouseX > startX && l.mouseX < (startX + widthThumb) && (l.mouseY > startY && l.mouseY < (startY + heightThumb))) {
                 selected1.each(function (i, thumb) {
@@ -58,8 +60,8 @@ let lines = function (l) {
                 l.strokeWeight(2.5);
                 //draw the polyLine
                 l.beginShape();
-                vertexArray.forEach(function (item) {
-                    l.vertex(item.x, item.y);
+                vertexArray.forEach(function (piece) {
+                    l.vertex(piece.x, piece.y);
                 });
                 l.endShape();
             }

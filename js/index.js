@@ -12,19 +12,31 @@ function shuffleArray(array) {
     }
 }
 
-// Get sub-arrays of elements after shuffled
-let selected1 = items.slice(0, 8);
-let selected2 = items.slice(14, 26);
+// Get sub-arrays of elements after shuffle
+
+let selected = [];
+let elems = 9;
+let groups = items.length / elems;
+
+for (i = 0; i < items.length; i += elems) {
+    selected.push(items.slice(i, i + elems));
+}
 
 //store the center coordinates of each div
-selected1.each(function () {
-    var $this = $(this);
-    vertexArray.push({
-        x: $this.offset().left + $this.width() / 2,
-        y: $this.offset().top + $this.height() / 2,
+for (k in selected) {
+    vertexArray[k] = [];
+    selected[k].each(function (index, element) {
+        var $this = $(element);
+        var tempCoord = {
+            x: $this.offset().left + $this.width() / 2,
+            y: $this.offset().top + $this.height() / 2,
+        };
+        
+        vertexArray[k][index] = tempCoord;
     });
-});
+}
 
+console.log(vertexArray);
 
 let lines = function (l) {
     l.setup = function () {
@@ -39,33 +51,40 @@ let lines = function (l) {
         const ctx = this.canvas.getContext("2d");
 
         //set all the thumbnails grayscale
-        selected1.each(function (index, item) {
-            $(item).addClass("filter");
-        });
+        for (k in selected) {
+            selected[k].each(function (index, item) {
+                $(item).addClass("filter");
+            });
+        }
 
-        selected1.each(function (index, item) {
-            var $this = $(item);
-            var startX = $this.offset().left;
-            var widthThumb = $this.width();
+        for (k in selected) {
+            selected[k].each(function (index, item) {
+                var $this = $(item);
+                var startX = $this.offset().left;
+                var widthThumb = $this.width();
 
-            var startY = $this.offset().top;
-            var heightThumb = $this.height();
+                var startY = $this.offset().top;
+                var heightThumb = $this.height();
 
-            if (l.mouseX > startX && l.mouseX < (startX + widthThumb) && (l.mouseY > startY && l.mouseY < (startY + heightThumb))) {
-                selected1.each(function (i, thumb) {
-                    $(thumb).removeClass("filter");
-                });
-                l.noFill();
-                l.stroke("red");
-                l.strokeWeight(2.5);
-                //draw the polyLine
-                l.beginShape();
-                vertexArray.forEach(function (piece) {
-                    l.vertex(piece.x, piece.y);
-                });
-                l.endShape();
-            }
-        });
+                if (l.mouseX > startX && l.mouseX < (startX + widthThumb) && (l.mouseY > startY && l.mouseY < (startY + heightThumb))) {
+                    selected[k].each(function (i, thumb) {
+                        $(thumb).removeClass("filter");
+                    });
+
+                    l.noFill();
+                    l.stroke("red");
+                    l.strokeWeight(2.5);
+
+                    //draw the polyLine
+                    l.beginShape();
+
+                    vertexArray[k].forEach(function (piece) {
+                        l.vertex(piece.x, piece.y);
+                    });
+                    l.endShape();
+                }
+            });
+        }
     };
 };
 let canvasLines = new p5(lines);

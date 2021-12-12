@@ -6,8 +6,6 @@ let lines = function (l) {
     l.setup = function () {
         // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
         var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight);
-
-        l.frameRate(25);
         l.pixelDensity(1);
         console.log("canva fr 1");
 

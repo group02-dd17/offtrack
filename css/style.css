@@ -330,6 +330,14 @@ Keywords
   border: 1px solid #ffffff;
 }
 
+.archive-svg {
+  grid-column: 1/span 3;
+  height: 50vh;
+  border: 1px solid #ffffff;
+  justify-self: center;
+  width: 70%;
+}
+
 /*- Video--*/
 #container {
   display: grid;
@@ -631,6 +639,7 @@ Keywords
   grid-row: 13;
   justify-self: center;
   align-self: start;
+  width: 90%;
 }
 
 #wrapper-vid21 {
@@ -655,18 +664,27 @@ Keywords
   width: 80%;
 }
 
-#wrapper-vid24 {
-  grid-column: 2 / span 3;
-  grid-row: 15;
+#mask-quote-8 {
+  grid-column: 1 / span 2;
+  grid-row: 14;
   justify-self: center;
-  align-self: center;
+  align-self: start;
+  z-index: 6;
+}
+#wrapper-vid24 {
+  grid-column: 2 / span 2;
+  grid-row: 14;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 50%;
 }
 
 #wrapper-vid25 {
   grid-column: 5 / span 3;
-  grid-row: 15;
+  grid-row: 14;
   justify-self: center;
   align-self: end;
+  width: 60%;
 }
 
 /*--------

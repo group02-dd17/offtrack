@@ -4,9 +4,12 @@ let lines = function (l) {
     let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 
     l.setup = function () {
-        var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
+        // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
+        var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight);
+
         l.frameRate(25);
         l.pixelDensity(1);
+        console.log("canva fr 1");
 
         console.log(l.windowWidth);
         console.log(document.getElementById("container").offsetHeight);
@@ -15,8 +18,11 @@ let lines = function (l) {
 
         var firstNode = document.getElementById("wrapper-vid1")
         xyVertex.push({
-            x: firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2 - l.width/2,
-            y: firstNode.lastElementChild.getBoundingClientRect().top - firstNode.parentNode.getBoundingClientRect().top + firstNode.lastElementChild.offsetHeight / 2 -l.height/2,
+            // x: firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2 - l.width/2,
+            // y: firstNode.lastElementChild.getBoundingClientRect().top - firstNode.parentNode.getBoundingClientRect().top + firstNode.lastElementChild.offsetHeight / 2 -l.height/2,
+
+            x: firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2,
+            y: firstNode.lastElementChild.getBoundingClientRect().top - firstNode.parentNode.getBoundingClientRect().top + firstNode.lastElementChild.offsetHeight / 2,
         });
     };
 
@@ -37,8 +43,8 @@ let lines = function (l) {
             videoList[index].lastElementChild.addEventListener("mouseover", function () {
                 //add the center of the video as a new vertex
                 xyVertex.push({
-                    x: videoList[index].lastElementChild.getBoundingClientRect().left + videoList[index].offsetWidth / 2 - l.width/2,
-                    y: videoList[index].lastElementChild.getBoundingClientRect().top - videoList[index].parentNode.getBoundingClientRect().top + videoList[index].lastElementChild.offsetHeight / 2 -l.height/2,
+                    x: videoList[index].lastElementChild.getBoundingClientRect().left + videoList[index].offsetWidth / 2,
+                    y: videoList[index].lastElementChild.getBoundingClientRect().top - videoList[index].parentNode.getBoundingClientRect().top + videoList[index].lastElementChild.offsetHeight / 2,
                 });
                 // console.log(videos[index].x,videos[index].y);
             });
@@ -49,7 +55,7 @@ let lines = function (l) {
         xyVertex.forEach(function (item, index) {
             l.vertex(xyVertex[index].x, xyVertex[index].y);
         });
-        l.vertex(l.mouseX-l.width/2, l.mouseY-l.height/2);
+        l.vertex(l.mouseX, l.mouseY);
         l.endShape();
 
     };

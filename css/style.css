@@ -342,7 +342,7 @@ Keywords
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: auto;
   grid-auto-rows: min-content;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   grid-area: overlap;
   width: 100%;
   z-index: 5;
@@ -360,7 +360,10 @@ Keywords
 
 .wrapper {
   height: fit-content;
-  border: 1px solid rgba(255, 255, 255, 0.0);
+  border-top: 1px rgba(255, 255, 255, 0.0);
+  border-bottom: 1px rgba(255, 255, 255, 0.0);
+  border-left: 1px rgba(255, 255, 255, 0.0);
+  border-right: 1px rgba(255, 255, 255, 0.0);
 }
 .wrapper:hover {
   border-top: 1px solid #ffffff;
@@ -368,6 +371,7 @@ Keywords
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
   background-color: #000000;
+  z-index: 5;
 }
 
 .wrapper p{
@@ -395,6 +399,22 @@ Keywords
   border-right: 1px solid rgba(255, 255, 255, 0.0);
 }
 
+.wrapper > video::-webkit-media-controls {
+  display: none;
+}
+
+.quote {
+  font-size: 2.8rem;
+  padding: 25px;
+  border: 1px solid #ffffff;
+  background-color: #000000;
+  text-align: center;
+}
+
+.quote p {
+  margin: 0;
+}
+
 #wrapper-vid1 {
   grid-column: 4 / span 4;
   grid-row: 1;
@@ -404,14 +424,23 @@ Keywords
 
 #wrapper-vid2 {
   grid-column: 3 / span 2;
-  grid-row: 1;
+  grid-row: 2;
   justify-self: center;
-  align-self: center;
+  align-self: start;
+}
+
+#mask-quote-1 {
+  grid-column: 4 / span 4;
+  grid-row: 2;
+  justify-self: end;
+  align-self: end;
+  margin-bottom: 20%;
+  z-index: 4;
 }
 
 #wrapper-vid3 {
   grid-column: 7 / span 2;
-  grid-row: 1;
+  grid-row: 2;
   justify-self: center;
   align-self: end;
 }
@@ -435,23 +464,24 @@ Keywords
 
 #wrapper-vid5 {
   grid-column: 8 / span 2;
-  grid-row: 4;
+  grid-row: 5;
   justify-self: center;
-  align-self: end;
+  align-self: start;
+  margin-bottom: 70%;
 }
 
 #wrapper-vid6 {
   grid-column: 2 / span 5;
   grid-row: 5;
   justify-self: center;
-  align-self: start;
+  align-self: end;
 }
 
 #wrapper-vid7 {
   grid-column: 6 / span 4;
   grid-row: 6;
   justify-self: center;
-  align-self: start;
+  align-self: center;
 }
 
 #wrapper-vid8 {
@@ -466,6 +496,8 @@ Keywords
   grid-row: 7;
   justify-self: center;
   align-self: center;
+  margin-top: 30%;
+  margin-bottom: 30%;
 }
 
 #wrapper-vid10 {
@@ -480,6 +512,7 @@ Keywords
   grid-row: 8;
   justify-self: center;
   align-self: start;
+  margin-bottom: 50%;
 }
 
 #wrapper-vid12 {
@@ -513,57 +546,67 @@ Keywords
 
 #wrapper-vid16 {
   grid-column: 8 / span 2;
-  grid-row: 9;
+  grid-row: 10;
   justify-self: center;
-  align-self: end;
+  align-self: start;
 }
 
 #wrapper-vid17 {
   grid-column: 3 / span 3;
   grid-row: 10;
   justify-self: center;
-  align-self: start;
+  align-self: center;
+}
+
+#description-mask-2 {
+  grid-column: 2 / span 8;
+  grid-row: 11;
+  justify-self: center;
+  align-self: center;
+  font-size: 2.8rem;
+  text-align: justify;
+  text-align-last: center;
 }
 
 #wrapper-vid18 {
   grid-column: 7 / span 3;
-  grid-row: 10;
+  grid-row: 12;
   justify-self: center;
-  align-self: center;
+  align-self: start;
+  margin-bottom: 30%;
 }
 
 #wrapper-vid19 {
   grid-column: 5 / span 3;
-  grid-row: 10;
+  grid-row: 12;
   justify-self: center;
   align-self: end;
-  width: 80%;
 }
 
 #wrapper-vid20 {
   grid-column: 8 / span 3;
-  grid-row: 11;
+  grid-row: 13;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid21 {
   grid-column: 1 / span 5;
-  grid-row: 12;
+  grid-row: 13;
   justify-self: center;
   align-self: end;
 }
 
 #wrapper-vid22 {
   grid-column: 5 / span 4;
-  grid-row: 13;
+  grid-row: 14;
   justify-self: center;
   align-self: start;
 }
 
 #wrapper-vid23 {
   grid-column: 8 / span 2;
-  grid-row: 13;
+  grid-row: 14;
   justify-self: center;
   align-self: center;
   width: 80%;
@@ -571,44 +614,16 @@ Keywords
 
 #wrapper-vid24 {
   grid-column: 2 / span 3;
-  grid-row: 13;
+  grid-row: 15;
   justify-self: center;
   align-self: center;
 }
 
 #wrapper-vid25 {
   grid-column: 5 / span 3;
-  grid-row: 13;
+  grid-row: 15;
   justify-self: center;
   align-self: end;
-}
-
-/*- Quotes--*/
-.quote {
-  font-size: 2.8rem;
-  padding: 25px;
-  border: 1px solid #ffffff;
-  background-color: #000000;
-}
-
-.quote p {
-  margin: 0;
-}
-
-#mask-quote-1 {
-  grid-column: 3 / span 3;
-  grid-row: 2;
-  justify-self: center;
-  align-self: end;
-  margin-bottom: 10%;
-}
-
-#mask-quote-2 {
-  grid-column: 2 / span 4;
-  grid-row: 3;
-  justify-self: center;
-  align-self: end;
-  margin-bottom: 30%;
 }
 
 /*--------

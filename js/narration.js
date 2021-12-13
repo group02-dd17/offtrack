@@ -33,7 +33,7 @@ $(videoList).ready(function () {
           firstNode.offsetWidth / 2,
         y:
           firstNode.lastElementChild.getBoundingClientRect().top -
-          firstNode.parentNode.getBoundingClientRect().top +
+          document.getElementById("title").getBoundingClientRect().top +
           firstNode.lastElementChild.offsetHeight / 2,
       });
     };
@@ -62,7 +62,7 @@ $(videoList).ready(function () {
                   videoList[index].offsetWidth / 2,
                 y:
                   videoList[index].lastElementChild.getBoundingClientRect().top -
-                  videoList[index].parentNode.getBoundingClientRect().top +
+                  document.getElementById("title").getBoundingClientRect().top +
                   videoList[index].lastElementChild.offsetHeight / 2,
               });
             }

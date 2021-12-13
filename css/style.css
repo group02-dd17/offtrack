@@ -84,13 +84,13 @@ p {
 }
 
 video {
-    width: 100%;
-    object-fit: cover;
-    -webkit-filter: grayscale(100%);
-    -moz-filter: grayscale(100%);
-    -ms-filter: grayscale(100%);
-    filter: grayscale(100%);
-    filter: gray;
+  width: 100%;
+  object-fit: cover;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
 }
 
 video:hover {
@@ -240,7 +240,7 @@ Index
   font-size: 2.8rem;
 }
 
-.go-to-archive:hover > p{
+.go-to-archive:hover>p {
   font-family: 'Redaction 50', serif;
 }
 
@@ -287,7 +287,7 @@ Keywords
   min-height: 50vh;
   width: 100%;
   place-items: center;
-  grid-column: 2 / span 8;
+  grid-column: 1 / span 2;
   font-size: 5rem;
   text-align: justify;
   text-align-last: center;
@@ -299,7 +299,6 @@ Keywords
   text-align-last: center;
   font-size: 5rem;
 }
-
 
 .subtitle {
   font-size: 2.3rem;
@@ -324,6 +323,12 @@ Keywords
 .selector {
   width: 100%;
   margin-bottom: 10%;
+}
+
+#selector-wrapper {
+  display: grid;
+  grid-row: 3 /span 1;
+  grid-column: 1 /span 2;
 }
 
 .selector-container {
@@ -358,6 +363,8 @@ Keywords
   grid-area: overlap;
   width: 100%;
   z-index: 5;
+  grid-row: 2/span 1;
+  grid-column: 1/span 2;
 }
 
 .videos-container {
@@ -372,20 +379,28 @@ Keywords
   grid-area: overlap;
 }
 
+.content {
+  display: grid;
+  grid-area: overlap;
+  /* grid-template-columns: 1fr; */
+  grid-auto-flow: row;
+
+}
+
 .wrapper {
   height: fit-content;
   z-index: 2;
-  padding-bottom:-5px;
+  padding-bottom: -5px;
   background-color: black;
 
   outline: 1px solid white;
 }
 
 .wrapper:hover {
-    z-index: 10;
+  z-index: 10;
 }
 
-.wrapper p{
+.wrapper p {
   padding-left: 1vmax;
   padding-right: 1vmax;
   opacity: 1;
@@ -404,22 +419,22 @@ Keywords
   width: 100% !important;
   height: auto !important;
   display: block;
-  outline:1px solid white;
+  outline: 1px solid white;
   justify-self: center;
   align-self: start;
 }
 
 .wrapper:hover video {
-  outline:none;
+  outline: none;
   width: 100% !important;
   height: auto !important;
   display: block;
-  outline:1px solid white;
+  outline: 1px solid white;
   justify-self: center;
   align-self: start;
 }
 
-.wrapper > video::-webkit-media-controls {
+.wrapper>video::-webkit-media-controls {
   display: none;
 }
 
@@ -465,6 +480,7 @@ Keywords
   margin-bottom: 20%;
   z-index: 6;
 }
+
 #wrapper-vid3 {
   grid-column: 7 / span 2;
   grid-row: 2;
@@ -497,6 +513,7 @@ Keywords
   margin-bottom: 80%;
   z-index: 6;
 }
+
 #wrapper-vid5 {
   grid-column: 8 / span 2;
   grid-row: 5;
@@ -519,6 +536,7 @@ Keywords
   align-self: center;
   z-index: 6;
 }
+
 #wrapper-vid7 {
   grid-column: 6 / span 4;
   grid-row: 6;
@@ -533,6 +551,7 @@ Keywords
   align-self: start;
   z-index: 6;
 }
+
 #wrapper-vid8 {
   grid-column: 2 / span 2;
   grid-row: 7;
@@ -564,6 +583,7 @@ Keywords
   margin-top: 20%;
   z-index: 6;
 }
+
 #wrapper-vid11 {
   grid-column: 3 / span 4;
   grid-row: 8;
@@ -586,6 +606,7 @@ Keywords
   align-self: end;
   z-index: 6;
 }
+
 #wrapper-vid13 {
   grid-column: 2 / span 2;
   grid-row: 8;
@@ -639,6 +660,7 @@ Keywords
   align-self: start;
   z-index: 6;
 }
+
 #wrapper-vid18 {
   grid-column: 7 / span 3;
   grid-row: 12;
@@ -691,6 +713,7 @@ Keywords
   align-self: start;
   z-index: 6;
 }
+
 #wrapper-vid24 {
   grid-column: 2 / span 2;
   grid-row: 14;
@@ -789,6 +812,7 @@ About
   grid-column: 1/span 2;
   grid-row: 1;
 }
+
 #person-img-1 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -798,6 +822,7 @@ About
   grid-column: 3/span 2;
   grid-row: 1;
 }
+
 #person-img-2 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -807,6 +832,7 @@ About
   grid-column: 5/span 2;
   grid-row: 1;
 }
+
 #person-img-3 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -816,6 +842,7 @@ About
   grid-column: 7/span 2;
   grid-row: 1;
 }
+
 #person-img-4 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -825,6 +852,7 @@ About
   grid-column: 2/span 2;
   grid-row: 2;
 }
+
 #person-img-5 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -834,6 +862,7 @@ About
   grid-column: 4/span 2;
   grid-row: 2;
 }
+
 #person-img-6 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -843,6 +872,7 @@ About
   grid-column: 6/span 2;
   grid-row: 2;
 }
+
 #person-img-7 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
@@ -893,6 +923,7 @@ Cover
   grid-column: 5/span 7;
   grid-row: 4/span 1;
 }
+
 #cover-title-2 {
   grid-column: 6/span 5;
   grid-row: 5/span 1;
@@ -924,286 +955,343 @@ Cover
   background-size: cover;
   background-position: center;
 }
+
 #cover-item2 {
   background-image: url("../assets/img/cover/thumb004.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item3 {
   background-image: url("../assets/img/cover/thumb005.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item4 {
   background-image: url("../assets/img/cover/thumb007.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item5 {
   background-image: url("../assets/img/cover/thumb009.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item6 {
   background-image: url("../assets/img/cover/thumb011.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item7 {
   background-image: url("../assets/img/cover/thumb016.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item8 {
   background-image: url("../assets/img/cover/thumb017.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item9 {
   background-image: url("../assets/img/cover/thumb020.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item10 {
   background-image: url("../assets/img/cover/thumb023.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item10 {
   background-image: url("../assets/img/cover/thumb023.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item11 {
   background-image: url("../assets/img/cover/thumb026.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item12 {
   background-image: url("../assets/img/cover/thumb027.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item13 {
   background-image: url("../assets/img/cover/thumb028.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item14 {
   background-image: url("../assets/img/cover/thumb029.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item15 {
   background-image: url("../assets/img/cover/thumb030.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item16 {
   background-image: url("../assets/img/cover/thumb031.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item17 {
   background-image: url("../assets/img/cover/thumb032.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item18 {
   background-image: url("../assets/img/cover/thumb036.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item19 {
   background-image: url("../assets/img/cover/thumb037.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item20 {
   background-image: url("../assets/img/cover/thumb040.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item21 {
   background-image: url("../assets/img/cover/thumb050.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item22 {
   background-image: url("../assets/img/cover/thumb052.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item23 {
   background-image: url("../assets/img/cover/thumb056.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item24 {
   background-image: url("../assets/img/cover/thumb059.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item25 {
   background-image: url("../assets/img/cover/thumb061.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item26 {
   background-image: url("../assets/img/cover/thumb062.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item27 {
   background-image: url("../assets/img/cover/thumb068.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item28 {
   background-image: url("../assets/img/cover/thumb077.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item29 {
   background-image: url("../assets/img/cover/thumb079.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item30 {
   background-image: url("../assets/img/cover/thumb085.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item31 {
   background-image: url("../assets/img/cover/thumb100.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item32 {
   background-image: url("../assets/img/cover/thumb124.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item33 {
   background-image: url("../assets/img/cover/thumb126.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item34 {
   background-image: url("../assets/img/cover/thumb130.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item35 {
   background-image: url("../assets/img/cover/thumb131.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item36 {
   background-image: url("../assets/img/cover/thumb1114.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item37 {
   background-image: url("../assets/img/cover/thumb138.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item38 {
   background-image: url("../assets/img/cover/thumb139.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item39 {
   background-image: url("../assets/img/cover/thumb145.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item40 {
   background-image: url("../assets/img/cover/thumb150.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item41 {
   background-image: url("../assets/img/cover/thumb152.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item42 {
   background-image: url("../assets/img/cover/thumb154.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item43 {
   background-image: url("../assets/img/cover/thumb155.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item44 {
   background-image: url("../assets/img/cover/thumb159.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item45 {
   background-image: url("../assets/img/cover/thumb163.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item46 {
   background-image: url("../assets/img/cover/thumb170.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item47 {
   background-image: url("../assets/img/cover/thumb171.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item48 {
   background-image: url("../assets/img/cover/thumb172.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item49 {
   background-image: url("../assets/img/cover/thumb174.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item50 {
   background-image: url("../assets/img/cover/thumb183.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item51 {
   background-image: url("../assets/img/cover/thumb184.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item52 {
   background-image: url("../assets/img/cover/thumb187.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item53 {
   background-image: url("../assets/img/cover/thumb204.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item54 {
   background-image: url("../assets/img/cover/thumb221.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item55 {
   background-image: url("../assets/img/cover/thumb226.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item56 {
   background-image: url("../assets/img/cover/thumb235.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item57 {
   background-image: url("../assets/img/cover/thumb238.webp");
   background-size: cover;
@@ -1215,393 +1303,470 @@ Cover
   background-size: cover;
   background-position: center;
 }
+
 #cover-item59 {
   background-image: url("../assets/img/cover/thumb256.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item60 {
   background-image: url("../assets/img/cover/thumb266.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item61 {
   background-image: url("../assets/img/cover/thumb1098.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item62 {
   background-image: url("../assets/img/cover/thumb277.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item63 {
   background-image: url("../assets/img/cover/thumb287.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item64 {
   background-image: url("../assets/img/cover/thumb303.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item65 {
   background-image: url("../assets/img/cover/thumb323.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item66 {
   background-image: url("../assets/img/cover/thumb324.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item67 {
   background-image: url("../assets/img/cover/thumb325.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item68 {
   background-image: url("../assets/img/cover/thumb327.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item69 {
   background-image: url("../assets/img/cover/thumb340.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item70 {
   background-image: url("../assets/img/cover/thumb343.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item71 {
   background-image: url("../assets/img/cover/thumb1001.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item72 {
   background-image: url("../assets/img/cover/thumb1003.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item73 {
   background-image: url("../assets/img/cover/thumb1004.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item74 {
   background-image: url("../assets/img/cover/thumb1005.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item75 {
   background-image: url("../assets/img/cover/thumb1015.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item76 {
   background-image: url("../assets/img/cover/thumb1016.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item77 {
   background-image: url("../assets/img/cover/thumb1017.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item78 {
   background-image: url("../assets/img/cover/thumb1018.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item79 {
   background-image: url("../assets/img/cover/thumb1019.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item80 {
   background-image: url("../assets/img/cover/thumb1022.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item81 {
   background-image: url("../assets/img/cover/thumb1024.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item82 {
   background-image: url("../assets/img/cover/thumb1025.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item83 {
   background-image: url("../assets/img/cover/thumb1027.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item84 {
   background-image: url("../assets/img/cover/thumb1028.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item85 {
   background-image: url("../assets/img/cover/thumb1029.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item86 {
   background-image: url("../assets/img/cover/thumb1031.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item87 {
   background-image: url("../assets/img/cover/thumb1032.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item88 {
   background-image: url("../assets/img/cover/thumb1033.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item89 {
   background-image: url("../assets/img/cover/thumb1035.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item90 {
   background-image: url("../assets/img/cover/thumb1040.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item91 {
   background-image: url("../assets/img/cover/thumb1041.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item92 {
   background-image: url("../assets/img/cover/thumb1042.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item93 {
   background-image: url("../assets/img/cover/thumb1043.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item94 {
   background-image: url("../assets/img/cover/thumb1044.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item95 {
   background-image: url("../assets/img/cover/thumb1045.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item96 {
   background-image: url("../assets/img/cover/thumb1046.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item97 {
   background-image: url("../assets/img/cover/thumb1047.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item98 {
   background-image: url("../assets/img/cover/thumb1049.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item99 {
   background-image: url("../assets/img/cover/thumb1050.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item100 {
   background-image: url("../assets/img/cover/thumb1051.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item101 {
   background-image: url("../assets/img/cover/thumb1052.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item102 {
   background-image: url("../assets/img/cover/thumb1053.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item103 {
   background-image: url("../assets/img/cover/thumb1055.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item104 {
   background-image: url("../assets/img/cover/thumb1056.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item105 {
   background-image: url("../assets/img/cover/thumb1057.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item106 {
   background-image: url("../assets/img/cover/thumb1058.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item107 {
   background-image: url("../assets/img/cover/thumb1059.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item108 {
   background-image: url("../assets/img/cover/thumb1061.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item109 {
   background-image: url("../assets/img/cover/thumb1063.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item110 {
   background-image: url("../assets/img/cover/thumb1066.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item111 {
   background-image: url("../assets/img/cover/thumb1070.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item112 {
   background-image: url("../assets/img/cover/thumb1071.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item113 {
   background-image: url("../assets/img/cover/thumb1074.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item114 {
   background-image: url("../assets/img/cover/thumb1075.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item115 {
   background-image: url("../assets/img/cover/thumb1076.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item116 {
   background-image: url("../assets/img/cover/thumb1078.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item117 {
   background-image: url("../assets/img/cover/thumb1079.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item118 {
   background-image: url("../assets/img/cover/thumb1081.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item119 {
   background-image: url("../assets/img/cover/thumb1083.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item120 {
   background-image: url("../assets/img/cover/thumb1084.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item121 {
   background-image: url("../assets/img/cover/thumb1087.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item122 {
   background-image: url("../assets/img/cover/thumb1088.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item123 {
   background-image: url("../assets/img/cover/thumb1089.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item124 {
   background-image: url("../assets/img/cover/thumb1090.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item125 {
   background-image: url("../assets/img/cover/thumb1091.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item126 {
   background-image: url("../assets/img/cover/thumb1098.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item127 {
   background-image: url("../assets/img/cover/thumb1099.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item128 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item129 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item130 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item131 {
   background-image: url("../assets/img/cover/thumb1114.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item132 {
   background-image: url("../assets/img/cover/thumb1101.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item133 {
   background-image: url("../assets/img/cover/thumb1103.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item134 {
   background-image: url("../assets/img/cover/thumb1104.webp");
   background-size: cover;
   background-position: center;
 }
+
 #cover-item135 {
   background-image: url("../assets/img/cover/thumb1106.webp");
   background-size: cover;
   background-position: center;
 }
 
-.filter{
+.filter {
   filter: grayscale(1) brightness(1) contrast(0.9) !important;
 }
 
@@ -1614,15 +1779,17 @@ Responsive
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 1rem;
   }
+
   .go-to-rabbit {
     grid-column: 1
   }
+
   .go-to-archive {
     grid-column: 1
   }
 }
 
-#masks{
+#masks {
   background-image: url("../assets/img/masks/bit_mask.webp");
   background-size: cover;
 }

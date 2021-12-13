@@ -377,6 +377,7 @@ Keywords
 #canvasLines {
   display: grid;
   grid-area: overlap;
+  z-index: 0;
 }
 
 .content {

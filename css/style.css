@@ -299,9 +299,7 @@ Keywords
   text-align-last: center;
   font-size: 5rem;
 }
-.title-content p{
-  margin-bottom: 0;
-}
+
 
 .subtitle {
   font-size: 2.3rem;
@@ -309,8 +307,21 @@ Keywords
   text-align-last: center;
 }
 
+.archive-svg {
+  grid-column: 1/span 3;
+  border: 1px solid white;
+  justify-self: center;
+  aspect-ratio: 3/2;
+  width: 75%;
+  background-color: black;
+  background-image: url('/assets/img/masks/exploremoremasks.jpg');
+  z-index: 50;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .selector {
-  height: 60vh;
   width: 100%;
 }
 
@@ -328,20 +339,6 @@ Keywords
   font-size: 2.8rem;
   padding: 30px;
   border: 1px solid white;
-}
-
-.archive-svg {
-  grid-column: 1/span 3;
-  height: 70vh;
-  border: 1px solid white;
-  justify-self: center;
-  width: 70%;
-  background-color: black;
-  background-image: url('/assets/img/masks/exploremoremasks.jpg');
-  z-index: 50;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 /*- Video--*/

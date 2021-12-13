@@ -134,7 +134,7 @@ form {
 
   input:focus {
     outline: none;
-  } 
+  }
 
   .autocomplete-items {
     position: absolute;
@@ -177,6 +177,8 @@ form {
     }
     #wrapper-side {
       border-bottom: 1px solid white;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
     }
     #visualizer {
       border-left: 1px solid white;

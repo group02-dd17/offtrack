@@ -377,8 +377,12 @@ Keywords
   z-index: 2;
   padding-bottom:-5px;
   background-color: black;
-  z-index: 10;
+
   outline: 1px solid white;
+}
+
+.wrapper:hover {
+    z-index: 10;
 }
 
 .wrapper p{

@@ -137,6 +137,36 @@ nav {
   border-right: 1px solid white;
 }
 
+/*
+.chungus-btn {
+  display: grid;
+  grid-column: 8;
+  border-left: 1px solid white;
+  overflow: hidden;
+  width: 100%;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  margin-top: 8vh;
+  background-color: #000000;
+  min-width: 100%;
+  z-index: 1;
+  text-align: center;
+}
+.dropdown-content a {
+  text-decoration: none;
+  height: 8vh;
+  display: block;
+  border-bottom: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
+  border-left: 1px solid #ffffff;
+}
+.chungus-btn:hover .dropdown-content {
+  display: block;
+}
+*/
+
 .archive-btn {
   display: grid;
   grid-column: 9;
@@ -377,17 +407,17 @@ Keywords
   z-index: 2;
   padding-bottom:-5px;
   background-color: black;
-
   outline: 1px solid white;
 }
 
 .wrapper:hover {
-    z-index: 10;
+  z-index: 10;
 }
 
 .wrapper p{
   padding-left: 1vmax;
   padding-right: 1vmax;
+  text-align: center;
   opacity: 1;
   font-family: 'GT America', sans-serif;
   font-size: 1rem;

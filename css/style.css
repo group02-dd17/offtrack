@@ -429,6 +429,14 @@ Keywords
   text-align: center;
 }
 
+.hash {
+  font-size: 2.8rem;
+  padding: 25px;
+  border: 1px solid white;
+  background-color: black;
+  text-align: center;
+}
+
 .quote p {
   margin: 0;
 }

@@ -784,6 +784,8 @@ About
 #person-1 {
   grid-column: 1/span 2;
   grid-row: 1;
+}
+#person-img-1 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -791,6 +793,8 @@ About
 #person-2 {
   grid-column: 3/span 2;
   grid-row: 1;
+}
+#person-img-2 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -798,6 +802,8 @@ About
 #person-3 {
   grid-column: 5/span 2;
   grid-row: 1;
+}
+#person-img-3 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -805,6 +811,8 @@ About
 #person-4 {
   grid-column: 7/span 2;
   grid-row: 1;
+}
+#person-img-4 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -812,6 +820,8 @@ About
 #person-5 {
   grid-column: 2/span 2;
   grid-row: 2;
+}
+#person-img-5 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -819,6 +829,8 @@ About
 #person-6 {
   grid-column: 4/span 2;
   grid-row: 2;
+}
+#person-img-6 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }
@@ -826,6 +838,8 @@ About
 #person-7 {
   grid-column: 6/span 2;
   grid-row: 2;
+}
+#person-img-7 {
   background-image: url("assets/img/about/grandeciungo.jpg");
   background-size: cover;
 }

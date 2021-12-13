@@ -135,7 +135,7 @@ form {
 
   input:focus {
     outline: none;
-  } 
+  }
 
   .autocomplete-items {
     position: absolute;
@@ -164,4 +164,25 @@ form {
     /*when navigating through the items using the arrow keys:*/
     background-color: #fff !important;
     color: #ffffff;
+  }
+
+
+  /*--------
+  Responsive
+  ----------*/
+  @media screen and (max-width: 600px) {
+    #network-container {
+      grid-column: auto;
+      grid-template-rows: minmax(20px, 40%) 1fr;
+      grid-template-columns: auto;
+    }
+    #wrapper-side {
+      border-bottom: 1px solid white;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+    }
+    #visualizer {
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
   }

@@ -78,6 +78,12 @@ let lines = function (l) {
     l.vertex(l.mouseX, l.mouseY);
     l.endShape();
   };
+  l.mouseWheel = function (event) {
+    //move the square according to the vertical scroll amount
+    l.mouseY += event.delta;
+    //uncomment to block page scrolling
+    //return false;
+  }
 };
 
 let canvasLines = new p5(lines);

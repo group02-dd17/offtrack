@@ -376,8 +376,6 @@ Keywords
   height: fit-content;
   z-index: 2;
   padding-bottom:-5px;
-}
-.wrapper:hover {
   background-color: black;
   z-index: 10;
   outline: 1px solid white;

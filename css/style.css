@@ -299,9 +299,7 @@ Keywords
   text-align-last: center;
   font-size: 5rem;
 }
-.title-content p{
-  margin-bottom: 0;
-}
+
 
 .subtitle {
   font-size: 2.3rem;
@@ -309,9 +307,23 @@ Keywords
   text-align-last: center;
 }
 
+.archive-svg {
+  grid-column: 1/span 3;
+  border: 1px solid white;
+  justify-self: center;
+  aspect-ratio: 3/2;
+  width: 75%;
+  background-color: black;
+  background-image: url('/assets/img/masks/exploremoremasks.jpg');
+  z-index: 50;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .selector {
-  height: 60vh;
   width: 100%;
+  margin-bottom: 10%;
 }
 
 .selector-container {
@@ -328,14 +340,6 @@ Keywords
   font-size: 2.8rem;
   padding: 30px;
   border: 1px solid white;
-}
-
-.archive-svg {
-  grid-column: 1/span 3;
-  height: 50vh;
-  border: 1px solid white;
-  justify-self: center;
-  width: 70%;
 }
 
 /*- Video--*/
@@ -360,6 +364,7 @@ Keywords
   overflow-y: hidden;
   overflow-x: hidden;
   padding-bottom: 3px;
+  padding-top: 3px;
 }
 
 #canvasLines {
@@ -415,6 +420,14 @@ Keywords
 }
 
 .quote {
+  font-size: 2rem;
+  padding: 25px;
+  border: 1px solid white;
+  background-color: black;
+  text-align: center;
+}
+
+.hash {
   font-size: 2.8rem;
   padding: 25px;
   border: 1px solid white;
@@ -749,49 +762,72 @@ About
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   justify-content: center;
+  margin-top: 5%;
 }
 
 .person {
   align-items: center;
-  text-align: justify;
-  text-align-last: center;
+}
+
+.person-img {
+  aspect-ratio: 1;
+  border: 1px solid #ffffff;
+  width: 100%;
+}
+
+.person-name {
+  text-align: center;
 }
 
 #person-1 {
   grid-column: 1/span 2;
   grid-row: 1;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-2 {
   grid-column: 3/span 2;
   grid-row: 1;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-3 {
   grid-column: 5/span 2;
   grid-row: 1;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-4 {
   grid-column: 7/span 2;
   grid-row: 1;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-5 {
   grid-column: 2/span 2;
   grid-row: 2;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-6 {
   grid-column: 4/span 2;
   grid-row: 2;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 #person-7 {
   grid-column: 6/span 2;
   grid-row: 2;
+  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-size: cover;
 }
 
 .radio {
@@ -1566,4 +1602,9 @@ Responsive
   .go-to-archive {
     grid-column: 1
   }
+}
+
+#masks{
+  background-image: url("/assets/img/masks/bit_mask2.png");
+  background-size: cover;
 }

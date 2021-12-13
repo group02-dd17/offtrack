@@ -53,6 +53,7 @@ body {
     left: 0;
     right: 0;
     background: #000;
+    overflow: hidden;
 }
 
 #wrapper {

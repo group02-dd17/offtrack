@@ -46,10 +46,9 @@ body {
 #network-container {
     display: grid;
     grid-template-columns: minmax(20px, 21.5%) 1fr;
-    border: 1px solid white;
-    width: 95%;
+    /* outline: 1px solid white; */
     margin: 0 auto;
-    height: 85vh;
+    height: 92vh;
     position: relative;
     left: 0;
     right: 0;
@@ -57,8 +56,7 @@ body {
 }
 
 #wrapper {
-    height: 200vh;
-    padding-top: 100px;
+    padding-top: 8vh;
 }
 
 #wrapper-side {

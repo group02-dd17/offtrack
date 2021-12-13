@@ -240,7 +240,7 @@ Index
   font-size: 2.8rem;
 }
 
-.go-to-archive:hover {
+.go-to-archive:hover > p{
   font-family: 'Redaction 50', serif;
 }
 
@@ -386,15 +386,18 @@ Keywords
 .wrapper p{
   padding-left: 1vmax;
   padding-right: 1vmax;
-  opacity: 0;
+  opacity: 1;
   font-family: 'GT America', sans-serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: 'GT America';
 }
 
+/*-
 .wrapper:hover > p{
   opacity: 1;
 }
+  --*/
+
 
 .wrapper video {
   width: 100% !important;

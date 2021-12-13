@@ -264,9 +264,7 @@ function buildNetwork() {
   });
   s.refresh();
 
-
   // SEARCH BAR
-
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), hashList);
 
@@ -318,6 +316,15 @@ function buildNetwork() {
     /*execute a function presses a key on the keyboard:*/
     inp.addEventListener("keydown", function (e) {
       var x = document.getElementById(this.id + "autocomplete-list");
+
+        var el = this;
+        var value = el.value;
+        setTimeout(function () {
+          if (el.value.indexOf("#") != 0) {
+            el.value = value;
+          }
+        }, 0);
+
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
         /*If the arrow DOWN key is pressed,
@@ -341,6 +348,7 @@ function buildNetwork() {
         }
       }
     });
+
     function addActive(x) {
       /*a function to classify an item as "active":*/
       if (!x) return false;
@@ -369,113 +377,117 @@ function buildNetwork() {
     }
 
     /*execute a function when someone clicks in the document:*/
-    document.getElementById("submitButton").addEventListener("click", function (f) {
-      closeAllLists(f.target);
-      let selectedHash = document.getElementById("myInput").value;
+    document
+      .getElementById("submitButton")
+      .addEventListener("click", function (f) {
+        closeAllLists(f.target);
+        let selectedHash = document.getElementById("myInput").value;
 
-  
-      // sigma.misc.animation.camera(
-      //   s.cameras[0],
-      //   { ratio: 1, x: 0, y: 0, angle: 0 },
-      //   { duration: 600 }
-      // );
+        s.refresh();
 
-      s.refresh();
+        s.graph.nodes().forEach(function (n) {
+          (n.color = n.originalColor), (n.hidden = false);
+        });
 
-      s.graph.nodes().forEach(function (n) {
-        (n.color = n.originalColor), (n.hidden = false);
-      });
+        s.graph.edges().forEach(function (e) {
+          (e.color = e.originalColor), (e.hidden = false);
+        });
 
-      s.graph.edges().forEach(function (e) {
-        (e.color = e.originalColor), (e.hidden = false);
-      });
+        s.graph.nodes().forEach(function (n) {
+          if (n.attributes.Type == "hashtags" && n.label == selectedHash) {
+            e = n;
+            var nodeId = e.id,
+              toKeep = s.graph.neighbors(nodeId),
+              arrIdNeighs = [],
+              nofNeighs = {};
 
-      s.graph.nodes().forEach(function (n) {
-        if (n.attributes.Type == "hashtags" && n.label == selectedHash) {
-          e = n;
-          var nodeId = e.id,
-            toKeep = s.graph.neighbors(nodeId),
-            arrIdNeighs = [],
-            nofNeighs = {};
+            toKeep[nodeId] = e;
+            var keyNames = Object.keys(toKeep); //array degli id dei neighbors
+            // console.log(keyNames);
 
-          toKeep[nodeId] = e;
-          var keyNames = Object.keys(toKeep); //array degli id dei neighbors
-          // console.log(keyNames);
+            for (k in keyNames) {
+              var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
 
-          for (k in keyNames) {
-            var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
+              arrIdNeighs = Object.keys(tempNeighs);
 
-            arrIdNeighs = Object.keys(tempNeighs);
+              for (j in arrIdNeighs) {
+                nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
+              }
 
-            for (j in arrIdNeighs) {
-              nofNeighs[arrIdNeighs[j]] = arrIdNeighs[j];
+              nofNeighs[nodeId] = e;
+              toKeep = nofNeighs;
+            }
+            // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+
+            if (e.attributes.Type == "id") {
+              document.getElementById("nameLabels").textContent =
+                e.attributes.title;
+              document.getElementById("videosNumber").textContent =
+                "Number of hashtags: " +
+                Object.keys(s.graph.neighbors(nodeId)).length;
+              document.getElementById("hashtagsLabel").textContent =
+                e.attributes.hashtags;
+              document.getElementById("videoPlayer").src = e.attributes.link;
+              document
+                .getElementById("videoPlayer")
+                .setAttribute("poster", e.attributes.thumburl);
+              document.getElementById("wrapper-video").classList.remove("hide");
+            } else {
+              document.getElementById("wrapper-video").classList.add("hide");
+              document.getElementById("videoPlayer").src = "";
+              document.getElementById("videosNumber").textContent =
+                "Number of videos: " +
+                Object.keys(s.graph.neighbors(nodeId)).length;
+              document.getElementById("nameLabels").textContent =
+                toKeep[nodeId].label;
             }
 
-            nofNeighs[nodeId] = e;
-            toKeep = nofNeighs;
+            s.graph.nodes().forEach(function (n) {
+              if (toKeep[n.id]) {
+                if (toKeep[n.id].id == nodeId) {
+                  n.color = "#FF0000";
+                } else n.color = n.originalColor;
+              } else n.hidden = true;
+            });
+
+            s.graph.edges().forEach(function (e) {
+              if (toKeep[e.source] && toKeep[e.target])
+                e.color = e.originalColor;
+              else (e.color = "#eee"), (e.hidden = true);
+            });
+
+            flagEvent[0] = true;
+            flagEvent[1] = nodeId;
+
+            let aNode = e;
+            let cam = s.cameras[0];
+            let pfx = cam.readPrefix;
+
+            console.log(cam);
+            console.log(aNode);
+            console.log(pfx);
+            console.log(aNode[pfx + "x"]);
+
+            sigma.misc.animation.camera(
+              cam,
+              {
+                x: aNode[cam.readPrefix + "x"],
+                y: aNode[cam.readPrefix + "y"],
+                ratio: 0.3,
+              },
+              { duration: 1000 }
+            );
+
+            // sigma.utils.zoomTo(
+            //   cam, // cam
+            //   aNode[pfx + "x"] - cam.x, // x
+            //   aNode[pfx + "y"] - cam.y, // y
+            //   0.3, // ratio
+            //   { duration: 1000 } // animation
+            // );
+            s.refresh();
           }
-          // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
-
-          if (e.attributes.Type == "id") {
-            document.getElementById("nameLabels").textContent = e.attributes.title;
-            document.getElementById("videosNumber").textContent = "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
-            document.getElementById("hashtagsLabel").textContent = e.attributes.hashtags;
-            document.getElementById("videoPlayer").src = e.attributes.link;
-            document.getElementById("videoPlayer").setAttribute("poster", e.attributes.thumburl);
-            document.getElementById("wrapper-video").classList.remove("hide");
-          } else {
-            document.getElementById("wrapper-video").classList.add("hide");
-            document.getElementById("videoPlayer").src = "";
-            document.getElementById("videosNumber").textContent = "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
-            document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
-          }
-
-          s.graph.nodes().forEach(function (n) {
-            if (toKeep[n.id]) {
-              if (toKeep[n.id].id == nodeId) {
-                n.color = "#FF0000";
-              } else n.color = n.originalColor;
-            } else n.hidden = true;
-          });
-
-          s.graph.edges().forEach(function (e) {
-            if (toKeep[e.source] && toKeep[e.target])
-              e.color = e.originalColor;
-            else (e.color = "#eee"), (e.hidden = true);
-          });
-
-          flagEvent[0] = true;
-          flagEvent[1] = nodeId;
-
-          let aNode = e;
-          let cam = s.cameras[0];
-          let pfx = cam.readPrefix;
-
-          console.log(cam);
-          console.log(aNode);
-          console.log(pfx);
-          console.log(aNode[pfx + "x"]);
-
-          sigma.misc.animation.camera(
-            cam, 
-            {
-              x: aNode[cam.readPrefix + 'x'], 
-              y: aNode[cam.readPrefix + 'y'],
-              ratio: 0.3
-            }, 
-            {duration: 1000}
-          );
-
-          // sigma.utils.zoomTo(
-          //   cam, // cam
-          //   aNode[pfx + "x"] - cam.x, // x
-          //   aNode[pfx + "y"] - cam.y, // y
-          //   0.3, // ratio
-          //   { duration: 1000 } // animation
-          // );
-          s.refresh();
-        }
+        });
       });
-    });
   }
 }

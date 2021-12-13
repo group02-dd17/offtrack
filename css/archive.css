@@ -102,8 +102,10 @@ body {
 /* SEARCH BAR */
 
 form {
-    position: absolute;
+    position: relative;
     z-index: 100;
+    left: 15px;
+    top: 15px;
 }
 
 .autocomplete {
@@ -121,11 +123,19 @@ form {
     background-color: #000;
     color: #FFF;
     width: 100%;
+    border: 1px solid #fff;
   }
   input[type=submit] {
-    background-color: DodgerBlue;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+    margin-left: 19px;
   }
+
+  input:focus {
+    outline: none;
+  } 
+
   .autocomplete-items {
     position: absolute;
     border: 1px solid #d4d4d4;
@@ -136,6 +146,7 @@ form {
     top: 100%;
     left: 0;
     right: 0;
+    font-family: "GT America";
   }
   .autocomplete-items div {
     padding: 10px;
@@ -150,6 +161,6 @@ form {
   }
   .autocomplete-active {
     /*when navigating through the items using the arrow keys:*/
-    background-color: DodgerBlue !important;
+    background-color: #fff !important;
     color: #ffffff;
   }

@@ -373,11 +373,14 @@ function buildNetwork() {
       closeAllLists(f.target);
       let selectedHash = document.getElementById("myInput").value;
 
-      sigma.misc.animation.camera(
-        s.cameras[0],
-        { ratio: 1, x: 0, y: 0, angle: 0 },
-        { duration: 600 }
-      );
+  
+      // sigma.misc.animation.camera(
+      //   s.cameras[0],
+      //   { ratio: 1, x: 0, y: 0, angle: 0 },
+      //   { duration: 600 }
+      // );
+
+      s.refresh();
 
       s.graph.nodes().forEach(function (n) {
         (n.color = n.originalColor), (n.hidden = false);
@@ -445,15 +448,31 @@ function buildNetwork() {
           flagEvent[1] = nodeId;
 
           let aNode = e;
-          let cam = s.camera;
+          let cam = s.cameras[0];
           let pfx = cam.readPrefix;
-          sigma.utils.zoomTo(
-            cam, // cam
-            aNode[pfx + "x"], // x
-            aNode[pfx + "y"], // y
-            0.3, // ratio
-            { duration: 1000 } // animation
+
+          console.log(cam);
+          console.log(aNode);
+          console.log(pfx);
+          console.log(aNode[pfx + "x"]);
+
+          sigma.misc.animation.camera(
+            cam, 
+            {
+              x: aNode[cam.readPrefix + 'x'], 
+              y: aNode[cam.readPrefix + 'y'],
+              ratio: 0.3
+            }, 
+            {duration: 1000}
           );
+
+          // sigma.utils.zoomTo(
+          //   cam, // cam
+          //   aNode[pfx + "x"] - cam.x, // x
+          //   aNode[pfx + "y"] - cam.y, // y
+          //   0.3, // ratio
+          //   { duration: 1000 } // animation
+          // );
           s.refresh();
         }
       });

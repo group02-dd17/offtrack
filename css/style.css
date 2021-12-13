@@ -313,7 +313,7 @@ Keywords
   aspect-ratio: 3/2;
   width: 75%;
   background-color: black;
-  background-image: url('/assets/img/masks/exploremoremasks.jpg');
+  background-image: url('../assets/img/masks/exploremoremasks.jpg');
   z-index: 50;
   background-size: contain;
   background-repeat: no-repeat;

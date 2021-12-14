@@ -131,11 +131,9 @@ function buildNetwork() {
 
     toKeep[nodeId] = e.data.node;
     var keyNames = Object.keys(toKeep); //array degli id dei neighbors
-    // console.log(keyNames);
 
     for (k in keyNames) {
       var tempNeighs = s.graph.neighbors(keyNames[k]); //neighbors di nodeId del ciclo
-
       arrIdNeighs = Object.keys(tempNeighs);
 
       for (j in arrIdNeighs) {
@@ -145,27 +143,31 @@ function buildNetwork() {
       nofNeighs[nodeId] = e.data.node;
       toKeep = nofNeighs;
     }
-    console.log(s.camera.cameraPosition(e.data.node.x, e.data.node.y));
-    console.log(e.data.node.x, e.data.node.y);
-    s.camera.goTo(e.data.node.x, e.data.node.y);
-    console.log(s.camera.cameraPosition(e.data.node.x, e.data.node.y));
 
-    // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+    s.camera.goTo(e.data.node.x, e.data.node.y);
+
+    for (i in s.graph.neighbors(nodeId)) {
+      console.log(s.graph.neighbors(nodeId)[i].label);
+      var dateSpan = document.createElement("span");
+      dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
+      var li = document.getElementById("hashtagsLabel");
+      li.appendChild(dateSpan);
+    }
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =
         e.data.node.attributes.title;
       document.getElementById("videosNumber").textContent =
         "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
-      document.getElementById("hashtagsLabel").textContent =
-        e.data.node.attributes.hashtags;
       document.getElementById("videoPlayer").src = e.data.node.attributes.link;
       document
         .getElementById("videoPlayer")
         .setAttribute("poster", e.data.node.attributes.thumburl);
       document.getElementById("wrapper-video").classList.remove("hide");
+      document.getElementById("hashtagsLabel").classList.remove("hide");
     } else {
       document.getElementById("wrapper-video").classList.add("hide");
+      document.getElementById("hashtagsLabel").classList.add("hide");
       document.getElementById("videoPlayer").src = "";
       document.getElementById("videosNumber").textContent =
         "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
@@ -273,7 +275,6 @@ function buildNetwork() {
   });
   s.refresh();
 
-  console.log($("input").value);
   // SEARCH BAR
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), hashList);
@@ -414,7 +415,9 @@ function buildNetwork() {
 
     //I'm using "click" but it works with any event
     document.addEventListener("click", function (event) {
-      var isClickInside = document.getElementById("myInput").contains(event.target);
+      var isClickInside = document
+        .getElementById("myInput")
+        .contains(event.target);
 
       if (!isClickInside) {
         closeAllLists();

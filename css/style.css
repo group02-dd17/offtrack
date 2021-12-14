@@ -140,7 +140,6 @@ nav .header div {
   display: grid;
   grid-column: 1;
   border-right: 1px solid white;
-
 }
 
 
@@ -386,6 +385,25 @@ Keywords
 }
 
 /*- Video--*/
+#toggleVolume {
+  position: fixed;
+  background-color: #000;
+  color: #FFF;
+  font-family: "Arial";
+  font-size: 16px;
+  border: 1px solid #FFF;
+  border-color: #FFF;
+  z-index: 100;
+  padding: 5px 10px;
+  right: 15px;
+  bottom: 15px;
+}
+
+#toggleVolume:hover {
+  background-color: #FFF;
+  color: #000;
+}
+
 #container {
   display: grid;
   grid-template-areas: "overlap";

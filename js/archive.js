@@ -122,7 +122,7 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
   s.bind("clickNode", function (e) {
     s.settings({
-      labelThreshold: 1
+      labelThreshold: 1,
     });
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId),
@@ -200,7 +200,7 @@ function buildNetwork() {
   //When the stage is right-clicked or just clicked, return nodes and edges to original colors
   s.bind("rightClickStage", function (e) {
     s.settings({
-      labelThreshold: 6
+      labelThreshold: 6,
     });
     s.graph.nodes().forEach(function (n) {
       (n.color = n.originalColor), (n.hidden = false);
@@ -252,7 +252,7 @@ function buildNetwork() {
   });
   $("#resetView").bind("click", function () {
     s.settings({
-      labelThreshold: 6
+      labelThreshold: 6,
     });
     // Reset view - animation :
     sigma.misc.animation.camera(
@@ -273,7 +273,7 @@ function buildNetwork() {
   });
   s.refresh();
 
-  console.log($('input').value);
+  console.log($("input").value);
   // SEARCH BAR
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
   autocomplete(document.getElementById("myInput"), hashList);
@@ -301,14 +301,15 @@ function buildNetwork() {
       /*append the DIV element as a child of the autocomplete container:*/
       this.parentNode.appendChild(a);
       /*for each item in the array...*/
-      if(val == "#") {
+      if (val == "#") {
         for (i = 0; i < 10; i++) {
           /*check if the item starts with the same letters as the text field value:*/
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
             /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML =
+              "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
@@ -323,15 +324,15 @@ function buildNetwork() {
             a.appendChild(b);
           }
         }
-      }
-      else {
+      } else {
         for (i = 0; i < arr.length; i++) {
           /*check if the item starts with the same letters as the text field value:*/
           if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
             /*create a DIV element for each matching element:*/
             b = document.createElement("DIV");
             /*make the matching letters bold:*/
-            b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+            b.innerHTML =
+              "<strong>" + arr[i].substr(0, val.length) + "</strong>";
             b.innerHTML += arr[i].substr(val.length);
             /*insert a input field that will hold the current array item's value:*/
             b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
@@ -352,13 +353,13 @@ function buildNetwork() {
     inp.addEventListener("keydown", function (e) {
       var x = document.getElementById(this.id + "autocomplete-list");
 
-        var el = this;
-        var value = el.value;
-        setTimeout(function () {
-          if (el.value.indexOf("#") != 0) {
-            el.value = value;
-          }
-        }, 0);
+      var el = this;
+      var value = el.value;
+      setTimeout(function () {
+        if (el.value.indexOf("#") != 0) {
+          el.value = value;
+        }
+      }, 0);
 
       if (x) x = x.getElementsByTagName("div");
       if (e.keyCode == 40) {
@@ -411,6 +412,15 @@ function buildNetwork() {
       }
     }
 
+    //I'm using "click" but it works with any event
+    document.addEventListener("click", function (event) {
+      var isClickInside = document.getElementById("myInput").contains(event.target);
+
+      if (!isClickInside) {
+        closeAllLists();
+      }
+    });
+
     /*execute a function when someone clicks in the document:*/
     document
       .getElementById("submitButton")
@@ -419,7 +429,7 @@ function buildNetwork() {
         let selectedHash = document.getElementById("myInput").value;
 
         s.settings({
-          labelThreshold: 1
+          labelThreshold: 1,
         });
 
         s.graph.nodes().forEach(function (n) {

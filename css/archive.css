@@ -2,6 +2,10 @@ body {
     margin: 0;
 }
 
+nav {
+  position: relative;
+}
+
 .buttonGui {
     position: absolute;
     background-color: #000;
@@ -56,10 +60,6 @@ body {
     overflow: hidden;
 }
 
-#wrapper {
-    padding-top: 8vh;
-}
-
 #wrapper-side {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr  !important;
@@ -103,9 +103,9 @@ body {
 /* SEARCH BAR */
 
 form {
-    position: relative;
+    position: absolute;
     z-index: 100;
-    left: 15px;
+    margin-left: 15px;
     top: 15px;
 }
 

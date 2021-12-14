@@ -471,7 +471,9 @@ Keywords
   z-index: 2;
   padding-bottom: -5px;
   background-color: black;
-  outline: 1px solid white;
+  border: 1px solid white;
+  outline: 40px;
+  outline-color: transparent;
 }
 
 .wrapper:hover {

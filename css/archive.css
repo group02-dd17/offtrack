@@ -10,7 +10,7 @@ nav {
     position: absolute;
     background-color: #000;
     color: #FFF;
-    font-family: "GT America";
+    font-family: 'GT America';
     font-size: 16px;
     border: 1px solid #FFF;
     border-color: #FFF;
@@ -100,12 +100,12 @@ nav {
     font-size: 1.6vmax;
 }
 
-#videosNumber h3{
+#videosNumber {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
 }
 
-#hashtagsLabel h3{
+#hashtagsLabel {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
 }

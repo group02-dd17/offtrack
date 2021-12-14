@@ -131,48 +131,55 @@ nav {
   height: 100%;
 }
 
+nav .header div {
+  text-align: center;
+  position: relative;
+}
+
 .home-btn {
   display: grid;
   grid-column: 1;
   border-right: 1px solid white;
-  
+
 }
 
-/*
+
 .chungus-btn {
   display: grid;
   grid-column: 8;
   border-left: 1px solid white;
-  overflow: hidden;
-  width: 100%;
 }
-.dropdown-content {
+
+nav .header .chungus-btn .dropdown-content {
   display: none;
+}
+nav .header .chungus-btn:hover .dropdown-content {
+  display: block;
   position: absolute;
+  width: 100%;
+  left: -1px;
   margin-top: 8vh;
   background-color: #000000;
-  min-width: 100%;
-  z-index: 1;
+  border: 1px solid #ffffff;
+  z-index: 10;
+    text-align: center;
+}
+nav .header .chungus-btn:hover .dropdown-content a {
+  display: grid;
   text-align: center;
-}
-.dropdown-content a {
-  text-decoration: none;
-  height: 8vh;
-  display: block;
+  border-top: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
-  border-right: 1px solid #ffffff;
-  border-left: 1px solid #ffffff;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
 }
-.chungus-btn:hover .dropdown-content {
-  display: block;
-}
-*/
+
 
 .archive-btn {
   display: grid;
   grid-column: 9;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  border-left: 1px solid #ffffff;
+  border-right: 1px solid #ffffff;
 }
 
 .about-btn {
@@ -345,7 +352,7 @@ Keywords
   width: 75%;
   background-color: black;
   background-image: url('../assets/img/masks/exploremoremasks.jpg');
-  z-index: 50;
+  z-index: 5;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -10,12 +10,12 @@ nav {
     position: absolute;
     background-color: #000;
     color: #FFF;
-    font-family: 'GT America';
-    font-size: 16px;
+    font-family: 'Redaction 10';
+    font-size: 1.5rem;
     border: 1px solid #FFF;
     border-color: #FFF;
     z-index: 100;
-    padding: 5px 10px;
+    padding: 1rem 1.2rem 0.8rem 1.2rem;
 }
 
 .buttonGui:hover {
@@ -24,7 +24,7 @@ nav {
 }
 
 #zoomIn {
-    bottom: 50px;
+    bottom: 80px;
     right: 15px;
 }
 
@@ -34,7 +34,7 @@ nav {
 }
 
 #resetView {
-    right: 50px;
+    right: 80px;
     top: 15px;
 }
 
@@ -84,6 +84,7 @@ nav {
   justify-self: center;
   place-self: center;
   width: 90%;
+  margin-top: 15px;
 }
 
 #visualizer {
@@ -125,6 +126,7 @@ form {
     display: inline-block;
   }
   input {
+    font-family: "Redaction 10";
     border: 1px solid transparent;
     background-color: #f1f1f1;
     padding: 10px;

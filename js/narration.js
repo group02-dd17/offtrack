@@ -1,5 +1,5 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
-let flagMute = true; //check volume video
+let flagMute = false; //check volume video
 
 volumeVideos(0.01);
 

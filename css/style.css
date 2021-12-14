@@ -294,6 +294,10 @@ Index
   width: 85%;
   aspect-ratio: 1;
   font-size: 2.8rem;
+  background-image: url('../assets/videos/buttons/gotoarchive.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .go-to-archive:hover>p {
@@ -1866,7 +1870,7 @@ Responsive
   }
 
   .go-to-archive {
-    grid-column: 1
+    grid-column: 1;
   }
 }
 

@@ -90,6 +90,8 @@ nav {
 #visualizer {
   border-top: 1px solid white;
   padding: 5%;
+  position: relative;
+  width: 100%;
 }
 
 #legend {
@@ -109,6 +111,14 @@ nav {
 #hashtagsLabel {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
+  width: 100%;
+  display: inline;
+}
+
+#hashtagsLabel > span {
+  border: 1px solid #FFF;
+  padding: 0.45em;
+  margin-right: 1em;
 }
 
 /* SEARCH BAR */

@@ -146,9 +146,10 @@ function buildNetwork() {
 
     s.camera.goTo(e.data.node.x, e.data.node.y);
 
+    document.getElementById("hashtagsLabel").textContent = null;
+
     for (i in s.graph.neighbors(nodeId)) {
-      console.log(s.graph.neighbors(nodeId)[i].label);
-      var dateSpan = document.createElement("span");
+      var dateSpan = document.createElement("li");
       dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
       var li = document.getElementById("hashtagsLabel");
       li.appendChild(dateSpan);

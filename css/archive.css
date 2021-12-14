@@ -49,7 +49,7 @@ nav {
 
 #network-container {
     display: grid;
-    grid-template-columns: minmax(20px, 21.5%) 1fr;
+    grid-template-columns: 1fr 3fr;
     /* outline: 1px solid white; */
     margin: 0 auto;
     height: 92vh;
@@ -62,14 +62,13 @@ nav {
 
 #wrapper-side {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr  !important;
+    grid-template-rows: 1fr 1fr !important;
     grid-auto-rows: 1fr;
     left: 0;
     height: 100%;
     border-right: 1px solid white;
     z-index: 10;
     overflow-x: hidden;
-    /* overflow-y: hidden; */
 }
 
 #network-graph {
@@ -109,16 +108,18 @@ nav {
 }
 
 #hashtagsLabel {
+  display: inline;
   font-family: 'GT America', sans-serif;
   font-weight: 400;
   width: 100%;
-  display: inline;
+  margin-left: -40px;
 }
 
-#hashtagsLabel > span {
+#hashtagsLabel li {
   border: 1px solid #FFF;
   padding: 0.45em;
   margin-right: 1em;
+  display: inline;
 }
 
 /* SEARCH BAR */

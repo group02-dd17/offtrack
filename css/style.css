@@ -935,44 +935,45 @@ Keywords
 
 
 #quote-mask-Q {
-  grid-column: 1 / span 2;
+  grid-column: 3/ span 2;
   grid-row: 13;
   justify-self: center;
-  align-self: start;
+  align-self: end;
   z-index: 6;
 }
 #wrapper-mask-24 {
   grid-column: 2 / span 2;
   grid-row: 13;
   justify-self: center;
-  align-self: end;
+  align-self: center;
   margin-bottom: 50%;
 }
 
 #quote-mask-R {
-  grid-column: 5 / span 1;
+  grid-column: 4 / span 1;
   grid-row: 13;
   justify-self: center;
-  align-self: end;
+  align-self: center;
   z-index: 6;
 }
 #wrapper-mask-25 {
-  grid-column: 5 / span 3;
+  grid-column: 4 / span 3;
   grid-row: 13;
   justify-self: center;
-  align-self: end;
+  align-self: center;
   width: 60%;
 }
 
 #hashtag-mask-12 {
-  grid-column: 6/span 1;
+  grid-column: 2/span 1;
   grid-row: 13;
   justify-self: center;
-  align-self: center;
+  align-self: end;
 }
 
 #hashtag-mask-13 {
-  grid-column: 2/span 1;
+
+  grid-column: 6/span 1;
   grid-row: 13;
   justify-self: center;
   align-self: end;

@@ -1,6 +1,7 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
+let flagMute = false; //check volume video
 
-$(videoList).ready(function () {
+volumeVideos(0.01);
 
   videoList.forEach(function (item, index) {
     videoList[index].lastElementChild.volume = 0.01;
@@ -87,25 +88,32 @@ $(videoList).ready(function () {
   };
   let canvasLines = new p5(lines);
 
-  videoList.forEach(function (item, index) {
-    //when :hover the video
-    videoList[index].lastElementChild.addEventListener(
-      "mouseover",
-      function () {
-        for (k in videoList) {
-          if (k != index) {
-            videoList[k].lastElementChild.volume = 0.01;
-          } else {
-            videoList[k].lastElementChild.volume = 1;
-          }
-        }
-      }
-    );
 
-    item.addEventListener("mouseout", function () {
-      for (k in videoList) {
-        videoList[k].lastElementChild.volume = 0.01;
-      }
-    });
+document.getElementById("toggleVolume").addEventListener("click", function () {
+  $(this).find("i").toggleClass("fa-volume-mute");
+  $(this).find("i").toggleClass("fa-volume-up");
+
+  if (flagMute) {
+    volumeVideos(0.01);
+    flagMute = false;
+  } else {
+    volumeVideos(0);
+    flagMute = true;
+  }
+});
+
+videoList.forEach(function (item, index) {
+  item.lastElementChild.addEventListener("mouseover", function () {
+    if (!flagMute) item.lastElementChild.volume = 1;
+  });
+
+  item.addEventListener("mouseout", function () {
+    if (!flagMute) item.lastElementChild.volume = 0.01;
   });
 });
+
+function volumeVideos(vol) {
+  videoList.forEach(function (item) {
+    item.lastElementChild.volume = vol;
+  });
+}

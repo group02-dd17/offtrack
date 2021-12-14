@@ -38,7 +38,7 @@ let lines = function (l) {
     // l.background("black"); //to avoid trails
     l.clear();
 
-    l.drawLines("covid", "mask-quote-3");
+    // l.drawLines("covid", "mask-quote-3");
 
     l.noFill();
     l.stroke("red");

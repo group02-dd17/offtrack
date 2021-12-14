@@ -205,6 +205,7 @@ Index
 
 .introduction-content {
   grid-column: 2 / span 8;
+
 }
 
 .introduction-text {
@@ -213,9 +214,27 @@ Index
   text-align-last: center;
 }
 
+.scroll-down {
+  grid-column: 2 / span 8;
+  align-self: end;
+  place-items: center;
+  position: absolute;
+  margin-bottom: 2%;
+  z-index: 2;
+}
+
+.scroll-down p{
+  font-family: 'GT America', sans-serif;
+  font-feature-settings: 'ss03';
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
 .one {
   background-image: url('../assets/img/home/2bitmap.webp');
   background-size: cover;
+  grid-template-areas: "overlap";
 }
 
 .two {

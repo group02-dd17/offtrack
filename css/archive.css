@@ -82,15 +82,14 @@ nav {
   align-self: center;
   justify-self: center;
   place-self: center;
-  width: 90%;
+  width: 100%;
   margin-top: 15px;
 }
 
 #visualizer {
+  position: relative;
   border-top: 1px solid white;
   padding: 5%;
-  position: relative;
-  width: 100%;
 }
 
 #legend {
@@ -108,17 +107,26 @@ nav {
 }
 
 #hashtagsLabel {
-  display: inline;
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 5px;
+  justify-items: start; */
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: start;
   font-family: 'GT America', sans-serif;
   font-weight: 400;
-  width: 100%;
+  max-width: 100%;
   margin-left: -40px;
+  white-space: nowrap;
 }
 
 #hashtagsLabel li {
   border: 1px solid #FFF;
-  padding: 0.45em;
-  margin-right: 1em;
+  padding: 0.45rem;
+  margin: 0.3em;
   display: inline;
 }
 
@@ -129,6 +137,9 @@ form {
     z-index: 100;
     margin-left: 15px;
     top: 15px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: stretch;
 }
 
 .autocomplete {
@@ -140,20 +151,23 @@ form {
     font-family: "Redaction 10";
     border: 1px solid transparent;
     background-color: #f1f1f1;
-    padding: 10px;
-    font-size: 16px;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
   input[type=text] {
+    font-family: "GT America";
     background-color: #000;
     color: #FFF;
-    width: 100%;
+    /* width: 100%; */
     border: 1px solid #fff;
   }
   input[type=submit] {
     background-color: #fff;
     color: #000;
     border-color: #fff;
-    margin-left: 19px;
+    font-size: 1.5rem;
+    padding: 1rem 1.2rem 0.8rem 1.2rem;
+    
   }
 
   input:focus {

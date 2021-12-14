@@ -251,6 +251,10 @@ Index
   width: 85%;
   aspect-ratio: 1;
   font-size: 2.8rem;
+  background-image: url('../assets/videos/buttons/followrabbit.webp');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .keywords {
@@ -533,10 +537,11 @@ Keywords
 
 .hash {
   font-size: 2.8rem;
-  padding: 25px;
+  padding: 15px;
   border: 1px solid white;
   background-color: black;
   text-align: center;
+  font-family: 'GT America', sans-serif;
 }
 
 .quote p {
@@ -547,6 +552,13 @@ Keywords
   grid-column: 4 / span 4;
   grid-row: 1;
   justify-self: center;
+  align-self: start;
+}
+
+#mask-hashtag-1 {
+  grid-column: 7/span 2;
+  grid-row: 2;
+  justify-self: end;
   align-self: start;
 }
 

@@ -1,15 +1,27 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
-let hashArray = [];
+let hashArray = [
+  "hoax",
+  "covid",
+  "pcr",
+  "genocide",
+  "injection",
+  "covidiots",
+  "bullshit",
+  "scam",
+  "communist",
+  "freedom",
+  "illuminati",
+  "pcr1",
+  "covidiots1",
+];
 
 volumeVideos(0.01);
 
 let lines = function (l) {
-
   let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
   l.setup = function () {
-    
     p5.disableFriendlyErrors = true; // disables FES
     // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
     var canvasL = l.createCanvas(
@@ -18,8 +30,7 @@ let lines = function (l) {
     );
 
     l.pixelDensity(1);
-    l.frameRate(30);
-
+    l.frameRate(25);
 
     canvasL.parent("#canvasLines");
 
@@ -45,19 +56,9 @@ let lines = function (l) {
     // l.background("black"); //to avoid trails
     l.clear();
 
-    l.drawLines("hoax", "hashtag-mask-1");
-    l.drawLines("covid", "hashtag-mask-2");
-    l.drawLines("pcr", "hashtag-mask-3");
-    l.drawLines("genocide", "hashtag-mask-4");
-    l.drawLines("injection", "hashtag-mask-5");
-    l.drawLines("covidiots", "hashtag-mask-6");
-    l.drawLines("bullshit", "hashtag-mask-7");
-    l.drawLines("scam", "hashtag-mask-8");
-    l.drawLines("communist", "hashtag-mask-9");
-    l.drawLines("freedom", "hashtag-mask-10");
-    l.drawLines("illuminati", "hashtag-mask-11");
-    l.drawLines("pcr1", "hashtag-mask-12");
-    l.drawLines("covidiots1", "hashtag-mask-13");
+    for (g in hashArray) {
+      l.drawLines(hashArray[g], "hashtag-mask-" + (+g + +1));
+    }
 
     l.noFill();
     l.stroke("red");
@@ -102,18 +103,21 @@ let lines = function (l) {
   l.drawLines = function (className, idHash) {
     var vidArray = document.getElementsByClassName(className);
     var x0 =
-      $("#"+idHash).offset().left +
+      $("#" + idHash).offset().left +
       document.getElementById(idHash).offsetWidth / 2;
     var y0 =
-      $("#"+idHash).offset().top +
+      $("#" + idHash).offset().top +
       document.getElementById(idHash).offsetHeight / 2;
     vidArray.forEach(function (item) {
       l.beginShape(l.LINES);
       l.strokeWeight(2);
       l.noFill();
       l.stroke("#d8d8d8");
-      l.vertex(x0,y0);
-      l.vertex($(item).offset().left + item.offsetWidth / 2, $(item).offset().top + item.offsetHeight / 2);
+      l.vertex(x0, y0);
+      l.vertex(
+        $(item).offset().left + item.offsetWidth / 2,
+        $(item).offset().top + item.offsetHeight / 2
+      );
       // l.line(
       //   x0,
       //   y0,

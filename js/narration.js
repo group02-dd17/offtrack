@@ -1,5 +1,6 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
+let hashArray = [];
 
 volumeVideos(0.01);
 
@@ -44,7 +45,19 @@ let lines = function (l) {
     // l.background("black"); //to avoid trails
     l.clear();
 
-    // l.drawLines("covid", "mask-quote-3");
+    l.drawLines("hoax", "hashtag-mask-1");
+    l.drawLines("covid", "hashtag-mask-2");
+    l.drawLines("pcr", "hashtag-mask-3");
+    l.drawLines("genocide", "hashtag-mask-4");
+    l.drawLines("injection", "hashtag-mask-5");
+    l.drawLines("covidiots", "hashtag-mask-6");
+    l.drawLines("bullshit", "hashtag-mask-7");
+    l.drawLines("scam", "hashtag-mask-8");
+    l.drawLines("communist", "hashtag-mask-9");
+    l.drawLines("freedom", "hashtag-mask-10");
+    l.drawLines("illuminati", "hashtag-mask-11");
+    l.drawLines("pcr1", "hashtag-mask-12");
+    l.drawLines("covidiots1", "hashtag-mask-13");
 
     l.noFill();
     l.stroke("red");
@@ -95,7 +108,7 @@ let lines = function (l) {
       $("#"+idHash).offset().top +
       document.getElementById(idHash).offsetHeight / 2;
     vidArray.forEach(function (item) {
-      l.beginShape();
+      l.beginShape(l.LINES);
       l.strokeWeight(2);
       l.noFill();
       l.stroke("#d8d8d8");

@@ -437,14 +437,14 @@ Keywords
   background-image: url('../assets/img/oth/sound-02.svg');
 }
 
-svg {
+#toggleVolume svg {
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
 }
-svg line {
+#toggleVolume svg line {
     stroke: rgb(255,255,255);
     stroke-width: 1;
 }
@@ -837,6 +837,7 @@ svg line {
   justify-self: center;
   align-self:  center;
   z-index: 6;
+  margin-top: 20%;
 }
 #wrapper-mask-16 {
   grid-column: 2 / span 3;
@@ -1084,7 +1085,7 @@ About
 }
 
 #person-img-1 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: "../assets/img/about/grandeciungo.jpg";
   background-size: cover;
 }
 

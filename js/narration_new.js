@@ -125,6 +125,5 @@ let lines = function (l) {
       let y = $(this).offset().top + this.offsetHeight / 2;
       tempCoord = [x, y];
       xyVertex.push(tempCoord);
-      console.log(tempCoord);
     });
   });

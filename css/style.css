@@ -200,7 +200,6 @@ Index
   place-items: center;
   position: sticky;
   top: 0;
-  background-color: black;
 }
 
 .introduction-content {
@@ -416,21 +415,34 @@ Keywords
   position: fixed;
   background-color: #000;
   color: #FFF;
-  font-family: "Arial";
-  font-size: 1.5em;
   border: 1px solid #FFF;
   border-color: #FFF;
   z-index: 100;
-  padding: 15px;
+  padding: 25px;
   right: 15px;
   bottom: 15px;
-  text-align: center;
   width: 1.2em;
+  aspect-ratio: 1;
+  background-image: url('../assets/img/oth/sound-01.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 #toggleVolume:hover {
-  background-color: #FFF;
-  color: #000;
+  background-image: url('../assets/img/oth/sound-02.svg');
+}
+
+svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+svg line {
+    stroke: rgb(255,255,255);
+    stroke-width: 1;
 }
 
 #container {

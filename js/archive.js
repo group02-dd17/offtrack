@@ -129,7 +129,6 @@ function buildNetwork() {
 
   document.getElementById("nameLabels").textContent =
     "Select a video or an hashtag to get more information";
-  document.getElementById("hashtagsLabel").innerHTML = null;
   document.getElementById("wrapper-video").classList.add("hide");
 
   s.bind("clickNode", function (e) {
@@ -154,6 +153,8 @@ function buildNetwork() {
     }
 
     s.camera.goTo(e.data.node.x, e.data.node.y);
+
+    document.getElementById("hashtagsLabel").innerHTML = null;
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =

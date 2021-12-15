@@ -235,7 +235,7 @@ Index
 }
 
 .one {
-  background-image: url('../assets/img/home/2bitmap.webp');
+  background-image: #toggleVolume#toggleVolume#toggleVolume;
   background-size: cover;
   grid-template-areas: "overlap";
 }
@@ -1073,6 +1073,19 @@ About
   aspect-ratio: 1;
   border: 1px solid #ffffff;
   width: 100%;
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+}
+
+.person-img:hover {
+  -webkit-filter: none;
+  -moz-filter: none;
+  -ms-filter: none;
+  filter: none;
+  filter: none;
 }
 
 .person-name {
@@ -1085,7 +1098,7 @@ About
 }
 
 #person-img-1 {
-  background-image: "../assets/img/about/grandeciungo.jpg";
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1095,7 +1108,7 @@ About
 }
 
 #person-img-2 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1105,7 +1118,7 @@ About
 }
 
 #person-img-3 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1115,7 +1128,7 @@ About
 }
 
 #person-img-4 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1125,7 +1138,7 @@ About
 }
 
 #person-img-5 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1135,7 +1148,7 @@ About
 }
 
 #person-img-6 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 
@@ -1145,7 +1158,7 @@ About
 }
 
 #person-img-7 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: url('../assets/img/about/chung.jpg');
   background-size: cover;
 }
 

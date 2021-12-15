@@ -588,6 +588,12 @@ Keywords
   margin: 0;
 }
 
+/*-MASKS-*/
+#masks {
+  background-image: url("../assets/img/masks/bit_mask.webp");
+  background-size: cover;
+}
+
 #wrapper-mask-1 {
   grid-column: 4 / span 4;
   grid-row: 1;
@@ -949,7 +955,6 @@ Keywords
   align-self: start;
 }
 
-
 #wrapper-mask-22 {
   grid-column: 5 / span 3;
   grid-row: 13;
@@ -1013,6 +1018,445 @@ Keywords
 }
 
 #hashtag-mask-13 {
+
+  grid-column: 5/span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+/*-VACCINE-*/
+#vaccine {
+  background-image: url("../assets/img/masks/bit_mask.webp");
+  background-size: cover;
+}
+
+#wrapper-vaccine-1 {
+  grid-column: 4 / span 4;
+  grid-row: 1;
+  justify-self: center;
+  align-self: start;
+}
+
+#hashtag-vaccine-1 {
+  grid-column: 7/span 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+}
+
+#quote-vaccine-A {
+  grid-column: 4 / span 3;
+  grid-row: 2;
+  justify-self: end;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-2 {
+  grid-column: 2 / span 3;
+  grid-row: 2;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#quote-vaccine-B {
+  grid-column: 6 / span 3;
+  grid-row: 3;
+  justify-self: end;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-3 {
+  grid-column: 8 / span 2;
+  grid-row: 3;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#hashtag-vaccine-2 {
+  grid-column: 2/span 2;
+  grid-row: 3;
+  justify-self: end;
+  align-self: center;
+}
+
+#wrapper-vaccine-4 {
+  grid-column: 3 / span 3;
+  grid-row: 4;
+  justify-self: center;
+  align-self: center;
+}
+
+#hashtag-vaccine-3 {
+  grid-column: 5/span 1;
+  grid-row: 5;
+  justify-self: end;
+  align-self: start;
+}
+
+#quote-vaccine-C {
+  grid-column: 8 / span 2;
+  grid-row: 5;
+  justify-self: end;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-vaccine-5 {
+  grid-column: 7 / span 2;
+  grid-row: 5;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 70%;
+}
+
+#quote-vaccine-D {
+  grid-column: 5 / span 2;
+  grid-row: 5;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+  margin-top: 100%;
+}
+#wrapper-vaccine-6 {
+  grid-column: 2 / span 4;
+  grid-row: 5;
+  justify-self: center;
+  align-self: center;
+}
+
+#hashtag-vaccine-4 {
+  grid-column: 8/span 2;
+  grid-row: 5;
+  justify-self: end;
+  align-self: end;
+  margin-bottom: 20%;
+}
+
+#quote-vaccine-3 {
+  grid-column: 2 / span 3;
+  grid-row: 6;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
+
+#hashtag-vaccine-5 {
+  grid-column: 2/span 2;
+  grid-row: 6;
+  justify-self: end;
+  align-self: start;
+}
+
+#quote-vaccine-E {
+  grid-column: 5 / span 2;
+  grid-row: 6;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-vaccine-7 {
+  grid-column: 6 / span 4;
+  grid-row: 6;
+  justify-self: center;
+  align-self: end;
+}
+
+#hashtag-vaccine-6 {
+  grid-column: 7/span 2;
+  grid-row: 7;
+  justify-self: end;
+  align-self: start;
+}
+
+
+#hashtag-vaccine-7 {
+  grid-column: 7/span 2;
+  grid-row: 7;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-vaccine-F {
+  grid-column: 3 / span 2;
+  grid-row: 7;
+  justify-self: center;
+  align-self: start;
+  z-index: 6;
+  margin-top: 30%;
+}
+#wrapper-vaccine-8 {
+  grid-column: 2 / span 2;
+  grid-row: 7;
+  justify-self: center;
+  align-self: start;
+}
+
+#quote-vaccine-G {
+  grid-column: 4 / span 2;
+  grid-row: 7;
+  justify-self: end;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-9 {
+  grid-column: 5 / span 2;
+  grid-row: 7;
+  justify-self: center;
+  align-self: center;
+  margin-top: 30%;
+  margin-bottom: 20%;
+}
+
+#quote-vaccine-H {
+  grid-column: 7 / span 2;
+  grid-row: 7;
+  justify-self: end;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-10 {
+  grid-column: 8 / span 2;
+  grid-row: 7;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#quote-vaccine-I {
+  grid-column: 6 / span 3;
+  grid-row: 8;
+  justify-self: center;
+  align-self: start;
+  margin-top: 20%;
+  z-index: 6;
+}
+
+#hashtag-vaccine-8 {
+  grid-column: 6/span 2;
+  grid-row: 8;
+  justify-self: start;
+  align-self: end;
+  margin-bottom: 50%;
+}
+
+#wrapper-vaccine-11 {
+  grid-column: 3 / span 4;
+  grid-row: 8;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 50%;
+}
+
+#wrapper-vaccine-12 {
+  grid-column: 8 / span 2;
+  grid-row: 8;
+  justify-self: center;
+  align-self: center;
+  margin-top:20%;
+}
+
+#hashtag-vaccine-9 {
+  grid-column: 5/span 2;
+  grid-row: 8;
+  justify-self: start;
+  align-self: end;
+}
+
+#wrapper-vaccine-13 {
+  grid-column: 2 / span 2;
+  grid-row: 8;
+  justify-self: center;
+  align-self: end;
+}
+
+#quote-vaccine-J {
+  grid-column: 6 / span 2;
+  grid-row: 9;
+  justify-self: center;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-14 {
+  grid-column: 7 / span 4;
+  grid-row: 9;
+  justify-self: center;
+  align-self: center;
+  width: 80%;
+}
+
+#wrapper-vaccine-15 {
+  grid-column: 2 / span 4;
+  grid-row: 9;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#quote-vaccine-K {
+  grid-column: 3 / span 3;
+  grid-row: 10;
+  justify-self: center;
+  align-self:  center;
+  z-index: 6;
+  margin-top: 20%;
+}
+#wrapper-vaccine-16 {
+  grid-column: 2 / span 3;
+  grid-row: 10;
+  justify-self: center;
+  align-self: start;
+}
+
+#quote-vaccine-L {
+  grid-column: 5 / span 2;
+  grid-row: 10;
+  justify-self: center;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-17 {
+  grid-column: 6 / span 4;
+  grid-row: 10;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#hashtag-vaccine-10 {
+  grid-column: 2/span 2;
+  grid-row: 10;
+  justify-self: start;
+  align-self: end;
+}
+
+#wrapper-vaccine-18 {
+  grid-column: 7 / span 3;
+  grid-row: 11;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 30%;
+}
+
+#quote-vaccine-M {
+  grid-column: 2 / span 2;
+  grid-row: 11;
+  justify-self: center;
+  align-self:  end;
+  z-index: 6;
+}
+#wrapper-vaccine-19 {
+  grid-column: 3 / span 3;
+  grid-row: 11;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#quote-vaccine-N {
+  grid-column: 7 / span 2;
+  grid-row: 12;
+  justify-self: center;
+  align-self:  end;
+  z-index: 6;
+  margin-bottom: 10%;
+}
+#wrapper-vaccine-20 {
+  grid-column: 8 / span 2;
+  grid-row: 12;
+  justify-self: center;
+  align-self: start;
+  width: 90%;
+}
+
+#quote-vaccine-O {
+  grid-column: 5 / span 2;
+  grid-row: 12;
+  justify-self: center;
+  align-self:  start;
+  z-index: 6;
+}
+#wrapper-vaccine-21 {
+  grid-column: 2 / span 4;
+  grid-row: 12;
+  justify-self: center;
+  align-self: start;
+  margin-top: 10%;
+}
+
+#hashtag-vaccine-11 {
+  grid-column: 4/span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: start;
+}
+
+
+#wrapper-vaccine-22 {
+  grid-column: 5 / span 3;
+  grid-row: 13;
+  justify-self: center;
+  align-self: start;
+}
+
+#quote-vaccine-P {
+  grid-column: 7 / span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self:  end;
+  z-index: 6;
+}
+#wrapper-vaccine-23 {
+  grid-column: 8 / span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: end;
+  width: 80%;
+  margin-bottom: 10%;
+}
+
+
+#quote-vaccine-Q {
+  grid-column: 3/ span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-vaccine-24 {
+  grid-column: 2 / span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: start;
+  margin-bottom: 50%;
+  margin-top: 20%;
+}
+
+#quote-vaccine-R {
+  grid-column: 5 / span 1;
+  grid-row: 13;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-vaccine-25 {
+  grid-column: 5 / span 3;
+  grid-row: 13;
+  justify-self: center;
+  align-self: center;
+  width: 60%;
+}
+
+#hashtag-vaccine-12 {
+  grid-column: 2/span 1;
+  grid-row: 14;
+  justify-self: center;
+  align-self: end;
+}
+
+#hashtag-vaccine-13 {
 
   grid-column: 5/span 2;
   grid-row: 13;
@@ -2146,9 +2590,4 @@ Responsive
   .go-to-archive {
     grid-column: 1;
   }
-}
-
-#masks {
-  background-image: url("../assets/img/masks/bit_mask.webp");
-  background-size: cover;
 }

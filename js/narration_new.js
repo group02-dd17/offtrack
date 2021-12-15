@@ -3,6 +3,7 @@ let flagMute = false; //check volume video
 
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
+console.log("sono il new");
 
 let this0= $(".wrapper:first");
 let _x0 = $(this0).offset().left + $(this0).offsetWidth / 2;

@@ -479,15 +479,15 @@ Keywords
   height: fit-content;
   z-index: 2;
   padding-bottom: -5px;
-  border: 1px solid white;
+/*-  border: 1px solid white;  --*/
   outline: 40px;
   outline-color: transparent;
 }
 
 
 .wrapper p {
-  padding-left: 1vmax;
-  padding-right: 1vmax;
+  /*-  padding-left: 1vmax;
+  padding-right: 1vmax;--*/
   text-align: left;
   opacity: 1;
   font-family: 'GT America', sans-serif;
@@ -526,7 +526,7 @@ Keywords
 }
 
 .quote {
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 25px;
   border: 1px solid white;
   background-color: black;
@@ -775,6 +775,7 @@ Keywords
   grid-row: 8;
   justify-self: center;
   align-self: center;
+  margin-top:20%;
 }
 
 #hashtag-mask-9 {

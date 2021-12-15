@@ -83,7 +83,6 @@ function buildNetwork() {
   //Set neighbor nodes to dark blue, else keep node as original color.
   //Do the same for the edges, coloring connections to neighbors blue.
   s.bind("overNode", function (e) {
-
     //reset label threshold
     s.settings({
       labelThreshold: 6,
@@ -127,8 +126,13 @@ function buildNetwork() {
   //Change the clicked node's original color to red.
   //Do the same for the edges, keeping the ones with both endpoints colored.
   //Clicking consecutive nodes will show the joint network all clicked nodes.
-  s.bind("clickNode", function (e) {
 
+  document.getElementById("nameLabels").textContent =
+    "Select a video or an hashtag to get more information";
+  document.getElementById("hashtagsLabel").innerHTML = null;
+  document.getElementById("wrapper-video").classList.add("hide");
+
+  s.bind("clickNode", function (e) {
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId),
       arrIdNeighs = [],
@@ -150,8 +154,6 @@ function buildNetwork() {
     }
 
     s.camera.goTo(e.data.node.x, e.data.node.y);
-
-    document.getElementById("hashtagsLabel").innerHTML = null;
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =
@@ -463,7 +465,6 @@ function buildNetwork() {
       }
     });
 
-
     //URL parsing variable for the singlePage redirection
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -484,7 +485,6 @@ function buildNetwork() {
       s.settings({
         labelThreshold: 1,
       });
-
 
       //15 dic h 22:15 li ho commentati tanto non cambia nulla —EG
 

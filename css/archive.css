@@ -83,14 +83,13 @@ nav {
 
 #wrapper-side {
   display: grid;
-  grid-template-rows: 3fr 1fr !important;
+  /* grid-template-rows: 3fr 1fr !important; */
   grid-auto-rows: 1fr;
   left: 0;
   height: 100%;
   border-right: 1px solid white;
   z-index: 10;
   overflow: hidden;
-
 }
 
 #network-graph {

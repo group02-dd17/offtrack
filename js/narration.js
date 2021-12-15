@@ -4,15 +4,21 @@ let flagMute = false; //check volume video
 volumeVideos(0.01);
 
 let lines = function (l) {
+
   let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
   l.setup = function () {
+    
+    p5.disableFriendlyErrors = true; // disables FES
     // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
     var canvasL = l.createCanvas(
       l.windowWidth,
       document.getElementById("container").offsetHeight
     );
+
     l.pixelDensity(1);
+    l.frameRate(30);
+
 
     canvasL.parent("#canvasLines");
 

@@ -1,20 +1,5 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
-let hashArray = [
-  "hoax",
-  "covid",
-  "pcr",
-  "genocide",
-  "injection",
-  "covidiots",
-  "bullshit",
-  "scam",
-  "communist",
-  "freedom",
-  "illuminati",
-  "pcr1",
-  "covidiots1",
-];
 
 volumeVideos(0.01);
 
@@ -35,7 +20,7 @@ let lines = function (l) {
 
     canvasL.parent("#canvasLines");
 
-    var firstNode = document.getElementById("wrapper-mask-1");
+    var firstNode = document.getElementById("wrapper-" + checkPage + "1");
     xyVertex.push({
       x:
         firstNode.lastElementChild.getBoundingClientRect().left +
@@ -51,7 +36,7 @@ let lines = function (l) {
     l.clear();
 
     for (g in hashArray) {
-      l.drawLines(hashArray[g], "hashtag-mask-" + (+g + +1));
+      l.drawLines(hashArray[g], "hashtag-" + checkPage + (+g + +1));
     }
 
     l.noFill();

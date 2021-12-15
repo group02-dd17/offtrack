@@ -50,6 +50,7 @@ function buildNetwork() {
       hashList.push(n.label);
     }
   });
+
   s.graph.edges().forEach(function (e) {
     e.originalColor = e.color;
   });
@@ -82,6 +83,12 @@ function buildNetwork() {
   //Set neighbor nodes to dark blue, else keep node as original color.
   //Do the same for the edges, coloring connections to neighbors blue.
   s.bind("overNode", function (e) {
+
+    //reset label threshold
+    s.settings({
+      labelThreshold: 6,
+    });
+
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId);
     toKeep[nodeId] = e.data.node;
@@ -117,13 +124,11 @@ function buildNetwork() {
 
   //When a node is clicked, check all nodes to see which are neighbors.
   //Set all non-neighbors to grey and hide them, else set node to original color.
-  //Change the clicked node's original color to green.
+  //Change the clicked node's original color to red.
   //Do the same for the edges, keeping the ones with both endpoints colored.
   //Clicking consecutive nodes will show the joint network all clicked nodes.
   s.bind("clickNode", function (e) {
-    s.settings({
-      labelThreshold: 1,
-    });
+
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId),
       arrIdNeighs = [],
@@ -218,6 +223,11 @@ function buildNetwork() {
       0.3, // ratio
       { duration: 1000 } // animation
     );
+
+    s.settings({
+      labelThreshold: 1,
+    });
+
     s.refresh();
   });
 
@@ -260,6 +270,7 @@ function buildNetwork() {
       }
     );
   });
+
   $("#zoomOut").bind("click", function () {
     // Zoom out - animation :
     if (s.camera.ratio < 1) {
@@ -274,6 +285,7 @@ function buildNetwork() {
       );
     }
   });
+
   $("#resetView").bind("click", function () {
     s.settings({
       labelThreshold: 6,
@@ -295,6 +307,7 @@ function buildNetwork() {
     flagEvent[0] = false;
     flagEvent[1] = null;
   });
+
   s.refresh();
 
   // SEARCH BAR
@@ -305,6 +318,7 @@ function buildNetwork() {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
     var currentFocus;
+
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function (e) {
       var a,
@@ -372,6 +386,7 @@ function buildNetwork() {
         }
       }
     });
+
     /*execute a function presses a key on the keyboard:*/
     inp.addEventListener("keydown", function (e) {
       var x = document.getElementById(this.id + "autocomplete-list");
@@ -418,12 +433,14 @@ function buildNetwork() {
       /*add class "autocomplete-active":*/
       x[currentFocus].classList.add("autocomplete-active");
     }
+
     function removeActive(x) {
       /*a function to remove the "active" class from all autocomplete items:*/
       for (var i = 0; i < x.length; i++) {
         x[i].classList.remove("autocomplete-active");
       }
     }
+
     function closeAllLists(elmnt) {
       /*close all autocomplete lists in the document,
       except the one passed as an argument:*/
@@ -446,10 +463,12 @@ function buildNetwork() {
       }
     });
 
+
+    //URL parsing variable for the singlePage redirection
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     const page_type = urlParams.get("selection");
-    moveToHash("#" + page_type);
+    if (page_type) moveToHash("#" + page_type);
 
     document
       .getElementById("submitButton")
@@ -466,13 +485,16 @@ function buildNetwork() {
         labelThreshold: 1,
       });
 
-      s.graph.nodes().forEach(function (n) {
-        (n.color = n.originalColor), (n.hidden = false);
-      });
 
-      s.graph.edges().forEach(function (e) {
-        (e.color = e.originalColor), (e.hidden = false);
-      });
+      //15 dic h 22:15 li ho commentati tanto non cambia nulla —EG
+
+      // s.graph.nodes().forEach(function (n) {
+      //   (n.color = n.originalColor), (n.hidden = false);
+      // });
+
+      // s.graph.edges().forEach(function (e) {
+      //   (e.color = e.originalColor), (e.hidden = false);
+      // });
 
       s.graph.nodes().forEach(function (n) {
         if (n.attributes.Type == "hashtags" && n.label == selectedHash) {
@@ -523,6 +545,7 @@ function buildNetwork() {
               toKeep[nodeId].label;
           }
 
+          //15 dic h22:15 sono scritti qua i cambiamenti —EG
           s.graph.nodes().forEach(function (n) {
             if (toKeep[n.id]) {
               if (toKeep[n.id].id == nodeId) {

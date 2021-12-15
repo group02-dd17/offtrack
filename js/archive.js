@@ -146,33 +146,54 @@ function buildNetwork() {
 
     s.camera.goTo(e.data.node.x, e.data.node.y);
 
-    document.getElementById("hashtagsLabel").textContent = null;
-
-    for (i in s.graph.neighbors(nodeId)) {
-      var dateSpan = document.createElement("li");
-      dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
-      var li = document.getElementById("hashtagsLabel");
-      li.appendChild(dateSpan);
-    }
+    document.getElementById("hashtagsLabel").innerHTML = null;
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =
         e.data.node.attributes.title;
+      document.getElementById("videoPlayer").src = e.data.node.attributes.link;
+      document.getElementById("wrapper-video").classList.remove("hide");
       document.getElementById("videosNumber").textContent =
         "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
-      document.getElementById("videoPlayer").src = e.data.node.attributes.link;
       document
         .getElementById("videoPlayer")
         .setAttribute("poster", e.data.node.attributes.thumburl);
-      document.getElementById("wrapper-video").classList.remove("hide");
+      for (i in s.graph.neighbors(nodeId)) {
+        var dateSpan = document.createElement("li");
+        dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
+        var li = document.getElementById("hashtagsLabel");
+        li.appendChild(dateSpan);
+      }
       document.getElementById("hashtagsLabel").classList.remove("hide");
+      document.getElementById("cohashTitle").classList.add("hide");
     } else {
-      document.getElementById("wrapper-video").classList.add("hide");
-      document.getElementById("hashtagsLabel").classList.add("hide");
+      document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
       document.getElementById("videoPlayer").src = "";
+      document.getElementById("wrapper-video").classList.add("hide");
       document.getElementById("videosNumber").textContent =
         "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
-      document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+      var tempNeighs = [];
+      var uniqueLabels = [];
+      for (k in keyNames) {
+        tempNeighs.push(s.graph.neighbors(keyNames[k])); //neighbors di nodeId del ciclo
+
+        $.each(tempNeighs[k], function (i, el) {
+          if (
+            $.inArray(el.label, uniqueLabels) === -1 &&
+            el.label.length > 1 &&
+            el.label != e.data.node.label
+          ) {
+            uniqueLabels.push(el.label);
+            var dateSpan = document.createElement("li");
+            dateSpan.innerHTML = el.label;
+            var li = document.getElementById("hashtagsLabel");
+            li.appendChild(dateSpan);
+          }
+        });
+      }
+      document.getElementById("cohashTitle").classList.remove("hide");
+      document.getElementById("cohashTitle").textContent =
+        "Number of cohashtags: " + uniqueLabels.length;
     }
 
     s.graph.nodes().forEach(function (n) {

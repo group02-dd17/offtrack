@@ -123,6 +123,7 @@ nav {
 #videosNumber {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
+  font-size: 1vmax;
 }
 
 #hashtagsLabel {
@@ -142,6 +143,12 @@ nav {
   padding: 0.45rem;
   margin: 0.3em;
   display: inline;
+}
+
+#cohashTitle {
+  font-family: 'GT America', sans-serif;
+  font-weight: 400;
+  font-size: 1vmax;
 }
 
 /* SEARCH BAR */

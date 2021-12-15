@@ -12,11 +12,6 @@ Font
 }
 
 @font-face {
-  font-family: 'Redaction 10';
-  src: url('../assets/font/Redaction_10-Regular.woff');
-}
-
-@font-face {
   font-family: 'Redaction 50';
   src: url('../assets/font/Redaction_50-Regular.woff');
 }

@@ -126,8 +126,10 @@ function volumeVideos(vol) {
   });
 }
 
-document.getElementById("hashtag-mask-1").addEventListener('click', function (){
-  var url = new URL ("https://group02-density.github.io/Website/archive.html");
-  url.searchParams.set('selection', 'hoax');
+$(".hash").click(function (_hash) {
+  let url = new URL('https://group02-density.github.io//Website/archive.html');
+  let content = _hash.target.innerText.toLowerCase().substring(1);
+  console.log(content);
+  url.searchParams.set('selection', content);
   window.open(url);
-} );
+});

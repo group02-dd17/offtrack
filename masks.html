@@ -33,7 +33,11 @@
     </nav>
 
     <!-- CONTAINER VIDEOS -->
-    <div id="toggleVolume"><i class="fas fa-volume-mute"></i></div>
+    <div id="toggleVolume">
+      <svg class="hide">
+        <line x1="0" y1="100%" x2="100%" y2="0" />
+    </svg>
+  </div>
     <div id="container">
       <div class="window" id="canvasLines"></div>
       <div class="content">
@@ -208,7 +212,7 @@
           <div class="wrapper" id="wrapper-mask-11">
             <p>1102 YAHWEH ELOHIM DOES NOT WEAR A FACE DIAPER</p>
             <video id="vid11" controls loop autoplay >
-              <source src="assets/videos/mask/masks11.webm" type="video/webm" />
+              <source src="assets/videos/mask/masks12.webm" type="video/webm" />
             </video>
           </div>
 
@@ -222,7 +226,7 @@
               IDAHO #841
             </p>
             <video id="vid12" controls loop autoplay >
-              <source src="assets/videos/mask/masks12.webm" type="video/webm" />
+              <source src="assets/videos/mask/masks11.webm" type="video/webm" />
             </video>
           </div>
 
@@ -387,32 +391,26 @@
         </div>
 
         <div id="selector-wrapper">
-          <!-- Explore Archive -->
-          <div class="selector">
+          <!-- Explore -->
+          <div class="introduction grid">
             <div class="title-content">
-              <p>EXPLORE MORE ON THE ARCHIVE</p>
+              <p>EXPLORE MORE</p>
             </div>
-            <div class="selector-container">
-              <div class="archive-svg"><a href="archive.html"></a></div>
-            </div>
-          </div>
-          <!-- Selector -->
-          <div class="selector">
-            <div class="title-content">
-              <p>CHOOSE ANOTHER PATH</p>
-            </div>
-            <div class="selector-container">
-              <div class="selector-btn">
-                <a class="redaction" href="vaccine.html">#Vaccine</a>
+            <div class="go-to-rabbit">
+              <div class="keywords">
+                <a href="vaccine.html" class="keyword">#Vaccine</a>
+                <a href="pcr.html" class="keyword">#PCR</a>
+                <a href="virus.html" class="keyword">#Virus</a>
               </div>
-              <div class="selector-btn">
-                <a class="redaction" href="pcr.html">#PCR</a>
-              </div>
-              <div class="selector-btn">
-                <a class="redaction" href="virus.html">#Virus</a>
+              <div class="rabbit">
+                <p>Choose another path</p>
               </div>
             </div>
-          </div>
+            <div class="go-to-archive">
+            <a href="archive.html" class="redaction">
+              <p class="redaction">Go to <br>the archive</p>
+            </a>
+            </div>
         </div>
       </div>
     </div>

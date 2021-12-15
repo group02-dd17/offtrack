@@ -110,6 +110,10 @@ video:hover {
   grid-template-columns: repeat(10, 1fr);
 }
 
+.hide {
+    display: none;
+}
+
 /*--------
 Header
 ----------*/
@@ -200,7 +204,6 @@ Index
   place-items: center;
   position: sticky;
   top: 0;
-  background-color: black;
 }
 
 .introduction-content {
@@ -416,21 +419,34 @@ Keywords
   position: fixed;
   background-color: #000;
   color: #FFF;
-  font-family: "Arial";
-  font-size: 1.5em;
   border: 1px solid #FFF;
   border-color: #FFF;
   z-index: 100;
-  padding: 15px;
+  padding: 25px;
   right: 15px;
   bottom: 15px;
-  text-align: center;
   width: 1.2em;
+  aspect-ratio: 1;
+  background-image: url('../assets/img/oth/sound-01.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 #toggleVolume:hover {
-  background-color: #FFF;
-  color: #000;
+  background-image: url('../assets/img/oth/sound-02.svg');
+}
+
+#toggleVolume svg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#toggleVolume svg line {
+    stroke: rgb(255,255,255);
+    stroke-width: 1;
 }
 
 #container {
@@ -479,22 +495,20 @@ Keywords
   height: fit-content;
   z-index: 2;
   padding-bottom: -5px;
-  border: 1px solid white;
+/*-  border: 1px solid white;  --*/
   outline: 40px;
   outline-color: transparent;
 }
 
-.wrapper:hover {
-  z-index: 10;
-}
 
 .wrapper p {
-  padding-left: 1vmax;
-  padding-right: 1vmax;
-  text-align: center;
+  /*-  padding-left: 1vmax;
+  padding-right: 1vmax;--*/
+  text-align: left;
   opacity: 1;
   font-family: 'GT America', sans-serif;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 /*-
@@ -528,7 +542,7 @@ Keywords
 }
 
 .quote {
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding: 25px;
   border: 1px solid white;
   background-color: black;
@@ -777,6 +791,7 @@ Keywords
   grid-row: 8;
   justify-self: center;
   align-self: center;
+  margin-top:20%;
 }
 
 #hashtag-mask-9 {
@@ -822,6 +837,7 @@ Keywords
   justify-self: center;
   align-self:  center;
   z-index: 6;
+  margin-top: 20%;
 }
 #wrapper-mask-16 {
   grid-column: 2 / span 3;
@@ -1069,7 +1085,7 @@ About
 }
 
 #person-img-1 {
-  background-image: url("assets/img/about/grandeciungo.jpg");
+  background-image: "../assets/img/about/grandeciungo.jpg";
   background-size: cover;
 }
 

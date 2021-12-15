@@ -43,10 +43,6 @@ nav {
     top: 15px;
 }
 
-.hide {
-    display: none !important;
-}
-
 #network-container {
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -106,7 +102,7 @@ nav {
 #legend li:first-child {
   display: block;
   background-image: url("../assets/img/legend/dot.svg");
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: left center;
   padding: 15px 40px;
 }
@@ -114,7 +110,7 @@ nav {
 #legend li:last-child {
   display: block;
   background-image: url("../assets/img/legend/square.svg");
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
   background-position: left center;
   padding: 0 34px 5px 34px;
   margin-left: 6px;
@@ -192,7 +188,7 @@ form {
     border-color: #fff;
     font-size: 1.5rem;
     padding: 1rem 1.2rem 0.8rem 1.2rem;
-    
+
   }
 
   input:focus {

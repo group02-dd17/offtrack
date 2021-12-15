@@ -22,8 +22,9 @@ let lines = function (l) {
   let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
   l.setup = function () {
+    const canvas = document.querySelector("#canvasLines");
+    const ctx = this.canvas.getContext("2d");
     p5.disableFriendlyErrors = true; // disables FES
-    // var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight, l.WEBGL);
     var canvasL = l.createCanvas(
       l.windowWidth,
       document.getElementById("container").offsetHeight
@@ -36,9 +37,6 @@ let lines = function (l) {
 
     var firstNode = document.getElementById("wrapper-mask-1");
     xyVertex.push({
-      // x: firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2 - l.width/2,
-      // y: firstNode.lastElementChild.getBoundingClientRect().top - firstNode.parentNode.getBoundingClientRect().top + firstNode.lastElementChild.offsetHeight / 2 -l.height/2,
-
       x:
         firstNode.lastElementChild.getBoundingClientRect().left +
         firstNode.offsetWidth / 2,
@@ -50,10 +48,6 @@ let lines = function (l) {
   };
 
   l.draw = function () {
-    const canvas = document.querySelector("#canvasLines");
-    const ctx = this.canvas.getContext("2d");
-
-    // l.background("black"); //to avoid trails
     l.clear();
 
     for (g in hashArray) {
@@ -65,23 +59,20 @@ let lines = function (l) {
     l.strokeWeight(2);
 
     $(videoList).ready(function () {
-      videoList.forEach(function (item, index) {
+      videoList.forEach(function (item) {
         //when :hover the video
-        videoList[index].lastElementChild.addEventListener(
-          "mouseover",
-          function () {
-            //add the center of the video as a new vertex
-            xyVertex.push({
-              x:
-                videoList[index].lastElementChild.getBoundingClientRect().left +
-                videoList[index].offsetWidth / 2,
-              y:
-                videoList[index].lastElementChild.getBoundingClientRect().top -
-                document.getElementById("title").getBoundingClientRect().top +
-                videoList[index].lastElementChild.offsetHeight / 2,
-            });
-          }
-        );
+        item.lastElementChild.addEventListener("mouseover", function () {
+          //add the center of the video as a new vertex
+          xyVertex.push({
+            x:
+              item.lastElementChild.getBoundingClientRect().left +
+              item.offsetWidth / 2,
+            y:
+              item.lastElementChild.getBoundingClientRect().top -
+              document.getElementById("title").getBoundingClientRect().top +
+              item.lastElementChild.offsetHeight / 2,
+          });
+        });
       });
     });
 
@@ -95,8 +86,6 @@ let lines = function (l) {
     l.mouseWheel = function (event) {
       //move the square according to the vertical scroll amount
       l.mouseY += event.delta;
-      //uncomment to block page scrolling
-      //return false;
     };
   };
 
@@ -112,18 +101,12 @@ let lines = function (l) {
       l.beginShape(l.LINES);
       l.strokeWeight(2);
       l.noFill();
-      l.stroke("#d8d8d8");
+      l.stroke("#D8D8D8");
       l.vertex(x0, y0);
       l.vertex(
         $(item).offset().left + item.offsetWidth / 2,
         $(item).offset().top + item.offsetHeight / 2
       );
-      // l.line(
-      //   x0,
-      //   y0,
-      //   $(item).offset().left + this.offsetWidth / 2,
-      //   $(item).offset().top + this.offsetHeight / 2
-      // );
       l.endShape();
     });
   };

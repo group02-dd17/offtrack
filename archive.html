@@ -35,22 +35,28 @@
     <!-- PLUGIN CUSTOM SHAPES -->
     <script src="assets/js/sigma.renderers.customShapes/shape-library.js"></script>
     <script src="assets/js/sigma.renderers.customShapes/sigma.renderers.customShapes.js"></script>
-
   </head>
   <body>
     <nav>
       <div class="header grid">
-        <div class="home-btn redaction"><a class="btn redaction" href="home.html">Home</a></div>
-        <div class="jumpto-btn redaction"><a class="btn redaction">Jump to</a>
+        <div class="home-btn redaction">
+          <a class="btn redaction" href="home.html">Home</a>
+        </div>
+        <div class="jumpto-btn redaction">
+          <a class="btn redaction">Jump to</a>
           <div class="dropdown-content">
-            <a  class="redaction" href="masks.html">#Masks</a>
+            <a class="redaction" href="masks.html">#Masks</a>
             <a class="redaction" href="vaccine.html">#Vaccine</a>
             <a class="redaction" href="pcr.html">#PCR</a>
             <a class="redaction" href="virus.html">#Virus</a>
           </div>
         </div>
-        <div class="archive-btn redaction"><a class="btn redaction" href="archive.html">Archive</a></div>
-        <div class="about-btn redaction"><a class="btn redaction" href="about.html">About</a></div>
+        <div class="archive-btn redaction">
+          <a class="btn redaction" href="archive.html">Archive</a>
+        </div>
+        <div class="about-btn redaction">
+          <a class="btn redaction" href="about.html">About</a>
+        </div>
       </div>
     </nav>
     <div id="wrapper">
@@ -58,25 +64,37 @@
         <div id="wrapper-side">
           <div id="visualizer">
             <h1 id="nameLabels">HASHTAG NAME</h1>
-            <div id="wrapper-video"><video controls id="videoPlayer" type="video/mp4"></video></div>
+            <div id="wrapper-video">
+              <video controls id="videoPlayer" type="video/mp4"></video>
+            </div>
             <h3 id="videosNumber">Number of videos:</h3>
             <ul id="hashtagsLabel"></ul>
           </div>
-          <div id="legend"><h1>LEGEND</h1></div>
+          <div id="legend">
+            <h1>HOW TO READ IT</h1>
+            <ul>
+              <li>Hashtag recurring more than 5 times</li>
+              <li>Video</li>
+            </ul>
+          </div>
         </div>
         <div id="network-graph">
           <form autocomplete="off" onsubmit="return false">
             <div class="autocomplete">
-              <input id="myInput" type="text" value="#" placeholder="Search hashtags...">
+              <input
+                id="myInput"
+                type="text"
+                value="#"
+                placeholder="Search hashtags..."
+              />
             </div>
-            <input type="submit" value="DIVE" id="submitButton">
+            <input type="submit" value="DIVE" id="submitButton" />
           </form>
           <div class="buttonGui" id="zoomIn">+</div>
           <div class="buttonGui" id="zoomOut">–</div>
-          <div  class="buttonGui" id="resetView">RESET</div>
-          <div  class="buttonGui" id="info">?</div>
+          <div class="buttonGui" id="resetView">RESET</div>
+          <div class="buttonGui" id="info">?</div>
         </div>
-
       </div>
     </div>
 

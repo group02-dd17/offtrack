@@ -62,7 +62,7 @@ nav {
 
 #wrapper-side {
     display: grid;
-    grid-template-rows: 1fr 1fr !important;
+    grid-template-rows: 3fr 1fr !important;
     grid-auto-rows: 1fr;
     left: 0;
     height: 100%;
@@ -93,9 +93,47 @@ nav {
 }
 
 #legend {
+  /* grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto; */
   padding: 5%;
   border-top: 1px solid white;
 }
+
+ul {
+  list-style-type: none;
+  font-family: "GT America";
+  padding: 0;
+  margin: 0;
+}
+li:first-child {
+  display: block;
+  background-image: url("../assets/img/legend/dot.svg");
+  background-repeat: no-repeat; 
+  background-position: left center;
+  padding: 15px 40px;
+}
+
+li:last-child {
+  display: block;
+  background-image: url("../assets/img/legend/square.svg");
+  background-repeat: no-repeat; 
+  background-position: left center;
+  padding: 0 34px 5px 34px;
+  margin-left: 6px;
+}
+/* 
+#legend h1 {
+  grid-column: 1 / span 2;
+}
+
+#legend div { 
+  display: inline-flex;
+  grid-column: 1 / span 2;
+}
+
+#legend p {
+  font-family: 'GT America', sans-serif;
+} */
 
 #nameLabels {
     font-size: 1.6vmax;

@@ -172,6 +172,27 @@ nav .header .jumpto-btn:hover .dropdown-content a {
   justify-content: center;
 }
 
+nav .header .jumpto-btn:hover .dropdown-content {
+  display: block;
+  position: absolute;
+  width: 100%;
+  left: -1px;
+  margin-top: 8vh;
+  background-color: #000000;
+  border: 1px solid #ffffff;
+  z-index: 10;
+    text-align: center;
+}
+nav .header .jumpto-btn:hover .dropdown-content a {
+  display: grid;
+  text-align: center;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  height: 8vh;
+  align-items: center;
+  justify-content: center;
+}
+
 
 .archive-btn {
   display: grid;
@@ -393,6 +414,8 @@ Keywords
   display: grid;
   grid-row: 3 /span 1;
   grid-column: 1 /span 2;
+  margin-top: 8rem;
+  margin-bottom: 8rem;
 }
 
 .selector-container {

@@ -331,7 +331,7 @@ Index
 
 /*--Tooltip--*/
 .tooltip {
-  position: relative;
+  position: inherit;
   z-index: 10;
 }
 

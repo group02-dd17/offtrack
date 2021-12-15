@@ -108,8 +108,7 @@ let lines = function (l) {
 let canvasLines = new p5(lines);
 
 document.getElementById("toggleVolume").addEventListener("click", function () {
-  $(this).find("i").toggleClass("fa-volume-mute");
-  $(this).find("i").toggleClass("fa-volume-up");
+  $(this).find("svg").toggleClass("hide");
 
   if (flagMute) {
     volumeVideos(0.01);

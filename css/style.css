@@ -110,6 +110,10 @@ video:hover {
   grid-template-columns: repeat(10, 1fr);
 }
 
+.hide {
+    display: none;
+}
+
 /*--------
 Header
 ----------*/

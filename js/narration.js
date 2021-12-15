@@ -125,3 +125,9 @@ function volumeVideos(vol) {
     item.lastElementChild.volume = vol;
   });
 }
+
+document.getElementById("hashtag-mask-1").addEventListener('click', function (){
+  var url = new URL ("https://group02-density.github.io/Website/archive.html");
+  url.searchParams.set('selection', 'hoax');
+  window.open(url);
+} );

@@ -580,6 +580,7 @@ Keywords
   grid-row: 2;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 #quote-mask-B {
@@ -587,7 +588,6 @@ Keywords
   grid-row: 3;
   justify-self: end;
   align-self: end;
-  margin-bottom: 10%;
   z-index: 6;
 }
 #wrapper-mask-3 {
@@ -595,6 +595,7 @@ Keywords
   grid-row: 3;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 #hashtag-mask-2 {
@@ -608,14 +609,14 @@ Keywords
   grid-column: 3 / span 3;
   grid-row: 4;
   justify-self: center;
-  align-self: start;
+  align-self: center;
 }
 
 #hashtag-mask-3 {
   grid-column: 5/span 1;
   grid-row: 5;
   justify-self: end;
-  align-self: center;
+  align-self: start;
 }
 
 #quote-mask-C {
@@ -623,7 +624,6 @@ Keywords
   grid-row: 5;
   justify-self: end;
   align-self: center;
-  margin-bottom: 80%;
   z-index: 6;
 }
 #wrapper-mask-5 {
@@ -637,16 +637,16 @@ Keywords
 #quote-mask-D {
   grid-column: 5 / span 2;
   grid-row: 5;
-  justify-self: end;
-  align-self: end;
+  justify-self: center;
+  align-self: center;
   z-index: 6;
+  margin-top: 100%;
 }
 #wrapper-mask-6 {
   grid-column: 2 / span 4;
   grid-row: 5;
   justify-self: center;
-  align-self: end;
-  margin-bottom: 10%;
+  align-self: center;
 }
 
 #hashtag-mask-4 {
@@ -654,6 +654,7 @@ Keywords
   grid-row: 5;
   justify-self: end;
   align-self: end;
+  margin-bottom: 20%;
 }
 
 #quote-mask-3 {
@@ -671,7 +672,7 @@ Keywords
   align-self: start;
 }
 
-#quote-mask-D {
+#quote-mask-E {
   grid-column: 5 / span 2;
   grid-row: 6;
   justify-self: center;
@@ -692,13 +693,7 @@ Keywords
   align-self: start;
 }
 
-#quote-mask-E {
-  grid-column: 5 / span 2;
-  grid-row: 7;
-  justify-self: center;
-  align-self: center;
-  z-index: 6;
-}
+
 #hashtag-mask-7 {
   grid-column: 7/span 2;
   grid-row: 7;
@@ -712,6 +707,7 @@ Keywords
   justify-self: center;
   align-self: start;
   z-index: 6;
+  margin-top: 30%;
 }
 #wrapper-mask-8 {
   grid-column: 2 / span 2;
@@ -733,7 +729,7 @@ Keywords
   justify-self: center;
   align-self: center;
   margin-top: 30%;
-  margin-bottom: 30%;
+  margin-bottom: 20%;
 }
 
 #quote-mask-H {
@@ -748,6 +744,7 @@ Keywords
   grid-row: 7;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 #quote-mask-I {
@@ -807,7 +804,7 @@ Keywords
   grid-column: 7 / span 4;
   grid-row: 9;
   justify-self: center;
-  align-self: start;
+  align-self: center;
   width: 80%;
 }
 
@@ -816,6 +813,7 @@ Keywords
   grid-row: 9;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 #quote-mask-K {
@@ -826,7 +824,7 @@ Keywords
   z-index: 6;
 }
 #wrapper-mask-16 {
-  grid-column: 2 / span 2;
+  grid-column: 2 / span 3;
   grid-row: 10;
   justify-self: center;
   align-self: start;
@@ -843,7 +841,15 @@ Keywords
   grid-column: 6 / span 4;
   grid-row: 10;
   justify-self: center;
-  align-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#hashtag-mask-10 {
+  grid-column: 2/span 2;
+  grid-row: 10;
+  justify-self: start;
+  align-self: end;
 }
 
 #wrapper-mask-18 {
@@ -854,18 +860,11 @@ Keywords
   margin-bottom: 30%;
 }
 
-#hashtag-mask-10 {
-  grid-column: 2/span 2;
-  grid-row: 11;
-  justify-self: start;
-  align-self: start;
-}
-
 #quote-mask-M {
   grid-column: 2 / span 2;
   grid-row: 11;
   justify-self: center;
-  align-self:  center;
+  align-self:  end;
   z-index: 6;
 }
 #wrapper-mask-19 {
@@ -873,14 +872,7 @@ Keywords
   grid-row: 11;
   justify-self: center;
   align-self: end;
-}
-
-#wrapper-mask-20 {
-  grid-column: 8 / span 2;
-  grid-row: 12;
-  justify-self: center;
-  align-self: start;
-  width: 90%;
+  margin-bottom: 10%;
 }
 
 #quote-mask-N {
@@ -889,19 +881,14 @@ Keywords
   justify-self: center;
   align-self:  end;
   z-index: 6;
+  margin-bottom: 10%;
 }
-#wrapper-mask-21 {
-  grid-column: 2 / span 4;
+#wrapper-mask-20 {
+  grid-column: 8 / span 2;
   grid-row: 12;
   justify-self: center;
-  align-self: center;
-}
-
-#hashtag-mask-11 {
-  grid-column: 4/span 2;
-  grid-row: 12;
-  justify-self: center;
-  align-self: end;
+  align-self: start;
+  width: 90%;
 }
 
 #quote-mask-O {
@@ -911,6 +898,22 @@ Keywords
   align-self:  start;
   z-index: 6;
 }
+#wrapper-mask-21 {
+  grid-column: 2 / span 4;
+  grid-row: 12;
+  justify-self: center;
+  align-self: start;
+  margin-top: 10%;
+}
+
+#hashtag-mask-11 {
+  grid-column: 4/span 2;
+  grid-row: 13;
+  justify-self: center;
+  align-self: start;
+}
+
+
 #wrapper-mask-22 {
   grid-column: 5 / span 3;
   grid-row: 13;
@@ -929,8 +932,9 @@ Keywords
   grid-column: 8 / span 2;
   grid-row: 13;
   justify-self: center;
-  align-self: center;
+  align-self: end;
   width: 80%;
+  margin-bottom: 10%;
 }
 
 
@@ -945,19 +949,20 @@ Keywords
   grid-column: 2 / span 2;
   grid-row: 13;
   justify-self: center;
-  align-self: center;
+  align-self: start;
   margin-bottom: 50%;
+  margin-top: 20%;
 }
 
 #quote-mask-R {
-  grid-column: 4 / span 1;
+  grid-column: 5 / span 1;
   grid-row: 13;
   justify-self: center;
   align-self: center;
   z-index: 6;
 }
 #wrapper-mask-25 {
-  grid-column: 4 / span 3;
+  grid-column: 5 / span 3;
   grid-row: 13;
   justify-self: center;
   align-self: center;
@@ -966,17 +971,18 @@ Keywords
 
 #hashtag-mask-12 {
   grid-column: 2/span 1;
-  grid-row: 13;
+  grid-row: 14;
   justify-self: center;
   align-self: end;
 }
 
 #hashtag-mask-13 {
 
-  grid-column: 6/span 1;
+  grid-column: 5/span 2;
   grid-row: 13;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 /*--------

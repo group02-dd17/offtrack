@@ -238,6 +238,8 @@ Index
   background-image: #toggleVolume#toggleVolume#toggleVolume;
   background-size: cover;
   grid-template-areas: "overlap";
+  background-image: url('../assets/img/home/2bitmap.webp');
+  background-size: cover;
 }
 
 .two {

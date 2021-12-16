@@ -278,3 +278,35 @@ input:focus {
     border-right: 1px solid white;
   }
 }
+
+
+/*--------
+  Popup
+  ----------*/
+.lightbox {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, .5)
+}
+
+.toolbarLB {
+  text-align: right;
+  padding: 3px;
+}
+
+.closeLB {
+  color: red;
+  cursor: pointer;
+}
+
+.lightbox .iframeContainer {
+  vertical-align: middle;
+  background: #CCC;
+  padding: 2px;
+}
+
+.lightbox.closed {
+  display: none;
+}

@@ -221,6 +221,15 @@ Index
   place-items: center;
   position: sticky;
   top: 0;
+  background-color: #000000;
+}
+
+.choose {
+  min-height: 100vh;
+  width: 100%;
+  place-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .introduction-content {
@@ -277,6 +286,7 @@ Index
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000000;
 }
 
 .keywords {
@@ -324,6 +334,7 @@ Index
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000000;
 }
 
 .go-to-archive:hover>p {

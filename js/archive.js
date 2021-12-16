@@ -269,17 +269,34 @@ function buildNetwork() {
     let aNode = e.data.node;
     let cam = s.camera;
     let pfx = cam.readPrefix;
-    sigma.utils.zoomTo(
-      cam, // cam
-      aNode[pfx + "x"] - cam.x, // x
-      aNode[pfx + "y"] - cam.y, // y
-      0.3, // ratio
-      { duration: 1000 } // animation
-    );
 
-    s.settings({
-      labelThreshold: 1,
-    });
+    console.log(cam.ratio);
+
+    if(cam.ratio > 0.7) {
+      sigma.utils.zoomTo(
+        cam, // cam
+        aNode[pfx + "x"] - cam.x, // x
+        aNode[pfx + "y"] - cam.y, // y
+        0.3, // ratio
+        { duration: 1000 } // animation
+      );
+  
+      s.settings({
+        labelThreshold: 1,
+      });
+    }
+
+    else {
+      sigma.misc.animation.camera(
+        cam,
+        {
+          x: aNode[cam.readPrefix + "x"],
+          y: aNode[cam.readPrefix + "y"],
+          ratio: 0.3,
+        },
+        { duration: 1000 }
+      );
+    }
 
     s.refresh();
   });
@@ -527,7 +544,18 @@ function buildNetwork() {
       .addEventListener("click", function (f) {
         let selectedHash = document.getElementById("myInput").value;
         closeAllLists(f.target);
+        s.graph.nodes().forEach(function (n) {
+          (n.color = n.originalColor), (n.hidden = false);
+        });
+    
+        s.graph.edges().forEach(function (e) {
+          (e.color = e.originalColor), (e.hidden = false);
+        });
+    
+        flagEvent[0] = false;
+        flagEvent[1] = null;
         moveToHash(selectedHash);
+        
       });
 
     function moveToHash(_selectedHash) {
@@ -614,23 +642,34 @@ function buildNetwork() {
           flagEvent[1] = nodeId;
 
           let aNode = e;
-          let cam = s.cameras[0];
+          let cam = s.camera;
           let pfx = cam.readPrefix;
 
-          console.log(cam);
-          console.log(aNode);
-          console.log(pfx);
-          console.log(aNode[pfx + "x"]);
-
-          sigma.misc.animation.camera(
-            cam,
-            {
-              x: aNode[cam.readPrefix + "x"],
-              y: aNode[cam.readPrefix + "y"],
-              ratio: 0.3,
-            },
-            { duration: 1000 }
-          );
+          if(cam.ratio > 0.7) {
+            sigma.utils.zoomTo(
+              cam, // cam
+              aNode[pfx + "x"], // x
+              aNode[pfx + "y"], // y
+              0.3, // ratio
+              { duration: 1000 } // animation
+            );
+        
+            s.settings({
+              labelThreshold: 1,
+            });
+          }
+      
+          else {
+            sigma.misc.animation.camera(
+              cam,
+              {
+                x: aNode[cam.readPrefix + "x"],
+                y: aNode[cam.readPrefix + "y"],
+                ratio: 0.3,
+              },
+              { duration: 1000 }
+            );
+          }
           s.refresh();
         }
       });

@@ -12,14 +12,14 @@ f(a[c]);d=setTimeout(function k(){c=(c+1)%a.length;f(a[c]);d=setTimeout(k,b)},b)
 
 favicon.animate(
   [
-    "Website/assets/favico/frame_0.png",
-    "Website/assets/favico/frame_1.png",
-    "Website/assets/favico/frame_2.png",
-    "Website/assets/favico/frame_3.png",
-    "Website/assets/favico/frame_4.png",
-    "Website/assets/favico/frame_5.png",
-    "Website/assets/favico/frame_6.png",
-    "Website/assets/favico/frame_7.png",
+    "assets/favico/frame_0.png",
+    "assets/favico/frame_1.png",
+    "assets/favico/frame_2.png",
+    "assets/favico/frame_3.png",
+    "assets/favico/frame_4.png",
+    "assets/favico/frame_5.png",
+    "assets/favico/frame_6.png",
+    "assets/favico/frame_7.png",
   ],
   500
 );

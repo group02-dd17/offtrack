@@ -605,29 +605,55 @@ function buildNetwork() {
             nofNeighs[nodeId] = e;
             toKeep = nofNeighs;
           }
-          // document.getElementById("videosNumber").textContent = Object.keys(s.graph.neighbors(nodeId)).length;
+
+          document.getElementById("hashtagsLabel").innerHTML = null;
 
           if (e.attributes.Type == "id") {
             document.getElementById("nameLabels").textContent =
               e.attributes.title;
-            document.getElementById("videosNumber").textContent =
-              "Number of hashtags: " +
-              Object.keys(s.graph.neighbors(nodeId)).length;
-            document.getElementById("hashtagsLabel").textContent =
-              e.attributes.hashtags;
             document.getElementById("videoPlayer").src = e.attributes.link;
+            document.getElementById("wrapper-video").classList.remove("hide");
+            document.getElementById("videosNumber").textContent =
+              "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
             document
               .getElementById("videoPlayer")
               .setAttribute("poster", e.attributes.thumburl);
-            document.getElementById("wrapper-video").classList.remove("hide");
+            for (i in s.graph.neighbors(nodeId)) {
+              var dateSpan = document.createElement("li");
+              dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
+              var li = document.getElementById("hashtagsLabel");
+              li.appendChild(dateSpan);
+            }
+            document.getElementById("hashtagsLabel").classList.remove("hide");
+            document.getElementById("cohashTitle").classList.add("hide");
           } else {
-            document.getElementById("wrapper-video").classList.add("hide");
+            document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
             document.getElementById("videoPlayer").src = "";
+            document.getElementById("wrapper-video").classList.add("hide");
             document.getElementById("videosNumber").textContent =
-              "Number of videos: " +
-              Object.keys(s.graph.neighbors(nodeId)).length;
-            document.getElementById("nameLabels").textContent =
-              toKeep[nodeId].label;
+              "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
+            var tempNeighs = [];
+            var uniqueLabels = [];
+            for (k in keyNames) {
+              tempNeighs.push(s.graph.neighbors(keyNames[k])); //neighbors di nodeId del ciclo
+      
+              $.each(tempNeighs[k], function (i, el) {
+                if (
+                  $.inArray(el.label, uniqueLabels) === -1 &&
+                  el.label.length > 1 &&
+                  el.label != e.label
+                ) {
+                  uniqueLabels.push(el.label);
+                  var dateSpan = document.createElement("li");
+                  dateSpan.innerHTML = el.label;
+                  var li = document.getElementById("hashtagsLabel");
+                  li.appendChild(dateSpan);
+                }
+              });
+            }
+            document.getElementById("cohashTitle").classList.remove("hide");
+            document.getElementById("cohashTitle").textContent =
+              "Number of cohashtags: " + uniqueLabels.length;
           }
 
           //15 dic h22:15 sono scritti qua i cambiamenti —EG

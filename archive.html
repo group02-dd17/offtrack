@@ -1,155 +1,145 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Sigma Network</title>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <link rel="icon" type="image/png" href="img/favicon.png" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/archive.css" />
 
-    <script src="assets/js/sigma.min.js"></script>
-    <script src="assets/js/sigma.parsers.json.min.js"></script>
-    <script src="assets/js/sigma.pathfinding.astar.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="assets/js/renderers/sigma.renderers.canvas.js"></script>
-    <script src="assets/js/renderers/sigma.renderers.webgl.js"></script>
-    <script src="assets/js/renderers/sigma.renderers.svg.js"></script>
-    <script src="assets/js/renderers/sigma.renderers.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.labels.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.hovers.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.nodes.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edges.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edges.curve.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
-    <script src="assets/js/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+<head>
+  <title>Sigma Network</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/archive.css" />
 
-    <!-- PLUGIN CUSTOM SHAPES -->
-    <script src="assets/js/sigma.renderers.customShapes/shape-library.js"></script>
-    <script src="assets/js/sigma.renderers.customShapes/sigma.renderers.customShapes.js"></script>
-  </head>
-  <body>
-    <nav>
-      <div class="header grid">
-        <div class="home-btn redaction">
-          <a class="btn redaction" href="home.html">Home</a>
-        </div>
-        <div class="jumpto-btn redaction">
-          <a class="btn redaction">Jump to</a>
-          <div class="dropdown-content">
-            <a class="redaction" href="masks.html">#Masks</a>
-            <a class="redaction" href="vaccine.html">#Vaccine</a>
-            <a class="redaction" href="pcr.html">#PCR</a>
-            <a class="redaction" href="virus.html">#Virus</a>
-          </div>
-        </div>
-        <div class="archive-btn redaction">
-          <a class="btn redaction" href="archive.html">Archive</a>
-        </div>
-        <div class="about-btn redaction">
-          <a class="btn redaction" href="about.html">About</a>
+  <script src="assets/js/sigma.min.js"></script>
+  <script src="assets/js/sigma.parsers.json.min.js"></script>
+  <script src="assets/js/sigma.pathfinding.astar.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="assets/js/renderers/sigma.renderers.canvas.js"></script>
+  <script src="assets/js/renderers/sigma.renderers.webgl.js"></script>
+  <script src="assets/js/renderers/sigma.renderers.svg.js"></script>
+  <script src="assets/js/renderers/sigma.renderers.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.labels.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.hovers.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.nodes.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edges.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edges.curve.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edges.arrow.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edges.curvedArrow.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.def.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.curve.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.arrow.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.edgehovers.curvedArrow.js"></script>
+  <script src="assets/js/renderers/canvas/sigma.canvas.extremities.def.js"></script>
+
+  <!-- PLUGIN CUSTOM SHAPES -->
+  <script src="assets/js/sigma.renderers.customShapes/shape-library.js"></script>
+  <script src="assets/js/sigma.renderers.customShapes/sigma.renderers.customShapes.js"></script>
+</head>
+
+<body>
+  <nav>
+    <div class="header grid">
+      <div class="home-btn redaction">
+        <a class="btn redaction" href="home.html">Home</a>
+      </div>
+      <div class="jumpto-btn redaction">
+        <a class="btn redaction">Jump to</a>
+        <div class="dropdown-content">
+          <a class="redaction" href="masks.html">#Masks</a>
+          <a class="redaction" href="vaccine.html">#Vaccine</a>
+          <a class="redaction" href="pcr.html">#PCR</a>
+          <a class="redaction" href="virus.html">#Virus</a>
         </div>
       </div>
-    </nav>
-    <div id="wrapper">
-      <div id="network-container">
-        <div id="wrapper-side">
-          <div id="visualizer">
-            <h1 id="nameLabels">HASHTAG NAME</h1>
-            <div id="wrapper-video">
-              <video controls id="videoPlayer" type="video/mp4"></video>
-            </div>
-            <h3 id="videosNumber"></h3>
-            <h3 id="cohashTitle"></h3>
-            <ul id="hashtagsLabel"></ul>
-          </div>
-        </div>
-        <div id="network-graph">
-          <!-- POPUP -->
-          <div class="lightbox closed">
-            <div class="iframeContainer">
-              <div class="popup-title">
-                <h1>How the archive works</h1>
-                <div class="toolbarLB">
-                  <span class="closeLB" onclick="lightBoxClose()">x</span>
-                </div>
-              </div>
-              <div class="popup-main">
-                <p>
-                  The following network gathers the videos (2381) and hashtags
-                  (127) collected on Bitchute related to #plandemic and
-                  #scamdemic and it shows the connection between a video and its
-                  related hashtags, and viceversa. The aim of the network is to
-                  let the users explore visually the dataset to see for
-                  themselves what kind of content one can find on the platform.
-                </p>
-                <div id="legend">
-                  <ul>
-                    <li>Hashtag</li>
-                    <li>Video</li>
-                  </ul>
-                </div>
-              </div>
-              <div class="popup-footer">
-                <div>
-                  <img src="assets/img/legend/SVG/popUp-1.svg" />
-                  <p>Use the search bar to look for a specific hashtag</p>
-                </div>
-                <div>
-                  <img src="assets/img/legend/SVG/popUp-2.svg" />
-                  <p>Zoom in to explore more hashtags</p>
-                </div>
-                <div>
-                  <img src="assets/img/legend/SVG/popUp-3.svg" />
-                  <p>Click to discover the connections</p>
-                </div>
-                <div>
-                  <img src="assets/img/legend/SVG/popUp-4.svg" />
-                  <p>Look at the side bar to learn more at the single video</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <form autocomplete="off" onsubmit="return false">
-            <div class="autocomplete">
-              <input
-                id="myInput"
-                type="text"
-                value="#"
-                placeholder="Search hashtags..."
-              />
-            </div>
-            <input type="submit" value="DIVE" id="submitButton" />
-          </form>
-          <div class="buttonGui" id="zoomIn">+</div>
-          <div class="buttonGui" id="zoomOut">–</div>
-          <div class="buttonGui" id="resetView">RESET</div>
-          <div class="buttonGui" id="info">?</div>
-        </div>
+      <div class="archive-btn redaction">
+        <a class="btn redaction" href="archive.html">Archive</a>
+      </div>
+      <div class="about-btn redaction">
+        <a class="btn redaction" href="about.html">About</a>
       </div>
     </div>
+  </nav>
+  <div id="wrapper">
+    <div id="network-container">
+      <div id="wrapper-side">
+        <div id="visualizer">
+          <h1 id="nameLabels">HASHTAG NAME</h1>
+          <div id="wrapper-video">
+            <video controls id="videoPlayer" type="video/mp4"></video>
+          </div>
+          <h3 id="videosNumber"></h3>
+          <h3 id="cohashTitle"></h3>
+          <ul id="hashtagsLabel"></ul>
+        </div>
+      </div>
+      <div id="network-graph">
+        <!-- POPUP -->
+        <div class="lightbox closed">
+          <div class="iframeContainer">
+            <div class="popup-title">
+              <h1>How the archive works</h1>
+              <div class="toolbarLB">
+                <span class="closeLB" onclick="lightBoxClose()">x</span>
+              </div>
+            </div>
+            <div class="popup-main">
+              <p>
+                The following network gathers the videos (2381) and hashtags
+                (127) collected on Bitchute related to #plandemic and
+                #scamdemic and it shows the connection between a video and its
+                related hashtags, and viceversa. The aim of the network is to
+                let the users explore visually the dataset to see for
+                themselves what kind of content one can find on the platform.
+              </p>
+              <div id="legend">
+                <ul>
+                  <li>Hashtag</li>
+                  <li>Video</li>
+                </ul>
+              </div>
+            </div>
+            <div class="popup-footer">
+              <div>
+                <img src="assets/img/legend/SVG/popUp-1.svg" />
+                <p>Use the search bar to look for a specific hashtag</p>
+              </div>
+              <div>
+                <img src="assets/img/legend/SVG/popUp-2.svg" />
+                <p>Zoom in to explore more hashtags</p>
+              </div>
+              <div>
+                <img src="assets/img/legend/SVG/popUp-3.svg" />
+                <p>Click to discover the connections</p>
+              </div>
+              <div>
+                <img src="assets/img/legend/SVG/popUp-4.svg" />
+                <p>Look at the side bar to learn more at the single video</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form autocomplete="off" onsubmit="return false">
+          <div class="autocomplete">
+            <input id="myInput" type="text" value="#" placeholder="Search hashtags..." />
+          </div>
+          <input type="submit" value="DIVE" id="submitButton" />
+        </form>
+        <div class="buttonGui" id="zoomIn">+</div>
+        <div class="buttonGui" id="zoomOut">–</div>
+        <div class="buttonGui" id="resetView">RESET</div>
+        <div class="buttonGui" id="info">?</div>
+      </div>
+    </div>
+  </div>
 
-    
-    <script src="js/main.js"></script>
-    <script src="js/archive.js"></script>
+  <script src="assets/js/favicon.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/archive.js"></script>
 
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>

@@ -296,6 +296,7 @@ Index
   grid-area: overlap;
   z-index: 1;
   display: none;
+  text-transform: uppercase;
 }
 
 .rabbit {

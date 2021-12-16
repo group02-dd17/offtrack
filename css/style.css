@@ -1122,21 +1122,6 @@ Keywords
   align-self: end;
 }
 
-#wrapper-vaccine-6 {
-  grid-column: 6 / span 4;
-  grid-row: 6;
-  justify-self: center;
-  align-self: start;
-}
-
-
-#hashtag-vaccine-5 {
-  grid-column: 2/span 2;
-  grid-row: 6;
-  justify-self: end;
-  align-self: start;
-}
-
 #quote-vaccine-E {
   grid-column: 5 / span 2;
   grid-row: 6;
@@ -1144,139 +1129,135 @@ Keywords
   align-self: center;
   z-index: 6;
 }
-#wrapper-vaccine-7 {
+#wrapper-vaccine-6 {
   grid-column: 6 / span 4;
   grid-row: 6;
   justify-self: center;
-  align-self: end;
-}
-
-#hashtag-vaccine-6 {
-  grid-column: 7/span 2;
-  grid-row: 7;
-  justify-self: end;
   align-self: start;
-}
-
-
-#hashtag-vaccine-7 {
-  grid-column: 7/span 2;
-  grid-row: 7;
-  justify-self: center;
-  align-self: center;
 }
 
 #quote-vaccine-F {
-  grid-column: 3 / span 2;
-  grid-row: 7;
-  justify-self: center;
-  align-self: start;
-  z-index: 6;
-  margin-top: 30%;
-}
-#wrapper-vaccine-8 {
-  grid-column: 2 / span 2;
-  grid-row: 7;
-  justify-self: center;
-  align-self: start;
-}
-
-#quote-vaccine-G {
   grid-column: 4 / span 2;
-  grid-row: 7;
-  justify-self: end;
-  align-self: end;
-  z-index: 6;
-}
-#wrapper-vaccine-9 {
-  grid-column: 5 / span 2;
   grid-row: 7;
   justify-self: center;
   align-self: center;
-  margin-top: 30%;
-  margin-bottom: 20%;
+  z-index: 6;
+}
+#wrapper-vaccine-7 {
+  grid-column: 2 / span 3;
+  grid-row: 7;
+  justify-self: center;
+  align-self: start;
 }
 
-#quote-vaccine-H {
-  grid-column: 7 / span 2;
+#wrapper-vaccine-8 {
+  grid-column: 6 / span 4;
   grid-row: 7;
+  justify-self: center;
+  align-self: end;
+}
+
+#wrapper-vaccine-9 {
+  grid-column: 2 / span 4;
+  grid-row: 8;
+  justify-self: center;
+  align-self: start;
+}
+
+#hashtag-vaccine-5 {
+  grid-column: 6/span 3;
+  grid-row: 8;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-vaccine-G {
+  grid-column: 6 / span 2;
+  grid-row: 9;
   justify-self: end;
   align-self: end;
   z-index: 6;
 }
 #wrapper-vaccine-10 {
-  grid-column: 8 / span 2;
-  grid-row: 7;
+  grid-column: 7 / span 3;
+  grid-row: 9;
   justify-self: center;
-  align-self: end;
-  margin-bottom: 10%;
+  align-self: start;
+}
+
+#hashtag-vaccine-6 {
+  grid-column: 2/span 2;
+  grid-row: 10;
+  justify-self: center;
+  align-self: START;
+}
+
+#quote-vaccine-H {
+  grid-column: 5 / span 3;
+  grid-row: 10;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-vaccine-11 {
+  grid-column: 2 / span 4;
+  grid-row: 10;
+  justify-self: center;
+  align-self: center;
 }
 
 #quote-vaccine-I {
   grid-column: 6 / span 3;
-  grid-row: 8;
+  grid-row: 10;
   justify-self: center;
-  align-self: start;
-  margin-top: 20%;
+  align-self: end;
   z-index: 6;
 }
-
-#hashtag-vaccine-8 {
-  grid-column: 6/span 2;
-  grid-row: 8;
-  justify-self: start;
-  align-self: end;
-  margin-bottom: 50%;
-}
-
-#wrapper-vaccine-11 {
-  grid-column: 3 / span 4;
-  grid-row: 8;
-  justify-self: center;
-  align-self: start;
-  margin-bottom: 50%;
-}
-
 #wrapper-vaccine-12 {
   grid-column: 8 / span 2;
-  grid-row: 8;
+  grid-row: 10;
   justify-self: center;
   align-self: center;
-  margin-top:20%;
 }
 
-#hashtag-vaccine-9 {
-  grid-column: 5/span 2;
-  grid-row: 8;
+#hashtag-vaccine-7 {
+  grid-column: 7/span 2;
+  grid-row: 11;
   justify-self: start;
-  align-self: end;
-}
-
-#wrapper-vaccine-13 {
-  grid-column: 2 / span 2;
-  grid-row: 8;
-  justify-self: center;
-  align-self: end;
+  align-self: start;
 }
 
 #quote-vaccine-J {
+  grid-column: 6 / span 3;
+  grid-row: 11;
+  justify-self: center;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-vaccine-13 {
+  grid-column: 6 / span 4;
+  grid-row: 11;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-vaccine-K {
   grid-column: 6 / span 2;
-  grid-row: 9;
+  grid-row: 12;
   justify-self: center;
   align-self: end;
   z-index: 6;
 }
 #wrapper-vaccine-14 {
-  grid-column: 7 / span 4;
-  grid-row: 9;
+  grid-column: 2 / span 3;
+  grid-row: 12;
   justify-self: center;
-  align-self: center;
-  width: 80%;
+  align-self: end;
 }
 
 #wrapper-vaccine-15 {
   grid-column: 2 / span 4;
-  grid-row: 9;
+  grid-row: 12;
   justify-self: center;
   align-self: end;
   margin-bottom: 10%;
@@ -1284,7 +1265,7 @@ Keywords
 
 #quote-vaccine-K {
   grid-column: 3 / span 3;
-  grid-row: 10;
+  grid-row: 20;
   justify-self: center;
   align-self:  center;
   z-index: 6;
@@ -1292,21 +1273,21 @@ Keywords
 }
 #wrapper-vaccine-16 {
   grid-column: 2 / span 3;
-  grid-row: 10;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
 }
 
 #quote-vaccine-L {
   grid-column: 5 / span 2;
-  grid-row: 10;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   z-index: 6;
 }
 #wrapper-vaccine-17 {
   grid-column: 6 / span 4;
-  grid-row: 10;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   margin-bottom: 10%;
@@ -1314,14 +1295,14 @@ Keywords
 
 #hashtag-vaccine-10 {
   grid-column: 2/span 2;
-  grid-row: 10;
+  grid-row: 20;
   justify-self: start;
   align-self: end;
 }
 
 #wrapper-vaccine-18 {
   grid-column: 7 / span 3;
-  grid-row: 11;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
   margin-bottom: 30%;
@@ -1329,14 +1310,14 @@ Keywords
 
 #quote-vaccine-M {
   grid-column: 2 / span 2;
-  grid-row: 11;
+  grid-row: 20;
   justify-self: center;
   align-self:  end;
   z-index: 6;
 }
 #wrapper-vaccine-19 {
   grid-column: 3 / span 3;
-  grid-row: 11;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   margin-bottom: 10%;
@@ -1344,7 +1325,7 @@ Keywords
 
 #quote-vaccine-N {
   grid-column: 7 / span 2;
-  grid-row: 12;
+  grid-row: 20;
   justify-self: center;
   align-self:  end;
   z-index: 6;
@@ -1352,7 +1333,7 @@ Keywords
 }
 #wrapper-vaccine-20 {
   grid-column: 8 / span 2;
-  grid-row: 12;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
   width: 90%;
@@ -1360,14 +1341,14 @@ Keywords
 
 #quote-vaccine-O {
   grid-column: 5 / span 2;
-  grid-row: 12;
+  grid-row: 20;
   justify-self: center;
   align-self:  start;
   z-index: 6;
 }
 #wrapper-vaccine-21 {
   grid-column: 2 / span 4;
-  grid-row: 12;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
   margin-top: 10%;
@@ -1375,7 +1356,7 @@ Keywords
 
 #hashtag-vaccine-11 {
   grid-column: 4/span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
 }
@@ -1383,21 +1364,21 @@ Keywords
 
 #wrapper-vaccine-22 {
   grid-column: 5 / span 3;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
 }
 
 #quote-vaccine-P {
   grid-column: 7 / span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self:  end;
   z-index: 6;
 }
 #wrapper-vaccine-23 {
   grid-column: 8 / span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   width: 80%;
@@ -1407,14 +1388,14 @@ Keywords
 
 #quote-vaccine-Q {
   grid-column: 3/ span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   z-index: 6;
 }
 #wrapper-vaccine-24 {
   grid-column: 2 / span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: start;
   margin-bottom: 50%;
@@ -1423,22 +1404,20 @@ Keywords
 
 #quote-vaccine-R {
   grid-column: 5 / span 1;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: center;
   z-index: 6;
 }
 #wrapper-vaccine-25 {
   grid-column: 5 / span 3;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: center;
-  width: 60%;
-}
 
 #hashtag-vaccine-12 {
   grid-column: 2/span 1;
-  grid-row: 14;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
 }
@@ -1446,7 +1425,7 @@ Keywords
 #hashtag-vaccine-13 {
 
   grid-column: 5/span 2;
-  grid-row: 13;
+  grid-row: 20;
   justify-self: center;
   align-self: end;
   margin-bottom: 10%;

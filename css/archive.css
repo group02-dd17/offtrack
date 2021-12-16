@@ -307,6 +307,14 @@ input:focus {
   padding: 2px;
 }
 
+.iframeContainer {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+
+
 .lightbox.closed {
   display: none;
 }

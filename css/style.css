@@ -221,6 +221,15 @@ Index
   place-items: center;
   position: sticky;
   top: 0;
+  background-color: #000000;
+}
+
+.choose {
+  min-height: 100vh;
+  width: 100%;
+  place-items: center;
+  position: sticky;
+  top: 0;
 }
 
 .introduction-content {
@@ -277,6 +286,7 @@ Index
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000000;
 }
 
 .keywords {
@@ -324,6 +334,7 @@ Index
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  background-color: #000000;
 }
 
 .go-to-archive:hover>p {
@@ -1238,7 +1249,9 @@ Keywords
   grid-column: 6 / span 4;
   grid-row: 11;
   justify-self: center;
-  align-self: start;
+  align-self: center;
+  margin-top: 15%;
+  margin-bottom: 15%;
 }
 
 #quote-vaccine-J {
@@ -1253,10 +1266,11 @@ Keywords
   grid-row: 11;
   justify-self: center;
   align-self: end;
+  margin-bottom: 20%;
 }
 
 #hashtag-vaccine-8 {
-  grid-column: 2/span 2;
+  grid-column: 6/span 2;
   grid-row: 12;
   justify-self: start;
   align-self: start;
@@ -1267,21 +1281,22 @@ Keywords
   grid-row: 12;
   justify-self: center;
   align-self: start;
+  margin-bottom: 50%;
 }
 
 #quote-vaccine-K {
-  grid-column: 3 / span 3;
+  grid-column: 3 / span 2;
   grid-row: 12;
   justify-self: center;
   align-self:  center;
   z-index: 6;
-  margin-top: 20%;
+  margin-bottom: 60%;
 }
 #wrapper-vaccine-16 {
   grid-column: 2 / span 2;
   grid-row: 12;
   justify-self: center;
-  align-self: start;
+  align-self: center;
 }
 
 #quote-vaccine-L {
@@ -1304,6 +1319,7 @@ Keywords
   grid-row: 13;
   justify-self: start;
   align-self: start;
+  margin-top: 15%;
 }
 
 #hashtag-vaccine-10 {
@@ -1318,6 +1334,7 @@ Keywords
   grid-row: 13;
   justify-self: start;
   align-self: start;
+  margin-top: 15%;
 }
 
 #hashtag-vaccine-12 {
@@ -1328,17 +1345,19 @@ Keywords
 }
 
 #quote-vaccine-M {
-  grid-column: 5 / span 4;
+  grid-column: 7 / span 3;
   grid-row: 13;
   justify-self: center;
   align-self:  end;
   z-index: 6;
 }
 #wrapper-vaccine-18 {
-  grid-column: 7 / span 3;
+  grid-column: 5 / span 4;
   grid-row: 13;
   justify-self: center;
   align-self: end;
+  margin-bottom: 5%;
+  margin-top: 30%;
 }
 
 #quote-vaccine-N {
@@ -1347,13 +1366,13 @@ Keywords
   justify-self: center;
   align-self:  end;
   z-index: 6;
-  margin-bottom: 10%;
 }
 #wrapper-vaccine-19 {
   grid-column: 8 / span 2;
   grid-row: 14;
   justify-self: center;
   align-self: end;
+  margin-bottom: 10%;
 }
 
 #wrapper-vaccine-20 {
@@ -1363,7 +1382,6 @@ Keywords
   align-self: start;
 }
 
-
 #wrapper-vaccine-21 {
   grid-column: 5 / span 2;
   grid-row: 14;
@@ -1372,17 +1390,18 @@ Keywords
 }
 
 #hashtag-vaccine-13 {
-  grid-column: 2/span 2;
+  grid-column: 6/span 2;
   grid-row: 15;
   justify-self: center;
   align-self: start;
+  margin-top: 10%;
 }
 
 #quote-vaccine-O {
-  grid-column: 3 / span 2;
+  grid-column: 4 / span 2;
   grid-row: 15;
   justify-self: center;
-  align-self:  start;
+  align-self:  center;
   z-index: 6;
 }
 #wrapper-vaccine-22 {
@@ -1396,21 +1415,24 @@ Keywords
   grid-column: 2/span 2;
   grid-row: 15;
   justify-self: center;
-  align-self: start;
+  align-self: end;
+  margin-bottom: 50%;
 }
 
 #quote-vaccine-P {
-  grid-column: 3 / span 2;
+  grid-column: 4 / span 3;
   grid-row: 15;
   justify-self: center;
-  align-self:  center;
+  align-self:  end;
   z-index: 6;
 }
 #wrapper-vaccine-23 {
   grid-column: 6 / span 4;
   grid-row: 15;
   justify-self: center;
-  align-self: start;
+  align-self: end;
+  margin-bottom: 5%;
+  margin-top: 50%;
 }
 
 /*-PCR-*/

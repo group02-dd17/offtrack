@@ -1,6 +1,7 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
+volumeVideos(0.01);
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
 console.log("sono il new");

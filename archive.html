@@ -73,6 +73,53 @@
           </div>
         </div>
         <div id="network-graph">
+          <!-- POPUP -->
+          <div class="lightbox closed">
+            <div class="iframeContainer">
+              <div class="toolbarLB">
+                <span class="closeLB" onclick="lightBoxClose()">x</span>
+              </div>
+              <div class="popup-title">
+                <h1>How the archive works</h1>
+              </div>
+              <div class="popup-main">
+                <p>
+                  The following network gathers the videos (2381) and hashtags
+                  (127) collected on Bitchute related to #plandemic and
+                  #scamdemic and it shows the connection between a video and its
+                  related hashtags, and viceversa. The aim of the network is to
+                  let the users explore visually the dataset to see for
+                  themselves what kind of content one can find on the platform.
+                </p>
+                <div id="legend">
+                  <ul>
+                    <li>Hashtag</li>
+                    <li>Video</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <div>
+                  <p>Use the search bar to look for a specific hashtag</p>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <div>
+                  <p>Zoom in to explore more hashtags</p>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <div>
+                  <p>Click to discover the connections</p>
+                </div>
+              </div>
+              <div class="popup-footer">
+                <div>
+                  <p>Look at the side bar to learn more at the single video</p>
+                </div>
+              </div>
+            </div>
+          </div>
           <form autocomplete="off" onsubmit="return false">
             <div class="autocomplete">
               <input
@@ -88,12 +135,6 @@
           <div class="buttonGui" id="zoomOut">–</div>
           <div class="buttonGui" id="resetView">RESET</div>
           <div class="buttonGui" id="info">?</div>
-          <!-- <div id="legend">
-            <ul>
-              <li>Hashtag (recurring more than 5 times)</li>
-              <li>Video</li>
-            </ul>
-          </div> -->
         </div>
       </div>
     </div>

@@ -1,7 +1,7 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
-$(window).on('load', function () {
+$(document).on('load', function () {
   volumeVideos(0.01);
 });
 
@@ -56,6 +56,7 @@ let lines = function (l) {
 
     l.vertex(l.mouseX, l.mouseY);
     l.endShape();
+
     l.mouseWheel = function (event) {
       //move the square according to the vertical scroll amount
       l.mouseY += event.delta;

@@ -10,33 +10,33 @@ let hashList = [];
 
 //Popup
 function rC(nam) {
-  var tC = document.cookie.split('; ');
+  var tC = document.cookie.split("; ");
   for (var i = tC.length - 1; i >= 0; i--) {
-    var x = tC[i].split('=');
+    var x = tC[i].split("=");
     if (nam == x[0]) return unescape(x[1]);
   }
-  return '~';
+  return "~";
 }
 
 function writeCookie(nam, val) {
-  document.cookie = nam + '=' + escape(val);
+  document.cookie = nam + "=" + escape(val);
 }
 
 function lookupCookie(nam, pg) {
   var val = rC(nam);
-  if (val.indexOf('~' + pg + '~') != -1) return false;
-  val += pg + '~';
+  if (val.indexOf("~" + pg + "~") != -1) return false;
+  val += pg + "~";
   writeCookie(nam, val);
   return true;
 }
 
 function firstTime(cookieName) {
-  return lookupCookie('pWrD4jBo', cookieName);
+  return lookupCookie("pWrD4jBo", cookieName);
 }
 
 function thisPage() {
-  var page = location.href.substring(location.href.lastIndexOf('\/') + 1);
-  pos = page.indexOf('.');
+  var page = location.href.substring(location.href.lastIndexOf("/") + 1);
+  pos = page.indexOf(".");
   if (pos > -1) {
     page = page.substr(0, pos);
   }
@@ -52,11 +52,9 @@ function init() {
 
 init();
 
-lightBoxClose = function() {
+lightBoxClose = function () {
   document.querySelector(".lightbox").classList.add("closed");
-}
-
-
+};
 
 //Add a method to the graph that returns all neighbors of a node
 sigma.classes.graph.addMethod("neighbors", function (nodeId) {
@@ -182,6 +180,18 @@ function buildNetwork() {
   document.getElementById("wrapper-video").classList.add("hide");
 
   s.bind("clickNode", function (e) {
+    
+    s.graph.nodes().forEach(function (n) {
+      (n.color = n.originalColor), (n.hidden = false);
+    });
+
+    s.graph.edges().forEach(function (e) {
+      (e.color = e.originalColor), (e.hidden = false);
+    });
+
+    flagEvent[0] = false;
+    flagEvent[1] = null;
+
     var nodeId = e.data.node.id,
       toKeep = s.graph.neighbors(nodeId),
       arrIdNeighs = [],
@@ -269,17 +279,31 @@ function buildNetwork() {
     let aNode = e.data.node;
     let cam = s.camera;
     let pfx = cam.readPrefix;
-    sigma.utils.zoomTo(
-      cam, // cam
-      aNode[pfx + "x"] - cam.x, // x
-      aNode[pfx + "y"] - cam.y, // y
-      0.3, // ratio
-      { duration: 1000 } // animation
-    );
 
-    s.settings({
-      labelThreshold: 1,
-    });
+
+    if (cam.ratio > 0.7) {
+      sigma.utils.zoomTo(
+        cam, // cam
+        aNode[pfx + "x"] - cam.x, // x
+        aNode[pfx + "y"] - cam.y, // y
+        0.3, // ratio
+        { duration: 1000 } // animation
+      );
+
+      s.settings({
+        labelThreshold: 1,
+      });
+    } else {
+      sigma.misc.animation.camera(
+        cam,
+        {
+          x: aNode[cam.readPrefix + "x"],
+          y: aNode[cam.readPrefix + "y"],
+          ratio: 0.3,
+        },
+        { duration: 1000 }
+      );
+    }
 
     s.refresh();
   });
@@ -527,6 +551,16 @@ function buildNetwork() {
       .addEventListener("click", function (f) {
         let selectedHash = document.getElementById("myInput").value;
         closeAllLists(f.target);
+        s.graph.nodes().forEach(function (n) {
+          (n.color = n.originalColor), (n.hidden = false);
+        });
+    
+        s.graph.edges().forEach(function (e) {
+          (e.color = e.originalColor), (e.hidden = false);
+        });
+    
+        flagEvent[0] = false;
+        flagEvent[1] = null;
         moveToHash(selectedHash);
       });
 
@@ -614,23 +648,32 @@ function buildNetwork() {
           flagEvent[1] = nodeId;
 
           let aNode = e;
-          let cam = s.cameras[0];
+          let cam = s.camera;
           let pfx = cam.readPrefix;
 
-          console.log(cam);
-          console.log(aNode);
-          console.log(pfx);
-          console.log(aNode[pfx + "x"]);
+          if (cam.ratio > 0.7) {
+            sigma.utils.zoomTo(
+              cam, // cam
+              aNode[pfx + "x"] - cam.x, // x
+              aNode[pfx + "y"] - cam.y, // y
+              0.3, // ratio
+              { duration: 1000 } // animation
+            );
 
-          sigma.misc.animation.camera(
-            cam,
-            {
-              x: aNode[cam.readPrefix + "x"],
-              y: aNode[cam.readPrefix + "y"],
-              ratio: 0.3,
-            },
-            { duration: 1000 }
-          );
+            s.settings({
+              labelThreshold: 1,
+            });
+          } else {
+            sigma.misc.animation.camera(
+              cam,
+              {
+                x: aNode[cam.readPrefix + "x"],
+                y: aNode[cam.readPrefix + "y"],
+                ratio: 0.3,
+              },
+              { duration: 1000 }
+            );
+          }
           s.refresh();
         }
       });

@@ -15,7 +15,7 @@ let lines = function (l) {
       document.getElementById("container").offsetHeight
     );
 
-    l.pixelDensity(1);
+    l.pixelDensity(0.6);
     l.frameRate(25);
 
     canvasL.parent("#canvasLines");

@@ -5,6 +5,8 @@ $(document).on('load', function () {
   volumeVideos(0.01);
 });
 
+console.log("prova ema")
+
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
 var firstNode = document.getElementById("wrapper-" + checkPage + "1");

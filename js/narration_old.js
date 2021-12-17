@@ -1,37 +1,35 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
-$(document).on('load', function () {
-  volumeVideos(0.01);
-});
-
-let xyVertex = []; //Array that will contain the vertexes of the polyLine
-
-var firstNode = document.getElementById("wrapper-" + checkPage + "1");
-let _x0 = firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2;
-let _y0 = firstNode.lastElementChild.getBoundingClientRect().top -
-        document.getElementById("title").getBoundingClientRect().top +
-        firstNode.lastElementChild.offsetHeight / 2;
-
-console.log(_x0, _y0);
+volumeVideos(0.01);
 
 let lines = function (l) {
+  let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
   l.setup = function () {
     const canvas = document.querySelector("#canvasLines");
     const ctx = this.canvas.getContext("2d");
-
     p5.disableFriendlyErrors = true; // disables FES
-
     var canvasL = l.createCanvas(
       l.windowWidth,
       document.getElementById("container").offsetHeight
     );
 
-    l.pixelDensity(1);
-    l.frameRate(30);
+    l.pixelDensity(0.6);
+    l.frameRate(25);
 
     canvasL.parent("#canvasLines");
+
+    var firstNode = document.getElementById("wrapper-" + checkPage + "1");
+    xyVertex.push({
+      x:
+        firstNode.lastElementChild.getBoundingClientRect().left +
+        firstNode.offsetWidth / 2,
+      y:
+        firstNode.lastElementChild.getBoundingClientRect().top -
+        document.getElementById("title").getBoundingClientRect().top +
+        firstNode.lastElementChild.offsetHeight / 2,
+    });
   };
 
   l.draw = function () {
@@ -45,18 +43,31 @@ let lines = function (l) {
     l.stroke("red");
     l.strokeWeight(2);
 
+    $(videoList).ready(function () {
+      videoList.forEach(function (item) {
+        //when :hover the video
+        item.lastElementChild.addEventListener("mouseover", function () {
+          //add the center of the video as a new vertex
+          xyVertex.push({
+            x:
+              item.lastElementChild.getBoundingClientRect().left +
+              item.offsetWidth / 2,
+            y:
+              item.lastElementChild.getBoundingClientRect().top -
+              document.getElementById("title").getBoundingClientRect().top +
+              item.lastElementChild.offsetHeight / 2,
+          });
+        });
+      });
+    });
 
     //draw the polyLine
     l.beginShape();
-    l.vertex(_x0, _y0);
-
-    $(xyVertex).each(function () {
-      l.vertex(this[0], this[1]);
+    xyVertex.forEach(function (item, index) {
+      l.vertex(xyVertex[index].x, xyVertex[index].y);
     });
-
     l.vertex(l.mouseX, l.mouseY);
     l.endShape();
-
     l.mouseWheel = function (event) {
       //move the square according to the vertical scroll amount
       l.mouseY += event.delta;
@@ -85,7 +96,6 @@ let lines = function (l) {
     });
   };
 };
-
 let canvasLines = new p5(lines);
 
 document.getElementById("toggleVolume").addEventListener("click", function () {
@@ -110,28 +120,16 @@ videoList.forEach(function (item, index) {
   });
 });
 
-let volumeVideos = function (vol) {
+function volumeVideos(vol) {
   videoList.forEach(function (item) {
     item.lastElementChild.volume = vol;
   });
 }
 
 $(".hash").click(function (_hash) {
-  let index = $(".hash").index(this);
   let url = new URL('https://group02-density.github.io//Website/archive.html');
   let content = _hash.target.innerText.toLowerCase().substring(1);
   console.log(content);
   url.searchParams.set('selection', content);
   window.open(url);
-});
-
-let tempCoord = [];
-
-$(".wrapper").each(function (index) {
-  $(this).mouseenter(function () {
-    let x = $(this).offset().left + this.offsetWidth / 2;
-    let y = $(this).offset().top + this.offsetHeight / 2;
-    tempCoord = [x, y];
-    xyVertex.push(tempCoord);
-  });
 });

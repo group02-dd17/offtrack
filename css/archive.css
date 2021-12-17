@@ -294,6 +294,7 @@ input:focus {
   padding: 3em;
   aspect-ratio: 16/9;
   grid-row-gap: 2em;
+  align-items: center;
 }
 
 .popup-title {
@@ -328,7 +329,7 @@ input:focus {
 }
 
 .popup-footer img {
-  padding: 30%;
+  width: 30%;
 }
 
 #legend {

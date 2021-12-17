@@ -1831,7 +1831,7 @@ About
 /*--------
 Cover
 ----------*/
-.cover {
+#cover {
   display: grid;
   grid-template-columns: repeat(15, 1fr);
   grid-template-rows: repeat(9, 1fr);

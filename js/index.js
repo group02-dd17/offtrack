@@ -1,3 +1,11 @@
+for(i=1; i<=135; i++){
+    let newThumb = null;
+    newThumb = document.createElement('div');
+    newThumb.className = "filter";
+    newThumb.setAttribute("id","cover-item"+i);
+    document.getElementById('cover').appendChild(newThumb);
+}
+
 $(window).on('load', function () {
     //collect all the divs that use .filter (so they will be the images ones)
     var items = $('.filter');

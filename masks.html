@@ -451,8 +451,10 @@
     <script src="js/narration.js"></script>
     <script src="js/main.js"></script>
     <script>
-      AOS.init({
-        once: false
+      $(document).ready(function () {
+        setTimeout(() => {
+          AOS.init();
+        }, 120);
       });
     </script>
 </body>

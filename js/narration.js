@@ -22,8 +22,6 @@ jQuery(window).on('load', function () {
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
-console.log("prova ema");
-
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
 var firstNode = document.getElementById("wrapper-" + checkPage + "1");
@@ -31,8 +29,6 @@ let _x0 = firstNode.lastElementChild.getBoundingClientRect().left + firstNode.of
 let _y0 = firstNode.lastElementChild.getBoundingClientRect().top -
   document.getElementById("title").getBoundingClientRect().top +
   firstNode.lastElementChild.offsetHeight / 2;
-
-console.log(_x0, _y0);
 
 let lines = function (l) {
 

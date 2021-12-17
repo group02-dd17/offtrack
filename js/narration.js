@@ -1,6 +1,7 @@
 jQuery(window).on('load', function () {
   // Animate loader off screen
-  $(".se-pre-con").slideUp("slow");;
+  $(".se-pre-con").slideUp("slow");
+  volumeVideos(0.01);
 });
 
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
@@ -108,8 +109,6 @@ $('video').hover(function () {
 }, function () {
   if (!flagMute) this.volume = 0.01;
 });
-
-
 // videoList.forEach(function (item, index) {
 //   item.lastElementChild.addEventListener("mouseover", function () {
 //     if (!flagMute) item.lastElementChild.volume = 1;
@@ -124,14 +123,11 @@ let volumeVideos = function (vol) {
   $("video").each(function () {
     this.volume = vol;
   });
+  //OLD METHOD
   // videoList.forEach(function (item) {
   //   item.lastElementChild.volume = vol;
   // });
 }
-
-$(window).on('load', function () {
-  volumeVideos(0.01);
-});
 
 $(".hash").click(function (_hash) {
   let index = $(".hash").index(this);

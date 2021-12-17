@@ -302,6 +302,7 @@ input:focus {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 2em;
+  font-size: 1.4rem;
 }
 
 .popup-main {

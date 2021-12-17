@@ -1,6 +1,9 @@
 jQuery(window).on('load', function () {
   // Animate loader off screen
   $(".se-pre-con").slideUp("slow");
+  document.getElementsByTagName('video').forEach((itemVid) => {
+    itemVid.muted = null;
+  });
   volumeVideos(0.01);
 });
 
@@ -109,6 +112,7 @@ $('video').hover(function () {
 }, function () {
   if (!flagMute) this.volume = 0.01;
 });
+
 // videoList.forEach(function (item, index) {
 //   item.lastElementChild.addEventListener("mouseover", function () {
 //     if (!flagMute) item.lastElementChild.volume = 1;
@@ -123,6 +127,7 @@ let volumeVideos = function (vol) {
   $("video").each(function () {
     this.volume = vol;
   });
+  
   //OLD METHOD
   // videoList.forEach(function (item) {
   //   item.lastElementChild.volume = vol;

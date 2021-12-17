@@ -39,7 +39,7 @@ nav {
   font-size: 1.5rem;
   border: 1px solid #FFF;
   border-color: #FFF;
-  z-index: 100;
+  z-index: 8;
   padding: 1rem 1.2rem 0.8rem 1.2rem;
 }
 
@@ -257,13 +257,15 @@ input:focus {
   ----------*/
 .lightbox {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 100;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  display: grid;
+  justify-items: center;
 }
 
-.toolbarLB {  
+.toolbarLB {
   justify-self: end;
   padding: 3px;
 }
@@ -273,6 +275,7 @@ input:focus {
   background-color: #000;
   color: #FFF;
   font-family: 'Redaction 50';
+  font-weight: 400;
   font-size: 1.5rem;
   border: 1px solid #FFF;
   border-color: #FFF;
@@ -288,15 +291,18 @@ input:focus {
 
 .iframeContainer {
   display: grid;
-  width: 60vw;
-  height: 40vh;
+  width: 50vw;
   padding: 3em;
+  aspect-ratio: 16/9;
+  grid-row-gap: 1em;
+  align-items: center;
 }
 
 .popup-title {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 2em;
+  font-size: 1.4rem;
 }
 
 .popup-main {
@@ -313,18 +319,20 @@ input:focus {
 .popup-footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
+  align-items: start;
   justify-items: center;
   grid-gap: 2em;
+  text-align-last: center;
 }
 
 .popup-footer p {
   font-family: 'GT America';
   text-align: center;
+  margin-top: 15%;
 }
 
 .popup-footer img {
-  padding: 1em 4.5em;
+  width: 30%;
 }
 
 #legend {

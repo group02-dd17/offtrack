@@ -7,6 +7,7 @@ document.getElementById("network-graph").oncontextmenu = function (e) {
 };
 
 let hashList = [];
+let step = 0;
 
 //Popup
 function rC(nam) {
@@ -56,16 +57,6 @@ lightBoxClose = function () {
   document.querySelector(".lightbox").classList.add("closed");
 };
 
-function resetSide() {
-  //reset sidebar
-  document.getElementById("nameLabels").textContent =
-    "Select a video or an hashtag to\u00A0get more information";
-  document.getElementById("wrapper-video").classList.add("hide");
-  document.getElementById("hashtagsLabel").classList.add("hide");
-  document.getElementById("videosNumber").classList.add("hide");
-  document.getElementById("cohashTitle").classList.add("hide");
-}
-
 //Add a method to the graph that returns all neighbors of a node
 sigma.classes.graph.addMethod("neighbors", function (nodeId) {
   var k,
@@ -89,12 +80,33 @@ $.getJSON("assets/data/Phase32.json", function (response) {
       type: "canvas",
     },
   });
+
   s.addCamera("cam2");
   // s.camera.angle= Math.PI;
   s.camera.isAnimated = true;
   // s.camera.getRectangle(document.getElementById("network-graph").clientWidth, document.getElementById("network-graph").clientHeight);
 
   buildNetwork();
+
+  setInterval(function() {
+    var prefix = ['grid_', 'atlas_'][step = +!step];
+    console.log(step);
+    sigma.plugins.animate(
+      s,
+      {
+        x: prefix + 'x',
+        y: prefix + 'y',
+      },
+      {
+        easing: 'cubicInOut',
+        duration: 300,
+        onComplete: function() { 
+          buildNetwork();
+        }
+      }
+    );
+  }, 2000);
+
 });
 
 CustomShapes.init(s);
@@ -107,13 +119,17 @@ function buildNetwork() {
     if (n.attributes.Type == "hashtags") {
       hashList.push(n.label);
     }
+    n.grid_x = 0;
+    n.grid_y = 0;
+    n.atlas_x = n.x;
+    n.atlas_y = n.y;
+    console.log(n);
   });
 
   s.graph.edges().forEach(function (e) {
     e.originalColor = e.color;
   });
 
-  s.refresh();
   //Override initial edge colors
 
   s.settings({
@@ -130,11 +146,11 @@ function buildNetwork() {
     defaultLabelBGColor: "rgba(0,0,0,0.5)", //opacità per visibiltà video piccoli
     defaultHoverLabelBGColor: "white",
     defaultLabelHoverColor: "black",
+    animationsTime: 1000,
   });
 
   // Refresh the graph to see the changes:
-  s.refresh();
-
+  
   let flagEvent = [false, 0];
 
   //When a node is hovered, check all nodes to see which are neighbors.
@@ -186,10 +202,11 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
 
   document.getElementById("nameLabels").textContent =
-    "Select a video or an hashtag to\u00A0get more information";
+    "Select a video or an hashtag to get more information";
   document.getElementById("wrapper-video").classList.add("hide");
 
   s.bind("clickNode", function (e) {
+
     s.graph.nodes().forEach(function (n) {
       (n.color = n.originalColor), (n.hidden = false);
     });
@@ -224,8 +241,6 @@ function buildNetwork() {
     s.camera.goTo(e.data.node.x, e.data.node.y);
 
     document.getElementById("hashtagsLabel").innerHTML = null;
-    document.getElementById("hashtagsLabel").classList.remove("hide");
-    document.getElementById("videosNumber").classList.remove("hide");
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =
@@ -291,6 +306,7 @@ function buildNetwork() {
     let cam = s.camera;
     let pfx = cam.readPrefix;
 
+
     if (cam.ratio > 0.7) {
       sigma.utils.zoomTo(
         cam, // cam
@@ -341,8 +357,6 @@ function buildNetwork() {
     );
     flagEvent[0] = false;
     flagEvent[1] = null;
-
-    resetSide();
   });
 
   // GUI EVENTS
@@ -376,7 +390,6 @@ function buildNetwork() {
   });
 
   $("#resetView").bind("click", function () {
-    resetSide();
     s.settings({
       labelThreshold: 6,
     });
@@ -399,11 +412,6 @@ function buildNetwork() {
   });
 
   s.refresh();
-
-  //INFO BUTTON
-  document.getElementById("info").addEventListener("click", function () {
-    document.querySelector(".lightbox").classList.remove("closed");
-  });
 
   // SEARCH BAR
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
@@ -632,8 +640,7 @@ function buildNetwork() {
             document.getElementById("videoPlayer").src = e.attributes.link;
             document.getElementById("wrapper-video").classList.remove("hide");
             document.getElementById("videosNumber").textContent =
-              "Number of hashtags: " +
-              Object.keys(s.graph.neighbors(nodeId)).length;
+              "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
             document
               .getElementById("videoPlayer")
               .setAttribute("poster", e.attributes.thumburl);
@@ -646,13 +653,11 @@ function buildNetwork() {
             document.getElementById("hashtagsLabel").classList.remove("hide");
             document.getElementById("cohashTitle").classList.add("hide");
           } else {
-            document.getElementById("nameLabels").textContent =
-              toKeep[nodeId].label;
+            document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
             document.getElementById("videoPlayer").src = "";
             document.getElementById("wrapper-video").classList.add("hide");
             document.getElementById("videosNumber").textContent =
-              "Number of videos: " +
-              Object.keys(s.graph.neighbors(nodeId)).length;
+              "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
             var tempNeighs = [];
             var uniqueLabels = [];
             for (k in keyNames) {

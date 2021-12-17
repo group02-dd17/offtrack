@@ -106,7 +106,7 @@ video:hover {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 
@@ -287,6 +287,7 @@ Index
   background-repeat: no-repeat;
   background-position: center;
   background-color: #000000;
+  text-transform: uppercase;
 }
 
 .keywords {
@@ -295,6 +296,7 @@ Index
   grid-area: overlap;
   z-index: 1;
   display: none;
+  text-transform: uppercase;
 }
 
 .rabbit {
@@ -335,6 +337,7 @@ Index
   background-repeat: no-repeat;
   background-position: center;
   background-color: #000000;
+  text-transform: uppercase;
 }
 
 .go-to-archive:hover>p {
@@ -1078,7 +1081,7 @@ Keywords
 }
 
 #hashtag-vaccine-3 {
-  grid-column: 7/span 3;
+  grid-column: 6/span 3;
   grid-row: 3;
   justify-self: end;
   align-self: start;
@@ -1441,10 +1444,131 @@ Keywords
   background-size: cover;
 }
 
-/*-PCR-*/
+/*-VIRUS-*/
 #virus {
   background-image: url("../assets/img/virus/bit_virus.webp");
   background-size: cover;
+}
+
+#wrapper-virus-1 {
+  grid-column: 4 / span 4;
+  grid-row: 1;
+  justify-self: center;
+  align-self: start;
+}
+
+#hashtag-virus-1 {
+  grid-column: 2/span 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: start;
+}
+
+#quote-virus-A {
+  grid-column: 4 / span 2;
+  grid-row: 2;
+  justify-self: end;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-virus-2 {
+  grid-column: 5 / span 3;
+  grid-row: 2;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
+}
+
+#hashtag-virus-2 {
+  grid-column: 8/span 3;
+  grid-row: 2;
+  justify-self: center;
+  align-self: center;
+}
+
+#hashtag-virus-3 {
+  grid-column: 8/span 2;
+  grid-row: 2;
+  justify-self: start;
+  align-self: end;
+}
+
+#wrapper-virus-3 {
+  grid-column: 3 / span 3;
+  grid-row: 3;
+  justify-self: center;
+  align-self: start;
+}
+
+#hashtag-virus-4 {
+  grid-column: 7/span 3;
+  grid-row: 3;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-virus-B {
+  grid-column: 3 / span 3;
+  grid-row: 4;
+  justify-self: start;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-virus-4 {
+  grid-column: 2 / span 3;
+  grid-row: 4;
+  justify-self: center;
+  align-self: center;
+}
+
+#quote-virus-C {
+  grid-column: 7 / span 2;
+  grid-row: 4;
+  justify-self: start;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-virus-5 {
+  grid-column: 8 / span 2;
+  grid-row: 4;
+  justify-self: center;
+  align-self: start;
+}
+
+#hashtag-virus-5 {
+  grid-column: 6/span 2;
+  grid-row: 3;
+  justify-self: start;
+  align-self: start;
+}
+
+#quote-virus-D {
+  grid-column: 3 / span 3;
+  grid-row: 5;
+  justify-self: start;
+  align-self: center;
+  z-index: 6;
+}
+#wrapper-virus-6 {
+  grid-column: 2 / span 3;
+  grid-row: 5;
+  justify-self: center;
+  align-self: start;
+}
+
+#quote-virus-E {
+  grid-column: 6 / span 2;
+  grid-row: 5;
+  justify-self: start;
+  align-self: end;
+  z-index: 6;
+}
+#wrapper-virus-7 {
+  grid-column: 7 / span 3;
+  grid-row: 5;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 10%;
 }
 
 /*--------
@@ -2497,7 +2621,7 @@ Cover
 }
 
 .filter {
-  filter: grayscale(1) brightness(1) contrast(0.9) !important;
+  filter: grayscale(1) contrast(0.75) brightness(0.7) !important;
 }
 
 /*--------

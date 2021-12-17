@@ -56,6 +56,16 @@ lightBoxClose = function () {
   document.querySelector(".lightbox").classList.add("closed");
 };
 
+function resetSide() {
+  //reset sidebar
+  document.getElementById("nameLabels").textContent =
+    "Select a video or an hashtag to\u00A0get more information";
+  document.getElementById("wrapper-video").classList.add("hide");
+  document.getElementById("hashtagsLabel").classList.add("hide");
+  document.getElementById("videosNumber").classList.add("hide");
+  document.getElementById("cohashTitle").classList.add("hide");
+}
+
 //Add a method to the graph that returns all neighbors of a node
 sigma.classes.graph.addMethod("neighbors", function (nodeId) {
   var k,
@@ -176,11 +186,10 @@ function buildNetwork() {
   //Clicking consecutive nodes will show the joint network all clicked nodes.
 
   document.getElementById("nameLabels").textContent =
-    "Select a video or an hashtag to get more information";
+    "Select a video or an hashtag to\u00A0get more information";
   document.getElementById("wrapper-video").classList.add("hide");
 
   s.bind("clickNode", function (e) {
-    
     s.graph.nodes().forEach(function (n) {
       (n.color = n.originalColor), (n.hidden = false);
     });
@@ -215,6 +224,8 @@ function buildNetwork() {
     s.camera.goTo(e.data.node.x, e.data.node.y);
 
     document.getElementById("hashtagsLabel").innerHTML = null;
+    document.getElementById("hashtagsLabel").classList.remove("hide");
+    document.getElementById("videosNumber").classList.remove("hide");
 
     if (e.data.node.attributes.Type == "id") {
       document.getElementById("nameLabels").textContent =
@@ -280,7 +291,6 @@ function buildNetwork() {
     let cam = s.camera;
     let pfx = cam.readPrefix;
 
-
     if (cam.ratio > 0.7) {
       sigma.utils.zoomTo(
         cam, // cam
@@ -331,6 +341,8 @@ function buildNetwork() {
     );
     flagEvent[0] = false;
     flagEvent[1] = null;
+
+    resetSide();
   });
 
   // GUI EVENTS
@@ -364,6 +376,7 @@ function buildNetwork() {
   });
 
   $("#resetView").bind("click", function () {
+    resetSide();
     s.settings({
       labelThreshold: 6,
     });
@@ -386,6 +399,11 @@ function buildNetwork() {
   });
 
   s.refresh();
+
+  //INFO BUTTON
+  document.getElementById("info").addEventListener("click", function () {
+    document.querySelector(".lightbox").classList.remove("closed");
+  });
 
   // SEARCH BAR
   /*initiate the autocomplete function on the "myInput" element, and pass along the countries array as possible autocomplete values:*/
@@ -554,11 +572,11 @@ function buildNetwork() {
         s.graph.nodes().forEach(function (n) {
           (n.color = n.originalColor), (n.hidden = false);
         });
-    
+
         s.graph.edges().forEach(function (e) {
           (e.color = e.originalColor), (e.hidden = false);
         });
-    
+
         flagEvent[0] = false;
         flagEvent[1] = null;
         moveToHash(selectedHash);
@@ -614,7 +632,8 @@ function buildNetwork() {
             document.getElementById("videoPlayer").src = e.attributes.link;
             document.getElementById("wrapper-video").classList.remove("hide");
             document.getElementById("videosNumber").textContent =
-              "Number of hashtags: " + Object.keys(s.graph.neighbors(nodeId)).length;
+              "Number of hashtags: " +
+              Object.keys(s.graph.neighbors(nodeId)).length;
             document
               .getElementById("videoPlayer")
               .setAttribute("poster", e.attributes.thumburl);
@@ -627,16 +646,18 @@ function buildNetwork() {
             document.getElementById("hashtagsLabel").classList.remove("hide");
             document.getElementById("cohashTitle").classList.add("hide");
           } else {
-            document.getElementById("nameLabels").textContent = toKeep[nodeId].label;
+            document.getElementById("nameLabels").textContent =
+              toKeep[nodeId].label;
             document.getElementById("videoPlayer").src = "";
             document.getElementById("wrapper-video").classList.add("hide");
             document.getElementById("videosNumber").textContent =
-              "Number of videos: " + Object.keys(s.graph.neighbors(nodeId)).length;
+              "Number of videos: " +
+              Object.keys(s.graph.neighbors(nodeId)).length;
             var tempNeighs = [];
             var uniqueLabels = [];
             for (k in keyNames) {
               tempNeighs.push(s.graph.neighbors(keyNames[k])); //neighbors di nodeId del ciclo
-      
+
               $.each(tempNeighs[k], function (i, el) {
                 if (
                   $.inArray(el.label, uniqueLabels) === -1 &&

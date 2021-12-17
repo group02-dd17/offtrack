@@ -106,7 +106,7 @@ video:hover {
 }
 
 .hide {
-    display: none;
+    display: none !important;
 }
 
 

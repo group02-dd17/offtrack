@@ -274,7 +274,7 @@ input:focus {
   cursor: pointer;
   background-color: #000;
   color: #FFF;
-  font-family: 'Redaction 70';
+  font-family: 'Redaction 50';
   font-weight: 400;
   font-size: 1.5rem;
   border: 1px solid #FFF;
@@ -327,6 +327,7 @@ input:focus {
 .popup-footer p {
   font-family: 'GT America';
   text-align: center;
+  margin-top: 15%;
 }
 
 .popup-footer img {

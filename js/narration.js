@@ -1,7 +1,8 @@
 jQuery(window).on('load', function () {
   // Animate loader off screen
   $(".se-pre-con").slideUp("slow");
-  document.getElementsByTagName('video').forEach((itemVid) => {
+  document.getElementsByTagName("video").forEach(function(itemVid){
+    itemVid.play();
     itemVid.muted = null;
   });
   volumeVideos(0.01);
@@ -41,8 +42,30 @@ let lines = function (l) {
     canvasL.parent("#canvasLines");
   };
 
+  const scrollProperties = {
+    y: null,
+    spd: null
+  };
+
   l.draw = function () {
+    scrollProperties.y -= scrollProperties.spd;
+    scrollProperties.spd /= 1.9;
+
+    let redLine = function () {
+      l.beginShape();
+      l.vertex(_x0, _y0);
+
+      $(xyVertex).each(function () {
+        l.vertex(this[0], this[1]);
+      });
+
+      l.vertex(l.mouseX, l.mouseY);
+      l.endShape();
+    }
+
     l.clear();
+
+    l.ellipse(l.mouseX, l.mouseY, 10);
 
     for (g in hashArray) {
       l.drawLines(hashArray[g], "hashtag-" + checkPage + (+g + +1));
@@ -52,23 +75,13 @@ let lines = function (l) {
     l.stroke("red");
     l.strokeWeight(2);
 
-
-    //draw the polyLine
-    l.beginShape();
-    l.vertex(_x0, _y0);
-
-    $(xyVertex).each(function () {
-      l.vertex(this[0], this[1]);
-    });
-
-    l.vertex(l.mouseX, l.mouseY);
-    l.endShape();
-
-    l.mouseWheel = function (event) {
-      //move the square according to the vertical scroll amount
-      l.mouseY += event.delta;
-    };
+    redLine();
   };
+
+
+  function mouseWheel(event) {
+    redLine();
+  }
 
   l.drawLines = function (className, idHash) {
     var vidArray = document.getElementsByClassName(className);
@@ -127,7 +140,7 @@ let volumeVideos = function (vol) {
   $("video").each(function () {
     this.volume = vol;
   });
-  
+
   //OLD METHOD
   // videoList.forEach(function (item) {
   //   item.lastElementChild.volume = vol;
@@ -153,8 +166,8 @@ $(".wrapper").each(function (index) {
     if (xyVertex.length > 1) {
       let a = xyVertex[(xyVertex.length) - 1];
       if (a.toString() !== tempCoord.toString()) {
-          xyVertex.push(tempCoord);
-        }
+        xyVertex.push(tempCoord);
+      }
     } else xyVertex.push(tempCoord);
   });
 });

@@ -10,8 +10,8 @@ let xyVertex = []; //Array that will contain the vertexes of the polyLine
 var firstNode = document.getElementById("wrapper-" + checkPage + "1");
 let _x0 = firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2;
 let _y0 = firstNode.lastElementChild.getBoundingClientRect().top -
-        document.getElementById("title").getBoundingClientRect().top +
-        firstNode.lastElementChild.offsetHeight / 2;
+  document.getElementById("title").getBoundingClientRect().top +
+  firstNode.lastElementChild.offsetHeight / 2;
 
 console.log(_x0, _y0);
 
@@ -129,9 +129,13 @@ let tempCoord = [];
 
 $(".wrapper").each(function (index) {
   $(this).mouseenter(function () {
-    let x = $(this).offset().left + this.offsetWidth / 2;
-    let y = $(this).offset().top + this.offsetHeight / 2;
+    let x = Math.floor($(this).offset().left + this.offsetWidth / 2);
+    let y = Math.floor($(this).offset().top + this.offsetHeight / 2);
     tempCoord = [x, y];
-    xyVertex.push(tempCoord);
+    if (xyVertex.length > 1){
+      if(xyVertex[(xyVertex.length)-1][0] != tempCoord[0] && xyVertex[(xyVertex.length)-1][1] != tempCoord[1]){
+        xyVertex.push(tempCoord);
+      }
+    } else xyVertex.push(tempCoord);
   });
 });

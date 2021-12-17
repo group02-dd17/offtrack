@@ -1,7 +1,7 @@
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
-$(document).on('load', function () {
+$(window).on('load', function () {
   volumeVideos(0.01);
 });
 

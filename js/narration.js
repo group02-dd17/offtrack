@@ -1,4 +1,4 @@
-jQuery(window).on('load', function() {
+jQuery(window).on('load', function () {
   // Animate loader off screen
   $(".se-pre-con").slideUp("slow");;
 });
@@ -103,15 +103,22 @@ document.getElementById("toggleVolume").addEventListener("click", function () {
   }
 });
 
-videoList.forEach(function (item, index) {
-  item.lastElementChild.addEventListener("mouseover", function () {
-    if (!flagMute) item.lastElementChild.volume = 1;
-  });
-
-  item.addEventListener("mouseout", function () {
-    if (!flagMute) item.lastElementChild.volume = 0.01;
-  });
+$('video').hover(function () {
+  if (!flagMute) this.volume = 1;
+}, function () {
+  if (!flagMute) this.volume = 0.01;
 });
+
+
+// videoList.forEach(function (item, index) {
+//   item.lastElementChild.addEventListener("mouseover", function () {
+//     if (!flagMute) item.lastElementChild.volume = 1;
+//   });
+
+//   item.addEventListener("mouseout", function () {
+//     if (!flagMute) item.lastElementChild.volume = 0.01;
+//   });
+// });
 
 let volumeVideos = function (vol) {
   $("video").each(function () {
@@ -121,7 +128,8 @@ let volumeVideos = function (vol) {
   //   item.lastElementChild.volume = vol;
   // });
 }
-$(window).on('load', function(){
+
+$(window).on('load', function () {
   volumeVideos(0.01);
 });
 
@@ -142,9 +150,10 @@ $(".wrapper").each(function (index) {
     let y = Math.floor($(this).offset().top + this.offsetHeight / 2);
     tempCoord = [x, y];
     if (xyVertex.length > 1) {
-      if (xyVertex[(xyVertex.length) - 1][0] != tempCoord[0] && xyVertex[(xyVertex.length) - 1][1] != tempCoord[1]) {
-        xyVertex.push(tempCoord);
-      }
+      let a = xyVertex[(xyVertex.length) - 1];
+      if (a.toString() !== tempCoord.toString()) {
+          xyVertex.push(tempCoord);
+        }
     } else xyVertex.push(tempCoord);
   });
 });

@@ -30,38 +30,38 @@ const tooltip = document.querySelector("#tooltip");
 //     placement: "bottom",
 //   });
 // });
-console.log(document.querySelectorAll('a u'));
-const instance = tippy(document.querySelectorAll('a u'));
-console.log(instance);
+// console.log(document.querySelectorAll('a u'));
+// const instance = tippy(document.querySelectorAll('a u'));
+// console.log(instance);
 
-instance.setProps ({
-    placement: 'bottom',
-    arrow: false,
-    animation: 'fade',
-    duration: 500,
-    trigger: 'click'
-  });
+// instance.setProps ({
+//     placement: 'bottom',
+//     arrow: false,
+//     animation: 'fade',
+//     duration: 500,
+//     trigger: 'click'
+//   });
 
-$(".tooltip-content").click(function () {
-  instance.each(function(index, item){
-    item.setContent(checkTooltip($(this)));
-  });
-});
+// $(".tooltip-content").click(function () {
+//   instance.each(function(index, item){
+//     item.setContent(checkTooltip($(this)));
+//   });
+// });
 
-function checkTooltip(content) {
-  var text;
-  switch (content.text()) {
-    case "dark platforms":
-      text = "Digital platforms that are less regulated and moderated hence can be used for hosting content and content creators that may not be tolerated by their more mainstream counterparts.";
-      return text;
-    case "Bitchute":
-      text = "BitChute is a video hosting service launched by Ray Vahey in January 2017. It is known for accommodating far-right individuals and conspiracy theorists, and for hosting hate speech.";
-      return text;
-    case "misinformation":
-      text = "Misinformation is false, inaccurate, or misleading information.";
-      return text;
-  };
-}
+// function checkTooltip(content) {
+//   var text;
+//   switch (content.text()) {
+//     case "dark platforms":
+//       text = "Digital platforms that are less regulated and moderated hence can be used for hosting content and content creators that may not be tolerated by their more mainstream counterparts.";
+//       return text;
+//     case "Bitchute":
+//       text = "BitChute is a video hosting service launched by Ray Vahey in January 2017. It is known for accommodating far-right individuals and conspiracy theorists, and for hosting hate speech.";
+//       return text;
+//     case "misinformation":
+//       text = "Misinformation is false, inaccurate, or misleading information.";
+//       return text;
+//   };
+// }
 
 /* http://mit-license.org */ function e() {
   function f(a) {

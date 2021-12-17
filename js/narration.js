@@ -1,11 +1,12 @@
+jQuery(window).on('load', function() {
+  // Animate loader off screen
+  $(".se-pre-con").slideUp("slow");;
+});
+
 let videoList = document.getElementsByClassName("wrapper"); //Array to obtain all the div.wrapper elements
 let flagMute = false; //check volume video
 
-$(window).on('load', function () {
-  volumeVideos(0.01);
-});
-
-console.log("prova ema")
+console.log("prova ema");
 
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
@@ -113,10 +114,16 @@ videoList.forEach(function (item, index) {
 });
 
 let volumeVideos = function (vol) {
-  videoList.forEach(function (item) {
-    item.lastElementChild.volume = vol;
+  $("video").each(function () {
+    this.volume = vol;
   });
+  // videoList.forEach(function (item) {
+  //   item.lastElementChild.volume = vol;
+  // });
 }
+$(window).on('load', function(){
+  volumeVideos(0.01);
+});
 
 $(".hash").click(function (_hash) {
   let index = $(".hash").index(this);
@@ -134,8 +141,8 @@ $(".wrapper").each(function (index) {
     let x = Math.floor($(this).offset().left + this.offsetWidth / 2);
     let y = Math.floor($(this).offset().top + this.offsetHeight / 2);
     tempCoord = [x, y];
-    if (xyVertex.length > 1){
-      if(xyVertex[(xyVertex.length)-1][0] != tempCoord[0] && xyVertex[(xyVertex.length)-1][1] != tempCoord[1]){
+    if (xyVertex.length > 1) {
+      if (xyVertex[(xyVertex.length) - 1][0] != tempCoord[0] && xyVertex[(xyVertex.length) - 1][1] != tempCoord[1]) {
         xyVertex.push(tempCoord);
       }
     } else xyVertex.push(tempCoord);

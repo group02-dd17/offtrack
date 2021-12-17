@@ -1,7 +1,18 @@
+let pointY=0, offsetPoint=0;
+
+onmousemove = function (e) {
+  pointY = e.clientY;
+};
+
+$(document).scroll(function () {
+  offsetPoint = window.scrollY;
+});
+
+
 jQuery(window).on('load', function () {
   // Animate loader off screen
   $(".se-pre-con").slideUp("slow");
-  document.getElementsByTagName("video").forEach(function(itemVid){
+  document.getElementsByTagName("video").forEach((itemVid) => {
     itemVid.play();
     itemVid.muted = null;
   });
@@ -42,16 +53,11 @@ let lines = function (l) {
     canvasL.parent("#canvasLines");
   };
 
-  const scrollProperties = {
-    y: null,
-    spd: null
-  };
-
   l.draw = function () {
-    scrollProperties.y -= scrollProperties.spd;
-    scrollProperties.spd /= 1.9;
 
-    let redLine = function () {
+    let mouseVertical = offsetPoint+pointY;
+
+    let redLine = function (_delta) {
       l.beginShape();
       l.vertex(_x0, _y0);
 
@@ -59,13 +65,14 @@ let lines = function (l) {
         l.vertex(this[0], this[1]);
       });
 
-      l.vertex(l.mouseX, l.mouseY);
+      l.vertex(l.mouseX, mouseVertical);
       l.endShape();
     }
 
     l.clear();
 
-    l.ellipse(l.mouseX, l.mouseY, 10);
+    // mousePos Helper
+    // l.ellipse(l.mouseX, offsetPoint+pointY, 20);
 
     for (g in hashArray) {
       l.drawLines(hashArray[g], "hashtag-" + checkPage + (+g + +1));
@@ -75,13 +82,17 @@ let lines = function (l) {
     l.stroke("red");
     l.strokeWeight(2);
 
-    redLine();
+    redLine(0);
+
+    // $(document).scroll( function(_event) {
+    //   l.print(_event.deltaY);
+    //   l.print("scroll");
+    // });
+
   };
 
 
-  function mouseWheel(event) {
-    redLine();
-  }
+
 
   l.drawLines = function (className, idHash) {
     var vidArray = document.getElementsByClassName(className);

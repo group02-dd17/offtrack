@@ -257,13 +257,15 @@ input:focus {
   ----------*/
 .lightbox {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   z-index: 100;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  display: grid;
+  justify-items: center;
 }
 
-.toolbarLB {  
+.toolbarLB {
   justify-self: end;
   padding: 3px;
 }
@@ -272,7 +274,7 @@ input:focus {
   cursor: pointer;
   background-color: #000;
   color: #FFF;
-  font-family: 'Redaction 50';
+  font-family: 'Redaction 70';
   font-size: 1.5rem;
   border: 1px solid #FFF;
   border-color: #FFF;
@@ -288,9 +290,10 @@ input:focus {
 
 .iframeContainer {
   display: grid;
-  width: 60vw;
-  height: 40vh;
+  width: 50vw;
   padding: 3em;
+  aspect-ratio: 16/9;
+  grid-row-gap: 2em;
 }
 
 .popup-title {
@@ -313,9 +316,10 @@ input:focus {
 .popup-footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  align-items: center;
+  align-items: start;
   justify-items: center;
   grid-gap: 2em;
+  text-align-last: center;
 }
 
 .popup-footer p {
@@ -324,7 +328,7 @@ input:focus {
 }
 
 .popup-footer img {
-  padding: 1em 4.5em;
+  padding: 30%;
 }
 
 #legend {

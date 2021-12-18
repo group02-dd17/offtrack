@@ -57,6 +57,7 @@ $(window).on('load', function () {
         l.setup = function () {
             var canvasL = l.createCanvas(l.windowWidth, document.getElementById("container").offsetHeight);
             l.pixelDensity(1);
+            l.frameRate(30);
             canvasL.parent("#canvasLines");
         };
 

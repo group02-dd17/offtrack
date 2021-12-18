@@ -2010,6 +2010,22 @@ About
   background-size: cover;
 }
 
+.easter-egg {
+	opacity: 0.2;
+	cursor: pointer;
+}
+
+.easter-egg p{
+	font-size: 1rem;
+	font-family: 'GT America';
+	font-weight: 400;
+	margin-bottom: 0;
+}
+
+.easter-egg:hover {
+	opacity: 1;
+}
+
 .radio {
   display: none;
 }

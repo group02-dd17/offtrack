@@ -111,7 +111,6 @@ const tooltip = document.querySelector("#tooltip");
 
 favicon.animate(
   [
-    "assets/favico/frame_0.png",
     "assets/favico/frame_1.png",
     "assets/favico/frame_2.png",
     "assets/favico/frame_3.png",
@@ -122,6 +121,14 @@ favicon.animate(
     "assets/favico/frame_8.png",
     "assets/favico/frame_9.png",
     "assets/favico/frame_10.png",
+    "assets/favico/frame_11.png",
+    "assets/favico/frame_12.png",
+    "assets/favico/frame_13.png",
+    "assets/favico/frame_14.png",
+    "assets/favico/frame_15.png",
+    "assets/favico/frame_16.png",
+    "assets/favico/frame_17.png",
+    "assets/favico/frame_18.png",
   ],
-  200
+  100
 );

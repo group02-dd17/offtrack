@@ -119,6 +119,9 @@ favicon.animate(
     "assets/favico/frame_5.png",
     "assets/favico/frame_6.png",
     "assets/favico/frame_7.png",
+    "assets/favico/frame_8.png",
+    "assets/favico/frame_9.png",
+    "assets/favico/frame_10.png",
   ],
-  500
+  200
 );

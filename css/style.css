@@ -2029,7 +2029,7 @@ Cover
   font-size: 4.1vw;
 }
 
-.cover-btn {
+#cover-btn {
   z-index: 15;
   grid-column: 8;
   grid-row: 6;
@@ -2041,7 +2041,7 @@ Cover
   grid-template-areas: "overlap";
 }
 
-.cover-btn a {
+#cover-btn a {
   font-size: 1.8vw;
   grid-area: overlap;
 }

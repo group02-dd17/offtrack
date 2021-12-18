@@ -1,12 +1,18 @@
-for(i=1; i<=135; i++){
+for (i = 1; i <= 135; i++) {
     let newThumb = null;
     newThumb = document.createElement('div');
     newThumb.className = "filter";
-    newThumb.setAttribute("id","cover-item"+i);
+    newThumb.setAttribute("id", "cover-item" + i);
     document.getElementById('cover').appendChild(newThumb);
 }
 
 $(window).on('load', function () {
+
+    var _ending = $("#cover-btn");
+    var enterX = _ending.offset().left + (_ending.width())/2;
+
+    var enterY = _ending.offset().top + (_ending.height())/2;
+
     //collect all the divs that use .filter (so they will be the images ones)
     var items = $('.filter');
     let vertexArray = [];
@@ -95,6 +101,7 @@ $(window).on('load', function () {
                             // l.ellipse(piece.x, piece.y, 10);
                             l.vertex(piece.x, piece.y);
                         });
+                        l.vertex(enterX, enterY);
                         l.endShape();
                     }
                 });

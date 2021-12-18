@@ -1868,6 +1868,42 @@ About
   font-weight: 400;
 }
 
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+
+.project-grid p {
+	grid-column: 1/span 3;
+}
+
+
+#project-video-1 {
+	grid-column: 1;
+}
+
+#project-video-2 {
+	grid-column: 2;
+}
+
+#project-video-3 {
+	grid-column: 3;
+}
+
+.project-video {
+	width: 100%;
+	text-align: center;
+	border: 1px solid #ffffff;
+	aspect-ratio: 1;
+}
+
+.project-video-text {
+	font-family: 'GT America';
+	font-size: 1.5rem;
+	font-weight: 400;
+}
+
 .team {
   display: grid;
   grid-template-columns: repeat(8, 1fr);

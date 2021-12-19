@@ -1,26 +1,50 @@
-<svg id="图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700">
-  <rect width="700" height="700" stroke="#fff" stroke-miterlimit="10" stroke-width="2"/>
-  <g>
-    <rect x="445.38559" y="308.72037" width="18.54104" height="82.05735" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="426.84455" y="254.25788" width="18.54104" height="54.46249" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="427.52504" y="390.77772" width="18.54104" height="54.46249" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="408.984" y="218.16827" width="18.54104" height="36.0896" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="409.66448" y="445.24022" width="18.54104" height="37.35398" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="391.12344" y="181.49477" width="18.54104" height="37.35398" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="391.80392" y="480.58391" width="18.54104" height="37.35398" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="372.5824" y="163.89608" width="18.54104" height="18.67699" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="373.26289" y="517.42693" width="18.54104" height="18.67699" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="364.1186" y="327.04764" width="18.54104" height="45.40282" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="345.57756" y="281.48913" width="18.54104" height="45.60414" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="327.717" y="237.52575" width="18.54104" height="43.96338" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="309.85645" y="218.16827" width="18.54104" height="19.35747" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="345.57756" y="372.45046" width="18.54104" height="45.60414" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="273.15545" y="343.64916" width="18.54104" height="21.33333" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="236.07337" y="288.06753" width="18.54104" height="21.33333" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="236.07337" y="399.61646" width="18.54104" height="21.33333" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="254.61441" y="308.72037" width="18.54104" height="37.43184" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="254.61441" y="362.86511" width="18.54104" height="37.43184" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="327.717" y="418.0546" width="18.54104" height="43.96338" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-    <rect x="309.85645" y="462.01798" width="18.54104" height="19.35747" fill="#fff" stroke="#fff" stroke-miterlimit="10" stroke-width="4"/>
-  </g>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Livello_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 37.7 37.7" style="enable-background:new 0 0 37.7 37.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{display:none;}
+	.st1{display:inline;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g id="Layer_1" class="st0">
+	<rect x="-47.3" y="-0.5" class="st1" width="1366" height="768"/>
+</g>
+<g id="Layer_2">
+	<g>
+		<g>
+			<path class="st2" d="M14.2,22.8c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1c-1.7,0-3.4,0-5,0c0-1.7,0-3.4,0-5c1.7,0,3.3,0,5,0
+				c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0l0,0c0,0.7,0,1.3,0,2c-1.7,0-3.4,0-5,0c0,1,0,2,0,3c1.7,0,3.4,0,5,0
+				C14.2,21.5,14.2,22.1,14.2,22.8L14.2,22.8z"/>
+			<path class="st2" d="M15.2,14.7c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0c0,4,0,8,0,12.1
+				c-0.7,0-1.3,0-2,0c0-0.3,0-0.7,0-1l0,0c0.3,0,0.7,0,1,0c0-3,0-6,0-9.1C15.8,14.7,15.5,14.7,15.2,14.7L15.2,14.7z"/>
+			<path class="st2" d="M24.3,22.8v-0.1c0-2.3,0-4.6,0-6.8v-0.1l0,0c0.3,0,0.7,0,1,0c0,2.3,0,4.7,0,7C24.9,22.8,24.6,22.8,24.3,22.8
+				L24.3,22.8z"/>
+			<path class="st2" d="M20.2,15.7c0.3,0,0.7,0,1,0c0,2,0,4,0,6c-0.3,0-0.7,0-1,0l0,0c0-0.3,0-0.5,0-0.8
+				C20.2,19.2,20.2,17.5,20.2,15.7C20.2,15.8,20.2,15.8,20.2,15.7L20.2,15.7z"/>
+			<path class="st2" d="M28.3,21.8C28.3,21.8,28.3,21.7,28.3,21.8c0-2,0-4,0-6l0,0l0,0c0.3,0,0.7,0,1,0c0,2,0,4,0,6
+				C28.9,21.8,28.6,21.8,28.3,21.8L28.3,21.8z"/>
+			<path class="st2" d="M28.3,15.7c-0.3,0-0.7,0-1,0c0-1,0-2,0-3l0,0c0.3,0,0.7,0,1,0C28.3,13.7,28.3,14.7,28.3,15.7L28.3,15.7z"/>
+			<path class="st2" d="M27.3,24.8L27.3,24.8c0-1,0-2,0-3c0,0,0,0,0-0.1c0.3,0,0.7,0,1,0l0,0c0,0.7,0,1.5,0,2.2c0,0.3,0,0.5,0,0.8
+				C27.9,24.8,27.6,24.8,27.3,24.8L27.3,24.8z"/>
+			<path class="st2" d="M23.2,13.7c0.3,0,0.7,0,1,0c0,0,0,0,0,0.1c0,0.6,0,1.3,0,1.9l0,0l0,0c-0.3,0-0.7,0-1,0
+				C23.2,15.1,23.2,14.4,23.2,13.7L23.2,13.7z"/>
+			<path class="st2" d="M24.3,22.8c0,0.7,0,1.3,0,2c-0.3,0-0.7,0-1,0l0,0c0-0.7,0-1.3,0-2C23.6,22.8,23.9,22.8,24.3,22.8L24.3,22.8z
+				"/>
+			<path class="st2" d="M27.3,12.7c-0.3,0-0.7,0-1,0c0-0.7,0-1.3,0-2c0.3,0,0.7,0,1,0C27.3,11.4,27.3,12.1,27.3,12.7L27.3,12.7z"/>
+			<path class="st2" d="M26.3,26.8c0-0.7,0-1.3,0-2c0.3,0,0.7,0,1,0l0,0c0,0.6,0,1.3,0,1.9v0.1C26.9,26.8,26.6,26.8,26.3,26.8
+				L26.3,26.8z"/>
+			<path class="st2" d="M23.2,13.7c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0C23.2,13.1,23.2,13.4,23.2,13.7L23.2,13.7z"/>
+			<path class="st2" d="M23.2,24.8c0,0.3,0,0.7,0,1c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1C22.6,24.8,22.9,24.8,23.2,24.8L23.2,24.8z"/>
+			<path class="st2" d="M26.3,26.8c0,0.3,0,0.7,0,1c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1C25.6,26.8,25.9,26.8,26.3,26.8L26.3,26.8z"/>
+			<path class="st2" d="M25.2,10.7c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0C25.2,10,25.2,10.4,25.2,10.7z"/>
+			<path class="st2" d="M14.2,15.7c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0l0,0c0,0.3,0,0.7,0,1C14.8,15.7,14.5,15.7,14.2,15.7L14.2,15.7z"
+				/>
+			<path class="st2" d="M20.2,15.7c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1c0.3,0,0.7,0,1,0C20.2,15.1,20.2,15.4,20.2,15.7L20.2,15.7z"/>
+			<path class="st2" d="M20.2,21.8c0,0.3,0,0.7,0,1c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1C19.6,21.8,19.9,21.8,20.2,21.8L20.2,21.8z"/>
+			<path class="st2" d="M15.2,23.8c-0.3,0-0.7,0-1,0c0-0.3,0-0.7,0-1l0,0c0.3,0,0.7,0,1,0C15.2,23.1,15.2,23.5,15.2,23.8L15.2,23.8z
+				"/>
+		</g>
+	</g>
+</g>
 </svg>

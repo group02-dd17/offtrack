@@ -1,34 +1,50 @@
 /* Paste this css to your style sheet file or under head tag */
 /* This only works with JavaScript,
 if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.no-js #loader {
+  display: none;
+}
+.js #loader {
+  display: block;
+  position: absolute;
+  left: 100px;
+  top: 0;
+}
 .se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url("../assets/img/loader.gif") center no-repeat #000;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../assets/img/loader.gif") center no-repeat #000;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content:center;
+}
+
+.se-pre-con > p{
+  padding-top: 150px;
+  text-align: center !important;
 }
 
 /*--------
 Font
 ----------*/
 @font-face {
-  font-family: 'GT America';
-  src: url('../assets/font/GT-AMERICA-REGULAR.woff');
+  font-family: "GT America";
+  src: url("../assets/font/GT-AMERICA-REGULAR.woff");
 }
 
 @font-face {
-  font-family: 'Redaction';
-  src: url('../assets/font/Redaction-Regular.woff');
+  font-family: "Redaction";
+  src: url("../assets/font/Redaction-Regular.woff");
 }
 
 @font-face {
-  font-family: 'Redaction 50';
-  src: url('../assets/font/Redaction_50-Regular.woff');
+  font-family: "Redaction 50";
+  src: url("../assets/font/Redaction_50-Regular.woff");
 }
 
 /*--------
@@ -43,7 +59,7 @@ html {
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
   cursor: crosshair;
-  font-family: 'Redaction', serif;
+  font-family: "Redaction", serif;
 }
 
 ::selection {
@@ -54,7 +70,7 @@ html {
 a {
   color: white;
   text-decoration: none;
-  font-family: 'Redaction', serif;
+  font-family: "Redaction", serif;
 }
 
 a:visited {
@@ -82,14 +98,14 @@ img:hover {
 }
 
 h1 {
-  font-family: 'Redaction', serif;
+  font-family: "Redaction", serif;
   font-weight: 400;
   text-transform: uppercase;
   margin: 0;
 }
 
 p {
-  font-family: 'Redaction', serif;
+  font-family: "Redaction", serif;
   font-weight: 400;
   margin: 0;
 }
@@ -113,7 +129,7 @@ video:hover {
 }
 
 .redaction:hover {
-  font-family: 'Redaction 50', serif;
+  font-family: "Redaction 50", serif;
 }
 
 .grid {
@@ -124,7 +140,6 @@ video:hover {
 .hide {
   display: none !important;
 }
-
 
 /*--------
 Header
@@ -157,7 +172,6 @@ nav .header div {
   grid-column: 1;
   border-right: 1px solid white;
 }
-
 
 .jumpto-btn {
   display: grid;
@@ -213,7 +227,6 @@ nav .header .jumpto-btn:hover .dropdown-content a {
   justify-content: center;
 }
 
-
 .archive-btn {
   display: grid;
   grid-column: 9;
@@ -253,7 +266,6 @@ Index
 
 .introduction-content {
   grid-column: 2 / span 8;
-
 }
 
 .introduction-text {
@@ -272,23 +284,23 @@ Index
 }
 
 .scroll-down p {
-  font-family: 'GT America', sans-serif;
-  font-feature-settings: 'ss03';
+  font-family: "GT America", sans-serif;
+  font-feature-settings: "ss03";
   text-align: center;
   font-size: 1.2rem;
   margin: 0;
 }
 
 .one {
-  background-image: url('../assets/img/home/2bitmap.webp');
+  background-image: url("../assets/img/home/2bitmap.webp");
   background-size: cover;
   grid-template-areas: "overlap";
-  background-image: url('../assets/img/home/2bitmap.webp');
+  background-image: url("../assets/img/home/2bitmap.webp");
   background-size: cover;
 }
 
 .two {
-  background-image: url('../assets/img/home/1bitmap.webp');
+  background-image: url("../assets/img/home/1bitmap.webp");
   background-size: cover;
 }
 
@@ -301,7 +313,7 @@ Index
   width: 85%;
   aspect-ratio: 1;
   font-size: 2.8rem;
-  background-image: url('../assets/videos/buttons/followrabbit.webp');
+  background-image: url("../assets/videos/buttons/followrabbit.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -338,7 +350,7 @@ Index
 }
 
 .keyword:hover {
-  font-family: 'Redaction 50', serif;
+  font-family: "Redaction 50", serif;
 }
 
 .go-to-archive {
@@ -351,7 +363,7 @@ Index
   width: 85%;
   aspect-ratio: 1;
   font-size: 2.8rem;
-  background-image: url('../assets/videos/buttons/gotoarchive.webp');
+  background-image: url("../assets/videos/buttons/gotoarchive.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -359,8 +371,8 @@ Index
   text-transform: uppercase;
 }
 
-.go-to-archive:hover>p {
-  font-family: 'Redaction 50', serif;
+.go-to-archive:hover > p {
+  font-family: "Redaction 50", serif;
 }
 
 /*--Tooltip--*/
@@ -436,7 +448,6 @@ Index
   color: #000;
 }
 
-
 /*--------
 Keywords
 ----------*/
@@ -464,14 +475,14 @@ Keywords
 }
 
 .archive-svg {
-  grid-column: 1/span 3;
+  grid-column: 1 / span 3;
   border: 1px solid white;
   justify-self: center;
   aspect-ratio: 3/2;
   width: 75%;
   background-color: black;
   z-index: 5;
-  background-image: url('../assets/videos/buttons/gotoarchive.webp');
+  background-image: url("../assets/videos/buttons/gotoarchive.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -484,8 +495,8 @@ Keywords
 
 #selector-wrapper {
   display: grid;
-  grid-row: 3 /span 1;
-  grid-column: 1 /span 2;
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 2;
   margin-top: 8rem;
   margin-bottom: 8rem;
 }
@@ -510,23 +521,23 @@ Keywords
 #toggleVolume {
   position: fixed;
   background-color: #000;
-  color: #FFF;
-  border: 1px solid #FFF;
-  border-color: #FFF;
+  color: #fff;
+  border: 1px solid #fff;
+  border-color: #fff;
   z-index: 100;
   padding: 25px;
   right: 15px;
   bottom: 15px;
   width: 1.2em;
   aspect-ratio: 1;
-  background-image: url('../assets/img/oth/sound-01.svg');
+  background-image: url("../assets/img/oth/sound-01.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
 }
 
 #toggleVolume:hover {
-  background-image: url('../assets/img/oth/sound-02.svg');
+  background-image: url("../assets/img/oth/sound-02.svg");
 }
 
 #toggleVolume svg {
@@ -558,8 +569,8 @@ Keywords
   grid-area: overlap;
   width: 100%;
   z-index: 5;
-  grid-row: 2/span 1;
-  grid-column: 1/span 2;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 2;
 }
 
 .videos-container {
@@ -581,7 +592,6 @@ Keywords
   grid-area: overlap;
   /* grid-template-columns: 1fr; */
   grid-auto-flow: row;
-
 }
 
 .wrapper {
@@ -593,13 +603,12 @@ Keywords
   outline-color: transparent;
 }
 
-
 .wrapper p {
   /*-  padding-left: 1vmax;
   padding-right: 1vmax;--*/
   text-align: left;
   opacity: 1;
-  font-family: 'GT America', sans-serif;
+  font-family: "GT America", sans-serif;
   font-size: 1rem;
   text-transform: uppercase;
 }
@@ -609,7 +618,6 @@ Keywords
   opacity: 1;
 }
   --*/
-
 
 .wrapper video {
   width: 100% !important;
@@ -630,7 +638,7 @@ Keywords
   align-self: start;
 }
 
-.wrapper>video::-webkit-media-controls {
+.wrapper > video::-webkit-media-controls {
   display: none;
 }
 
@@ -646,7 +654,7 @@ Keywords
   padding: 1vmax;
   border: 1px solid white;
   background-color: black;
-  font-family: 'GT America', sans-serif;
+  font-family: "GT America", sans-serif;
 }
 
 .hash:hover {
@@ -659,7 +667,7 @@ Keywords
   font-size: 2.2rem;
   font-weight: 400;
   text-align: center;
-  font-family: 'GT America', sans-serif;
+  font-family: "GT America", sans-serif;
 }
 
 .quote p {
@@ -680,7 +688,7 @@ Keywords
 }
 
 #hashtag-mask-1 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 2;
   justify-self: end;
   align-self: start;
@@ -719,7 +727,7 @@ Keywords
 }
 
 #hashtag-mask-2 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 3;
   justify-self: end;
   align-self: center;
@@ -733,7 +741,7 @@ Keywords
 }
 
 #hashtag-mask-3 {
-  grid-column: 5/span 1;
+  grid-column: 5 / span 1;
   grid-row: 5;
   justify-self: end;
   align-self: start;
@@ -772,7 +780,7 @@ Keywords
 }
 
 #hashtag-mask-4 {
-  grid-column: 8/span 2;
+  grid-column: 8 / span 2;
   grid-row: 5;
   justify-self: end;
   align-self: end;
@@ -780,7 +788,7 @@ Keywords
 }
 
 #hashtag-mask-5 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 6;
   justify-self: end;
   align-self: start;
@@ -802,15 +810,14 @@ Keywords
 }
 
 #hashtag-mask-6 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 7;
   justify-self: end;
   align-self: start;
 }
 
-
 #hashtag-mask-7 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 7;
   justify-self: center;
   align-self: center;
@@ -875,7 +882,7 @@ Keywords
 }
 
 #hashtag-mask-8 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 8;
   justify-self: start;
   align-self: end;
@@ -899,7 +906,7 @@ Keywords
 }
 
 #hashtag-mask-9 {
-  grid-column: 5/span 2;
+  grid-column: 5 / span 2;
   grid-row: 8;
   justify-self: start;
   align-self: end;
@@ -969,7 +976,7 @@ Keywords
 }
 
 #hashtag-mask-10 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 10;
   justify-self: start;
   align-self: end;
@@ -1033,7 +1040,7 @@ Keywords
 }
 
 #hashtag-mask-11 {
-  grid-column: 4/span 2;
+  grid-column: 4 / span 2;
   grid-row: 13;
   justify-self: center;
   align-self: start;
@@ -1063,9 +1070,8 @@ Keywords
   margin-bottom: 10%;
 }
 
-
 #quote-mask-Q {
-  grid-column: 3/ span 2;
+  grid-column: 3 / span 2;
   grid-row: 13;
   justify-self: center;
   align-self: end;
@@ -1098,15 +1104,14 @@ Keywords
 }
 
 #hashtag-mask-12 {
-  grid-column: 2/span 1;
+  grid-column: 2 / span 1;
   grid-row: 14;
   justify-self: center;
   align-self: end;
 }
 
 #hashtag-mask-13 {
-
-  grid-column: 5/span 2;
+  grid-column: 5 / span 2;
   grid-row: 13;
   justify-self: center;
   align-self: end;
@@ -1127,14 +1132,14 @@ Keywords
 }
 
 #hashtag-vaccine-1 {
-  grid-column: 9/span 2;
+  grid-column: 9 / span 2;
   grid-row: 1;
   justify-self: center;
   align-self: end;
 }
 
 #hashtag-vaccine-2 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 2;
   justify-self: end;
   align-self: start;
@@ -1157,7 +1162,7 @@ Keywords
 }
 
 #hashtag-vaccine-3 {
-  grid-column: 6/span 3;
+  grid-column: 6 / span 3;
   grid-row: 3;
   justify-self: end;
   align-self: start;
@@ -1211,7 +1216,7 @@ Keywords
 }
 
 #hashtag-vaccine-4 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 5;
   justify-self: end;
   align-self: end;
@@ -1263,7 +1268,7 @@ Keywords
 }
 
 #hashtag-vaccine-5 {
-  grid-column: 6/span 3;
+  grid-column: 6 / span 3;
   grid-row: 8;
   justify-self: center;
   align-self: center;
@@ -1286,7 +1291,7 @@ Keywords
 }
 
 #hashtag-vaccine-6 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 10;
   justify-self: center;
   align-self: start;
@@ -1313,7 +1318,6 @@ Keywords
   justify-self: center;
   align-self: end;
   z-index: 6;
-
 }
 
 #wrapper-vaccine-12 {
@@ -1325,12 +1329,11 @@ Keywords
 }
 
 #hashtag-vaccine-7 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 11;
   justify-self: start;
   align-self: start;
 }
-
 
 #wrapper-vaccine-13 {
   grid-column: 6 / span 4;
@@ -1358,7 +1361,7 @@ Keywords
 }
 
 #hashtag-vaccine-8 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 12;
   justify-self: start;
   align-self: start;
@@ -1405,7 +1408,7 @@ Keywords
 }
 
 #hashtag-vaccine-9 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 13;
   justify-self: start;
   align-self: start;
@@ -1413,14 +1416,14 @@ Keywords
 }
 
 #hashtag-vaccine-10 {
-  grid-column: 5/span 2;
+  grid-column: 5 / span 2;
   grid-row: 13;
   justify-self: start;
   align-self: start;
 }
 
 #hashtag-vaccine-11 {
-  grid-column: 8/span 2;
+  grid-column: 8 / span 2;
   grid-row: 13;
   justify-self: start;
   align-self: start;
@@ -1428,7 +1431,7 @@ Keywords
 }
 
 #hashtag-vaccine-12 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 13;
   justify-self: start;
   align-self: center;
@@ -1482,7 +1485,7 @@ Keywords
 }
 
 #hashtag-vaccine-13 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 15;
   justify-self: center;
   align-self: start;
@@ -1505,7 +1508,7 @@ Keywords
 }
 
 #hashtag-vaccine-14 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 15;
   justify-self: center;
   align-self: end;
@@ -1558,7 +1561,7 @@ Keywords
 }
 
 #hashtag-pcr-1 {
-  grid-column: 2/span 3;
+  grid-column: 2 / span 3;
   grid-row: 3;
   justify-self: end;
   align-self: center;
@@ -1609,14 +1612,14 @@ Keywords
 }
 
 #hashtag-pcr-2 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 5;
   justify-self: end;
   align-self: end;
 }
 
 #hashtag-pcr-3 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 6;
   justify-self: start;
   align-self: start;
@@ -1634,18 +1637,18 @@ Keywords
   grid-row: 6;
   justify-self: center;
   align-self: end;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #hashtag-pcr-4 {
-  grid-column: 4/span 2;
+  grid-column: 4 / span 2;
   grid-row: 7;
   justify-self: start;
   align-self: start;
 }
 
 #hashtag-pcr-5 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 7;
   justify-self: start;
   align-self: end;
@@ -1663,7 +1666,7 @@ Keywords
   grid-row: 7;
   justify-self: center;
   align-self: end;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #quote-pcr-G {
@@ -1678,18 +1681,18 @@ Keywords
   grid-row: 8;
   justify-self: center;
   align-self: end;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #hashtag-pcr-6 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 8;
   justify-self: end;
   align-self: start;
 }
 
 #hashtag-pcr-7 {
-  grid-column: 9/span 2;
+  grid-column: 9 / span 2;
   grid-row: 8;
   justify-self: center;
   align-self: start;
@@ -1707,7 +1710,7 @@ Keywords
   grid-row: 9;
   justify-self: center;
   align-self: start;
-	margin-bottom: 80%;
+  margin-bottom: 80%;
 }
 
 #quote-pcr-I {
@@ -1715,7 +1718,7 @@ Keywords
   grid-row: 9;
   justify-self: end;
   align-self: end;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
   z-index: 6;
 }
 #wrapper-pcr-10 {
@@ -1726,15 +1729,15 @@ Keywords
 }
 
 #hashtag-pcr-8 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 9;
   justify-self: center;
   align-self: end;
-	margin-bottom: 20%;
+  margin-bottom: 20%;
 }
 
 #hashtag-pcr-9 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 10;
   justify-self: center;
   align-self: start;
@@ -1752,7 +1755,7 @@ Keywords
   grid-row: 10;
   justify-self: center;
   align-self: end;
-	margin-bottom: 50%;
+  margin-bottom: 50%;
 }
 
 #quote-pcr-K {
@@ -1767,7 +1770,7 @@ Keywords
   grid-row: 10;
   justify-self: center;
   align-self: end;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #wrapper-pcr-13 {
@@ -1778,7 +1781,7 @@ Keywords
 }
 
 #hashtag-pcr-10 {
-  grid-column: 5/span 2;
+  grid-column: 5 / span 2;
   grid-row: 11;
   justify-self: center;
   align-self: center;
@@ -1803,8 +1806,8 @@ Keywords
   grid-row: 12;
   justify-self: center;
   align-self: end;
-	margin-bottom: 15%;
-	margin-top: 20%;
+  margin-bottom: 15%;
+  margin-top: 20%;
 }
 
 #quote-pcr-M {
@@ -1819,15 +1822,15 @@ Keywords
   grid-row: 13;
   justify-self: center;
   align-self: start;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #hashtag-pcr-11 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 13;
   justify-self: center;
   align-self: start;
-	margin-top: 5%;
+  margin-top: 5%;
 }
 
 /*-VIRUS-*/
@@ -1844,7 +1847,7 @@ Keywords
 }
 
 #hashtag-virus-1 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 2;
   justify-self: end;
   align-self: start;
@@ -1866,14 +1869,14 @@ Keywords
 }
 
 #hashtag-virus-2 {
-  grid-column: 8/span 3;
+  grid-column: 8 / span 3;
   grid-row: 2;
   justify-self: center;
   align-self: center;
 }
 
 #hashtag-virus-3 {
-  grid-column: 8/span 2;
+  grid-column: 8 / span 2;
   grid-row: 2;
   justify-self: start;
   align-self: end;
@@ -1887,7 +1890,7 @@ Keywords
 }
 
 #hashtag-virus-4 {
-  grid-column: 7/span 3;
+  grid-column: 7 / span 3;
   grid-row: 3;
   justify-self: center;
   align-self: center;
@@ -1926,7 +1929,7 @@ Keywords
 }
 
 #hashtag-virus-5 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 5;
   justify-self: start;
   align-self: start;
@@ -1975,7 +1978,7 @@ Keywords
   grid-row: 6;
   justify-self: center;
   align-self: start;
-	margin-bottom: 15%;
+  margin-bottom: 15%;
 }
 
 #quote-virus-G {
@@ -1997,18 +2000,18 @@ Keywords
   grid-row: 7;
   justify-self: end;
   align-self: start;
-	width: 80%;
+  width: 80%;
 }
 
 #hashtag-virus-6 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 8;
   justify-self: start;
   align-self: center;
 }
 
 #hashtag-virus-7 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 8;
   justify-self: start;
   align-self: start;
@@ -2026,7 +2029,7 @@ Keywords
   grid-row: 8;
   justify-self: center;
   align-self: start;
-	margin-bottom: 25%;
+  margin-bottom: 25%;
 }
 
 #quote-virus-I {
@@ -2055,20 +2058,20 @@ Keywords
   grid-row: 9;
   justify-self: center;
   align-self: end;
-	margin-top: 80%;
-	margin-bottom: 10%;
+  margin-top: 80%;
+  margin-bottom: 10%;
 }
 
 #hashtag-virus-8 {
-  grid-column: 9/span 2;
+  grid-column: 9 / span 2;
   grid-row: 9;
   justify-self: start;
   align-self: start;
-	margin-top: 15%;
+  margin-top: 15%;
 }
 
 #hashtag-virus-9 {
-  grid-column: 9/span 2;
+  grid-column: 9 / span 2;
   grid-row: 10;
   justify-self: start;
   align-self: center;
@@ -2086,25 +2089,25 @@ Keywords
   grid-row: 10;
   justify-self: center;
   align-self: start;
-	margin-bottom: 10%;
+  margin-bottom: 10%;
 }
 
 #hashtag-virus-10 {
-  grid-column: 4/span 2;
+  grid-column: 4 / span 2;
   grid-row: 11;
   justify-self: center;
   align-self: start;
 }
 
 #hashtag-virus-11 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 11;
   justify-self: start;
   align-self: center;
 }
 
 #hashtag-virus-12 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 11;
   justify-self: start;
   align-self: end;
@@ -2122,8 +2125,8 @@ Keywords
   grid-row: 11;
   justify-self: end;
   align-self: start;
-	margin-bottom: 10%;
-	width: 70%;
+  margin-bottom: 10%;
+  width: 70%;
 }
 /*--------
 About
@@ -2181,76 +2184,73 @@ About
 }
 
 .project-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 
 .project-grid p {
-	grid-column: 1/span 3;
+  grid-column: 1 / span 3;
 }
 
-
 #project-video-1 {
-	grid-column: 1;
+  grid-column: 1;
 }
 
 #project-video-2 {
-	grid-column: 2;
+  grid-column: 2;
 }
 
 #project-video-3 {
-	grid-column: 3;
+  grid-column: 3;
 }
 
 .project-video {
-	width: 100%;
-	text-align: center;
-	border: 1px solid #ffffff;
-	aspect-ratio: 1;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ffffff;
+  aspect-ratio: 1;
 }
 
 .project-video-text {
-	font-family: 'GT America';
-	font-size: 1.5rem;
-	font-weight: 400;
+  font-family: "GT America";
+  font-size: 1.5rem;
+  font-weight: 400;
 }
-
 
 .project-grid {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 
 .project-grid p {
-	grid-column: 1/span 3;
+  grid-column: 1 / span 3;
 }
 
-
 #project-video-1 {
-	grid-column: 1;
+  grid-column: 1;
 }
 
 #project-video-2 {
-	grid-column: 2;
+  grid-column: 2;
 }
 
 #project-video-3 {
-	grid-column: 3;
+  grid-column: 3;
 }
 
 .project-video {
-	width: 100%;
-	text-align: center;
-	border: 1px solid #ffffff;
-	aspect-ratio: 1;
+  width: 100%;
+  text-align: center;
+  border: 1px solid #ffffff;
+  aspect-ratio: 1;
 }
 
 .project-video-text {
-	font-family: 'GT America';
-	font-size: 1.5rem;
-	font-weight: 400;
+  font-family: "GT America";
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 
 .team {
@@ -2290,107 +2290,107 @@ About
 }
 
 #person-1 {
-  grid-column: 1/span 2;
+  grid-column: 1 / span 2;
   grid-row: 1;
 }
 
 #person-img-1 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-2 {
-  grid-column: 3/span 2;
+  grid-column: 3 / span 2;
   grid-row: 1;
 }
 
 #person-img-2 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-3 {
-  grid-column: 5/span 2;
+  grid-column: 5 / span 2;
   grid-row: 1;
 }
 
 #person-img-3 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-4 {
-  grid-column: 7/span 2;
+  grid-column: 7 / span 2;
   grid-row: 1;
 }
 
 #person-img-4 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-5 {
-  grid-column: 2/span 2;
+  grid-column: 2 / span 2;
   grid-row: 2;
 }
 
 #person-img-5 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-6 {
-  grid-column: 4/span 2;
+  grid-column: 4 / span 2;
   grid-row: 2;
 }
 
 #person-img-6 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 #person-7 {
-  grid-column: 6/span 2;
+  grid-column: 6 / span 2;
   grid-row: 2;
 }
 
 #person-img-7 {
-  background-image: url('../assets/img/about/chung.jpg');
+  background-image: url("../assets/img/about/chung.jpg");
   background-size: cover;
 }
 
 .easter-egg {
-	opacity: 0.2;
-	cursor: pointer;
+  opacity: 0.2;
+  cursor: pointer;
 }
 
-.easter-egg p{
-	font-size: 1rem;
-	font-family: 'GT America';
-	font-weight: 400;
-	margin-bottom: 0;
+.easter-egg p {
+  font-size: 1rem;
+  font-family: "GT America";
+  font-weight: 400;
+  margin-bottom: 0;
   margin-top: 5%;
 }
 
 .easter-egg:hover {
-	opacity: 1;
+  opacity: 1;
 }
 
 .radio {
   display: none;
 }
 
-#one:checked~.panels #one-panel,
-#two:checked~.panels #two-panel,
-#three:checked~.panels #three-panel,
-#four:checked~.panels #four-panel {
-  display: block
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel {
+  display: block;
 }
 
-#one:checked~.tabs #one-tab,
-#two:checked~.tabs #two-tab,
-#three:checked~.tabs #three-tab,
-#four:checked~.tabs #four-tab {
+#one:checked ~ .tabs #one-tab,
+#two:checked ~ .tabs #two-tab,
+#three:checked ~ .tabs #three-tab,
+#four:checked ~ .tabs #four-tab {
   border-bottom: 2px solid black;
   margin-bottom: -1px;
 }
@@ -2414,17 +2414,16 @@ Cover
   text-align: center;
   align-self: center;
   justify-self: stretch;
-
 }
 
 #cover-title-1 {
-  grid-column: 5/span 7;
-  grid-row: 4/span 1;
+  grid-column: 5 / span 7;
+  grid-row: 4 / span 1;
 }
 
 #cover-title-2 {
-  grid-column: 6/span 5;
-  grid-row: 5/span 1;
+  grid-column: 6 / span 5;
+  grid-row: 5 / span 1;
 }
 
 .cover-title h1 {
@@ -3321,7 +3320,7 @@ footer li {
   list-style: none;
   margin: 0;
   line-height: 1.5;
-  font-family: 'GT America', sans-serif;
+  font-family: "GT America", sans-serif;
 }
 
 /*--------
@@ -3334,7 +3333,7 @@ Responsive
   }
 
   .go-to-rabbit {
-    grid-column: 1
+    grid-column: 1;
   }
 
   .go-to-archive {

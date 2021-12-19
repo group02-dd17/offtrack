@@ -7,6 +7,7 @@ document.getElementById("network-graph").oncontextmenu = function (e) {
 };
 
 let hashList = [];
+let step = 0;
 
 //Popup
 function rC(nam) {
@@ -88,16 +89,57 @@ $.getJSON("assets/data/Phase32.json", function (response) {
       container: document.getElementById("network-graph"),
       type: "canvas",
     },
+    settings: {
+      edgeColor: "default",
+    defaultEdgeColor: "#D8D8D8",
+    labelThreshold: 6,
+    minNodeSize: 1,
+    maxNodeSize: 15,
+    minEdgeSize: 0.3,
+    maxEdgeSize: 0.3,
+    font: "GT America",
+    defaultLabelSize: 16,
+    defaultLabelColor: "#FFF",
+    defaultLabelBGColor: "rgba(0,0,0,0.5)", //opacità per visibiltà video piccoli
+    defaultHoverLabelBGColor: "white",
+    defaultLabelHoverColor: "black",
+    animationsTime: 1000
+    }
   });
+
   s.addCamera("cam2");
   // s.camera.angle= Math.PI;
   s.camera.isAnimated = true;
   // s.camera.getRectangle(document.getElementById("network-graph").clientWidth, document.getElementById("network-graph").clientHeight);
 
-  buildNetwork();
-});
+  s.graph.nodes().forEach(function (n) {
+    n.atlas_x = n.x;
+    n.atlas_y = n.y;
+    n.x = Math.random() * (3000 + 200) + 200;
+    n.y = Math.random() * (2000 + 200) + 200;;
+  });
 
-CustomShapes.init(s);
+  console.log(s.graph.nodes());
+
+    console.log(step);
+
+    sigma.plugins.animate(
+      s,
+      {
+        x: 'atlas_x',
+        y: 'atlas_y',
+      },
+      {
+        easing: 'cubicInOut',
+        duration: 5000,
+        onComplete: function() { 
+          console.log("aoooo");
+          CustomShapes.init(s);
+          buildNetwork();
+        }
+      }
+    );
+});
 
 //Create the function to build the network graph
 function buildNetwork() {

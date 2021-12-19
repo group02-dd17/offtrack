@@ -46,6 +46,19 @@ function thisPage() {
 
 let checkClosed = false;
 
+// if(document.cookie == "pWrD4jBo=%7Earchive%7E") animateGraph();
+function resetSide() {
+  //reset sidebar
+  document.getElementById("nameLabels").textContent =
+    "Select a video or an hashtag to\u00A0get more information";
+  document.getElementById("wrapper-video").classList.add("hide");
+  document.getElementById("hashtagsLabel").classList.add("hide");
+  document.getElementById("videosNumber").classList.add("hide");
+  document.getElementById("cohashTitle").classList.add("hide");
+}
+
+resetSide();
+
 lightBoxClose = function () {
   console.log(checkClosed);
   document.querySelector(".lightbox").classList.add("closed");
@@ -62,17 +75,6 @@ function init() {
 }
 
 init();
-
-// if(document.cookie == "pWrD4jBo=%7Earchive%7E") animateGraph();
-function resetSide() {
-  //reset sidebar
-  document.getElementById("nameLabels").textContent =
-    "Select a video or an hashtag to\u00A0get more information";
-  document.getElementById("wrapper-video").classList.add("hide");
-  document.getElementById("hashtagsLabel").classList.add("hide");
-  document.getElementById("videosNumber").classList.add("hide");
-  document.getElementById("cohashTitle").classList.add("hide");
-}
 
   //Create the function to build the network graph
   function buildNetwork(s) {

@@ -9,19 +9,20 @@ for (i = 1; i <= 135; i++) {
 $(window).on('load', function () {
 
     var _ending = $("#cover-btn");
-    var enterX = _ending.offset().left + (_ending.width())/2;
+    var enterX = _ending.offset().left + (_ending.width()) / 2;
 
-    var enterY = _ending.offset().top + (_ending.height())/2;
+    var enterY = _ending.offset().top + (_ending.height()) / 2;
 
     //collect all the divs that use .filter (so they will be the images ones)
     var items = $('.filter');
+
     let vertexArray = [];
 
     //shuffle the array
     shuffleArray(items);
 
     function shuffleArray(array) {
-        for (let i = array.length - 14; i > 0; i--) {
+        for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
@@ -33,7 +34,7 @@ $(window).on('load', function () {
     let elems = 5;
     let groups = items.length / elems;
 
-    for (i = 0; i < items.length - 16; i += elems) {
+    for (i = 0; i < items.length - 1; i += elems) {
         selected.push(items.slice(i, i + elems));
     }
 

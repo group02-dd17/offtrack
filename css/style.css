@@ -2412,47 +2412,58 @@ Cover
 #titles{
   display: grid;
   grid-area: overlap;
-  grid-template-rows: 2fr, 1fr;
-  grid-template-columns: 1fr;
+  align-content: center;
+  justify-items: center;
+  align-self: center;
+  grid-row-gap: 4rem;
 }
 .cover-title {
   z-index: 15;
-  background-color: black;
-  width: 100%;
   text-align: center;
   align-self: center;
-  justify-self: stretch;
+  text-align: -webkit-center;
+  grid-template-areas: "overlap";
 }
 
 #cover-title-1 {
-  padding-top: 1.3em;
-  grid-row: 1 / span 1;
-  border: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  background-color: #000000;
+  padding-top: 1.5%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  padding-bottom: 1.5%;
+  font-size: 4.5rem;
+  width: max-content;
+  grid-area: overlap;
+  outline: 1px solid #000000;
 }
 
-/*
 #cover-title-2 {
-  grid-column: 6 / span 5;
-  grid-row: 5 / span 1;
-} */
-
-.cover-title h1 {
-  font-size: 4.1vw;
+  border-bottom: 1px solid #FFF;
+  border-top: 1px solid #FFF;
+  border-left: 1px solid #FFF;
+  border-right: 1px solid #FFF;
+  background-color: #000000;
+  padding-bottom: 1.5%;
+  padding-top: 1.5%;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+  font-size: 4.5rem;
+  width: max-content;
+  grid-area: overlap;
 }
 
-.cover-title h2 {
-  font-size: 2vw;
-}
+
+
 #cover-btn {
   z-index: 15;
-  grid-column: 8;
-  grid-row: 7;
   background-color: black;
-  width: 100%;
   text-align: center;
-  justify-self: center;
   align-self: center;
-  grid-template-areas: "overlap";
+  border: 1px solid #FFF;
+  padding: 1%;
 }
 
 #cover-btn a {

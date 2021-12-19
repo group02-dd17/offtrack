@@ -9,6 +9,11 @@ document.getElementById("network-graph").oncontextmenu = function (e) {
 let hashList = [];
 let step = 0;
 
+      //URL parsing variable for the singlePage redirection
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const page_type = urlParams.get("selection");
+
 //Popup
 function rC(nam) {
   var tC = document.cookie.split("; ");
@@ -536,9 +541,9 @@ init();
       });
   
       //URL parsing variable for the singlePage redirection
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const page_type = urlParams.get("selection");
+      // const queryString = window.location.search;
+      // const urlParams = new URLSearchParams(queryString);
+      // const page_type = urlParams.get("selection");
       if (page_type) moveToHash("#" + page_type);
   
       document
@@ -762,7 +767,12 @@ function animateGraph() {
     console.log(s.graph.nodes());
   
       console.log(step);
-  
+    
+      
+    let durata;
+    if(page_type) durata=1;
+    else durata = 3000;
+
       sigma.plugins.animate(
         s,
         {
@@ -771,7 +781,7 @@ function animateGraph() {
         },
         {
           easing: 'quadraticOut',
-          duration: 3000,
+          duration: durata,
           onComplete: function() { 
             CustomShapes.init(s);
             buildNetwork(s);

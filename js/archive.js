@@ -770,7 +770,7 @@ function animateGraph() {
           y: 'atlas_y',
         },
         {
-          easing: 'cubicInOut',
+          easing: 'quadraticOut',
           duration: 3000,
           onComplete: function() { 
             CustomShapes.init(s);

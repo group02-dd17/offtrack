@@ -759,7 +759,7 @@ Keywords
   grid-row: 5;
   justify-self: center;
   align-self: start;
-  margin-bottom: 70%;
+  margin-bottom: 80%;
 }
 
 #quote-mask-D {
@@ -776,6 +776,7 @@ Keywords
   grid-row: 5;
   justify-self: center;
   align-self: center;
+	margin-bottom: 5%;
 }
 
 #hashtag-mask-4 {
@@ -852,7 +853,7 @@ Keywords
   justify-self: center;
   align-self: center;
   margin-top: 30%;
-  margin-bottom: 20%;
+  margin-bottom: 15%;
 }
 
 #quote-mask-H {
@@ -1035,7 +1036,7 @@ Keywords
   grid-row: 12;
   justify-self: center;
   align-self: start;
-  margin-top: 10%;
+  margin-top: 5%;
 }
 
 #hashtag-mask-11 {
@@ -1082,7 +1083,7 @@ Keywords
   grid-row: 13;
   justify-self: center;
   align-self: start;
-  margin-bottom: 50%;
+  margin-bottom: 35%;
   margin-top: 20%;
 }
 
@@ -1963,6 +1964,7 @@ Keywords
   justify-self: center;
   align-self: end;
   margin-top: 70%;
+	margin-bottom: 10%;
 }
 
 #quote-virus-F {

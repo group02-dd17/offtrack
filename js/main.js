@@ -13,11 +13,11 @@ function isInViewport() {
           offsets = this.getBoundingClientRect();
 
   if(offsets.x < 0) {
-    this.style.transform = "translate(" + ((offsets.x * -1) + 5) + "px, 0)";
+    this.style.transform = "translate(" + ((offsets.x * -1) + 100) + "px, 0)";
   }
 
   else if(offsets.x + offsets.width > wWidth) {
-    this.style.transform = "translate(" + ((offsets.x * -1) - 5) + "px, 0)";
+    this.style.transform = "translate(" + ((offsets.x * -1) - 100) + "px, 0)";
   }
   });
 }

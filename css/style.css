@@ -3263,7 +3263,7 @@ Cover
 }
 
 .filter {
-  filter: grayscale(1) contrast(0.75) brightness(0.7) !important;
+  filter: grayscale(1) contrast(0.9) brightness(0.5) !important;
 }
 
 /*--------

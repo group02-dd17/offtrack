@@ -2277,6 +2277,7 @@ About
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: gray;
+  filter: grayscale(1) contrast(2) brightness(1)
 }
 
 .person-img:hover {
@@ -2285,6 +2286,8 @@ About
   -ms-filter: none;
   filter: none;
   filter: none;
+  filter: grayscale(0) contrast(1.5) brightness(2)
+  
 }
 
 .person-name {
@@ -2297,7 +2300,7 @@ About
 }
 
 #person-img-1 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/andrea.gif");
   background-size: cover;
 }
 
@@ -2307,7 +2310,7 @@ About
 }
 
 #person-img-2 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/davide.gif");
   background-size: cover;
 }
 
@@ -2317,7 +2320,7 @@ About
 }
 
 #person-img-3 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/emanuele.gif");
   background-size: cover;
 }
 
@@ -2327,7 +2330,7 @@ About
 }
 
 #person-img-4 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/francesca.gif");
   background-size: cover;
 }
 
@@ -2337,7 +2340,7 @@ About
 }
 
 #person-img-5 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/hanlu.gif");
   background-size: cover;
 }
 
@@ -2347,7 +2350,7 @@ About
 }
 
 #person-img-6 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/mattia.gif");
   background-size: cover;
 }
 
@@ -2357,7 +2360,7 @@ About
 }
 
 #person-img-7 {
-  background-image: url("../assets/img/about/chung.jpg");
+  background-image: url("../assets/img/about/members/raffaele.gif");
   background-size: cover;
 }
 

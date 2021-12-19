@@ -2408,6 +2408,10 @@ Cover
   grid-area: overlap;
 }
 
+#titles{
+  display: grid;
+  grid-area: overlap;
+}
 .cover-title {
   z-index: 15;
   background-color: black;
@@ -2418,19 +2422,25 @@ Cover
 }
 
 #cover-title-1 {
-  grid-column: 5 / span 7;
-  grid-row: 4 / span 1;
+  padding-top: 1.3em;
+  grid-column: 6 / span 5;
+  grid-row: 4 / span 2;
+  border: 1px solid #FFF;
 }
 
+/* 
 #cover-title-2 {
   grid-column: 6 / span 5;
   grid-row: 5 / span 1;
-}
+} */
 
 .cover-title h1 {
   font-size: 4.1vw;
 }
 
+.cover-title h2 {
+  font-size: 2vw;
+}
 #cover-btn {
   z-index: 15;
   grid-column: 8;

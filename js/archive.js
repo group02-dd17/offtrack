@@ -748,7 +748,7 @@ function animateGraph() {
       defaultLabelBGColor: "rgba(0,0,0,0.5)", //opacità per visibiltà video piccoli
       defaultHoverLabelBGColor: "white",
       defaultLabelHoverColor: "black",
-      animationsTime: 1000
+      animationsTime: 300
       }
     });
   
@@ -763,11 +763,6 @@ function animateGraph() {
       n.x = Math.random() * (3000 + 200) + 200;
       n.y = Math.random() * (2000 + 200) + 200;;
     });
-  
-    console.log(s.graph.nodes());
-  
-      console.log(step);
-    
       
     let durata;
     if(page_type) durata=1;

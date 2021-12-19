@@ -2261,16 +2261,18 @@ About
   grid-column: 1 / span 5;
 }
 
-#archive-img {
+.archive-img {
 	grid-column: 1 / span 5;
 }
 
-#archive-img img{
-	width: 80%;
+#archive-img-2 img{
+  width: 80%;
+  border: 1px solid #ffffff;
 }
 
-#archive-img video{
+.archive-img video{
 	width: 80%;
+  border: 1px solid #ffffff;
 }
 
 .team {

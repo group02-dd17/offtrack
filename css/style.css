@@ -2277,6 +2277,7 @@ About
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: gray;
+  filter: grayscale(1) contrast(2) brightness(1)
 }
 
 .person-img:hover {
@@ -2285,6 +2286,8 @@ About
   -ms-filter: none;
   filter: none;
   filter: none;
+  filter: grayscale(0) contrast(1.5) brightness(2)
+  
 }
 
 .person-name {

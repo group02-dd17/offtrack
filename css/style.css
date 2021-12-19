@@ -349,7 +349,7 @@ Index
 }
 
 /*--Tooltip--*/
-/* 
+/*
 .tooltip {
   position: inherit;
   z-index: 10;
@@ -406,7 +406,7 @@ Index
   font-size: 1.5rem;
   width: 30vw;
   padding: 30px;
-  
+
   /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
   opacity: 0;
   transition: opacity 0.5s;
@@ -2117,6 +2117,7 @@ About
 	font-family: 'GT America';
 	font-weight: 400;
 	margin-bottom: 0;
+  margin-top: 20%;
 }
 
 .easter-egg:hover {

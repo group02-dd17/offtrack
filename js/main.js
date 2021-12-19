@@ -7,7 +7,23 @@ $(document).on("scroll", function () {
 });
 
 // TOOLTIP
-const tooltip = document.querySelector("#tooltip");
+function isInViewport() {
+  $(".tooltiptext").each(function () {
+      var $this = $(this),
+          wWidth = $(window).width(),
+          offsets = this.getBoundingClientRect();
+
+  if(offsets.x < 0) {
+    this.style.transform = "translate(" + ((offsets.x * -1) + 100) + "px, 0)";
+  }
+
+  else if(offsets.x + offsets.width > wWidth) {
+    this.style.transform = "translate(" + (((offsets.left + offsets.width - wWidth) * -1) - 100) + "px, 0)";
+  }
+  });
+}
+
+isInViewport();
 
 /* http://mit-license.org */ function e() {
   function f(a) {

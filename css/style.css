@@ -2251,8 +2251,26 @@ About
   grid-column: 3;
 }
 
-#archive-img-1 {
-	grid-column: 1 / span 3;
+.archive-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2rem;
+}
+
+.archive-grid p {
+  grid-column: 1 / span 5;
+}
+
+#archive-img {
+	grid-column: 1 / span 5;
+}
+
+#archive-img img{
+	width: 80%;
+}
+
+#archive-img video{
+	width: 80%;
 }
 
 .team {
@@ -2277,7 +2295,7 @@ About
   -ms-filter: grayscale(100%);
   filter: grayscale(100%);
   filter: gray;
-  filter: grayscale(1) contrast(2) brightness(1)
+  filter: grayscale(1);
 }
 
 .person-img:hover {
@@ -2286,8 +2304,8 @@ About
   -ms-filter: none;
   filter: none;
   filter: none;
-  filter: grayscale(0) contrast(1.5) brightness(2)
-  
+  filter: grayscale(0);
+
 }
 
 .person-name {

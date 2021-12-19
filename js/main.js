@@ -6,6 +6,7 @@ $(document).on("scroll", function () {
   }
 });
 
+// TOOLTIP
 function isInViewport() {
   $(".tooltiptext").each(function () {
       var $this = $(this),
@@ -13,36 +14,16 @@ function isInViewport() {
           offsets = this.getBoundingClientRect();
 
   if(offsets.x < 0) {
-    this.style.transform = "translate(" + ((offsets.x * -1) + 5) + "px, 0)";
+    this.style.transform = "translate(" + ((offsets.x * -1) + 100) + "px, 0)";
   }
 
   else if(offsets.x + offsets.width > wWidth) {
-    this.style.transform = "translate(" + ((offsets.x * -1) - 5) + "px, 0)";
+    this.style.transform = "translate(" + (((offsets.left + offsets.width - wWidth) * -1) - 100) + "px, 0)";
   }
   });
 }
 
 isInViewport();
-
-// TOOLTIP
-// const tooltip = document.getElementsByClassName("tooltiptext");
-// let offsets = [];
-
-// for(k in tooltip) {
-//   offsets.push(tooltip[k].getBoundingClientRect());
-// }
-
-// for(j in offsets) {
-//   console.log(offsets[j]);
-//   if(offsets[j].x < 0) {
-//     tooltip[j].style.transform = "translate(" + ((offsets[j].x * -1) + 5) + "px, 0)";
-//   }
-// }
-
-
-
-
-
 
 /* http://mit-license.org */ function e() {
   function f(a) {

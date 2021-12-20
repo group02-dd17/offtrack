@@ -2275,6 +2275,11 @@ About
   border: 1px solid #ffffff;
 }
 
+.faces {
+  position: absolute;
+  z-index: 5;
+}
+
 .team {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -2384,12 +2389,12 @@ About
   background-size: cover;
 }
 
-.easter-egg {
+#easter-egg {
   opacity: 0.2;
   cursor: pointer;
 }
 
-.easter-egg p {
+#easter-egg p {
   font-size: 1rem;
   font-family: "GT America";
   font-weight: 400;
@@ -2397,7 +2402,7 @@ About
   margin-top: 5%;
 }
 
-.easter-egg:hover {
+#easter-egg:hover {
   opacity: 1;
 }
 

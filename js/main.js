@@ -9,17 +9,18 @@ $(document).on("scroll", function () {
 // TOOLTIP
 function isInViewport() {
   $(".tooltiptext").each(function () {
-      var $this = $(this),
-          wWidth = $(window).width(),
-          offsets = this.getBoundingClientRect();
+    var $this = $(this),
+      wWidth = $(window).width(),
+      offsets = this.getBoundingClientRect();
 
-  if(offsets.x < 0) {
-    this.style.transform = "translate(" + ((offsets.x * -1) + 100) + "px, 0)";
-  }
-
-  else if(offsets.x + offsets.width > wWidth) {
-    this.style.transform = "translate(" + (((offsets.left + offsets.width - wWidth) * -1) - 100) + "px, 0)";
-  }
+    if (offsets.x < 0) {
+      this.style.transform = "translate(" + (offsets.x * -1 + 100) + "px, 0)";
+    } else if (offsets.x + offsets.width > wWidth) {
+      this.style.transform =
+        "translate(" +
+        ((offsets.left + offsets.width - wWidth) * -1 - 100) +
+        "px, 0)";
+    }
   });
 }
 
@@ -95,173 +96,88 @@ favicon.animate(
   100
 );
 
+document.getElementById("easter-egg").addEventListener("click", function() {
+  //easter egg
+const world = document.querySelector(".faces");
+const { Engine, Render, Runner, World, Bodies } = Matter;
 
-//easter egg
-(() => {
-	// constants
-	const COLOR = {
-		WINDOW: '#f8f9fa',
-		BAR: '#868e96',
-		DOT: '#f8f9fa',
-		HEADER: '#868e96',
-		TEXT: '#ced4da',
-		SOCIAL: '#f06595',
-		IMAGE: '#22b8cf'
-	};
+let engine = Engine.create();
 
-	// variables
-	let canvas, elements;
+const textures = ["https://i.ibb.co/PDFjr65/IL-PECORA.png"];
+function init() {
+  let width = $(document).width();
+  let height = $(document).height();
+  let vmin = Math.min(width, height);
 
-	function init() {
-		// engine
-		let engine = Matter.Engine.create();
-		engine.world.gravity.y = 0.5;
+  engine.events = {};
+  World.clear(engine.world);
+  Engine.clear(engine);
+  engine = Engine.create();
 
-		// render
-		let render = Matter.Render.create({
-			element: document.getElementById('container'),
-			engine: engine,
-			options: {
-				width: 800,
-				height: 600,
-				wireframes: false, // need this or various render styles won't take
-				background: COLOR.WINDOW
-			}
-		});
-		Matter.Render.run(render);
+  let render = Render.create({
+    canvas: world,
+    engine: engine,
+    options: {
+      wireframes: false,
+      background: "transparent",
+      width: width,
+      height: height,
+    },
+  });
 
-		// runner
-		let runner = Matter.Runner.create();
-		Matter.Runner.run(runner, engine);
+  World.add(engine.world, [
+    Bodies.rectangle(width / 2, height, width, 100, {
+      isStatic: true,
+      render: {
+        fillStyle: 'none'
+      }
+    }),
 
-		// fixed bodies
-		Matter.World.add(engine.world, [
-			// boundaries (top, bottom, left, right)
-			wall(400, -10, 800, 20),
-			wall(400, 610, 800, 20),
-			wall(-10, 300, 20, 600),
-			wall(810, 300, 20, 600),
+    Bodies.rectangle(-50, height / 2, 100, height, {
+      isStatic: true,
+    }),
+    Bodies.rectangle(width + 50, height / 2, 100, height, {
+      isStatic: true,
+    })
+  ]);
 
-			// top bar with 3 dots (left, mid, right)
-			rect(400, 20, 800, 40, COLOR.BAR),
-			circ(25, 20, 7, COLOR.DOT),
-			circ(50, 20, 7, COLOR.DOT),
-			circ(75, 20, 7, COLOR.DOT)
-		]);
+  function createBall() {
+    const ORIGINAL_SIZE = 70;
+    const SIZE = Math.floor(Math.random() * 76) + 30;
+    const ball = Bodies.circle(Math.round(Math.random() * width), -30, 29, {
+      angle: Math.PI * (Math.random() * 2 - 1),
+      friction: 0.001,
+      frictionAir: 0.01,
+      restitution: 0.8,
+      render: {
+        sprite: {
+          texture: textures[Math.floor(Math.random() * textures.length)],
+          xScale: SIZE / ORIGINAL_SIZE,
+          yScale: SIZE / ORIGINAL_SIZE,
+        },
+      },
+    });
 
-		// bodies to toss around
-		elements = [
-			// header icon
-			circ(80, 120, 40, COLOR.IMAGE),
+    setTimeout(() => {
+      World.remove(engine.world, ball);
+    }, 6000);
 
-			// header main text
-			rect(230, 105, 180, 30, COLOR.HEADER),
-			rect(420, 105, 180, 30, COLOR.HEADER),
+    return ball;
+  }
 
-			// header sub text
-			rect(170, 140, 60, 20, COLOR.HEADER),
-			rect(280, 140, 140, 20, COLOR.HEADER),
+  Engine.run(engine);
 
-			// social media icons
-			circ(740, 100, 20, COLOR.SOCIAL),
-			circ(740, 150, 20, COLOR.SOCIAL),
-			circ(740, 200, 20, COLOR.SOCIAL),
+  Render.run(render);
+  const handleClick = () => {
+    const ball2 = createBall();
+    World.add(engine.world, [ball2]);
+  };
+  setInterval(handleClick, 50);
+}
 
-			// top paragraph, first row
-			rect(100, 230, 120, 20, COLOR.TEXT),
-			rect(210, 230, 80, 20, COLOR.TEXT),
-			rect(340, 230, 160, 20, COLOR.TEXT),
-			rect(450, 230, 40, 20, COLOR.TEXT),
-			rect(520, 230, 80, 20, COLOR.TEXT),
+init();
 
-			// top paragraph, second row
-			rect(60, 260, 40, 20, COLOR.TEXT),
-			rect(150, 260, 120, 20, COLOR.TEXT),
-			rect(300, 260, 160, 20, COLOR.TEXT),
-			rect(450, 260, 120, 20, COLOR.TEXT),
-			rect(560, 260, 80, 20, COLOR.TEXT),
-
-			// top paragraph, third row
-			rect(80, 290, 80, 20, COLOR.TEXT),
-			rect(180, 290, 100, 20, COLOR.TEXT),
-			rect(270, 290, 60, 20, COLOR.TEXT),
-			rect(370, 290, 120, 20, COLOR.TEXT),
-			rect(510, 290, 140, 20, COLOR.TEXT),
-
-			// thumbnails
-			rect(100, 400, 120, 80, COLOR.IMAGE),
-			rect(250, 400, 120, 80, COLOR.IMAGE),
-			rect(400, 400, 120, 80, COLOR.IMAGE),
-			rect(550, 400, 120, 80, COLOR.IMAGE),
-
-			// bottom paragraph, first row
-			rect(100, 500, 120, 20, COLOR.TEXT),
-			rect(190, 500, 40, 20, COLOR.TEXT),
-			rect(300, 500, 160, 20, COLOR.TEXT),
-			rect(450, 500, 120, 20, COLOR.TEXT),
-			rect(560, 500, 80, 20, COLOR.TEXT),
-
-			// bottom paragraph, second row
-			rect(80, 530, 80, 20, COLOR.TEXT),
-			rect(180, 530, 100, 20, COLOR.TEXT),
-			rect(270, 530, 60, 20, COLOR.TEXT),
-			rect(370, 530, 120, 20, COLOR.TEXT)
-		];
-		Matter.World.add(engine.world, elements);
-
-		canvas = document.querySelector('#container canvas');
-		run();
-	}
-
-	function run() {
-		canvas.classList.add('slam');
-		setTimeout(slam, 2000);
-	}
-
-	function slam() {
-		// let the bodies hit the floor
-		elements.forEach((body) => {
-			Matter.Body.setStatic(body, false);
-			Matter.Body.setVelocity(body, {
-				x: rand(-4, 4),
-				y: rand(-6, -4)
-			});
-			Matter.Body.setAngularVelocity(body, rand(-0.05, 0.05));
-		});
-
-		// repeat
-		canvas.classList.remove('slam');
-		setTimeout(run, 5000);
-	}
-
-	// matter.js has a built in random range function, but it is deterministic
-	function rand(min, max) {
-		return Math.random() * (max - min) + min;
-	}
-
-	function wall(x, y, width, height) {
-		return Matter.Bodies.rectangle(x, y, width, height,  {
-			isStatic: true,
-			render: { visible: false }
-		});
-	}
-
-	function rect(x, y, width, height, color) {
-		return Matter.Bodies.rectangle(x, y, width, height, {
-			isStatic: true,
-			restitution: 1,
-			render: { fillStyle: color }
-		});
-	}
-
-	function circ(x, y, radius, color) {
-		return Matter.Bodies.circle(x, y, radius, {
-			isStatic: true,
-			restitution: 1,
-			render: { fillStyle: color }
-		});
-	}
-
-	window.addEventListener('load', init, false);
-})();
-
+$(window).resize(function () {
+  init();
+});
+});

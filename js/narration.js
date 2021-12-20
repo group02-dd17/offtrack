@@ -156,7 +156,7 @@ let volumeVideos = function (vol) {
 
 $(".hash").click(function (_hash) {
   let index = $(".hash").index(this);
-  let url = new URL('https://group02-density.github.io//Website/archive.html');
+  let url = new URL('https://group02-dd17.github.io/offtrack/archive.html');
   let content = _hash.target.innerText.toLowerCase().substring(1);
   console.log(content);
   url.searchParams.set('selection', content);

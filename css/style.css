@@ -60,6 +60,7 @@ html {
   font-variant-ligatures: common-ligatures;
   cursor: crosshair;
   font-family: "Redaction", serif;
+  hyphens: auto;
 }
 
 ::selection {
@@ -157,6 +158,8 @@ nav {
   font-size: 2rem;
   text-transform: uppercase;
 }
+
+
 
 .active {
   background-color: black;
@@ -2188,6 +2191,7 @@ About
 .panel-title {
   font-size: 5rem;
   font-weight: 400;
+  text-align: center;
 }
 
 .project-grid {
@@ -2263,6 +2267,10 @@ About
 
 .archive-img {
 	grid-column: 1 / span 5;
+}
+
+.archive-img video{
+  filter: none !important;
 }
 
 #archive-img-2 img{
@@ -2453,7 +2461,7 @@ Cover
   grid-template-areas: "overlap";
   outline: 1px solid #FFF;
   background-color: #000;
-  padding: 2em 4em; 
+  padding: 2em 4em;
 }
 
 #cover-title-1 {
@@ -3384,8 +3392,42 @@ Responsive
 ----------*/
 @media screen and (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
+  }
+
+  nav {
+    font-size: calc(2rem + 0.5 * ((100vw - 20rem) / 60));
+  }
+  .home-btn {
+    grid-column: 1;
+  }
+
+  .jumpto-btn {
+    grid-column: 3;
+  }
+
+  .archive-btn {
+    grid-column: 4;
+  }
+
+  .about-btn {
+    grid-column: 5;
+  }
+
+
+  .introduction-content {
+    grid-column: auto;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  .introduction-text {
+    font-size: calc(1.7rem + 0.5 * ((100vw - 20rem) / 60));
+  }
+
+  .scroll-down {
+    grid-column: auto;
   }
 
   .go-to-rabbit {

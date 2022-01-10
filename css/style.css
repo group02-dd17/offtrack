@@ -75,6 +75,7 @@ html {
   font-optical-sizing: auto;
   text-rendering: optimizeLegibility;
   font-variant-ligatures: common-ligatures;
+  font-variant-numeric: slashed-zero;
   cursor: crosshair;
   font-family: "Redaction", serif;
   hyphens: auto;

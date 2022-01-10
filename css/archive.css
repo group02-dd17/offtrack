@@ -118,6 +118,12 @@ nav {
   font-size: 1.6vmax;
 }
 
+#videosDate {
+  font-family: 'GT America', sans-serif;
+  font-weight: 400;
+  font-size: 1vmax;
+}
+
 #videosNumber {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
@@ -172,7 +178,7 @@ input {
   font-family: "Redaction";
   border: 1px solid transparent;
   background-color: #f1f1f1;
-  padding: 1rem;
+  padding: 0.86rem;
   font-size: 1.2rem;
 }
 
@@ -189,7 +195,7 @@ input[type=submit] {
   color: #000;
   border-color: #fff;
   font-size: 1.5rem;
-  padding: 1rem 1.2rem 0.8rem 1.2rem;
+  padding: 1rem 1.2rem 0.6rem 1.2rem;
 
 }
 
@@ -281,7 +287,7 @@ input:focus {
   border: 1px solid #FFF;
   border-color: #FFF;
   z-index: 100;
-  padding: 1rem 1.2rem 0.8rem 1.2rem;
+  padding: 0.8rem 1.1rem;
 }
 
 .lightbox .iframeContainer {
@@ -315,6 +321,7 @@ input:focus {
 
 .popup-main>p {
   font-family: 'GT America';
+  font-size: 1.3em;
 }
 
 .popup-footer {
@@ -328,6 +335,7 @@ input:focus {
 
 .popup-footer p {
   font-family: 'GT America';
+  font-size: 1.3em;
   text-align: center;
   margin-top: 15%;
 }
@@ -346,6 +354,7 @@ input:focus {
 #legend ul {
   list-style-type: none;
   font-family: "GT America";
+  font-size: 1.3em;
 }
 
 #legend li:first-child {

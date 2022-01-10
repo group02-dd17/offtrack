@@ -6,6 +6,62 @@ $(document).on("scroll", function () {
   }
 });
 
+//COOKIES
+
+function rC(nam) {
+  var tC = document.cookie.split("; ");
+  for (var i = tC.length - 1; i >= 0; i--) {
+    var x = tC[i].split("=");
+    if (nam == x[0]) return unescape(x[1]);
+  }
+  return "~";
+}
+
+function writeCookie(nam, val) {
+  document.cookie = nam + "=" + escape(val);
+}
+
+function lookupCookie(nam, pg) {
+  var val = rC(nam);
+  if (val.indexOf("~" + pg + "~") != -1) return false;
+  val += pg + "~";
+  writeCookie(nam, val);
+  return true;
+}
+
+function firstTime(cookieName) {
+  return lookupCookie("qneiEnow", cookieName);
+}
+
+function thisPage() {
+  var page = location.href.substring(location.href.lastIndexOf("/") + 1);
+  pos = page.indexOf(".");
+  if (pos > -1) {
+    page = page.substr(0, pos);
+  }
+  console.log(page);
+  return page;
+}
+
+if (firstTime(thisPage()) && thisPage() == "home") {
+  // this code only runs for first visit
+  window.cookieconsent.initialise({
+    cookie: {
+       domain : "/",
+       name: "cookie_consent",
+     },
+     palette:{
+       popup:  { background: "#FFF"  },
+       button: { background: "#000"},
+     },
+     content:{
+       message: "We use cookies to offer you a better browsing experience. If you continue to use this site, you consent to our use of cookies",
+     },
+   });
+} 
+
+
+
 // TOOLTIP
 function isInViewport() {
   $(".tooltiptext").each(function () {

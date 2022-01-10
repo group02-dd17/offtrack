@@ -48,6 +48,23 @@ Font
 }
 
 /*--------
+Cookies
+----------*/
+@media (min-width: 32em) {
+  .cc-window.cc-banner {
+    padding: 1.5em 1.8em
+  }
+  .cc-message {
+    font-size: 0.9em;
+    line-height: 1.4;
+    font-family: GT America;
+  }
+  .cc-compliance {
+    padding-left: 4em
+  }
+}
+
+/*--------
 Global
 ----------*/
 html {

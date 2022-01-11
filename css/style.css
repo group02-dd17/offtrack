@@ -173,11 +173,14 @@ nav {
   position: fixed;
   z-index: 10 !important;
   border-bottom: 1px solid white;
-  font-size: 2rem;
+  font-size: calc(1.7rem + 0.5 * ((100vw - 20rem) / 60));
   text-transform: uppercase;
 }
 
-
+.hgrid {
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr 1fr 1fr;
+}
 
 .active {
   background-color: black;
@@ -200,7 +203,7 @@ nav .header div {
 
 .jumpto-btn {
   display: grid;
-  grid-column: 8;
+  grid-column: 3;
   border-left: 1px solid white;
 }
 
@@ -254,14 +257,14 @@ nav .header .jumpto-btn:hover .dropdown-content a {
 
 .archive-btn {
   display: grid;
-  grid-column: 9;
+  grid-column: 4;
   border-left: 1px solid #ffffff;
   border-right: 1px solid #ffffff;
 }
 
 .about-btn {
   display: grid;
-  grid-column: 10;
+  grid-column: 5;
 }
 
 .btn {
@@ -3350,7 +3353,7 @@ Cover
 }
 
 /*--------
-Responsive
+Footer
 ----------*/
 footer {
   margin-top: 3rem;
@@ -3415,8 +3418,14 @@ Responsive
   }
 
   nav {
-    font-size: calc(2rem + 0.5 * ((100vw - 20rem) / 60));
+    font-size: calc(1.1rem + 0.5 * ((100vw - 20rem) / 60));
   }
+
+  .hgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+
   .home-btn {
     grid-column: 1;
   }

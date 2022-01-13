@@ -58,7 +58,7 @@ Cookies
   }
 
   .cc-message {
-    font-size: 0.9em;
+    font-size: calc(0.9rem + (1.2 - 0.9) * ((100vw - 576px) / (1200 - 576)));
     line-height: 1.4;
     font-family: GT America;
   }
@@ -175,9 +175,9 @@ nav {
   width: 100%;
   height: 8vh;
   position: fixed;
-  z-index: 10 !important;
+  z-index: 100 !important;
   border-bottom: 1px solid white;
-  font-size: calc(1.7rem + 0.5 * ((100vw - 20rem) / 60));
+  font-size: calc(30px + (50 - 30) * ((100vw - 576px) / (2560 - 576)));
   text-transform: uppercase;
 }
 
@@ -223,7 +223,7 @@ nav .header .jumpto-btn:hover .dropdown-content {
   margin-top: 8vh;
   background-color: #000000;
   border: 1px solid #ffffff;
-  z-index: 10;
+  z-index: 99;
   text-align: center;
 }
 
@@ -301,7 +301,7 @@ Index
 }
 
 .introduction-text {
-  font-size: 2.8rem;
+  font-size: calc(1.7rem + (2.8 - 1.7) * ((100vw - 576px) / (2560 - 576)));
   text-align: justify;
   text-align-last: center;
 }
@@ -3444,10 +3444,6 @@ Responsive
     grid-gap: 1rem;
   }
 
-  nav {
-    font-size: calc(1.1rem + 0.5 * ((100vw - 20rem) / 60));
-  }
-
   .hgrid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -3474,10 +3470,6 @@ Responsive
     grid-column: auto;
     padding-left: 8%;
     padding-right: 8%;
-  }
-
-  .introduction-text {
-    font-size: calc(1.7rem + 0.5 * ((100vw - 20rem) / 60));
   }
 
   .scroll-down {

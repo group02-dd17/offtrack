@@ -111,7 +111,7 @@ function buildNetwork(s) {
     defaultLabelColor: "#FFF",
     defaultLabelBGColor: "rgba(0,0,0,0.5)", //opacità per visibiltà video piccoli
     defaultHoverLabelBGColor: "white",
-    defaultLabelHoverColor: "black",
+    defaultLabelHoverColor: "black"
   });
 
   // Refresh the graph to see the changes:
@@ -362,14 +362,20 @@ function buildNetwork(s) {
   });
 
   $("#resetView").bind("click", function () {
+    var adjustZoom = 1;
     resetSide();
+
+    if(document.body.clientWidth <= 425) {
+      adjustZoom = (document.body.clientWidth / 425) / 8;
+    }
+
     s.settings({
       labelThreshold: 6,
     });
     // Reset view - animation :
     sigma.misc.animation.camera(
       s.cameras[0],
-      { ratio: onresize(), x: 0, y: 0, angle: 0 },
+      { ratio: adjustZoom, x: 0, y: 0, angle: 0 },
       { duration: 600 }
     );
     s.graph.nodes().forEach(function (n) {
@@ -663,7 +669,6 @@ function buildNetwork(s) {
               "Number of cohashtags: " + uniqueLabels.length;
           }
 
-          //15 dic h22:15 sono scritti qua i cambiamenti —EG
           s.graph.nodes().forEach(function (n) {
             if (toKeep[n.id]) {
               if (toKeep[n.id].id == nodeId) {
@@ -760,6 +765,12 @@ function animateGraph() {
     s.camera.isAnimated = true;
     // s.camera.getRectangle(document.getElementById("network-graph").clientWidth, document.getElementById("network-graph").clientHeight);
 
+  
+    if(document.body.clientWidth <= 425) {
+      s.camera.ratio = (document.body.clientWidth / 425) / 8;
+    }
+    
+
     s.graph.nodes().forEach(function (n) {
       n.atlas_x = n.x;
       n.atlas_y = n.y;
@@ -788,13 +799,3 @@ function animateGraph() {
     );
   });
 }
-
-function onresize() {
-  //your code here
-  //this is just an example
-  width = document.body.clientWidth;
-  console.log(width);
-  return (width / 425) / 8;
-}
-console.log(onresize());
-window.addEventListener("resize", onresize);

@@ -276,7 +276,6 @@ input:focus {
   display: grid;
   width: 50vw;
   padding: 3em;
-  aspect-ratio: 16/9;
   grid-row-gap: 1em;
   align-items: center;
 }
@@ -285,7 +284,7 @@ input:focus {
   display: grid;
   grid-template-columns: 3fr 1fr;
   grid-gap: 2em;
-  font-size: 1.4rem;
+  font-size: calc(20px + (30 - 20) * ((100vw - 576px) / (2560 - 576)));
 }
 
 .popup-main {
@@ -297,7 +296,7 @@ input:focus {
 
 .popup-main>p {
   font-family: 'GT America';
-  font-size: 1.3em;
+  font-size: calc(16px + (20 - 16) * ((100vw - 576px) / (2560 - 576)));
 }
 
 .popup-footer {
@@ -311,7 +310,7 @@ input:focus {
 
 .popup-footer p {
   font-family: 'GT America';
-  font-size: 1.3em;
+  font-size: calc(16px + (20 - 16) * ((100vw - 576px) / (2560 - 576)));
   text-align: center;
   margin-top: 15%;
 }
@@ -330,7 +329,7 @@ input:focus {
 #legend ul {
   list-style-type: none;
   font-family: "GT America";
-  font-size: 1.3em;
+  font-size: calc(16px + (20 - 16) * ((100vw - 576px) / (2560 - 576)));
 }
 
 #legend li:first-child {
@@ -394,6 +393,29 @@ input:focus {
     right: auto;
     top: auto;
   }
+
+  .iframeContainer {
+    width: 70vw;
+    margin-top: 25vh;
+  }
+
+  .popup-main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2em;
+    font-family: 'GT America';
+  }
+
+  #legend {
+    padding: 0;
+    border-left: 0 solid transparent;
+    border-top: 1px solid white;
+  }
+
+  #legend ul {
+    padding-left: 0;
+  }
+  
 }
 
 @media screen and (max-width: 425px) {
@@ -420,10 +442,34 @@ form {
 
 input[type=text] {
   width: 70%;
-
 }
 
 input[type=submit] {
   width: 30%;
+}
+
+.lightbox {
+  height: 100%;
+}
+
+.iframeContainer {
+  padding: 40px;
+  height: 100%;
+  overflow-y: scroll;
+  margin-top: 15vh;
+}
+
+.popup-main {
+  grid-gap: 0;
+}
+
+.popup-footer {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+.popup-footer img {
+  width: 50%;
 }
 }

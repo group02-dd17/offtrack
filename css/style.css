@@ -2522,7 +2522,7 @@ Cover
 }
 
 #cover-btn a {
-  font-size: calc(35px + (55 - 35) * ((100vw - 576px) / (2560 - 576)));
+  font-size: calc(30px + (55 - 30) * ((100vw - 576px) / (2560 - 576)));
   grid-area: overlap;
 }
 
@@ -3356,7 +3356,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1rem;
-  font-size: 1rem;
+  font-size: calc(10px + (13 - 10) * ((100vw - 576px) / (1200 - 576)));
   border-top: 1px solid #ffffff;
   padding-top: 2rem;
 }
@@ -3387,7 +3387,7 @@ footer img {
 
 footer h1 {
   margin: 0 0 1rem 0;
-  font-size: 1.5rem;
+  font-size: calc(20px + (25 - 20) * ((100vw - 576px) / (1200 - 576)));
   text-transform: uppercase;
 }
 
@@ -3472,5 +3472,9 @@ Responsive
   .about-btn {
     grid-column: 4;
   }
+
+footer {
+  grid-template-columns: 1fr;
+}
 
 }

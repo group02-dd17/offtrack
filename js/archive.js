@@ -369,7 +369,7 @@ function buildNetwork(s) {
     // Reset view - animation :
     sigma.misc.animation.camera(
       s.cameras[0],
-      { ratio: 1, x: 0, y: 0, angle: 0 },
+      { ratio: onresize(), x: 0, y: 0, angle: 0 },
       { duration: 600 }
     );
     s.graph.nodes().forEach(function (n) {
@@ -788,3 +788,13 @@ function animateGraph() {
     );
   });
 }
+
+function onresize() {
+  //your code here
+  //this is just an example
+  width = document.body.clientWidth;
+  console.log(width);
+  return (width / 425) / 8;
+}
+console.log(onresize());
+window.addEventListener("resize", onresize);

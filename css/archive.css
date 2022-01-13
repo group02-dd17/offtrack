@@ -159,7 +159,7 @@ nav {
 
 form {
   position: absolute;
-  z-index: 100;
+  z-index: 8;
   margin-left: 15px;
   top: 15px;
   display: flex;
@@ -208,7 +208,7 @@ input:focus {
   border: 1px solid #d4d4d4;
   border-bottom: none;
   border-top: none;
-  z-index: 99;
+  z-index: 8;
   /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
@@ -234,30 +234,6 @@ input:focus {
   background-color: #fff !important;
   color: #ffffff;
 }
-
-
-/*--------
-  Responsive
-  ----------*/
-@media screen and (max-width: 600px) {
-  #network-container {
-    grid-column: auto;
-    grid-template-rows: minmax(20px, 40%) 1fr;
-    grid-template-columns: auto;
-  }
-
-  #wrapper-side {
-    border-bottom: 1px solid white;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto;
-  }
-
-  #visualizer {
-    border-left: 1px solid white;
-    border-right: 1px solid white;
-  }
-}
-
 
 /*--------
   Popup
@@ -286,7 +262,7 @@ input:focus {
   font-size: 1.5rem;
   border: 1px solid #FFF;
   border-color: #FFF;
-  z-index: 100;
+  z-index: 10;
   padding: 0.8rem 1.1rem;
 }
 
@@ -376,4 +352,27 @@ input:focus {
 
 .lightbox.closed {
   display: none;
+}
+
+
+/*--------
+  Responsive
+  ----------*/
+@media screen and (max-width: 992px) {
+  #network-container {
+    grid-column: auto;
+    grid-template-rows: minmax(20px, 40%) 1fr;
+    grid-template-columns: auto;
+  }
+
+  #wrapper-side {
+    border-bottom: 1px solid white;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  #visualizer {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+  }
 }

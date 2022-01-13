@@ -3411,7 +3411,7 @@ footer li {
 /*--------
 Responsive
 ----------*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
   .grid {
     grid-template-columns: 1fr;
     grid-gap: 1rem;

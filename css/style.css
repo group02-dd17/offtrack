@@ -58,7 +58,7 @@ Cookies
   }
 
   .cc-message {
-    font-size: calc(15px + (20 - 15) * ((100vw - 576px) / (1200 - 576)));
+    font-size: calc(10px + (15 - 10) * ((100vw - 576px) / (1200 - 576)));
     line-height: 1.4;
     font-family: GT America;
   }
@@ -319,7 +319,7 @@ Index
   font-family: "GT America", sans-serif;
   font-feature-settings: "ss03";
   text-align: center;
-  font-size: 1.2rem;
+  font-size: calc(13px + (20 - 17) * ((100vw - 576px) / (2560 - 576)));
   margin: 0;
 }
 
@@ -344,7 +344,7 @@ Index
   border: 1px solid white;
   width: 85%;
   aspect-ratio: 1;
-  font-size: 2.8rem;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   background-image: url("../assets/videos/buttons/followrabbit.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -394,7 +394,7 @@ Index
   border: 1px solid white;
   width: 85%;
   aspect-ratio: 1;
-  font-size: 2.8rem;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   background-image: url("../assets/videos/buttons/gotoarchive.webp");
   background-size: cover;
   background-repeat: no-repeat;
@@ -408,42 +408,6 @@ Index
 }
 
 /*--Tooltip--*/
-/*
-.tooltip {
-  position: inherit;
-  z-index: 10;
-}
-
-.tooltip:before,
-.tooltip:after {
-  display: block;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-}
-
-.tooltip:before {
-  background: white;
-  border: 1px solid black;
-  color: black;
-  content: attr(data-title);
-  font-size: 1.5rem;
-  max-width: 40vw;
-  padding: 30px;
-}
-
-.tooltip.fade:after,
-.tooltip.fade:before {
-  transform: translate(0, -10px);
-  transition: all .15s ease-in-out;
-}
-
-.tooltip.fade:hover:after,
-.tooltip.fade:hover:before {
-  opacity: 1;
-  transform: translate(0, 0);
-} */
-
 .tooltip {
   position: relative;
   display: inline;
@@ -462,7 +426,7 @@ Index
   text-align: justify;
   text-align-last: center;
   margin-left: -20vw;
-  font-size: 1.5rem;
+  font-size: calc(15px + (30 - 15) * ((100vw - 576px) / (2560 - 576)));
   width: 30vw;
   padding: 30px;
 
@@ -488,7 +452,6 @@ Keywords
   width: 100%;
   place-items: center;
   grid-column: 1 / span 2;
-  font-size: 5rem;
   text-align: justify;
   text-align-last: center;
 }
@@ -497,11 +460,15 @@ Keywords
   grid-column: 2 / span 8;
   text-align: justify;
   text-align-last: center;
-  font-size: 5rem;
+}
+
+.t-title {
+  font-size: calc(45px + (100 - 45) * ((100vw - 576px) / (2560 - 576)));
+  margin-bottom: 0;
 }
 
 .subtitle {
-  font-size: 2.3rem;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   text-align: justify;
   text-align-last: center;
 }
@@ -2211,7 +2178,7 @@ About
   border-top: 1px solid white;
   border-left: 1px solid white;
   border-right: 1px solid white;
-  font-size: 2rem;
+  font-size: calc(19px + (45 - 19) * ((100vw - 576px) / (2560 - 576)));
   z-index: 3;
 }
 
@@ -2228,7 +2195,7 @@ About
 
 .panel {
   display: none;
-  font-size: 2.8rem;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   grid-column: 2 / span 8;
   align-items: center;
   text-align: justify;
@@ -2236,7 +2203,7 @@ About
 }
 
 .panel-title {
-  font-size: 5rem;
+  font-size: calc(45px + (100 - 45) * ((100vw - 576px) / (2560 - 576)));
   font-weight: 400;
   text-align: center;
 }
@@ -2450,7 +2417,7 @@ About
 }
 
 #easter-egg p {
-  font-size: 1rem;
+  font-size: calc(15px + (20 - 15) * ((100vw - 576px) / (2560 - 576)));
   font-family: "GT America";
   font-weight: 400;
   margin-bottom: 0;
@@ -2521,7 +2488,7 @@ Cover
   padding-left: 1.5%;
   padding-right: 1.5%;
   padding-bottom: 1.5%;
-  font-size: 6rem;
+  font-size: calc(50px + (110 - 50) * ((100vw - 576px) / (2560 - 576)));
   width: max-content;
   grid-area: overlap;
   /* outline: 1px solid #000000; */
@@ -2537,7 +2504,7 @@ Cover
   padding-top: 1.5%;
   padding-left: 1.5%;
   padding-right: 1.5%;
-  font-size: 1.9rem;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   width: max-content;
   grid-area: overlap;
   /* text-transform: uppercase;  */
@@ -2555,7 +2522,7 @@ Cover
 }
 
 #cover-btn a {
-  font-size: 2.5rem;
+  font-size: calc(35px + (55 - 35) * ((100vw - 576px) / (2560 - 576)));
   grid-area: overlap;
 }
 

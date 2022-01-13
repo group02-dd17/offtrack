@@ -39,7 +39,7 @@ function thisPage() {
   if (pos > -1) {
     page = page.substr(0, pos);
   }
-  console.log(page);
+
   return page;
 }
 

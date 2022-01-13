@@ -386,7 +386,7 @@ input:focus {
     right: auto;
     top: auto;
   }
-  
+
   #info {
     bottom: 10px;
     left: 125px;
@@ -418,8 +418,8 @@ input:focus {
   
 }
 
-@media screen and (max-width: 425px) {
-  
+@media screen and (max-width: 600px) {
+
   /* SEARCH BAR */
 
 form {

@@ -58,7 +58,7 @@ Cookies
   }
 
   .cc-message {
-    font-size: calc(15px + (20 - 15) * ((100vw - 576px) / (1200 - 576)));
+    font-size: calc(10px + (15 - 10) * ((100vw - 576px) / (1200 - 576)));
     line-height: 1.4;
     font-family: GT America;
   }

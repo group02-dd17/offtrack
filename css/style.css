@@ -3450,9 +3450,20 @@ Responsive
   .go-to-archive {
     grid-column: 1;
   }
+
+
+    .panels {
+      grid-column: auto;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    .panel {
+      grid-column: auto;
+    }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 600px) {
   .hgrid {
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }

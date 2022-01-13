@@ -58,7 +58,7 @@ Cookies
   }
 
   .cc-message {
-    font-size: calc(10px + (15 - 10) * ((100vw - 576px) / (1200 - 576)));
+    font-size: calc(10px + (15 - 10) * ((100vw - 576px) / (2560 - 576)));
     line-height: 1.4;
     font-family: GT America;
   }
@@ -3356,7 +3356,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1rem;
-  font-size: calc(10px + (13 - 10) * ((100vw - 576px) / (1200 - 576)));
+  font-size: calc(10px + (13 - 10) * ((100vw - 576px) / (2560 - 576)));
   border-top: 1px solid #ffffff;
   padding-top: 2rem;
 }
@@ -3387,7 +3387,7 @@ footer img {
 
 footer h1 {
   margin: 0 0 1rem 0;
-  font-size: calc(20px + (25 - 20) * ((100vw - 576px) / (1200 - 576)));
+  font-size: calc(20px + (25 - 20) * ((100vw - 576px) / (2560 - 576)));
   text-transform: uppercase;
 }
 
@@ -3451,16 +3451,12 @@ Responsive
     grid-column: 1;
   }
 
-
     .panels {
-      grid-column: auto;
-      padding-left: 8%;
-      padding-right: 8%;
+      grid-template-columns: 1fr;
+      padding-left: 2%;
+      padding-right: 2%;
     }
 
-    .panel {
-      grid-column: auto;
-    }
 }
 
 @media screen and (max-width: 600px) {

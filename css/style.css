@@ -58,7 +58,7 @@ Cookies
   }
 
   .cc-message {
-    font-size: calc(0.9rem + (1.2 - 0.9) * ((100vw - 576px) / (1200 - 576)));
+    font-size: calc(15px + (20 - 15) * ((100vw - 576px) / (1200 - 576)));
     line-height: 1.4;
     font-family: GT America;
   }
@@ -177,7 +177,7 @@ nav {
   position: fixed;
   z-index: 100 !important;
   border-bottom: 1px solid white;
-  font-size: calc(30px + (50 - 30) * ((100vw - 576px) / (2560 - 576)));
+  font-size: calc(20px + (45 - 20) * ((100vw - 576px) / (2560 - 576)));
   text-transform: uppercase;
 }
 
@@ -301,7 +301,7 @@ Index
 }
 
 .introduction-text {
-  font-size: calc(1.7rem + (2.8 - 1.7) * ((100vw - 576px) / (2560 - 576)));
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
   text-align: justify;
   text-align-last: center;
 }

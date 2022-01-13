@@ -369,14 +369,16 @@ input:focus {
   #wrapper-side {
     border-bottom: 1px solid white;
     border-top: 1px solid white;
+    border-left: transparent;
+    border-right: transparent;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     grid-row: 2;
   }
 
   #visualizer {
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-left: transparent;
+    border-right: transparent;
   }
 
   #resetView {
@@ -413,10 +415,11 @@ form {
 
 .autocomplete {
   width: 70%;
+  background-color: #000;
 }
 
 input[type=text] {
-  width: 40%;
+  width: 70%;
 
 }
 

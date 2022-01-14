@@ -2243,7 +2243,7 @@ About
 
 .project-video-text {
   font-family: "GT America";
-  font-size: 1.5rem;
+  font-size: calc(15px + (25px - 15) * ((100vw - 576px) / (2560 - 576)));
   font-weight: 400;
   margin-top: 0;
 }

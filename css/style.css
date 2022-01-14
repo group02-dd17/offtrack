@@ -609,7 +609,7 @@ Keywords
   text-align: left;
   opacity: 1;
   font-family: "GT America", sans-serif;
-  font-size: 1rem;
+  font-size: calc(10px + (19 - 10) * ((100vw - 576px) / (2560 - 576)));
   text-transform: uppercase;
 }
 
@@ -643,7 +643,7 @@ Keywords
 }
 
 .quote {
-  font-size: 1.7rem;
+  font-size: calc(15px + (35 - 15) * ((100vw - 576px) / (2560 - 576)));
   padding: 25px;
   border: 1px solid white;
   background-color: black;
@@ -664,7 +664,7 @@ Keywords
 
 .hash p {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: calc(18px + (45 - 18) * ((100vw - 576px) / (2560 - 576)));
   font-weight: 400;
   text-align: center;
   font-family: "GT America", sans-serif;

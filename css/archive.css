@@ -152,7 +152,7 @@ nav {
 #cohashTitle {
   font-family: 'GT America', sans-serif;
   font-weight: 400;
-  font-size: 1vmax;
+  font-size: calc(15px + (22 - 15) * ((100vw - 576px) / (2560 - 576)));
 }
 
 /* SEARCH BAR */

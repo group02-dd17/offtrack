@@ -94,6 +94,7 @@ a {
   color: white;
   text-decoration: none;
   font-family: "Redaction", serif;
+  word-break:break-all;
 }
 
 a:visited {
@@ -2247,28 +2248,6 @@ About
   margin-top: 0;
 }
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2rem;
-}
-
-.project-grid p {
-  grid-column: 1 / span 3;
-}
-
-#project-video-1 {
-  grid-column: 1;
-}
-
-#project-video-2 {
-  grid-column: 2;
-}
-
-#project-video-3 {
-  grid-column: 3;
-}
-
 .archive-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -3453,8 +3432,71 @@ Responsive
 
     .panels {
       grid-template-columns: 1fr;
-      padding-left: 2%;
-      padding-right: 2%;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
+    .panel {
+    grid-column: 1;
+    }
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-grid p {
+      grid-column: auto;
+    }
+
+    #project-video-1 {
+      grid-column: auto;
+    }
+
+    #project-video-2 {
+      grid-column: auto;
+    }
+
+    #project-video-3 {
+      grid-column: auto;
+    }
+
+    .team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    }
+    #person-1 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-2 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-3 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-4 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-5 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-6 {
+      grid-column: auto;
+      grid-row: auto;
+    }
+    #person-7 {
+      grid-column: auto;
+      grid-row: auto;
     }
 
 }
@@ -3479,6 +3521,7 @@ Responsive
   .about-btn {
     grid-column: 4;
   }
+
 
 footer {
   grid-template-columns: 1fr;

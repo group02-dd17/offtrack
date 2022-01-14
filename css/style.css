@@ -3532,6 +3532,10 @@ Responsive
       width: auto;
     }
 
+    .video-grid {
+      grid-column-gap: 5px;
+    }
+
 
 footer {
   grid-template-columns: 1fr;

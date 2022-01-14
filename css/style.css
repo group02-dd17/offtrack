@@ -3522,6 +3522,16 @@ Responsive
     grid-column: 4;
   }
 
+  #cover {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(27, 1fr);
+  }
+
+  .cover-title {
+      padding: 2em 1.5em;
+      width: auto;
+    }
+
 
 footer {
   grid-template-columns: 1fr;

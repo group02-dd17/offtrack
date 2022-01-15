@@ -3542,6 +3542,23 @@ Responsive
       padding-right: 8%;
     }
 
+    #masks {
+      width: fit-content
+    }
+    #pcr {
+      width: fit-content
+    }
+    #vaccine {
+      width: fit-content
+    }
+    #virus {
+      width: fit-content
+    }
+
+    #toggleVolume {
+    width: 0.7em;
+    }
+
 
 footer {
   grid-template-columns: 1fr;

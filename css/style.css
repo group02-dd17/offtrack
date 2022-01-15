@@ -94,7 +94,7 @@ a {
   color: white;
   text-decoration: none;
   font-family: "Redaction", serif;
-  word-break:break-all;
+  word-break: break-all;
 }
 
 a:visited {
@@ -181,7 +181,7 @@ video:hover {
   justify-content: center;
 }
 
-#disclaimer > p{
+#disclaimer>p {
   font-size: 1.8em;
 }
 
@@ -2197,6 +2197,7 @@ About
   border-right: 1px solid white;
   font-size: calc(19px + (45 - 19) * ((100vw - 576px) / (2560 - 576)));
   z-index: 3;
+  align-content: center;
 }
 
 .panels {
@@ -3346,14 +3347,13 @@ Footer
 ----------*/
 footer {
   margin-top: 3rem;
-  padding: 0 1rem;
+  padding: 2rem 1rem 0 1rem;
   grid-column: 1 / span 4;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1rem;
   font-size: calc(10px + (13 - 10) * ((100vw - 576px) / (2560 - 576)));
   border-top: 1px solid #ffffff;
-  padding-top: 2rem;
 }
 
 footer * {
@@ -3455,96 +3455,110 @@ Responsive
   #masks {
     width: fit-content
   }
+
   #pcr {
     width: fit-content
   }
+
   #vaccine {
     width: fit-content
   }
+
   #virus {
     width: fit-content
   }
 
   #toggleVolume {
-  width: 0.7em;
+    width: 0.7em;
   }
 
   .go-to-rabbit {
     width: 50%;
-    }
+  }
 
   .go-to-archive {
     width: 50%;
-    }
+  }
 
-    .panels {
-      grid-template-columns: 1fr;
-      padding-left: 8%;
-      padding-right: 8%;
-    }
+  .panels {
+    grid-template-columns: 1fr;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 
-    .panel {
+  .panel {
     grid-column: 1;
-    }
+  }
 
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 
 
-    .project-grid {
-      grid-template-columns: 1fr;
-    }
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 
-    .project-grid p {
-      grid-column: auto;
-    }
+  .project-grid p {
+    grid-column: auto;
+  }
 
-    #project-video-1 {
-      grid-column: auto;
-    }
+  #project-video-1 {
+    grid-column: auto;
+  }
 
-    #project-video-2 {
-      grid-column: auto;
-    }
+  #project-video-2 {
+    grid-column: auto;
+  }
 
-    #project-video-3 {
-      grid-column: auto;
-    }
+  #project-video-3 {
+    grid-column: auto;
+  }
 
-    .team {
+  .team {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    }
-    #person-1 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-2 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-3 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-4 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-5 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-6 {
-      grid-column: auto;
-      grid-row: auto;
-    }
-    #person-7 {
-      grid-column: auto;
-      grid-row: auto;
-    }
+  }
+
+  #person-1 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-2 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-3 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-4 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-5 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-6 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  #person-7 {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  footer {
+    padding: 2rem 5rem 0 1rem;
+  }
 
 }
 
@@ -3575,40 +3589,50 @@ Responsive
   }
 
   .cover-title {
-      padding: 1.5em 1em;
-      width: 70%;
-    }
+    padding: 1.5em 1em;
+    width: 70%;
+  }
 
-    .video-grid {
-      grid-column-gap: 5px;
-    }
+  .video-grid {
+    grid-column-gap: 5px;
+  }
 
-    .title-content {
-      grid-column: auto;
-      padding-left: 8%;
-      padding-right: 8%;
-    }
+  .title-content {
+    grid-column: auto;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
 
-    #masks {
-      width: fit-content
-    }
-    #pcr {
-      width: fit-content
-    }
-    #vaccine {
-      width: fit-content
-    }
-    #virus {
-      width: fit-content
-    }
+  #masks {
+    width: fit-content
+  }
 
-    #toggleVolume {
+  #pcr {
+    width: fit-content
+  }
+
+  #vaccine {
+    width: fit-content
+  }
+
+  #virus {
+    width: fit-content
+  }
+
+  #toggleVolume {
     width: 0.7em;
-    }
+  }
 
+  #one-tab {
+    border-left: 0;
+  }
 
-footer {
-  grid-template-columns: 1fr;
-}
+  #four-tab {
+    border-right: 0;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
+  }
 
 }

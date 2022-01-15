@@ -10,26 +10,27 @@ $(document).scroll(function () {
 
 if(window.innerHeight > window.innerWidth){
   console.log("AIOOSOOAKDOA");
-  document.getElementById("disclaimer").style.display = "block";
+  document.getElementById("disclaimer").style.display = "grid";
+  document.documentElement.setAttribute("style","touch-action: none;");
 }
 
 function doOnOrientationChange() {
   switch(window.orientation) {
     case 90:
       document.getElementById("disclaimer").style.display = "none";
-      $('body').unbind('touchmove');
+      document.documentElement.setAttribute("style","touch-action: auto;");
       break;
     case -90:
       document.getElementById("disclaimer").style.display = "none";
-      $('body').unbind('touchmove');
+      document.documentElement.setAttribute("style","touch-action: auto;");
       break;
     case 0:
-      document.getElementById("disclaimer").style.display = "block";
-      $('body').bind('touchmove', function(e){e.preventDefault()});
+      document.getElementById("disclaimer").style.display = "grid";
+      document.documentElement.setAttribute("style","touch-action: none;");
       break;
     case 180:
-      document.getElementById("disclaimer").style.display = "block";
-      $('body').bind('touchmove', function(e){e.preventDefault()});
+      document.getElementById("disclaimer").style.display = "grid";
+      document.documentElement.setAttribute("style","touch-action: none;");
       break;
     default:
       break;

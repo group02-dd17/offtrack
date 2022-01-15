@@ -2483,7 +2483,7 @@ Cover
   padding-top: 1.5%;
   padding-left: 1.5%;
   padding-right: 1.5%;
-  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
+  font-size: calc(20px + (50 - 20) * ((100vw - 576px) / (2560 - 576)));
   width: auto;
   grid-area: overlap;
   /* text-transform: uppercase;  */
@@ -3528,8 +3528,8 @@ Responsive
   }
 
   .cover-title {
-      padding: 2em 1.5em;
-      width: auto;
+      padding: 1.5em 1em;
+      width: 70%;
     }
 
     .video-grid {

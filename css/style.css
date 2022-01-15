@@ -3536,6 +3536,12 @@ Responsive
       grid-column-gap: 5px;
     }
 
+    .title-content {
+      grid-column: auto;
+      padding-left: 8%;
+      padding-right: 8%;
+    }
+
 
 footer {
   grid-template-columns: 1fr;

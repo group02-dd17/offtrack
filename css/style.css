@@ -3430,6 +3430,37 @@ Responsive
     grid-column: 1;
   }
 
+  .title-content {
+    grid-column: auto;
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+
+  #masks {
+    width: fit-content
+  }
+  #pcr {
+    width: fit-content
+  }
+  #vaccine {
+    width: fit-content
+  }
+  #virus {
+    width: fit-content
+  }
+
+  #toggleVolume {
+  width: 0.7em;
+  }
+
+  .go-to-rabbit {
+    width: 50%;
+    }
+
+  .go-to-archive {
+    width: 50%;
+    }
+
     .panels {
       grid-template-columns: 1fr;
       padding-left: 8%;

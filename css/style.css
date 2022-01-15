@@ -504,33 +504,10 @@ Keywords
   background-position: center;
 }
 
-.selector {
-  width: 100%;
-  margin-bottom: 10%;
-}
 
 #selector-wrapper {
-  display: grid;
-  grid-row: 3 / span 1;
-  grid-column: 1 / span 2;
   margin-top: 8rem;
   margin-bottom: 8rem;
-}
-
-.selector-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 1.5rem;
-  text-align: center;
-  align-items: center;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.selector-btn {
-  font-size: 2.8rem;
-  padding: 30px;
-  border: 1px solid white;
 }
 
 /*- Video--*/

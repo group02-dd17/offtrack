@@ -3352,7 +3352,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 1rem;
-  font-size: calc(10px + (13 - 10) * ((100vw - 576px) / (2560 - 576)));
+  font-size: calc(12px + (16 - 12) * ((100vw - 576px) / (2560 - 576)));
   border-top: 1px solid #ffffff;
 }
 
@@ -3582,6 +3582,14 @@ Responsive
   .about-btn {
     grid-column: 4;
   }
+
+  .go-to-rabbit {
+    width: 85%;
+    }
+
+  .go-to-archive {
+    width: 85%;
+    }
 
   #cover {
     grid-template-columns: repeat(5, 1fr);

@@ -169,6 +169,16 @@ video:hover {
   display: none !important;
 }
 
+#disclaimer {
+  position: absolute;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 101;
+  justify-content: center;
+}
+
 /*--------
 Header
 ----------*/

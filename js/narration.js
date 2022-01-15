@@ -8,10 +8,42 @@ $(document).scroll(function () {
   offsetPoint = window.scrollY;
 });
 
+if(window.innerHeight > window.innerWidth){
+  console.log("AIOOSOOAKDOA");
+  document.getElementById("disclaimer").style.display = "block";
+}
+
+function doOnOrientationChange() {
+  switch(window.orientation) {
+    case 90:
+      document.getElementById("disclaimer").style.display = "none";
+      $('body').unbind('touchmove');
+      break;
+    case -90:
+      document.getElementById("disclaimer").style.display = "none";
+      $('body').unbind('touchmove');
+      break;
+    case 0:
+      document.getElementById("disclaimer").style.display = "block";
+      $('body').bind('touchmove', function(e){e.preventDefault()});
+      break;
+    case 180:
+      document.getElementById("disclaimer").style.display = "block";
+      $('body').bind('touchmove', function(e){e.preventDefault()});
+      break;
+    default:
+      break;
+  }
+}
+
+window.addEventListener('orientationchange', doOnOrientationChange);
+
+// Initial execution if needed
+doOnOrientationChange();
 
 jQuery(window).on('load', function () {
   // Animate loader off screen
-  $(".se-pre-con").delay(800).fadeOut("slow");
+  $(".se-pre-con").fadeOut("slow");
   document.getElementsByTagName("video").forEach((itemVid) => {
     itemVid.play();
     itemVid.muted = null;

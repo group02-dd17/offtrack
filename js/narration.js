@@ -1,4 +1,5 @@
-let pointY=0, offsetPoint=0;
+let pointY = 0,
+  offsetPoint = 0;
 
 onmousemove = function (e) {
   pointY = e.clientY;
@@ -8,41 +9,36 @@ $(document).scroll(function () {
   offsetPoint = window.scrollY;
 });
 
-if(window.innerHeight > window.innerWidth){
-  console.log("AIOOSOOAKDOA");
+if (window.innerHeight > window.innerWidth) {
   document.getElementById("disclaimer").style.display = "grid";
-  document.documentElement.setAttribute("style","touch-action: none;");
+  document.documentElement.setAttribute("style", "touch-action: none;");
 }
 
 function doOnOrientationChange() {
-  switch(window.orientation) {
+  var checkOrientation;
+  switch (window.orientation) {
     case 90:
-      document.getElementById("disclaimer").style.display = "none";
-      document.documentElement.setAttribute("style","touch-action: auto;");
-      break;
     case -90:
       document.getElementById("disclaimer").style.display = "none";
-      document.documentElement.setAttribute("style","touch-action: auto;");
+      document.documentElement.setAttribute("style", "touch-action: auto;");
+      checkOrientation = 1;
       break;
     case 0:
-      document.getElementById("disclaimer").style.display = "grid";
-      document.documentElement.setAttribute("style","touch-action: none;");
-      break;
     case 180:
-      document.getElementById("disclaimer").style.display = "grid";
-      document.documentElement.setAttribute("style","touch-action: none;");
+      screen.orientation.lock('landscape');
       break;
     default:
       break;
   }
 }
 
-window.addEventListener('orientationchange', doOnOrientationChange);
+window.addEventListener("orientationchange", doOnOrientationChange);
 
 // Initial execution if needed
 doOnOrientationChange();
 
-jQuery(window).on('load', function () {
+jQuery(window).on("load", function () {
+  console.log("AOOOO");
   // Animate loader off screen
   $(".se-pre-con").fadeOut("slow");
   document.getElementsByTagName("video").forEach((itemVid) => {
@@ -58,13 +54,15 @@ let flagMute = false; //check volume video
 let xyVertex = []; //Array that will contain the vertexes of the polyLine
 
 var firstNode = document.getElementById("wrapper-" + checkPage + "1");
-let _x0 = firstNode.lastElementChild.getBoundingClientRect().left + firstNode.offsetWidth / 2;
-let _y0 = firstNode.lastElementChild.getBoundingClientRect().top -
+let _x0 =
+  firstNode.lastElementChild.getBoundingClientRect().left +
+  firstNode.offsetWidth / 2;
+let _y0 =
+  firstNode.lastElementChild.getBoundingClientRect().top -
   document.getElementById("title").getBoundingClientRect().top +
   firstNode.lastElementChild.offsetHeight / 2;
 
 let lines = function (l) {
-
   l.setup = function () {
     const canvas = document.querySelector("#canvasLines");
     const ctx = this.canvas.getContext("2d");
@@ -83,8 +81,7 @@ let lines = function (l) {
   };
 
   l.draw = function () {
-
-    let mouseVertical = offsetPoint+pointY;
+    let mouseVertical = offsetPoint + pointY;
 
     let redLine = function (_delta) {
       l.beginShape();
@@ -96,13 +93,12 @@ let lines = function (l) {
 
       l.vertex(l.mouseX, mouseVertical);
       l.endShape();
-    }
+    };
 
     l.clear();
 
     // mousePos Helper
     // l.ellipse(l.mouseX, offsetPoint+pointY, 20);
-
     for (g in hashArray) {
       l.drawLines(hashArray[g], "hashtag-" + checkPage + (+g + +1));
     }
@@ -117,11 +113,7 @@ let lines = function (l) {
     //   l.print(_event.deltaY);
     //   l.print("scroll");
     // });
-
   };
-
-
-
 
   l.drawLines = function (className, idHash) {
     var vidArray = document.getElementsByClassName(className);
@@ -160,11 +152,14 @@ document.getElementById("toggleVolume").addEventListener("click", function () {
   }
 });
 
-$('video').hover(function () {
-  if (!flagMute) this.volume = 1;
-}, function () {
-  if (!flagMute) this.volume = 0.01;
-});
+$("video").hover(
+  function () {
+    if (!flagMute) this.volume = 1;
+  },
+  function () {
+    if (!flagMute) this.volume = 0.01;
+  }
+);
 
 // videoList.forEach(function (item, index) {
 //   item.lastElementChild.addEventListener("mouseover", function () {
@@ -185,14 +180,14 @@ let volumeVideos = function (vol) {
   // videoList.forEach(function (item) {
   //   item.lastElementChild.volume = vol;
   // });
-}
+};
 
 $(".hash").click(function (_hash) {
   let index = $(".hash").index(this);
-  let url = new URL('https://group02-dd17.github.io/offtrack/archive.html');
+  let url = new URL("https://group02-dd17.github.io/offtrack/archive.html");
   let content = _hash.target.innerText.toLowerCase().substring(1);
   console.log(content);
-  url.searchParams.set('selection', content);
+  url.searchParams.set("selection", content);
   window.open(url);
 });
 
@@ -204,7 +199,7 @@ $(".wrapper").each(function (index) {
     let y = Math.floor($(this).offset().top + this.offsetHeight / 2);
     tempCoord = [x, y];
     if (xyVertex.length > 1) {
-      let a = xyVertex[(xyVertex.length) - 1];
+      let a = xyVertex[xyVertex.length - 1];
       if (a.toString() !== tempCoord.toString()) {
         xyVertex.push(tempCoord);
       }

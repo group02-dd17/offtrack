@@ -15,17 +15,16 @@ if (window.innerHeight > window.innerWidth) {
 }
 
 function doOnOrientationChange() {
-  var checkOrientation;
   switch (window.orientation) {
     case 90:
     case -90:
       document.getElementById("disclaimer").style.display = "none";
       document.documentElement.setAttribute("style", "touch-action: auto;");
-      checkOrientation = 1;
       break;
     case 0:
     case 180:
-      screen.orientation.lock('landscape');
+      document.getElementById("disclaimer").style.display = "grid";
+      document.documentElement.setAttribute("style", "touch-action: none;");
       break;
     default:
       break;

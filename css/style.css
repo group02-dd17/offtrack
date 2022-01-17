@@ -83,6 +83,7 @@ html {
   cursor: crosshair;
   font-family: "Redaction", serif;
   hyphens: auto;
+  -webkit-hyphenate-character: '-';
 }
 
 ::selection {

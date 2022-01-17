@@ -743,6 +743,11 @@ function buildNetwork(s) {
     // const urlParams = new URLSearchParams(queryString);
     // const page_type = urlParams.get("selection");
     if (page_type) {
+      s.graph.nodes().forEach(function(n){
+        if(n.label == ("#" + page_type)) {
+          selectedHash = n.id;
+        }
+      }); 
       var nodeId = selectedHash,
         toKeep = s.graph.neighbors(nodeId),
         arrIdNeighs = [],

@@ -81,6 +81,12 @@ function init() {
 
 init();
 
+function changeEdgeSize() {
+  console.log(window.screen.width);
+  if(window.screen.width <= 425) return 0.1;
+  else return 0.3;
+}
+
 //Create the function to build the network graph
 function buildNetwork(s) {
   //Save the initial colors of the nodes and edges
@@ -104,8 +110,8 @@ function buildNetwork(s) {
     labelThreshold: 6,
     minNodeSize: 1,
     maxNodeSize: 15,
-    minEdgeSize: 0.3,
-    maxEdgeSize: 0.3,
+    minEdgeSize: changeEdgeSize(),
+    maxEdgeSize: changeEdgeSize(),
     font: "GT America",
     defaultLabelSize: 16,
     defaultLabelColor: "#FFF",
@@ -897,8 +903,8 @@ function animateGraph() {
         labelThreshold: 6,
         minNodeSize: 1,
         maxNodeSize: 15,
-        minEdgeSize: 0.3,
-        maxEdgeSize: 0.3,
+        minEdgeSize: changeEdgeSize(),
+        maxEdgeSize: changeEdgeSize(),
         font: "GT America",
         defaultLabelSize: 16,
         defaultLabelColor: "#FFF",

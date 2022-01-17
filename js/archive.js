@@ -120,11 +120,8 @@ function buildNetwork(s) {
   let flagEvent = [false, 0];
 
   function createHashList() {
-    console.log(document.getElementById("hashtagsLabel").childNodes);
     document.getElementById("hashtagsLabel").childNodes.forEach(function (ent) {
-      console.log("forEach");
       ent.addEventListener("click", function () {
-        console.log("listener");
         s.graph.nodes().forEach(function (n) {
           (n.color = n.originalColor), (n.hidden = false);
         });
@@ -136,6 +133,24 @@ function buildNetwork(s) {
         flagEvent[0] = false;
         flagEvent[1] = null;
         moveToHash(ent.innerHTML);
+      });
+
+      ent.addEventListener("mouseover", function () {
+        s.graph.nodes().forEach(function (n) {
+          if (n.label === ent.innerHTML) {
+            n.color = "#FF0000";
+          }
+        });
+        s.refresh();
+      });
+
+      ent.addEventListener("mouseout", function () {
+        s.graph.nodes().forEach(function (n) {
+          if (n.label === ent.innerHTML) {
+            n.color = n.originalColor;
+          }
+        });
+        s.refresh();
       });
     });
   }
@@ -195,12 +210,16 @@ function buildNetwork(s) {
           document
             .getElementById("videoPlayer")
             .setAttribute("poster", e.attributes.thumburl);
+
           for (i in s.graph.neighbors(nodeId)) {
             var dateSpan = document.createElement("li");
             dateSpan.innerHTML = s.graph.neighbors(nodeId)[i].label;
             var li = document.getElementById("hashtagsLabel");
             li.appendChild(dateSpan);
           }
+
+          createHashList();
+
           document.getElementById("hashtagsLabel").classList.remove("hide");
           document.getElementById("cohashTitle").classList.add("hide");
         } else {
@@ -234,7 +253,6 @@ function buildNetwork(s) {
           document.getElementById("cohashTitle").textContent =
             "Number of cohashtags: " + uniqueLabels.length;
         }
-
         s.graph.nodes().forEach(function (n) {
           if (toKeep[n.id]) {
             if (toKeep[n.id].id == nodeId) {
@@ -250,8 +268,6 @@ function buildNetwork(s) {
 
         flagEvent[0] = true;
         flagEvent[1] = nodeId;
-
-        createHashList();
 
         let aNode = e;
         let cam = s.camera;
@@ -422,16 +438,16 @@ function buildNetwork(s) {
             var li = document.getElementById("hashtagsLabel");
             li.appendChild(dateSpan);
           }
-          console.log("AOOOO");
         });
       }
-
-      createHashList();
 
       document.getElementById("cohashTitle").classList.remove("hide");
       document.getElementById("cohashTitle").textContent =
         "Number of cohashtags: " + uniqueLabels.length;
     }
+
+    //Interactive sidebar
+    createHashList();
 
     s.graph.nodes().forEach(function (n) {
       if (toKeep[n.id]) {

@@ -406,9 +406,8 @@ Index
 .go-to-archive {
   cursor: pointer;
   display: grid;
-  text-align: center;
-  place-items: center;
   grid-column: 6 / span 4;
+  grid-template-areas: "overlap";
   border: 1px solid white;
   width: 85%;
   aspect-ratio: 1;
@@ -419,6 +418,10 @@ Index
   background-position: center;
   background-color: #000000;
   text-transform: uppercase;
+}
+
+.go-to-archive:hover .keywords {
+  display: grid;
 }
 
 .go-to-archive:hover>p {

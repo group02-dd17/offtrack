@@ -3445,6 +3445,11 @@ Responsive
     grid-column: 1;
   }
 
+  .go-to-archive-home {
+    grid-column: 1;
+    width: 50%;
+  }
+
   .title-content {
     grid-column: auto;
     padding-left: 8%;
@@ -3589,6 +3594,10 @@ Responsive
   .go-to-archive {
     width: 85%;
     }
+
+    .go-to-archive-home {
+      width: 85%;
+      }
 
   #cover {
     grid-template-columns: repeat(5, 1fr);

@@ -403,6 +403,24 @@ Index
   font-family: "Redaction 50", serif;
 }
 
+.go-to-archive-home {
+  cursor: pointer;
+  display: grid;
+  grid-column: 6 / span 4;
+  border: 1px solid white;
+  width: 85%;
+  text-align: center;
+  place-items: center;
+  aspect-ratio: 1;
+  font-size: calc(25px + (50 - 25) * ((100vw - 576px) / (2560 - 576)));
+  background-image: url("../assets/videos/buttons/gotoarchive.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000000;
+  text-transform: uppercase;
+}
+
 .go-to-archive {
   cursor: pointer;
   display: grid;
